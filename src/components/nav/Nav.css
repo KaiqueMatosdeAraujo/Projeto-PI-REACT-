@@ -1,0 +1,25 @@
+.menu{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Comfortaa', cursive;
+    background-color: white;
+   
+
+}
+ 
+.menu-a li a, .dropdown-toggle{
+    list-style: none;
+    text-decoration-line: none;
+    color: #E6889A;
+    font-weight: bold;
+}
+.menu-a li a:hover{
+    color: grey;
+}
+.dropdown-toggle:hover{
+    color:grey;
+}
+.dropdown-toggle{
+padding: 0.5rem 1rem;
+text-decoration-line: none;
+}

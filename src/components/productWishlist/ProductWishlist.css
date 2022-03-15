@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+
+
+ul{
+    line-height: 2;
+}
+
+.produtosFav{
+    margin: 20px 0px;
+    height: 100%;
+}
+
+.produtoFav{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cod{
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.nomeBB{
+    font-size: 18px;
+}
+
+.trashbin{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.lineVertical{
+    width: 25px;
+    height: 50px;
+    font-size: 1px;
+    border-left: 2px solid black;
+    padding: 5px 40px;
+}
+
+.lix button{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+
+.btnCar button{
+    background-color: #9CF38E;
+    font-size: 14px;
+    height: 46px;
+    display: flex;
+    width: 199px;
+    justify-content: center;
+    border-radius: 24px;
+    border: none;
+    color: white;
+    align-items: center;
+}
+
+
+.tab-content{
+    background-color: white;
+    padding:50px;
+    outline:1px solid rgb(199, 199, 199);
+    margin-bottom: 20px;
+}
+
+.nav-item.principal{
+    outline:0.5px solid rgb(199, 199, 199);
+    background-color: #ffc792a8;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+
+}
+
+.nav-link.principal {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    width: 231px;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    width: 276px;
+}
+
+.nav-link.principal:active{
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    color:rgb(0, 0, 0);
+}
+
+.nav-link.principal:hover{
+   
+   color:rgb(255, 255, 255);
+    
+}
+
+.nav-link.active.principal{
+    text-decoration-color: black;
+    border-top-right-radius:12px;
+    border-top-left-radius:12px;
+}
+
+.titleCard{
+    padding: 5px;
+    outline: 0.5px solid rgb(199, 199, 199);
+    border-radius:8px;
+}
+
+#titleCardMinhaConta h1{
+    font-size:25px;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+
+.container.row{
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1{
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left:10px
+}
+
+.modalcontentTitle{
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.cardContentTitleDC{
+    font-size:  20px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.cardContent{
+    border: 0.5px solid rgb(199, 199, 199);
+    border-radius:8px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.lixeiraBtnAdd {
+    display: flex;
+    align-items: center;
+    width: 35%;
+}
+
+
+
+@media (max-width: 425px){
+    nav-link.principal {
+        width: 366px;
+    }
+
+    .lixeiraBtnAdd{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 35%;
+        margin-left: 143px;
+    }
+}
+
+
+@media (max-width: 1024px){
+    .lixeiraBtnAdd {
+    display: flex;
+    align-items: center;
+    width: 35%;
+    margin-left: 173px;
+    }
+}
+
+
+
+
+
+
+
+
+

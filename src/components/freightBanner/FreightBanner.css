@@ -1,0 +1,14 @@
+
+.menSuperior {
+    background-color: #F7D794;
+    text-align: center;
+    color: white;
+    height: 25px;
+
+}
+
+@media (max-width: 767px){ 
+    .menSuperior{
+        font-size: 12px;
+    }
+}

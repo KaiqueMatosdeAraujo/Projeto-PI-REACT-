@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Roboto+Mono:wght@200;300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    max-width: 100%;
+}
+
+.navbar-toggler-icon{
+    background-image: url(./imgs//menu-maior.png);
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.custom-nav{
+    background-color: #E6889A;
+    height: 90px;
+}
+
+.logo{
+
+    padding-bottom: 10px;
+    margin-left: 20px;
+}
+
+/* .custom-form{
+    margin-left: 115px;
+} */
+
+.custom-form input{
+    width: 585px;
+    height: 37px;
+}
+
+.custom-form ::after{
+    background-image: url(./imgs/search.png);
+    background-size: 23px;
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 40px;
+}
+
+.icone{
+    position: relative;
+    padding-top: 15px;
+    width: 32px;
+    height: 44px;
+    left: 35px;
+    margin-top: 8px;
+}
+
+.cart p{
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.login-cadatro p a{
+    text-align: center;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.login-cadatro p {
+    text-align: center;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.login-cadatro p a:hover{
+    color: gray;
+}
+
+.link-login-cadastro{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.custom-btn{
+    margin-left: 100px;
+    background-color: #9ACCFF;
+    width: 149px;
+    height: 37px;
+}
+p span{
+    position: relative;
+}
+span.cartIcon::before{
+    background-image: url(./imgs/cart.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 40px;
+    right: 3%;
+}
+
+
+.login-cadatro{
+    margin-right: 30px;
+}
+
+
+
+.navbar-collapse{
+    flex-grow: 0;
+    background-color: #E6889A;
+}
+
+button:focus:not(:focus-visible) {
+    outline: 0;
+    color: #ff00814a;
+}
+
+
+
+@media (max-width: 992px){ 
+    *{
+        max-width: 100%;
+    }
+    
+    .custom-form input{
+        width: 278px;
+        margin-left: 20px;
+    }
+ 
+    .navbar-collapse{
+        display: flex;
+        height: 80px;
+    }
+ 
+    .custom-btn{
+        position: relative;
+        right: 55px;
+    }
+
+    .teste2{
+        display: flex;
+        align-items: center;
+    }
+ 
+    /* .teste{
+        display: flex;
+    } */
+ 
+    .icone{
+        width: 23px;
+        height: 40px;
+        left: 20px;
+    }
+ 
+    .login-cadatro{
+        font-size: 9px;
+    }
+ 
+    .custom-nav{
+        height: 108px;
+    }
+ 
+    .cartIcon::before{
+        right:10%;
+    }
+ 
+    .logo{
+        height: 100px;
+    }
+
+    .navbar-toggler{
+        margin-right: 3%;
+    }
+     
+ }
+
+
+@media (max-width: 767px){ 
+    .custom-form input{
+        width: 75%;
+        margin-left: 20px;
+    }
+ 
+    .navbar-collapse{
+        display: flex;
+        height: 116px;
+        display: block;
+    }
+ 
+    .custom-btn{
+        position: relative;
+        right: 55px;
+        margin-left: 78px;
+    }
+
+    .teste2{
+        display: flex;
+    }
+ 
+    
+ 
+    .icone{
+        display: none;
+    }
+ 
+    .login-cadatro p{
+        font-size: 15px;
+        padding-top: 15px;
+        margin-bottom: 5px;
+    }
+ 
+    .custom-nav{
+        height: 108px;
+    }
+ 
+ 
+ 
+    .logo{
+        height: 100px;
+    }
+     
+ }
+
+
+@media (min-width: 993px){
+    .navbar-collapse{
+        height: 90px;
+    }
+
+    .custom-form input{
+        margin-left: 108px;
+    }
+
+    .navbar .container-fluid{
+        justify-content: flex-start;
+    }
+
+    
+
+    .login-cadatro{
+        margin-left: 106px;
+        font-size: 15px;
+    }
+
+    .logo{
+           width:103px;
+        padding-top: 16px;
+    }
+
+    .teste2{
+        display: flex;
+        align-items: center;
+    }
+}
+

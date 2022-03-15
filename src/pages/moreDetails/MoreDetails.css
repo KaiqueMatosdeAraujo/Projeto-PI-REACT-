@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Roboto+Mono:wght@200;300&display=swap');
+
+*{
+    /* font-family: 'Roboto Mono', monospace; */
+    font-family: 'Comfortaa', cursive;
+}
+
+.hr-title{
+    width: 300px;
+    margin-top: 0;
+    margin-left: 106px;
+}
+
+.title{
+    margin-left: 108px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.container-mais-detalhes{
+    border: 1px solid #E7E6E6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.bebe-mais-detalhes{
+    width: 165;
+    height: 126;
+}
+
+.infosBebe-mais-detalhes{
+    margin-left: 130px;
+}
+
+.container-mais-detalhes-endereco{
+    border: 1px solid #E7E6E6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+    height: 235px;
+    margin-right: 20px;
+}
+
+.container-mais-detalhes-pagamento{
+    border: 1px solid #E7E6E6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
+.p-cidade{
+    margin-left: 160px;
+}
+
+.container-conteudo-pagamento{
+    border: 1px solid #E7E6E6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 460px;
+}
+
+.title-container{
+    font-weight: bold;
+}
+
+.p-container{
+    font-weight: bold;
+    text-align: center;
+}
+
+.container-status-pagamento{
+    border: 1px solid #E7E6E6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+    margin-right: 738px;
+    margin-top: -144px;
+    height: 123px;
+}
+
+.container-status-pagamento p{
+    font-size: 25px;
+    text-align: center;
+    padding-top: 20px;
+    font-weight: bold;
+}

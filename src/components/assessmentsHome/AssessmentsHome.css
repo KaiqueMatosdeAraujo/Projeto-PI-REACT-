@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+
+.avaliacoes{
+    display: flex;
+    justify-content: center;
+}
+
+.linha{
+    border-top: 1px solid #d1d0cc;
+    border-bottom: none;
+    position: relative;
+    top: -41px;
+}
+
+
+.avaliacoes-clientes{
+    display: inline-block;
+    background-color: #fff;
+    padding: 0 17px;
+    margin: 20px auto 33px;
+    margin: 20px 0 10px 10px;
+    font-size: 1.5em;
+    color: #E6889A;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bolder;
+    
+}
+
+em{
+    text-decoration: underline;
+    font-style: normal;
+}
+
+.legenda{
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+    font: 2em 'Comfortaa', cursive;
+    color: #E6889A;
+    
+}
+
+
+.descricao-sobre{
+    margin: 0;
+    text-align: center;
+    font-size: 1.25em;
+    line-height: 1.4;
+   
+    color: #868474;;
+}
+
+.paragrafo-sobre{
+    color: #aead9e;
+    line-height: 1.5;
+    align-items: center;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.clientes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.img-cliente{
+    display: block;
+    margin: 20px auto 40px;
+    max-width: 100%;
+    
+
+}
+
+.cliente1, .cliente2, .cliente3, .cliente4{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.avaliacoes{
+    color:#E6889A;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+}
+
+
+/* RESPONSIVO */
+
+@media(max-width:900px)
+{  .clientes{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    justify-content: space-around;
+}
+
+.avaliacoes{
+    margin-left: 0%;
+}
+}
+
+@media(max-width:416px){
+    .avaliacoes{
+        margin-left: 1vw;
+    }
+}

@@ -1,0 +1,99 @@
+*{
+    font-family: 'Comfortaa', cursive;
+}
+
+body{
+    background-color: #ffcedf8f;
+}
+
+hr{
+    width: 600px;
+}
+.p-sucesso-title{
+    text-align: center;
+    margin-top: 5px;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.custom-button{
+    background-color: #9ACCFF;
+    width: 80px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    margin-right: 65px;
+    /* border-radius: 30%; */
+    height: 40px;
+    text-align: center;
+    /* padding-bottom: 40px;*/
+}
+
+
+
+
+
+.text-title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.card-input{
+    width: 600px;
+}
+
+.custom-input{
+    /* width: 375px; */
+    margin-left: 10px;
+}
+
+.custom-label{
+    margin-left: 25px;
+}
+
+.custom-button{
+    background-color: #9ACCFF;
+    width: 210px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* border-radius: 30%; */
+    height: 40px;
+    text-align: center;
+    /* padding-bottom: 40px; */
+}
+.custom-input input{
+    font-size: 12px;
+    
+}
+.segunto-texto{
+    margin-left: 56px;
+}
+.input-login{
+    margin-left: 29px;
+}
+
+
+
+.infos-loja{
+    margin-top: 15px;
+    margin-left: 45px;
+}
+
+.input-message{
+    height:70px;
+}
+
+.img-checked{
+    width:17%;
+    margin-top:10px;
+}
+
+.p-segunto-texto{
+    margin-left: 30px;
+}

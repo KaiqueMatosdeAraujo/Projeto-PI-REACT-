@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Roboto+Mono:wght@200;300&display=swap');
+div root{
+    background-color: #E6889A;
+}
+
+.Principal{
+  margin-left:35px;
+
+}
+br {
+    background-color: white;
+}
+
+p {
+    
+     text-align: start;
+     font-family: 'Comfortaa', cursive;
+    }
+
+b { 
+    font-weight:bold;
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+    padding: 11px;
+}
+
+h3 h4 {
+    padding-top: 24px;
+}
+
+
+

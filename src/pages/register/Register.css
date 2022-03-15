@@ -1,0 +1,99 @@
+.user-cadastro{
+    width: 100%;
+    margin-top: 2%;
+    margin-left:1%;
+}
+
+.custom-button{
+
+    background-color: #9ACCFF;
+    width: 210px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* border-radius: 30%; */
+    height: 40px;
+    text-align: center;
+    /* padding-bottom: 40px; */
+}
+
+
+
+.border-card{
+    box-shadow: 0px 0px 1em 0px rgba(50, 50, 50, 0.384);
+}
+
+.row.rowCentralized{
+    --bs-gutter-x: 0; 
+     --bs-gutter-y: 0;
+}
+
+.text-title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.row.custom-input{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    justify-content: space-between;
+}
+
+.custom-input input{
+
+    
+        
+          
+    
+
+        
+  
+  
+    font-size: 12px;
+}
+.custom-input label{    /* ADICIONEI */
+    font-weight: bold;
+    color: #626262;
+}
+.custom-input input::placeholder{   /* ADICIONEI */
+    color: black;
+}
+
+
+
+
+@media (max-width: 767px){ 
+
+
+
+
+    .custom-input{
+        display: block !important;
+
+    
+          
+            
+    
+
+          
+    
+    
+  
+    }
+    .input-login{
+        margin: 0px;
+    }
+    .input-media{   /* CRIEI ESSA CLASSE NO HTML */
+        margin-top: 15px;
+    }
+    .user-cadastro{
+        left: 154px;
+    }
+    hr{
+        width: 285px;
+        margin-left: 28px;
+    }
+}

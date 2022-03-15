@@ -1,0 +1,71 @@
+.cart-request{
+    height: 30px;
+    width: 30px;
+}
+
+.dados-pedido-title{
+    margin-left: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.container-conteudo{
+    border: 1px solid #E7E6E6;
+    border-radius: 10px;
+    padding-top: 15px;
+    
+    background-color: #e7e6e66b;
+}
+
+.container-conteudo .row{
+    align-items: center;
+    
+}
+
+
+.custom-btn-meus-pedidos{
+    
+    background-color: #9ACCFF;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    width: 68%;
+    padding: 6%;
+}
+
+.custom-btn-meus-pedidos:hover{
+    color: rgb(107, 107, 107);
+}
+
+.container-meus-pedidos{
+    border: 1px solid #E7E6E6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+   
+  
+}
+
+
+
+@media (max-width:992px){
+    .custom-btn-meus-pedidos{
+        font-size: 13px;
+        width: 81%;
+    }
+}
+
+@media (max-width:767px){   /* TROQUEI AS COLUNAS TB COL-MD-8 E COL-12 */
+    .container-conteudo{
+        text-align: center;
+    }
+
+    .p-formaPagamento{  /* ADICIONEI NO HTML DE MEU PERFIL */
+        margin-bottom: 0px;
+    }
+
+    .custom-btn-meus-pedidos{
+        margin-left: 61px;
+        margin-bottom: 13px;
+    }
+}
