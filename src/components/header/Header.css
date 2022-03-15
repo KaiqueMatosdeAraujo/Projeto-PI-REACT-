@@ -9,12 +9,17 @@
 
 .navbar-toggler-icon{
     background-image: url(./imgs//menu-maior.png);
+    margin-bottom: -3px;
+}
+.container-fluid.noPadding{
+    padding:0 ;
 }
 
-.container-fluid{
-    padding: 0;
-}
 
+
+.containerHeader{
+    z-index: 1;
+}
 .custom-nav{
     background-color: #E6889A;
     height: 90px;
@@ -120,7 +125,8 @@ span.cartIcon::before{
 
 button:focus:not(:focus-visible) {
     outline: 0;
-    color: #ff00814a;
+    color: #e996a6;
+    margin-bottom: 6px;
 }
 
 
@@ -174,6 +180,8 @@ button:focus:not(:focus-visible) {
  
     .logo{
         height: 100px;
+        padding: 0;
+        width: 169px;
     }
 
     .navbar-toggler{
@@ -200,6 +208,7 @@ button:focus:not(:focus-visible) {
         right: 55px;
         margin-left: 78px;
     }
+    
 
     .teste2{
         display: flex;
@@ -224,7 +233,9 @@ button:focus:not(:focus-visible) {
  
  
     .logo{
+        padding: 0;
         height: 100px;
+        width: 154px;
     }
      
  }
