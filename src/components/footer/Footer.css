@@ -8,6 +8,16 @@
     
 }
 
+.footerDesktop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}   
+
+.accordionFooter{
+    display: none;
+}
+
 .nav{
     display: flex;
     flex-wrap: wrap;
@@ -21,6 +31,10 @@ a, .redes, .nav-link, .pagamento, .nav{
     font-family: 'Comfortaa', cursive;
     font-weight: bold;
     text-decoration: none;
+}
+
+a, .nav-link,  .nav{
+    line-height: 4;
 }
 
 .teste li a {
@@ -81,6 +95,9 @@ ul{
     background-color: #E6889A ;
     font-family: 'Comfortaa', cursive;
     color: rgba(255, 255, 255, 0.637);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
 }
 
@@ -100,6 +117,8 @@ ul{
     margin-top: 50px;
 }
 
+
+
 @media (max-width: 768px){
     .redes{
         display: none;
@@ -112,13 +131,40 @@ ul{
 
 @media (max-width: 425px){ 
     .footer{
-        
         display: flex;
         flex-direction: column;
-        text-align: center;
     }
 
     .coluna-1, .coluna-2, .coluna-3, .redes p {
         margin-top: 0px;
+    }
+
+    .accordionFooter{
+        display: block;
+    }
+
+    .footerDesktop{
+        display: none;
+    }
+
+    .accordion-body {
+        padding: 0px;
+        background-color: #E6889A;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .accordion-button {
+        
+        color: #f7fbff;
+        background-color: #e6889a;
+        font-weight: bold;
+    }
+
+    .redesMobile{
+        margin: 15px 0px;
+        color: white;
+        font-weight: bold;
     }
 }
