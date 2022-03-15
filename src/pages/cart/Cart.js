@@ -18,7 +18,7 @@ function Cart(props) {
             <Header />
             <Nav/>
             <div className="container">
-                <div className="carrinho">
+                <div className="carrinho ">
                     <p className="resumo">Resumo do pedido</p>
                     <div className="sub-menu col-12">
                         <ul className="sub">
