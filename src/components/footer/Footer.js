@@ -67,6 +67,7 @@ function Footer() {
                     {/* REDES SOCIAIS */}
 
 
+
                     <div className="redes row">
 
                         <p>Siga a gente nas redes sociais</p>
