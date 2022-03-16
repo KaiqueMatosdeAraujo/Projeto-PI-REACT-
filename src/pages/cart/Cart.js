@@ -18,7 +18,7 @@ function Cart(props) {
             <Header />
             <Nav/>
             <div className="container">
-                <div className="carrinho">
+                <div className="carrinho ">
                     <p className="resumo">Resumo do pedido</p>
                     <div className="sub-menu col-12">
                         <ul className="sub">
@@ -75,6 +75,55 @@ function Cart(props) {
     )
 }
 
+
+// new
+
+<div class="carrinho">
+<h4 class="page-banner-sm">Cart</h4>
+<div class="wrapper">
+
+    <div class="cart-collection">
+        <div class="cart-item">
+            <form action="">
+                <div class="cart-product">
+                    <div class="cart-image"
+                        style="background-image: url(./img-carrinho/lixeira-de-reciclagem\ \(1\).png);"></div>
+                    <div class="cart-product-info">
+                        <p class="cart-product-name">baby clara</p>
+                        <p class="cart-price-sm">R$499,99 </p>
+                        <small>x 1</small>
+                    </div>
+                </div>
+                <div class="cart-quantity-md">
+                    <div class="cart-quantity-controls">
+                        <button>-</button>
+                        <input type="number" value="1" readonly />
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="cart-unit-price">
+                    <h4>R$499,90</h4>
+                </div>
+                <div class="cart-product-total">
+                    <h4>R$499,90</h4>
+                </div>
+                <div class="cart-controls-sm">
+                    <div class="remove">
+                        <span class="ti-trash"> </span> Remove
+                    </div>
+                    <div class="quantity-controls-sm">
+                        <button>-</button>
+                        <input type="number" value="1" readonly />
+                        <button>+</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
 
 
 export default Cart
