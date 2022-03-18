@@ -12,6 +12,7 @@ function Assessments() {
                         <h1>Avaliações de Clientes</h1>
                         <div class="container row">
 
+
                             <br />
                             <div class="col-12">De modo geral, qual foi sua experiência em comprar na Pimpolhos ?
 
