@@ -17,7 +17,10 @@
 .accordionFooter{
     display: none;
 }
-
+.accordion-item.footerAccordion{
+     background-color:transparent;
+    border: none;
+}
 .nav{
     display: flex;
     flex-wrap: wrap;
@@ -49,7 +52,7 @@ a, .nav-link .nav{
 }
 
 ul{
-    line-height: 3.5;
+    /* line-height: 3.5; */
 }
 
 

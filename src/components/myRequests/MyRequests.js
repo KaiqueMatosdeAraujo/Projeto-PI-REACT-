@@ -4,11 +4,20 @@ import bebe3 from './imgs/bebe3.jpg'
 import cart from './imgs/shopping-cart.png'
 import MoreDetails from '../moreDetails/MoreDetails'
 
+import {useState} from 'react'
+
 function MyRequests() {
+
+    const [toggleState, setToggleState] = useState(1)
+
+    const toggleTab = (index) => {
+        setToggleState(index)
+    }
+
     return (
         <>
-        <div className="tab-content" id="myTabContent">
-            <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        {/*<div className="tab-content" id="myTabContent">*/}
+            <div className={toggleState === 2 ? "tab-pane fade show active": "content"} id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div className="tab-pane fade" id="MeusPedidos" role="tabpanel" aria-labelledby="pedidos-tab">
                     <div className="titleCard" id="titleCardMinhaConta"><h1>Meus pedidos</h1>
 
@@ -119,7 +128,7 @@ function MyRequests() {
 
                 </div>
             </div>
-        </div>
+        {/*</div>*/}
 
 
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

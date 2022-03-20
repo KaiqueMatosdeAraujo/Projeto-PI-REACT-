@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
 import './Header.css'
-import logo from '../header/imgs/logo-pimpolhos-certo.gif';
+import logo from '../header/imgs/logo-pimpolhos-certo.png';
 import user from '../header/imgs/baby-user.png';
 import Cart from './imgs/cart.png'
 function Header(props) {
     return (
         <>
             <header>
-               <div className="container-fluid">
+               <div className="container-fluid noPadding">
                     <nav className="navbar navbar-expand-lg custom-nav">
-                        <div className="container-fluid">
+                        <div className="container-fluid containerHeader noPadding">
                             
                         <Link to="/"><img src={logo} alt="Logo" className='logo'/></Link>
                         
@@ -30,7 +30,7 @@ function Header(props) {
 
                                 <span className="login-cadatro ">
                                 <img src={user} alt="User" className='icone'/> 
-                                    <p><Link to="../login"> login ou</Link>  <br/><Link to="../register">cadastre-se</Link></p>
+                                    <p><Link to="../login"> login ou</Link> <Link to="../register">cadastre-se</Link></p>
                                 </span>
                             </div>
                         </div>

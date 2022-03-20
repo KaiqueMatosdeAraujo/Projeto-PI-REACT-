@@ -28,7 +28,9 @@ function Delivery(props) {
 
     return (
         <>
-
+<BannerFreight/>
+<Header/>
+<Nav/>
             <div className="row rowCentralized justify-content-center">
                 <div className="resumo col-11">
                     <div className="row justify-content-around">
@@ -214,6 +216,7 @@ function Delivery(props) {
 
                             <button type="button" className=" btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#modalCartao">
+                
                                 <input type="radio" name="pagamento" />
                             </button>
 
@@ -344,6 +347,7 @@ function Delivery(props) {
                             { /*  Button trigger modal  */}
                             <button type="button" className=" btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#pix">
+                                    
                                 <input type="radio" name="pagamento" />
                             </button>
 
@@ -540,7 +544,7 @@ function Delivery(props) {
                     </div>
                 </div>
             </div>
-            {/*  <Footer />  */}
+              <Footer />
 
         </>
     )

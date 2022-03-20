@@ -31,8 +31,6 @@ export const Routes = () => {
             <Route path="/cart" component={Cart} />
             <Route path="/itemPage" component={ItemPage} />
             <Route path="/profile" component={Profile} />
-            <Route path="/product" component={Product} />
-            <Route path="/cart" component={Cart} />
             <Route path="/nav" component={Nav} exact/>
             <Route path="/assessmentsHome" component={AssessmentsHome} exact/>
             <Route path="/forgotPassword" component={ForgotPassword} />
@@ -40,9 +38,6 @@ export const Routes = () => {
             <Route path="/updatePassword" component={UpdatePassword} />
             <Route path="/assessments" component={Assessments} />
             <Route path="/moreDetails" component={MoreDetails} />
-            <Route path="/" component={Home} exact/>
-            <Route path="/product" component={Product} />
-            <Route path="/cart" component={Cart} />
             <Route path="/Contact" component={Contact} />
             <Route path="/SuccessPassword" component={SuccessPassword} />
             <Route path="/Wishlist" component={Wishlist}/>
