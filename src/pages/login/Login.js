@@ -22,12 +22,12 @@ function Login() {
                 <div className="row justify-content-center rowCentralized">
                     <div className="card border-card col-11 col-md-10 col-lg-6">
                         <div className="row justify-content-center rowCentralized">
-                            <div className="col-md-10">
+                            <div className="col-12 col-md-12 col-lg-10">
 
 
 
-                                <div className="row justify-content-center">
-                                    <div className="col-md-10">
+                                <div className="row row-login justify-content-center">
+                                    <div className="col-md-12">
                                         <div className="row justify-content-center ">
                                             <div className="col-2">
                                                 <div className="col-12">
@@ -38,16 +38,16 @@ function Login() {
                                         <h1 className="text-center text-title">Já é nosso cliente?</h1>
 
 
-                                        <div className="card card-input backgroundH mb-4">
+                                        <div className="card card-input-login backgroundH mb-4">
 
-                                            <div className="form-group font-weight-bold mb-2 mt-3 custom-input col-10">
+                                            <div className="form-group font-weight-bold mb-2 mt-3 custom-input col-12 col-md-12 col-lg-11">
                                                 <label className="mb-2" for="usuario">E-mail:</label>
                                                 <input className="form-control" type="text" placeholder="Insira o e-mail" />
                                             </div>
 
-                                            <div className="form-group font-weight-bold mb-2 mt-3 custom-input col-10">
+                                            <div className="form-group font-weight-bold mb-2 mt-3 custom-input col-12 col-md-12 col-lg-11">
                                                 <label className="mb-2" for="usuario">Senha:</label>
-                                                <input className="form-control" type="password" placeholder="Insira o e-mail" />
+                                                <input className="form-control" type="password" placeholder="Insira a senha" />
                                             </div>
 
                                             <div className="d-flex justify-content-center">

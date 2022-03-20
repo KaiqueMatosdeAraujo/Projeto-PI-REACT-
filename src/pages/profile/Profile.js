@@ -11,17 +11,27 @@ import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
  import MyAccount from '../myAccount/MyAccount'
 
+ import {useState} from 'react'
+import MyRequests from '../../components/myRequests/MyRequests'
+
 function Profile() {
+
+    const [toggleState, setToggleState] = useState(1)
+
+    const toggleTab = (index) => {
+        setToggleState(index)
+    }
+
     return (
         <>
            <BannerFreight/>
-        <Header />
-        <Nav/>
+            <Header />
+            <Nav/>
             <div className="container container-profile navtabContainer">
 
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
 
-                    <li className="nav-item principal" role="presentation">
+                    <li className= {toggleState === 1 ? "nav-item principal": "tabs"} onClick={() => toggleTab(1)} role="presentation">
                         <button className="nav-link principal active col-12" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
                             role="tab" aria-controls="home" aria-selected="true">
                             <img src={user} alt="" className='emotes'/>Minha Conta</button>
@@ -30,7 +40,7 @@ function Profile() {
 
 
 
-                    <li className="nav-item principal" role="presentation">
+                    <li className={toggleState === 2 ? "nav-item principal": "tabs"} onClick={() => toggleTab(2)}role="presentation">
                         <button className="nav-link principal col-12 " id="pedidos-tab" data-bs-toggle="tab" data-bs-target="#MeusPedidos"
                             type="button" role="tab" aria-controls="pedidos" aria-selected="false">
                             <img src={checklist} alt="" className='emotes'/> Meus Pedidos</button>
@@ -38,7 +48,7 @@ function Profile() {
 
 
 
-                    <li className="nav-item principal" role="presentation">
+                    <li className={toggleState === 3 ? "nav-item principal": "tabs"} onClick={() => toggleTab(3)}role="presentation">
                         <button className="nav-link principal" id="desejos-tab" data-bs-toggle="tab" data-bs-target="#ListadeDesejos"
                             type="button" role="tab" aria-controls="desejos" aria-selected="false"> 
                             <img src={desejos} alt="" className='emotes'/>Lista de desejos</button>
@@ -46,7 +56,7 @@ function Profile() {
 
 
 
-                    <li className="nav-item principal" role="presentation">
+                    <li className={toggleState === 4 ? "nav-item principal": "tabs"} onClick={() => toggleTab(3)}role="presentation">
                         <button className="nav-link principal" id="avaliacoes-tab" data-bs-toggle="tab" data-bs-target="#Avaliacoes"
                             type="button" role="tab" aria-controls="avaliacoes" aria-selected="false">
                             <svg className="emotes" width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,13 +70,23 @@ function Profile() {
 
                 </ul>
             
-
-
-             {/* <!-- INICIO DO CONTEUDO NAV/TAB --> */}
+                <div className="tab-content" id="myTabContent">
                     <Assessments />
+                    <MyRequests 
+                        codPedido="58685"
+                        status="Processando Pagamento"
+                        data="27/12/2021"
+                        price="549,90"
+                        methodPayment="Cartão de Crédito"
+                        cardNumber="5622 XXXX XXXX XXXX 1589"
+                    />
                     <MoreDetails />
                    <MyAccount/>
                    <Wishlist/>
+                </div>
+
+             {/* <!-- INICIO DO CONTEUDO NAV/TAB --> */}
+                   
 
             
             </div>

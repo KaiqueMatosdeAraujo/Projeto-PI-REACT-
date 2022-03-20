@@ -18,6 +18,11 @@
     display: none;
 }
 
+.accordion-item{
+    background-color: transparent;
+    border: none;
+}
+
 .nav{
     display: flex;
     flex-wrap: wrap;

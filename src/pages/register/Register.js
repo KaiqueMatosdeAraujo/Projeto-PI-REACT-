@@ -5,6 +5,8 @@ import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import Nav from '../../components/nav/Nav'
 import babyCadastro from './imgs/baby-cadastro.png'
+import SupportButton from '../../components/supportButton/SupportButton'
+
 function Register() {
     return (
         <>
@@ -15,7 +17,7 @@ function Register() {
                 <div className="row justify-content-center rowCentralized">
                     <div className="card border-card col-11 col-md-10 col-lg-6">
                         <div className="row justify-content-center rowCentralized">
-                            <div className="col-md-10">
+                            <div className="col-12 col-md-12 col-lg-11">
                                 <div className="row justify-content-center ">
                                     <div className="col-2">
                                         <div className="col-12">
@@ -34,13 +36,13 @@ function Register() {
                                     </div>
                                     <div className="col-11">
                                         <div className="row custom-input ">
-                                            <div className="form-group font-weight-bold col-12 col-md-5">
-                                                <label className="mb-2" for="usuario">CPF:</label>
+                                            <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5">
+                                                <label className="mb-2 mt-2" for="usuario">CPF:</label>
                                                 <input type="text" className="form-control" placeholder="Insira o CPF" />
                                             </div>
-                                            <div className="form-group font-weight-bold col-12 col-md-5 input-media">
-                                                <label className="mb-2" for="usuario">Data Nascimento:</label>
-                                                <input type="text" className="form-control input-login" placeholder="Insira a data de nascimento" />
+                                            <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5 input-media">
+                                                <label className="mb-2 mt-2" for="usuario">Data Nascimento:</label>
+                                                <input type="text" className="form-control " placeholder="Insira a data de nascimento" />
                                             </div>
                                         </div>
                                     </div>
@@ -54,19 +56,24 @@ function Register() {
                                     </div>
                                     <div className="col-11">
                                         <div className="row custom-input">
-                                            <div className="form-group font-weight-bold col-12 col-md-6">
-                                                <label className="mb-2" for="usuario">Senha:</label>
+                                            <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5">
+                                                <label className="mb-2 mt-2" for="usuario">Senha:</label>
                                                 <input type="password" className="form-control" placeholder="Insira a senha" />
                                             </div>
-                                            <div className="form-group font-weight-bold col-12 col-md-5 input-media">
-                                                <label className="mb-2" for="usuario">Confirme a senha:</label>
-                                                <input type="password" className="form-control input-login" placeholder="Confirme a senha" />
+                                            <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5 input-media">
+                                                <label className="mb-2 mt-2" for="usuario">Confirme a senha:</label>
+                                                <input type="password" className="form-control" placeholder="Confirme a senha" />
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="d-flex justify-content-center">
+                                    {/*<div className="d-flex justify-content-center">
                                     <Link to="/login">  <button type="button" className="btn custom-button">Cadastrar</button></Link>
-                                    </div>
+                                    </div>*/}
+                                    <SupportButton 
+                                        class="d-flex justify-content-center"
+                                        link="/login"
+                                        title="Cadastrar"
+                                    />
                                 </div>
                             </div>
                         </div>

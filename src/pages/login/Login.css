@@ -42,11 +42,15 @@ body{
     font-weight: bold;
 }
 
-
+.row-login{
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
 
 .custom-input input{
     font-size: 12px;
+    height: 40px;
 }
 
 .text-esqueci-senha{
@@ -60,9 +64,20 @@ body{
     color: black;
 }
 
+.card-input-login{
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+    align-items: center;
+}
+
 
 @media (max-width: 992px){ 
- 
+    .card-input-login{
+        border: none;
+        outline: none;
+    }
 
    
 }
