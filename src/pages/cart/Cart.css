@@ -488,14 +488,17 @@ body{
     color: gray;
 }
 
-button, input, optgroup, select, textarea {
+.inputNumber-Qtd,.btn-CustomCart{
     margin: 4px;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     width: 20px;
     border: none;
+
+
 }
+
  
 .number-qtd{
     color: gray;

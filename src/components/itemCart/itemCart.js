@@ -45,9 +45,9 @@ function ItemCart(props) {
             <div className="cart-quantity-md">
                 
                 <div className="cart-quantity-controls">
-                    <button className="btn-menos">-</button>
+                    <button className="btn-menos btn-CustomCart">-</button>
                     <input className="number-qtd" type="number" value="1" />
-                    <button className="btn-mais">+</button>
+                    <button className="btn-mais btn-CustomCart">+</button>
                 </div>
             </div>
             <div className="cart-unit-price">
@@ -62,9 +62,9 @@ function ItemCart(props) {
                     <img src={lixeira} alt="lixeira" width="30px" height="30px" />
                 </div>
                 <div className="quantity-controls-sm">
-                    <button className="btn-menos">-</button>
-                    <input className="number-qtd" type="number" value="1" />
-                    <button className="btn-mais">+</button>
+                    <button className="btn-menos btn-CustomCart">-</button>
+                    <input className="number-qtd inputNumber-Qtd" type="number" value="1" />
+                    <button className="btn-mais btn-CustomCart">+</button>
 
                 </div>
             </div>
