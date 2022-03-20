@@ -7,6 +7,8 @@ import ImagemSucesso from './imgs/checked.png'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import SuccessPurschaseItens from '../../components/successPurchaseItens/SuccessPurchaseItens'
+import ItensProducts from '../../components/successPurchaseItens/ItensProducts'
+
 
 function SucessPurchase(props) {
 
@@ -48,29 +50,16 @@ function SucessPurchase(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Bebê Reborn Realista - <br /> Abigail Pode Dar Banho</td>
-                        <td>R$ 999,99</td>
+                <ItensProducts id="1" name="Bebê Reborn Realista -" subname="Abigail Pode Dar Banho" value="999,99"/>
+                <ItensProducts id="2" name="Bebê reborn Alice -" subname="Com coelinho" value="599,99"/>
+        
                         
-                        
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Bebê reborn Alice - <br /> Com coelinho</td>
-                        <td>R$ 599,99</td>
-                        
-                    </tr>
-                    <tr>
-                        <th scope="row">Total</th>
-                        <td></td>
-                        <td>R$ 1.599,98</td>
-                        
-                    </tr>
+                    
+                <ItensProducts id="Total" name="" subname="" value="1.599,98"/>
                 </tbody>
             </table>
             <div className="d-flex justify-content-center">
-            <Link to="/"> <button type="button" className="btn custom-button"> Ir para Home</button></Link>
+            <Link to="/profile"> <button type="button" className="btn custom-button1"> Meus Pedidos</button></Link>
             </div>
                 </div>
               </div>
