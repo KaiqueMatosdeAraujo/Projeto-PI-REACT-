@@ -28,7 +28,7 @@
 .logo{
 
     padding-bottom: 10px;
-    margin-left: 20px;
+    margin-left: 24px;
 }
 
 /* .custom-form{
@@ -131,7 +131,7 @@ button:focus:not(:focus-visible) {
 
 
 
-/* @media (min-width: 1288px){
+@media (min-width: 1920px){
     .login-cadatro {
         width: 1169px;
         font-size: 17px;
@@ -147,7 +147,7 @@ button:focus:not(:focus-visible) {
         width: 585px;
         height: 37px;
     }
-} */
+}
 @media (max-width: 992px){ 
     *{
         max-width: 100%;
@@ -196,16 +196,17 @@ button:focus:not(:focus-visible) {
     }
  
     .logo{
-        height: 100px;
-        padding: 0;
-        width: 169px;
+        width: 103px;
+        padding-top: 16px;
+        height: 75px;
+    }
     }
 
     .navbar-toggler{
         margin-right: 3%;
     }
      
- }
+
 
 
 @media (max-width: 767px){ 
@@ -280,8 +281,9 @@ button:focus:not(:focus-visible) {
     }
 
     .logo{
-           width:103px;
+         width: 103px;
         padding-top: 16px;
+        height: 75px;
     }
 
     .teste2{
