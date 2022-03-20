@@ -7,9 +7,9 @@ function Header(props) {
     return (
         <>
             <header>
-               <div className="container-fluid">
+               <div className="container-fluid noPadding">
                     <nav className="navbar navbar-expand-lg custom-nav">
-                        <div className="container-fluid">
+                        <div className="container-fluid containerHeader noPadding">
                             
                         <Link to="/"><img src={logo} alt="Logo" className='logo'/></Link>
                         

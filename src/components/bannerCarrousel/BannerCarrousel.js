@@ -14,13 +14,13 @@ function BannerCarrousel() {
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={ Banner1 } className="banner" width="100%" />
+                        <img src={ Banner1 } className="banner" width="100%" height="330px"/>
                     </div>
                     <div className="carousel-item">
-                        <img src={ Banner2 } className="banner" width="100%" />
+                        <img src={ Banner2 } className="banner" width="100%" height="330px" />
                     </div>
                     <div className="carousel-item">
-                        <img src={ Banner3 } className="banner" width="100%" />
+                        <img src={ Banner3 } className="banner" width="100%" height="330px" />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

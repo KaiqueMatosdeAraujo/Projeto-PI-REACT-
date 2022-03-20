@@ -3,8 +3,8 @@
     justify-content: space-around;
     font-family: 'Comfortaa', cursive;
     background-color: white;
-   
-
+    height: 61px;
+    margin-top: -10px;
 }
  
 .menu-a li a, .dropdown-toggle{
