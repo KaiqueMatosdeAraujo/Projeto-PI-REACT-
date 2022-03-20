@@ -158,7 +158,7 @@ function MyAccount() {
                                 aria-hidden="true">
                                 <div className="modal-dialog modal-xl">
                                     <div className="modal-content">
-                                        <div className="modal-header">
+                                        <div className="modal-header myprofileModal">
                                             <div className="modalcontentTitle" id="exampleModalLabel">Editar Dados</div>
                                             <button type="button" className="btn modalclose" data-bs-dismiss="modal" aria-label="Close">X</button>
                                         </div>
@@ -329,7 +329,7 @@ function MyAccount() {
                                     aria-hidden="true">
                                     <div className="modal-dialog modal-lg">
                                         <div className="modal-content">
-                                            <div className="modal-header">
+                                            <div className="modal-header myprofileModal">
                                                 <div className="modalcontentTitle" id="exampleModalLabel">Cadastre um novo endereço</div>
                                                 <button type="button" className="btn modalclose" data-bs-dismiss="modal" aria-label="Close">X</button>
                                             </div>
@@ -447,7 +447,7 @@ function MyAccount() {
                             <div className="modal fade" id="novocartao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div className="modal-dialog">
                                     <div className="modal-content">
-                                        <div className="modal-header">
+                                        <div className="modal-header myprofileModal">
                                             <div className="modalcontentTitle" id="exampleModalLabel">Novo Cartão</div>
                                             <button type="button" className="btn modalclose" data-bs-dismiss="modal" aria-label="Close">x</button>
                                         </div>

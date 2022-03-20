@@ -33,9 +33,11 @@ a, .redes, .nav-link, .pagamento, .nav{
     text-decoration: none;
 }
 
-a, .nav-link,  .nav{
+footer
+a, .nav-link .nav{
     line-height: 4;
 }
+
 
 .teste li a {
     color: white;
