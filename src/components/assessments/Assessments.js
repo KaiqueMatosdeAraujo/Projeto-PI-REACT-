@@ -1,17 +1,25 @@
 import './Assessments.css'
 import camera from './imgs/camera-fotografica.png'
 
+import {useState} from 'react'
+
 
 function Assessments() {
+
+    const [toggleState, setToggleState] = useState(1)
+
+    const toggleTab = (index) => {
+        setToggleState(index)
+    }
+
     return (
         <>
-        <div className="tab-content" id="myTabContent">
-            <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        {/*<div className="tab-content" id="myTabContent">*/}
+            <div className={toggleState === 4 ? "tab-pane fade show active": "content"} id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div className="tab-pane fade" id="Avaliacoes" role="tabpanel" aria-labelledby="avaliacoes-tab">
                     <div class="titleCard" id="titleCardMinhaConta">
                         <h1>Avaliações de Clientes</h1>
                         <div class="container row">
-
 
                             <br />
                             <div class="col-12">De modo geral, qual foi sua experiência em comprar na Pimpolhos ?
@@ -44,7 +52,7 @@ function Assessments() {
                     </div>
                 </div>
             </div>
-        </div>
+        {/*</div>*/}
 
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
                     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
