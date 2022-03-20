@@ -18,6 +18,11 @@
     display: none;
 }
 
+.accordion-item{
+    background-color: transparent;
+    border: none;
+}
+
 .nav{
     display: flex;
     flex-wrap: wrap;
@@ -33,9 +38,9 @@ a, .redes, .nav-link, .pagamento, .nav{
     text-decoration: none;
 }
 
-a, .nav-link,  .nav{
+/* a, .nav-link,  .nav{
     /* line-height: 4; */
-}
+
 
 .teste li a {
     color: white;
@@ -46,9 +51,9 @@ a, .nav-link,  .nav{
     color:grey;
 }
 
-ul{
-    /* line-height: 3.5; */
-}
+/* ul{
+    line-height: 3.5;
+} */
 
 
 

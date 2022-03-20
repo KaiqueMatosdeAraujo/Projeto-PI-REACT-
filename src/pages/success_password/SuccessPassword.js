@@ -17,7 +17,7 @@ function SuccessPassword() {
                 <div className="row">
                     <div className="col-md-12">
 
-                        <div className="container">
+                        <div className="container container-maior">
                             <div className="card">
 
                                 <div className="row justify-content-center">
