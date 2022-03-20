@@ -221,6 +221,7 @@ function Delivery(props) {
 
                             <button type="button" class=" btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#modalCartao">
+                
                                 <input type="radio" name="pagamento" />
                             </button>
 
@@ -229,7 +230,9 @@ function Delivery(props) {
 
                             <div class="modal fade" id="modalCartao" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
+                                    
                                 <div class="modal-dialog">
+                                
                                     <div class="modal-content">
                                         <div class="pag">
                                             <div class="row">
@@ -237,7 +240,7 @@ function Delivery(props) {
                                                     <img src={LogoMaster} width="7%" />
                                                     <img src={LogoAmerican} width="7%" />
                                                     <img src={LogoVisa} width="7%" />
-                                                    
+                                                    <button type="button" class="btn-close fechar" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                             </div>
                                             <hr />
@@ -351,6 +354,7 @@ function Delivery(props) {
                             { /*  Button trigger modal  */}
                             <button type="button" class=" btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#pix">
+                                    
                                 <input type="radio" name="pagamento" />
                             </button>
 
@@ -360,7 +364,9 @@ function Delivery(props) {
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class=" imagemPix col-12">
+
                                             <img src="../Entrega/Imagens/pix.png" width="84px" />
+                                            <button type="button" class="btn-close fechar2" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <hr />
 
@@ -423,6 +429,7 @@ function Delivery(props) {
 
                                         <div class="imagemBoleto">
                                             <img src="../Entrega/Imagens/boleto.png" width="20%" />
+                                            <button type="button" class="btn-close fechar2" data-bs-dismiss="modal" aria-label="Close"></button>
                                             <hr />
                                         </div>
 

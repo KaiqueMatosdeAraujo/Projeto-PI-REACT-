@@ -34,7 +34,7 @@ a, .redes, .nav-link, .pagamento, .nav{
 }
 
 a, .nav-link,  .nav{
-    line-height: 4;
+    /* line-height: 4; */
 }
 
 .teste li a {
@@ -47,7 +47,7 @@ a, .nav-link,  .nav{
 }
 
 ul{
-    line-height: 3.5;
+    /* line-height: 3.5; */
 }
 
 
