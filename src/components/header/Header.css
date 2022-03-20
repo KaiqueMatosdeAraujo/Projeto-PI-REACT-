@@ -63,6 +63,8 @@
     color: white;
     text-align: center;
     font-size: 18px;
+    margin-left: 25%;
+    margin-top: 3%;
 }
 
 .login-cadatro p a{
@@ -180,7 +182,7 @@ button:focus:not(:focus-visible) {
     .icone{
         width: 23px;
         height: 40px;
-        left: 20px;
+        left: 44px;
     }
  
     .login-cadatro{

@@ -21,7 +21,7 @@ function Wishlist() {
                     </div>
                 </div>
 
-                <div className="row">
+                <div className="row row-wishlist">
                     <div className="produtosFav row">
                         <div className="col-lg-12">
 

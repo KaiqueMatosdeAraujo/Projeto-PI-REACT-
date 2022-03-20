@@ -20,10 +20,10 @@ function ProductWishlist(props) {
           <div className=" lixeiraBtnAdd">
 
             <div className="lix col-md-4 col-lg-3">
-              <button><img src={lixeira} width="35px" /></button>
+              <button><img className="btn-lixeira" src={lixeira}  /></button>
             </div>
             <div className="lineVertical col-1">.</div>
-            <div className="btnCar col-5">
+            <div className="btnCar col-8">
               <button><strong>Adicionar ao Carrinho</strong> </button>
             </div>
           </div>
