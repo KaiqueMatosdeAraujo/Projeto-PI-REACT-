@@ -6,8 +6,9 @@ import BannerFreight from '../../components/freightBanner/FreightBanner'
 import ImagemSucesso from './imgs/checked.png'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
+import SuccessPurschaseItens from '../../components/successPurchaseItens/SuccessPurchaseItens'
 
-function SucessPurchase() {
+function SucessPurchase(props) {
 
 
 
@@ -35,10 +36,7 @@ function SucessPurchase() {
                 <p className="p-segunto-texto">
                     A confirmação do seu pedido foi enviada para seu e-mail
                 </p>
-                <div className="info-pessoal">
-                <p><b>Forma de Pagamento:</b> Cartão de Credito 4x Sem Juros</p>
-                <p><b>Forma de Entrega:</b> Correio</p>
-                </div>
+                <SuccessPurschaseItens formPagment="Cartão de Crédito" parcel="4 X Vezes Sem Juros" delivery="Correios"/>
             </div>
                 <hr/>
                 <table className="table">

@@ -212,6 +212,7 @@ button:focus:not(:focus-visible) {
     .custom-form input{
         width: 85%;
         margin-left: 20px;
+        margin-top: 8px;
     }
  
     .navbar-collapse{
@@ -250,9 +251,9 @@ button:focus:not(:focus-visible) {
  
  
     .logo{
-        padding: 0;
-        height: 100px;
-        width: 154px;
+    padding: 0;
+    height: 66px;
+    width: 135px;
     }
      
  }
