@@ -10,9 +10,9 @@ function ProductInfoMain(props) {
   }
   return (
     <>
-      <div className="container containerConteudo  col-11">
+      <div className="container containerConteudo-ProductInfoMain  col-12 col-md-11">
 
-        <div className="container">
+        <div className="container container-imagem">
 
           <div className="row">
             <div className="col-12 col-lg-5 ">
@@ -37,14 +37,14 @@ function ProductInfoMain(props) {
 
               <div className="infoBonecos">
                 <div className="row align-items-center">
-                  <h2 className="nomeBebe col-10">{props.nameProduct}</h2>
+                  <h2 className="nomeBebe col-9 col-md-10">{props.nameProduct}</h2>
 
-                  <div className="col-2"><img src={Heart} className="imgFav" /></div>
+                  <div className="col-3 col-md-2"><img src={Heart} className="imgFav" /></div>
                 </div>
 
-                <div className="row">
-                  <div className="produtoSubtitulo col-6">CÓDIGO: {props.codeProduct} </div>
-                  <div className="produtoSubtitulo v2 col-6"> MARCA: {props.brand} </div>
+                <div className="row row-marca-codigo">
+                  <div className="produtoSubtitulo col-md-6 col-12">CÓDIGO: {props.codeProduct} </div>
+                  <div className="produtoSubtitulo v2 col-md-6 col-12"> MARCA: {props.brand} </div>
                 </div>
 
                 <div className="precoContainer row">
@@ -56,8 +56,8 @@ function ProductInfoMain(props) {
                     <input type="text" className="campo-qtd col-lg-1 col-md-1 col-2" name="format" value="0" id="format" size="2" />
                     <input type="button" className="adicionar col-lg-1 col-md-1 col-2" name="mais" id="mais" value="+" />
 
-                      <a className="col-xl-6 col-lg-10 col-md-5 col-10 " ><Link to="../cart"><button className="btn btnAdicionarAoCarrinho "
-                      type="submit">Adicionar Ao Carrinho</button></Link></a>
+                      <Link to="../cart" className="col-xl-6 col-lg-10 col-md-5 col-12 " ><button className="btn btnAdicionarAoCarrinho "
+                      type="submit">Adicionar Ao Carrinho</button></Link>
                   </div>
                 </div>
               </div>

@@ -9,20 +9,10 @@ function RelatableProductsContainer(props) {
     <>
       <div className="container containerConteudo col-11">
         <h4 className="nomeBebe">Produtos Relacionados</h4>
-        <div className="row justify-content-evenly">
+        <div className="row row-cards-relatable-products justify-content-evenly">
 
           <RelatableProduct
             rProductName="Bebê reborn Renata"
-
-    
-          
-            
-    
-
-          
-    
-    
-  
             rProductPrice="659,00"
             rProductParcel="65,90"
             image={Product1} />
