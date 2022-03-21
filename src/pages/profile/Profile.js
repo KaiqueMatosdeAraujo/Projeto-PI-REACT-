@@ -9,8 +9,8 @@ import BannerFreight from '../../components/freightBanner/FreightBanner'
 import Nav from '../../components/nav/Nav'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
- import MyAccount from '../myAccount/MyAccount'
-
+import MyAccount from '../myAccount/MyAccount'
+import MyRequests from '../../components/myRequests/MyRequests'
 function Profile() {
     return (
         <>
@@ -64,6 +64,14 @@ function Profile() {
 
              {/* <!-- INICIO DO CONTEUDO NAV/TAB --> */}
                     <Assessments />
+                    <MyRequests 
+                        codPedido="58685"
+                        status="Processando Pagamento"
+                        data="27/12/2021"
+                        price="549,90"
+                        methodPayment="Cartão de Crédito"
+                        cardNumber="5622 XXXX XXXX XXXX 1589"
+                    />
                     <MoreDetails />
                    <MyAccount/>
                    <Wishlist/>

@@ -6,7 +6,7 @@ import MoreDetails from '../moreDetails/MoreDetails'
 
 import {useState} from 'react'
 
-function MyRequests() {
+function MyRequests(props) {
 
     const [toggleState, setToggleState] = useState(1)
 
@@ -22,11 +22,11 @@ function MyRequests() {
                     <div className="titleCard" id="titleCardMinhaConta"><h1>Meus pedidos</h1>
 
                         <div className="container container-meus-pedidos">
-                            <p><strong>Pedido #58685</strong></p>
+                            <p><strong>Pedido # {props.codPedido}</strong></p>
                             <hr />
 
                             <div className="d-flex">
-                                <img src={cart} alt="" className='cart' />
+                                <img src={cart} alt="" className="cartimG" />
                                 <p className="dados-pedido-title">Dados do pedido:</p>
                             </div>
 
@@ -36,12 +36,12 @@ function MyRequests() {
                             <div className="container container-conteudo ">
                                 <div className="row">
                                     <div className=" col-md-8 col-12">
-                                        <p><strong>Situação do pedido:</strong> Processando Pagamento</p>
-                                        <p><strong>Data do Pedido:</strong> 27/12/2021</p>
-                                        <p><strong>Valor:</strong> R$ 549,90</p>
+                                        <p><strong>Situação do pedido:</strong> {props.status}</p>
+                                        <p><strong>Data do Pedido:</strong> {props.data}</p>
+                                        <p><strong>Valor:</strong>R$ {props.price}</p>
                                         <p className="p-formaPagamento"><strong>Forma de Pagamento:</strong></p>
-                                        <p>Cartão de crédito <br />
-                                            5622 XXXX XXXX XXXX 1589 <br />
+                                        <p>{props.methodPayment}<br />
+                                            {props.cardNumber}<br />
                                             10x sem juros  </p>
                                     </div>
 
@@ -51,40 +51,6 @@ function MyRequests() {
                                 </div>
                             </div>
 
-                        </div>
-
-
-
-
-                        <div className="container container-meus-pedidos">
-                            <p><strong>Pedido #49362</strong></p>
-                            <hr />
-
-                            <div className="d-flex">
-                                <img src={cart} alt="" className='cart-request' />
-                                <p className="dados-pedido-title">Dados do pedido:</p>
-                            </div>
-
-
-
-                            <div className="container container-conteudo ">
-                                <div className="row">
-                                    <div className=" col-md-8 col-12">
-
-                                        <p><strong>Situação do pedido:</strong> Processando Pagamento</p>
-                                        <p><strong>Data do Pedido:</strong> 27/12/2021</p>
-                                        <p><strong>Valor:</strong> R$ 549,90</p>
-                                        <p className="p-formaPagamento"><strong>Forma de Pagamento:</strong></p>
-                                        <p>Cartão de crédito <br />
-                                            5622 XXXX XXXX XXXX 1589 <br />
-                                            10x sem juros  </p>
-                                    </div>
-
-                                    <div  className="col-md-4 col-8">
-                                        <button type="button" className="btn custom-btn-meus-pedidos" data-bs-toggle="modal" data-bs-target="#maisdetalhes2">Mais detalhes</button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 

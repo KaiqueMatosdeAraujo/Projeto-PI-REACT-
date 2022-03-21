@@ -6,7 +6,7 @@ import ItemPage from './pages/itemPage/ItemPage'
 import Profile from './pages/profile/Profile'
 import Nav from "./components/nav/Nav";
 import AssessmentsHome from "./components/assessmentsHome/AssessmentsHome";
-import Contact from './pages/contact us/Contact'
+import Contact from './pages/contactUs/Contact'
 import SuccessPassword from './pages/success_password/SuccessPassword'
 import Wishlist from "./pages/wishlist/Wishlist";
 
