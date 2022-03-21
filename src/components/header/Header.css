@@ -63,6 +63,8 @@
     color: white;
     text-align: center;
     font-size: 18px;
+    margin-left: 25%;
+    margin-top: 3%;
 }
 
 .login-cadatro p a{
@@ -123,11 +125,6 @@ span.cartIcon::before{
     background-color: #E6889A;
 }
 
-button:focus:not(:focus-visible) {
-    outline: 0;
-    color: #e996a6;
-    margin-bottom: 6px;
-}
 
 
 
@@ -180,7 +177,7 @@ button:focus:not(:focus-visible) {
     .icone{
         width: 23px;
         height: 40px;
-        left: 20px;
+        left: 44px;
     }
  
     .login-cadatro{

@@ -5,7 +5,7 @@
     border-radius: 4px;
     border: 1px solid rgb(216, 216, 216);
     box-shadow: 0 2px 2px 0 grey;
-    
+    width: 22%;
 }
 
 .cardProdutoRelacionado:hover{
@@ -38,4 +38,14 @@ box-shadow: 0 1px 7px 0 grey;
 color: rgb(206, 206, 206);
     font-size: 14px;
     font-weight: 700;
+}
+
+@media (max-width: 390px){
+    .row-cards-relatable-products{
+        display: block;
+    }
+
+    .cardProdutoRelacionado{
+        width: 100%;
+    }
 }

@@ -147,6 +147,9 @@ h1{
     width: 35%;
 }
 
+.row-wishlist{
+    --bs-gutter-x: 0.5rem;
+}
 
 
 @media (max-width: 425px){

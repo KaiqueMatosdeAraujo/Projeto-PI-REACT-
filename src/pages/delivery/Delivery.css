@@ -34,7 +34,7 @@
 
 /* <!-- NAV--> */
 
-.menu{
+/* .menu{
     display: flex;
     justify-content: space-around;
     font-family: 'Comfortaa', cursive;
@@ -62,7 +62,7 @@
 .dropdown-toggle{
 padding: 0.5rem 1rem;
 text-decoration-line: none;
-}
+} */
 /* <!-- FINAL NAV --> */
 
 
@@ -70,26 +70,26 @@ text-decoration-line: none;
 
 .resumo{
     background-color: #ffffff;
-    width: 100%;
     margin: 20px 15px 0px 15px;
     padding: 8px 0px 0px 20px;
     height: 40px;
+    width: 98%;
  
 }
 
 .resumo2{
     background-color: #ffffff;
-    width: 100%;
     margin: 5px 15px 0px 15px;
     padding: 4px 0px 0px 20px;
     height: 100%;
+    width: 98%;
 }
 
 .resumo3{
     background-color: #ffffff;
-    width: 100%;
     margin: 5px 15px 0px 15px;
     padding-left: 20px;
+    width: 98%;
     
 }
 
@@ -101,6 +101,16 @@ text-decoration-line: none;
 
 /* <!-- ENTREGA --> */
 
+.cep.row.rowCentralized{
+    justify-content:space-between;
+    margin-bottom: 4%;
+}
+.caixaIntEnd .row.rowCentralized{
+    justify-content:space-between;
+}
+.searchCep{
+    margin-top:1px;
+}
 .entrega{
     text-align: center;
     font-size: 22px;
@@ -120,7 +130,8 @@ text-decoration-line: none;
 }
 
 .cep img{
-    margin-bottom: 10px;
+    margin-bottom: 2%;
+    margin-right: 1%;
 }
 
 .cep button{
@@ -128,11 +139,13 @@ text-decoration-line: none;
     background-color: white;
     border: none;
 }
-
+.lupaImgFrete{
+width:50%;
+}
 .correios {
     color: black;
     font-size: 14px;
-    padding-top: 205px;
+   
 
 }
 
@@ -145,7 +158,7 @@ text-decoration-line: none;
 .formEntrega form{
     border: 1px solid #00000036;
     border-radius: 8px;
-    padding: 15px;   
+    padding: 9px;   
 }
 
 .check input{
@@ -165,9 +178,7 @@ text-decoration-line: none;
 
 .formPagamento{
     background-color: white;
-    
     padding: 20px;
-    height: 735px;
     margin: 20px 0px 10px 10px ;
 }
 
@@ -180,6 +191,7 @@ text-decoration-line: none;
 
 .cartao img{
     margin: 0px 10px;
+    width:13%;
 }
 
 .pix img{
@@ -226,6 +238,9 @@ text-decoration-line: none;
 .imagens img{
     margin: 10px;
 }
+.imagemPix{
+width:20%;
+}
 
 .cartFake{
   
@@ -254,7 +269,7 @@ text-decoration-line: none;
     margin-left: 30px;
 }
 
-.data{
+.dataCard{
     padding-top: 30px;
     margin-left: 20px;
 }
@@ -272,7 +287,6 @@ text-decoration-line: none;
 
 .form select{
     width: 100%;
-    height: 30px;
     border-radius: 5px;
     border: 1px solid #ced4da;
 }
@@ -323,9 +337,14 @@ text-decoration-line: none;
     margin: 0px;
 }
 
-.modalPix img{
-    margin: 6px ;
+div.pix img{
+    margin-top: 2%;
+    width: 31%;
     
+}
+div.boleto img{
+    margin-left: -1%;
+    width: 37%;
 }
 
 .textPix{
@@ -354,7 +373,7 @@ text-decoration-line: none;
     height: 50px;
     color: white;
     border-radius: 30px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .addPagamento button {
@@ -422,7 +441,7 @@ text-decoration-line: none;
     height: 50px;
     color: white;
     border-radius: 30px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .btnFinalizar button:hover{
@@ -435,8 +454,6 @@ text-decoration-line: none;
 /* <!-- CHECKOUT-> */
 .checkout {
     background-color: white;
-    height: 735px;
-
     margin: 20px 0px 5px 10px ;
 }
 
@@ -447,10 +464,8 @@ text-decoration-line: none;
 }
 
 .chek{
-    margin: 0px 10px 20px 15px;
-    height: 450px;
-    border: 1px solid #00000036;
-    border-radius: 8px;
+    height: max-content;
+    padding-bottom: 3%;
     
 }
 
@@ -519,7 +534,7 @@ text-decoration-line: none;
     height: 40px;
     color: white;
     border-radius: 30px;
-    font-size: 20px;
+    font-size: 16px;
     border: none;
 }
 
@@ -535,6 +550,17 @@ text-decoration-line: none;
 
 @media (max-width: 820px) {
 
+   .resumo{
+       width: 91%;
+   }
+   
+   .resumo3{
+    width: 91%;
+}
+
+.resumo2{
+    width: 91%;
+}
     .check input{
         font-size: 11px;
     }
@@ -542,34 +568,28 @@ text-decoration-line: none;
 
     .formPagamento{
         background-color: white;
-        width: 100%;
         padding: 20px;
-        height: 970.55px;
         margin: 20px 0px 10px 10px ;
     }
 
     .cartao img{
+        width: 5%;
+        
+    }
+    
+    div.pix img{
         width: 15%;
-        margin: 5px 6px 0px 0px;
+        margin: 3px;
     }
     
-    .pix img{
-        width: 40%;
-        padding: 5px 0px;
-        margin: 0px
-    }
-    
-    .boleto img{
-        width: 50%;
-        padding: 5px 0px;
-        margin: 0px
+    div.boleto img{
+        width: 18%;
+        margin: 4px;
     }
 
         
     .checkout {
         background-color: white;
-        height: 970.55px;
-        width: 100%;
         margin: 20px 0px 5px 10px ;
     }
     
@@ -628,13 +648,27 @@ text-decoration-line: none;
     }
 }
 
-@media (max-width: 765px) {
-    
-
+@media (max-width: 768px){
+.checkoutEntrega img {
    
+    margin-left: 21%;
+    margin-top: 0%;
+    width: 25%;
+}
+
+  
+
+img.paymentMethodImg{
+    width: 30%;
+    margin-left: 31%;
+        }
+}
+@media (max-width: 765px) {
+  
     .formPagamento, .checkout{  
         height: 100%;
     }
+
 
     .check input{
         font-size: 11px;
@@ -642,15 +676,17 @@ text-decoration-line: none;
 
     .cartao img{
         width: 11%;
-        margin-top: 2px;
+        
     }
 
-    .pix img{
-        width: 25%;
+    div.pix img{
+        width: 28%;
+        margin-top: 2%;
     }
 
-    .boleto img{
+    div.boleto img{
         width: 32%;
+        margin: 6px;
     }
 
     .cartFake{
@@ -671,8 +707,10 @@ text-decoration-line: none;
         font-size: 12px;
     }
 
-    .entregaDescriao img{
-        width: 65%;
+    .imgCaminhao img{
+        width: 51%;
+        margin-left: 72%;
+    
     }
 
     .entregaDescriao li{
@@ -685,5 +723,33 @@ text-decoration-line: none;
         margin-top: 5px;
     }
 
-}
+    .formEntrega form{
+        border:none;
+        padding:0;
+    }
+    .caixaIntEnd{
+        border:none;
+        padding:0;
+    }
+    .check{
+      outline:  1px solid #ced4da;
+      border-radius: 8px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
     
+}
+@media (max-width: 500px) {
+    .checkout img{
+margin-left: 21%;
+margin-top: 14%;
+width: 66%;
+}
+div.resumo1 strong img{
+    margin-left: 0;
+     margin-top: 0; 
+    width:6%;
+}
+
+}

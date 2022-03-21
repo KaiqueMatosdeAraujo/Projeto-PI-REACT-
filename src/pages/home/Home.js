@@ -8,8 +8,6 @@ import BannerSecondary from '../../components/bannerSecondary/BannerSecondary'
 import Categories from '../../components/categories/Categories'
 import Nav from '../../components/nav/Nav'
 import CardP from '../../components/cardProduct/CardProduct'
-
-
 import Emilly from '../product/imgs/arthur.jpg'
 import Bruna from '../product/imgs/bruna.jpg'
 import Bianca from '../product/imgs/bianca1.jpg'
@@ -18,6 +16,7 @@ import Camila from '../../pages/product/imgs/camila.jpg'
 import Rafael from '../product/imgs/rafael.jpg'
 import Heitor from '../product/imgs/thiago.jpg'
 import Lucas from '../product/imgs/LUCAS1.jpg'
+import AssessmentsHome from '../../components/assessmentsHome/AssessmentsHome'
 
 
 function Home() {
@@ -43,7 +42,7 @@ function Home() {
                 <CardP Image={ Lucas }  Name="Bebê Reborn Lucas" price="599" parcel="59,90"/>
             </div>
          
-            <Avaliation/>
+            <AssessmentsHome/>
             <Footer />
         </>
     )

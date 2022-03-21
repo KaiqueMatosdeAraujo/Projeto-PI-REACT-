@@ -4,7 +4,7 @@ function RelatableProduct(props) {
   return (
     <>
 
-      <div class="cardProdutoRelacionado  col-lg-2 col-sm-5 col-8">
+      <div class="cardProdutoRelacionado  col-lg-2 col-sm-5 col-12">
         <div class="col-6">
           <div class="row">
             <a class="fav-icon"><img src={Heart} width="25" height="25" /></a>

@@ -1,4 +1,4 @@
-.containerConteudo {
+.containerConteudo-ProductInfoMain {
     padding: 21px;
     outline:1px solid rgb(209, 209, 209);
     border-radius: 8px;
@@ -6,22 +6,14 @@
 
 
 }
-.ContainerInfoProduto{
-
-    
-          
-            
-    
-
-          
-    
-    
-  
+/*.ContainerInfoProduto{
     margin-top: 10px;
-}
+}*/
+
 .imgMaior{
     height:80%;
 }
+
 .infoBonecos {
         padding: 30px;
         outline: 1px solid rgb(209, 209, 209);
@@ -34,14 +26,14 @@
     font-weight: bold;
 }
 h2.nomeBebe{
-    Font-size: 27px;
+    Font-size: 30px;
 }
 .PrecoBebeInfo{
     font-size: 36px;
 }
-.nomeBebe.PrecoBebeInfo{
+/*.nomeBebe.PrecoBebeInfo{
     margin-top: 10px;
-}
+}*/
 h3.nomeBebe{
     color: rgb(165, 165, 165);
 }
@@ -87,6 +79,7 @@ height:80%;
     border-radius: 26px;
     color: white;
     text-decoration: none;
+    margin-bottom: 7%;
 }
 .btnAdicionarAoCarrinho:hover{
     color:white;
@@ -126,8 +119,9 @@ h5 {
     justify-content: center;
 }
 .row.botoesInfoProduto{
-    justify-content: center;
+    justify-content: flex-start;
     margin-top:7%;
+    margin-left: 1%;
 }
 .descricaoTecContent{
    color: #666565;
@@ -145,6 +139,7 @@ h5 {
     border: 1.5px solid grey;
     color: #E6889A;
     font-weight: bold;
+    height: 65%;
 }
 .subtrair{
    
@@ -153,6 +148,7 @@ h5 {
     border: 1.5px solid grey;
     color: #E6889A;
     font-weight: bold;
+    height: 65%;
 }
 .campo-qtd{
     border-radius: 16px;
@@ -162,42 +158,50 @@ h5 {
     font-weight: bold;
     color: #E6889A;
     text-align: center;
+    height: 65%;
 }
 .row .botoesInfoProduto input{
-    margin-right: 5px;}
+    margin-right: 5px;
+}
+
+
 @media (max-width:991px){
-.cardProdutoRelacionado{
-    margin-top:15px;
+    .cardProdutoRelacionado{
+        margin-top:15px;
+    }
+    .imgFav{
+        width:61%;
+    }
+    .ContainerInfoProduto{
+        margin-top: 10px;
+    }
+    .btnAdicionarAoCarrinho{
+        font-size: 83%;
+    }
 }
-.imgFav{
-    width:61%;
-}
-.ContainerInfoProduto{
-    margin-top: 10px;
-}
-.btnAdicionarAoCarrinho{
-    font-size: 83%;
-}
-}
+
+
 @media (min-width:767px){
     .imgFav{
     width:50%;
     }
 }
+
+
 @media (max-width:414px){
     .imgFav{
         width: 124%;
     }
-h2.nomeBebe{
-    Font-size: 18px;
-}
-.botoesInfoProduto{
-    font-size:12px;
-}
-.btnAdicionarAoCarrinho{
-    font-size: 119%;
-    margin-top: 10px;
-}
+    h2.nomeBebe{
+        Font-size: 18px;
+    }
+    .botoesInfoProduto{
+        font-size:12px;
+    }
+    .btnAdicionarAoCarrinho{
+        font-size: 119%;
+        margin-top: 10px;
+    }
 }
 .PrecoBebeInfo {
     font-size:27px;
@@ -205,9 +209,84 @@ h2.nomeBebe{
 .PrecoBebeInfoDescricao{
     font-size:18px;
 }
+
+
 @media (max-width: 390px){
     .btnAdicionarAoCarrinho{
         
-    font-size: 106%;
-    margin-top: 10px;}
+        font-size: 106%;
+        margin-top: 10px;
+        margin-left: -7%;
+    }
+
+    .container-imagem{
+        width: 100%;
+        padding-right: var(--bs-gutter-x,.75rem);
+        padding-left: var(--bs-gutter-x,.75rem);
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .containerConteudo-ProductInfoMain{
+        outline: none;
+        border-radius: none;
+    }
+
+    .produtoSubtitulo{
+        font-size: 12px;
+    }
+
+    h2.nomeBebe{
+        Font-size: 21px;
+    }
+
+    .imgFav{
+        margin-bottom: 70%;
+        margin-left: 80%;
+    }
+
+    .infoBonecos{
+        padding: 23px;
+    }
+
+    .row.botoesInfoProduto {
+        justify-content: flex-start;
+        margin-top: 7%;
+        margin-left: 2%;
+    }
+
+    .row-marca-codigo{
+        display: block;
+    }
+
+    .produtoSubtitulo.v2{
+        justify-content: flex-start;
+    }
+
+    .precoContainer {
+        margin-top: 11%;
+    }
+
+    .subtrair{
+        font-size: 22px;
+        height: 40%;
+        border-radius: 12px;
+        padding: 7px;
+    }
+
+    .campo-qtd{
+        font-size: 22px;
+        height: 40%;
+        border-radius: 12px;
+        padding: 7px;
+    }
+
+    .adicionar{
+        font-size: 22px;
+        height: 40%;
+        border-radius: 12px;
+        padding: 7px;
+    }
 }

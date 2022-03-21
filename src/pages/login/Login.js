@@ -22,11 +22,11 @@ function Login() {
                 <div className="row justify-content-center rowCentralized">
                     <div className="card border-card col-11 col-md-10 col-lg-6">
                         <div className="row justify-content-center rowCentralized">
-                            <div className="col-md-12 col-lg-10">
+                            <div className="col-12 col-md-12 col-lg-10">
 
 
 
-                                <div className="row justify-content-center">
+                                <div className="row row-login justify-content-center">
                                     <div className="col-md-12">
                                         <div className="row justify-content-center ">
                                             <div className="col-2">

@@ -12,19 +12,20 @@ function Contact() {
             <Nav/>
 
             <div className="container-fluid mt-5">
-                <div className="row">
+                <div className="row row-contact">
                     <div className="col-md-12">
 
 
 
 
-                        <div className="row justify-content-center">
-                            <div class="col-10">
+                        <div className="row row-contact justify-content-center">
+                            <div class="col-12 col-md-12 col-lg-8">
                                 <div className="card">
-                      
+
                                     <h1 className="text-center text-title">Fale Conosco</h1>
                                     <div className="row rowCentralized justify-content-center ">
-                                    <div className="col-10">
+                                    <div className="col-12
+                                    ">
                                         <div className="card2  mb-4">
 
                                             <div className="row rowCentralized justify-content-around">
@@ -34,8 +35,8 @@ function Contact() {
                                                 </div>
 
                                                 <div className="form-group font-weight-bold mb-2 mt-3 custom-input col-11 col-md-5 input-media">
-                                                    <label className="mb-2 custom-label" for="usuario">Telefone:</label>
-                                                    <input className="form-control input-login" type="tel" placeholder="(11) 3763-8738" />
+                                                    <label className="mb-2" for="usuario">Telefone:</label>
+                                                    <input className="form-control" type="tel" placeholder="(11) 3763-8738" disabled/>
                                                 </div>
                                             </div>
 
@@ -46,9 +47,9 @@ function Contact() {
                                                 </div>
 
                                                 <div className="form-group font-weight-bold col-11 col-md-5 mb-2 mt-2 custom-input input-media">
-                                                    <label className="mb-2 custom-label" for="usuario">Whatsapp:</label>
-                                                    <input type="tel" className="form-control input-login"
-                                                        placeholder="(11) 91426-5144" />
+                                                    <label className="mb-2" for="usuario">Whatsapp:</label>
+                                                    <input type="tel" className="form-control"
+                                                        placeholder="(11) 91426-5144" disabled/>
                                                 </div>
                                             </div>
 
@@ -59,8 +60,8 @@ function Contact() {
                                                 </div>
 
                                                 <div className="form-group font-weight-bold mb-2 mt-2 custom-input col-11 col-md-5 input-media">
-                                                    <label className="mb-2 custom-label" for="usuario">E-mail:</label>
-                                                    <input className="form-control input-login" type="email" placeholder="pimpolhos@outlook.com" />
+                                                    <label className="mb-2" for="usuario">E-mail:</label>
+                                                    <input className="form-control" type="email" placeholder="pimpolhos@outlook.com" disabled/>
                                                 </div>
                                             </div>
 
@@ -71,9 +72,9 @@ function Contact() {
                                                 </div>
 
                                                 <div className="form-group font-weight-bold col-11 col-md-5 mb-2 mt-2 custom-input input-media">
-                                                    <label className="mb-2 custom-label" for="usuario">Endereço:</label>
-                                                    <input type="text" className="form-control input-login"
-                                                        placeholder="Rua Elias Cutait,  Cidade Jardim, 20" />
+                                                    <label className="mb-2" for="usuario">Endereço:</label>
+                                                    <input type="text" className="form-control"
+                                                        placeholder="Rua Elias Cutait,  Cidade Jardim, 20" disabled/>
                                                 </div>
                                             </div>
 
@@ -84,11 +85,11 @@ function Contact() {
                                                         placeholder="Insira a mensagem" />
                                                 </div>
 
-                                                <div className="col-5">
+                                                <div className="col-10 col-md-5 col-lg-5">
                                                     <p />
                                                     Atendimento: <br />
                                                     <br />
-                                                    Segunda à Sexta, das 08h às 17h
+                                                    Segunda à Sexta, das 08h às 17h <br />
 
                                                     Sábado, das 09h às 16h
                                                     <p />
@@ -96,8 +97,8 @@ function Contact() {
                                             </div>
 
                                             <div className="row rowCentralized justify-content-center">
-                                            <div className="col-3 ">
-                                                <button type="submit" className="btn custom-button">Enviar</button>
+                                            <div className="col-10 col-md-5 col-lg-3">
+                                                <button type="submit" className="btn custom-button-contact">Enviar</button>
                                             </div>
                                             </div>
 
@@ -112,9 +113,9 @@ function Contact() {
                     </div>
                 </div>
             </div>
-                
+
             <Footer/>   
-                
+
         </>
     );
 }
