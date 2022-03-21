@@ -4,13 +4,17 @@
 }
 
 .cart{
-    height: 31px;
+    height: 37px;
 }
 
 .dados-pedido-title{
     margin-left: 10px;
     margin-top: 5px;
     font-weight: bold;
+}
+.cartimG{
+    width: 3%;
+    height: 35px;
 }
 
 .container-conteudo{

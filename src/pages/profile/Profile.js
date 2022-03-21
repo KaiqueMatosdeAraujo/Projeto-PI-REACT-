@@ -9,11 +9,9 @@ import BannerFreight from '../../components/freightBanner/FreightBanner'
 import Nav from '../../components/nav/Nav'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
- import MyAccount from '../myAccount/MyAccount'
-
- import {useState} from 'react'
+import MyAccount from '../myAccount/MyAccount'
 import MyRequests from '../../components/myRequests/MyRequests'
-
+import { useState } from 'react'
 function Profile() {
 
     const [toggleState, setToggleState] = useState(1)
