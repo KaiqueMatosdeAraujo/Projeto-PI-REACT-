@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './SuccessPurchase.css'
-import Nav from '../../components/nav/Nav'
 import BannerFreight from '../../components/freightBanner/FreightBanner'
 import ImagemSucesso from './imgs/checked.png'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
+import Nav from '../../components/nav/Nav'
 import SuccessPurschaseItens from '../../components/successPurchaseItens/SuccessPurchaseItens'
 import ItensProducts from '../../components/successPurchaseItens/ItensProducts'
 

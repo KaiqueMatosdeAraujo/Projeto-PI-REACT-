@@ -248,7 +248,7 @@ function Delivery(props) {
                                                 <div class="cartFake col-10 col-md-8">
                                                     <div class="row">
                                                         <div class="col-3">
-                                                            <img src="../Entrega/Imagens/chip-de-cartao-de-credito.png" alt="" />
+                                                            <img src={ChipCartaoCred} alt="" />
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -334,7 +334,7 @@ function Delivery(props) {
                             </div>
                             <div class="cartao col-11 col-md-10 col-lg-11">
                                 <img src={LogoMaster}width="10%" />
-                                <img src="../Entrega/Imagens/logo-visa-4096.png" width="10%" />
+                                <img src={LogoVisa} width="10%" />
                                 <img src={LogoAmerican} width="8%" />
                              
 
@@ -365,7 +365,7 @@ function Delivery(props) {
                                     <div class="modal-content">
                                         <div class=" imagemPix col-12">
 
-                                            <img src="../Entrega/Imagens/pix.png" width="84px" />
+                                            <img src={Pix} width="84px" />
                                             <button type="button" class="btn-close fechar2" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <hr />
@@ -428,7 +428,7 @@ function Delivery(props) {
                                     <div class="modal-content">
 
                                         <div class="imagemBoleto">
-                                            <img src="../Entrega/Imagens/boleto.png" width="20%" />
+                                            <img src={Boleto} width="20%" />
                                             <button type="button" class="btn-close fechar2" data-bs-dismiss="modal" aria-label="Close"></button>
                                             <hr />
                                         </div>
@@ -463,7 +463,7 @@ function Delivery(props) {
                                 </div>
                             </div>
                             <div class="boleto col-11 col-md-10 col-lg-11">
-                                <img src="../Entrega/Imagens/boleto.png" width="28%" />
+                                <img src={Boleto} width="28%" />
                             </div>
                         </div>
                     </div>
