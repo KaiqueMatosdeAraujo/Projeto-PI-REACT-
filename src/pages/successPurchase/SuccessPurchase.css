@@ -14,8 +14,9 @@ hr{
     margin-top: 5px;
     font-size: 18px;
     margin-left: 10px;
+    font-weight: bold;
 }
-.custom-button{
+.custom-button1{
     background-color: #9ACCFF;
     width: 80px;
     color: white;
@@ -50,7 +51,7 @@ hr{
     margin-left: 25px;
 }
 
-.custom-button{
+.custom-button1{
     background-color: #9ACCFF;
     width: 210px;
     color: white;
@@ -86,10 +87,85 @@ hr{
 }
 
 .img-checked{
-    width:17%;
-    margin-top:10px;
+    width: 128px;
+    margin-top: 10px;
+    height: 94px;
+    margin-left: 54px;
 }
 
 .p-segunto-texto{
-    margin-left: 30px;
+    margin-left: 12px;
+}
+
+@media (max-width: 1200px){
+    .table{
+        font-size: 13px;
+    }
+    .img-checked {
+        width: 107px;
+        margin-top: 10px;
+        height: 94px;
+        margin-left: 29px;
+    }
+    .p-segunto-texto {
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    p {
+        text-align: start;
+        font-family: 'Comfortaa', cursive;
+        margin-left: 6px;
+        font-size: 13px;
+    }
+    .custom-button1 {
+    height: 43px;
+    width: 170px;
+    margin-left: 81px;
+}
+.card{
+    margin-left: 27px;
+}
+    }
+@media (max-width:767px){
+.card {
+    font-size: 9px;
+    padding: 6px;
+    margin-left: 28px;
+}
+.img-checked {
+    width: 107px;
+    margin-top: 10px;
+    height: 94px;
+    margin-left: 29px;
+}
+.p-segunto-texto {
+    margin-left: 10px;
+    font-size: 13px;
+}
+p {
+    text-align: start;
+    font-family: 'Comfortaa', cursive;
+    margin-left: 6px;
+    font-size: 13px;
+}
+.custom-button1 {
+    margin-left: 25px;
+    height: 35px;
+    width: 175px;
+}
+.table{
+    margin-left: 8px;
+    width: 249px;
+    font-size: 11px;
+}
+}
+@media (max-width:400px){
+.custom-button1{
+    margin-left: 32px;
+    height: 35px;
+    width: 170px;
+}
+.table{
+    font-size: 13px;
+}
 }

@@ -85,11 +85,7 @@ hr{
         margin-left:10px
     }
     
-    .modalcontentTitle{
-        font-size: 19px;
-        font-weight: bold;
-      
-    }
+   
     .cardContentTitleDC{
         font-size:  20px;
        font-weight: bold;
@@ -176,17 +172,8 @@ hr{
         color: rgb(255, 255, 255);
     }
     
-    
-    .modal-header{
-        background-color:#f897a9;
-        color: white;
-     
-    }
-    .modal-body{
-     
-        font-weight: bold;
-    
-    }
+  
+
     
     
     .cardContent.row.modalEndereco{
@@ -220,11 +207,7 @@ hr{
         margin-right: 5px;
     }
     
-    .btn.modalclose{
-       font-size: 30px;
-      color: white;
-      font-weight: bold;
-    }
+
     
     .nomeCartao{
         font-size: 19px;

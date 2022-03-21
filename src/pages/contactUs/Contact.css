@@ -61,7 +61,6 @@ body{
 
 @media (max-width: 767px){ 
     .card-input{
-      
         border: none;
         padding-left: 22px;
     }

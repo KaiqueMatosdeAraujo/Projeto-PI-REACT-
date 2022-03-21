@@ -9,12 +9,17 @@
 
 .navbar-toggler-icon{
     background-image: url(./imgs//menu-maior.png);
+    margin-bottom: -3px;
+}
+.container-fluid.noPadding{
+    padding:0 ;
 }
 
-.container-fluid{
-    padding: 0;
-}
 
+
+.containerHeader{
+    z-index: 1;
+}
 .custom-nav{
     background-color: #E6889A;
     height: 90px;
@@ -58,6 +63,8 @@
     color: white;
     text-align: center;
     font-size: 18px;
+    margin-left: 25%;
+    margin-top: 3%;
 }
 
 .login-cadatro p a{
@@ -118,20 +125,33 @@ span.cartIcon::before{
     background-color: #E6889A;
 }
 
-button:focus:not(:focus-visible) {
-    outline: 0;
-    color: #ff00814a;
-}
 
 
 
+/* @media (min-width: 1288px){
+    .login-cadatro {
+        width: 1169px;
+        font-size: 17px;
+    }
+    .teste2{
+        margin-left: 577px;
+    }
+    .logo {
+        width: 164px;
+        padding-top: 26px;
+    }
+    .custom-form input {
+        width: 585px;
+        height: 37px;
+    }
+} */
 @media (max-width: 992px){ 
     *{
         max-width: 100%;
     }
     
     .custom-form input{
-        width: 278px;
+        width: 420px;
         margin-left: 20px;
     }
  
@@ -157,7 +177,7 @@ button:focus:not(:focus-visible) {
     .icone{
         width: 23px;
         height: 40px;
-        left: 20px;
+        left: 44px;
     }
  
     .login-cadatro{
@@ -174,6 +194,8 @@ button:focus:not(:focus-visible) {
  
     .logo{
         height: 100px;
+        padding: 0;
+        width: 169px;
     }
 
     .navbar-toggler{
@@ -185,8 +207,9 @@ button:focus:not(:focus-visible) {
 
 @media (max-width: 767px){ 
     .custom-form input{
-        width: 75%;
+        width: 85%;
         margin-left: 20px;
+        margin-top: 8px;
     }
  
     .navbar-collapse{
@@ -200,6 +223,7 @@ button:focus:not(:focus-visible) {
         right: 55px;
         margin-left: 78px;
     }
+    
 
     .teste2{
         display: flex;
@@ -224,7 +248,9 @@ button:focus:not(:focus-visible) {
  
  
     .logo{
-        height: 100px;
+    padding: 0;
+    height: 66px;
+    width: 135px;
     }
      
  }

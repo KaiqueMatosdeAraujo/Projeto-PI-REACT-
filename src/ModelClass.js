@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 class ModelClass extends Component {
 
-    state = {
+    state =  {
         nome: ''
     }
     //para mudar o estado de nome use: this.setState({nome: 'Novo Nome'})

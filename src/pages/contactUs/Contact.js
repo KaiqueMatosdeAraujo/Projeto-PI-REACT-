@@ -21,7 +21,6 @@ function Contact() {
                         <div className="row row-contact justify-content-center">
                             <div class="col-12 col-md-12 col-lg-8">
                                 <div className="card">
-                      
                                     <h1 className="text-center text-title">Fale Conosco</h1>
                                     <div className="row rowCentralized justify-content-center ">
                                     <div className="col-12
@@ -113,9 +112,9 @@ function Contact() {
                     </div>
                 </div>
             </div>
-                
+
             <Footer/>   
-                
+
         </>
     );
 }
