@@ -1,19 +1,33 @@
+.btn-close.fechar3 {    
+    margin-top: -1%;
+    background-color:white;
+}
+.btn-close.fechar {    
+    margin-top: 0%;
+    background-color: white;
+    margin-left: 121px;
+}
+.btn-close.fechar:active {
+     background-color:white;
+}
+.btn-close.fechar2:active {
+    background-color:white;
+}
+.btn-close.fechar2{
+    margin-left: 422px;
+    background-color:white;
+}
+.btn-close.fechar2:hover{
+    background-color:white;
+}
+.btn-close.fechar:hover{
 
-
-
-.menSuperior{
-    background-color: #F7D794;
-    text-align: center;
-    color: white;
-    height: 25px;
-    font-family: 'Dancing Script', cursive;
-    width: 1400px;
-    
+    background-color:white;
 }
 
 /* <!-- NAV--> */
 
-.menu{
+/* .menu{
     display: flex;
     justify-content: space-around;
     font-family: 'Comfortaa', cursive;
@@ -41,7 +55,7 @@
 .dropdown-toggle{
 padding: 0.5rem 1rem;
 text-decoration-line: none;
-}
+} */
 /* <!-- FINAL NAV --> */
 
 
@@ -218,7 +232,8 @@ width:50%;
     margin: 10px;
 }
 .imagemPix{
-width:20%;
+    height: 29px;
+    width: 66%;
 }
 
 .cartFake{
@@ -384,7 +399,7 @@ div.boleto img{
 
 
 .modalBoleto button:hover{
-    background-color: #F7D794;
+    background-color: white;
 }
 
 .modalBoleto hr{

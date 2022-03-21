@@ -216,14 +216,10 @@ function Delivery(props) {
 
                             <button type="button" className=" btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#modalCartao">
-                                <input type="radio" name="pagamento" />
-                            </button>
-
-                            <button type="button" class=" btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#modalCartao">
                 
                                 <input type="radio" name="pagamento" />
                             </button>
+
 
                             { /*  MODAL  */}
 
@@ -233,12 +229,13 @@ function Delivery(props) {
                                     <div className="modal-content">
                                         <div className="pag">
                                             <div className="row">
-                                                <div className=" imagens col-12">
+                                                <div className=" imagens col-8">
                                                     <img src={LogoMaster} width="7%" />
                                                     <img src={LogoAmerican} width="7%" />
                                                     <img src={LogoVisa} width="7%" />
 
                                                 </div>
+                                                <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <hr />
                                             <div className="row">
@@ -351,6 +348,7 @@ function Delivery(props) {
                             { /*  Button trigger modal  */}
                             <button type="button" className=" btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#pix">
+                                    
                                 <input type="radio" name="pagamento" />
                             </button>
 
@@ -359,9 +357,13 @@ function Delivery(props) {
                                 aria-hidden="true">
                                 <div className="modal-dialog">
                                     <div className="modal-content">
-                                        <div class="modal-header">
-                                            <img className="" src={Pix} width="20%" />
-
+                                        
+                                        <div className="row">
+                                        <div className="imagemPix col-8">
+                                            <img src={Pix} width="20%" />
+                                        
+                                        </div>
+                                        <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <hr />
 
@@ -421,12 +423,15 @@ function Delivery(props) {
                                 aria-hidden="true">
                                 <div className="modal-dialog">
                                     <div className="modal-content">
-
-                                        <div className="imagemBoleto">
+                                        <div className="row">
+                                        <div className="imagemBoleto col-8">
                                             <img src={Boleto} width="20%" />
-                                            <hr />
+                                            
+                    
                                         </div>
-
+                                        <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <hr />
                                         <div className="textBoleto">
                                             <div className="row">
                                                 <div className=" pi col-12">
@@ -525,7 +530,7 @@ function Delivery(props) {
                                             </div>
                                             <div className="col-9 col-md-8 col-lg-10">
                                                 <ul type="none">
-                                                    <li><strong>Nubank **** 4135</strong></li>
+                                                    <li><strong>Nubank ** 4135</strong></li>
                                                     <li>Você pagara 10x de R$ 54,99</li>
                                                 </ul>
                                             </div>
