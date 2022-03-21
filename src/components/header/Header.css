@@ -54,8 +54,7 @@
     position: relative;
     padding-top: 15px;
     width: 32px;
-    height: 44px;
-    left: 35px;
+    left: 50px;
     margin-top: 8px;
 }
 
@@ -193,7 +192,6 @@ span.cartIcon::before{
     }
  
     .logo{
-        height: 100px;
         padding: 0;
         width: 169px;
     }
@@ -249,7 +247,6 @@ span.cartIcon::before{
  
     .logo{
     padding: 0;
-    height: 66px;
     width: 135px;
     }
      
