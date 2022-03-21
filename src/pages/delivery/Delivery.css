@@ -10,9 +10,15 @@
     width: 1400px;
     
 }
-.btn-close.fechar {    
-    margin-left: 270px;
+
+.btn-close.fechar3 {    
+    margin-top: -1%;
     background-color:white;
+}
+.btn-close.fechar {    
+    margin-top: 0%;
+    background-color: white;
+    margin-left: 121px;
 }
 .btn-close.fechar:active {
      background-color:white;
@@ -239,7 +245,8 @@ width:50%;
     margin: 10px;
 }
 .imagemPix{
-width:20%;
+    height: 29px;
+    width: 66%;
 }
 
 .cartFake{
