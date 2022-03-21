@@ -19,7 +19,16 @@ import desejos from './img-myAccount/desejos.png'
 import user from './img-myAccount/user.png'
 import { Link } from 'react-router-dom'
 
+import {useState} from 'react'
+
 function MyAccount() {
+
+    const [toggleState, setToggleState] = useState(1)
+
+    const toggleTab = (index) => {
+        setToggleState(index)
+    }
+    
     return (
         <>
          
@@ -29,14 +38,14 @@ function MyAccount() {
 
 
                 {/* <!-- INICIO DO CONTEUDO NAV/TAB --> */}
-                <div class="tab-content" id="myTabContent">
+               {/* <div class="tab-content" id="myTabContent">*/}
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
 
 
 
                         <h1>Minha Conta</h1>
-                        <div className="container row">
+                        <div className={toggleState === 1 ? "container row": "content"}>
 
 
                             <div className="col-md-6 col-12">
@@ -540,7 +549,7 @@ function MyAccount() {
 
 
                     </div>
-                </div>
+                {/*</div>*/}
             
 
 

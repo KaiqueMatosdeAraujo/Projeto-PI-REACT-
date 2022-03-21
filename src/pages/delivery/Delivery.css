@@ -10,31 +10,10 @@
     width: 1400px;
     
 }
-.btn-close.fechar {    
-    margin-left: 270px;
-    background-color:white;
-}
-.btn-close.fechar:active {
-     background-color:white;
-}
-.btn-close.fechar2:active {
-    background-color:white;
-}
-.btn-close.fechar2{
-    margin-left: 422px;
-    background-color:white;
-}
-.btn-close.fechar2:hover{
-    background-color:white;
-}
-.btn-close.fechar:hover{
-
-    background-color:white;
-}
 
 /* <!-- NAV--> */
 
-/* .menu{
+.menu{
     display: flex;
     justify-content: space-around;
     font-family: 'Comfortaa', cursive;
@@ -62,7 +41,7 @@
 .dropdown-toggle{
 padding: 0.5rem 1rem;
 text-decoration-line: none;
-} */
+}
 /* <!-- FINAL NAV --> */
 
 
@@ -405,7 +384,7 @@ div.boleto img{
 
 
 .modalBoleto button:hover{
-    background-color: white;
+    background-color: #F7D794;
 }
 
 .modalBoleto hr{

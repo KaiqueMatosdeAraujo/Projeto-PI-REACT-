@@ -216,10 +216,14 @@ function Delivery(props) {
 
                             <button type="button" className=" btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#modalCartao">
-                
                                 <input type="radio" name="pagamento" />
                             </button>
 
+                            <button type="button" class=" btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modalCartao">
+                
+                                <input type="radio" name="pagamento" />
+                            </button>
 
                             { /*  MODAL  */}
 
@@ -347,7 +351,6 @@ function Delivery(props) {
                             { /*  Button trigger modal  */}
                             <button type="button" className=" btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#pix">
-                                    
                                 <input type="radio" name="pagamento" />
                             </button>
 
