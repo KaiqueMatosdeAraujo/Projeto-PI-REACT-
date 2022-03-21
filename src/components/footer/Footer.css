@@ -17,12 +17,10 @@
 .accordionFooter{
     display: none;
 }
-
-.accordion-item{
-    background-color: transparent;
+.accordion-item.footerAccordion{
+     background-color:transparent;
     border: none;
 }
-
 .nav{
     display: flex;
     flex-wrap: wrap;
@@ -38,8 +36,10 @@ a, .redes, .nav-link, .pagamento, .nav{
     text-decoration: none;
 }
 
-/* a, .nav-link,  .nav{
-    /* line-height: 4; */
+footer
+a, .nav-link .nav{
+    line-height: 4;
+}
 
 
 .teste li a {
