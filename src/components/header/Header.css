@@ -276,6 +276,7 @@ span.cartIcon::before{
     .logo{
            width:103px;
         padding-top: 16px;
+        position: relative;
     }
 
     .teste2{

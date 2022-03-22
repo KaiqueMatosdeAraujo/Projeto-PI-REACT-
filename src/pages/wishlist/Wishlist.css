@@ -18,13 +18,7 @@ ul{
     height: 100%;
 }
 
-.produtoFav{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+
 
 .cod{
     font-size: 12px;
@@ -175,12 +169,3 @@ h1{
     margin-left: 173px;
     }
 }
-
-
-
-
-
-
-
-
-

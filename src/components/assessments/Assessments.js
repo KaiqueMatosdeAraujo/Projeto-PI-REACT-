@@ -19,10 +19,10 @@ function Assessments() {
                 <div className="tab-pane fade" id="Avaliacoes" role="tabpanel" aria-labelledby="avaliacoes-tab">
                     <div class="titleCard" id="titleCardMinhaConta">
                         <h1>Avaliações de Clientes</h1>
-                        <div class="container row">
+                        <div class="container row ">
 
                             <br />
-                            <div class="col-12">De modo geral, qual foi sua experiência em comprar na Pimpolhos ?
+                            <div class="col-12 dentro">De modo geral, qual foi sua experiência em comprar na Pimpolhos ?
 
                                 <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                                     <option selected>Selecione como se sente.</option>

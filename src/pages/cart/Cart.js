@@ -53,7 +53,7 @@ function Cart(props) {
                     </div>
 
                     <div className="cart-total-holder">
-                        <p>Total: R$899,90</p>
+                        <p>Total: R$399,90</p>
                     </div>
                     <div className="cart-action-button">
                         <Link to="/Product" className="btn-main">Continuar comprando</Link>

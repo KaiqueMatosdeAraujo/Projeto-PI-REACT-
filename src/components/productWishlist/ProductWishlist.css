@@ -240,18 +240,9 @@ h1{
     margin-left: 3px;
     }
 }
+@media (max-width:500px){
+.produtoFav{
+    justify-content:space-evenly;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+}

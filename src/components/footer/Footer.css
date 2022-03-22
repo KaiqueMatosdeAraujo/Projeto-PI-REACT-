@@ -144,6 +144,19 @@ a, .nav-link .nav{
         margin-top: 0px;
     }
 
+    .accordion-button:not(.collapsed) {
+        color: #ffffff;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .accordion-button:focus {
+        z-index: 3;
+        border-color: #ffffff;
+        outline: 0;
+        box-shadow: none;
+    }
+
     .accordionFooter{
         display: block;
     }

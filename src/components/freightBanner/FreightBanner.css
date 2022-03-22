@@ -11,6 +11,10 @@
 
 @media (max-width: 767px){ 
     .menSuperior{
-        font-size: 12px;
+        font-size: 11px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
     }
 }

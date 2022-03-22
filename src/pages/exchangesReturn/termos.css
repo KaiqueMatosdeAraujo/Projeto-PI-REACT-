@@ -1,39 +1,37 @@
 
-
 .Principal{
-    padding: 30px;
-  
-  }
-  br {
-      background-color: white;
-  }
-  
-  p {
-      
-       /* text-align: start; */
-       font-family: 'Comfortaa', cursive;
-      }
-  
-  b { 
-      font-weight:bold;
-      font-family: 'Comfortaa', cursive;
-      text-decoration: none;
-      padding: 11px;
-  }
-  
-  h3 h4 {
-      padding-top: 24px;
-  }
-  
-  .bold{
-      text-align: justify;
-  }
-  
-  .lh-base{
-      border: 2px solid rgba(255, 0, 179, 0.125);
-      padding: 10px;
-      text-align: justify;
-  }
-  
+  padding: 30px;
+
+}
+br {
+    background-color: white;
+}
+
+p {
+    
+     /* text-align: start; */
+     font-family: 'Comfortaa', cursive;
+    }
+
+b { 
+    font-weight:bold;
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+    padding: 11px;
+}
+
+h3 h4 {
+    padding-top: 24px;
+}
+
+.bold{
+    text-align: justify;
+}
+
+.lh-base{
+    border: 2px solid rgba(255, 0, 179, 0.125);
+    padding: 10px;
+    text-align: justify;
+}
 
 

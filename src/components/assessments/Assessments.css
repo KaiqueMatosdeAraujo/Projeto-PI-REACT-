@@ -8,7 +8,9 @@
 }
 
 
-
+.dentro{
+    margin: 55px;
+}
 
 
 hr{
@@ -77,6 +79,7 @@ hr{
     .container.row{
         flex-direction: row;
         justify-content: space-around;
+        
     }
     
     h1{
@@ -85,6 +88,9 @@ hr{
         margin-left:10px
     }
     
+   .dentro{
+       margin: 55px;
+   }
    
     .cardContentTitleDC{
         font-size:  20px;
