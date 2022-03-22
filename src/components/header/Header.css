@@ -26,7 +26,7 @@
 }
 
 .logo{
-
+    position: relative;
     padding-bottom: 10px;
     margin-left: 20px;
 }
@@ -194,6 +194,7 @@ span.cartIcon::before{
     .logo{
         padding: 0;
         width: 169px;
+        
     }
 
     .navbar-toggler{
@@ -276,6 +277,7 @@ span.cartIcon::before{
     .logo{
            width:103px;
         padding-top: 16px;
+
     }
 
     .teste2{

@@ -1,10 +1,4 @@
-*{
-    font-family: 'Comfortaa', cursive;
-}
 
-body{
-    background-color: #ffcedf8f;
-}
 
 hr{
     width: 600px;
@@ -40,10 +34,6 @@ hr{
     font-size: 24px;
     font-weight: bold;
     margin-top: 15px;
-}
-
-.card-input{
-    width: 600px;
 }
 
 .custom-input{
@@ -116,7 +106,7 @@ hr{
         font-size: 13px;
     }
     p {
-        text-align: start;
+        /* text-align: start; */
         font-family: 'Comfortaa', cursive;
         margin-left: 6px;
         font-size: 13px;

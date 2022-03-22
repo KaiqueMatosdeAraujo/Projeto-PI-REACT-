@@ -1,18 +1,14 @@
-
-
-
-.menSuperior{
-    background-color: #F7D794;
-    text-align: center;
-    color: white;
-    height: 25px;
-    font-family: 'Dancing Script', cursive;
-    width: 1400px;
-    
+body {
+    background-color: #9abdff;
+}
+.btn-close.fechar3 {    
+    margin-top: -1%;
+    background-color:white;
 }
 .btn-close.fechar {    
-    margin-left: 270px;
-    background-color:white;
+    margin-top: 0%;
+    background-color: white;
+    margin-left: 121px;
 }
 .btn-close.fechar:active {
      background-color:white;
@@ -239,7 +235,8 @@ width:50%;
     margin: 10px;
 }
 .imagemPix{
-width:20%;
+    height: 29px;
+    width: 66%;
 }
 
 .cartFake{
@@ -384,6 +381,7 @@ div.boleto img{
     color: white !important;
     border-radius: 30px !important;
     font-size: 20px !important; 
+    border-color: transparent;
 }
 
 

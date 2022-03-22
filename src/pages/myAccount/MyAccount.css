@@ -1,16 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
-
-*{
-    max-width: 100%;
-}
-
-body{
-    background-color: #ffcedf8f;
-    padding:0px;
-    margin:0px;
-    font-family: 'Comfortaa', cursive;
-}
 
 .num{
     font-size: 18px;
@@ -97,7 +85,7 @@ h1{
    margin-left: 50px;
    margin-top: 20px;
 }
-.cardContent{
+.cardContentAccount{
  
  border: 0.5px solid rgb(199, 199, 199);
  border-radius:8px;
@@ -176,7 +164,7 @@ color: rgb(255, 255, 255);
 
 }
 .edit{
-    background-color: rgb(245, 184, 207);
+    background-color: rgb(123, 164, 211);
     color: rgb(255, 255, 255);
 }
 .edit:hover{
@@ -197,7 +185,7 @@ color: rgb(255, 255, 255);
 }
 
 
-.cardContent.row.modalEndereco{
+.cardContentAccount.row.modalEndereco{
 justify-content:space-between;
 }
 .btn.lupa{
@@ -249,6 +237,11 @@ background-color: rgb(177, 236, 217);
 .modal-footer.Card{
     background-color:white;
 }
+
+.custom-inputAccount input{
+    font-size: 12px;
+    height: 40px;
+}
 @media(max-width:520px){
 
     .row.enderecoCartao{
@@ -266,14 +259,21 @@ background-color: rgb(177, 236, 217);
         flex-direction: row;
     }
     
-    
+    .containerAccount{
+        display: flex;
+        justify-content: center;
+    }
+
+    .cardContentAccount{
+        border: none;
+        padding: 0px;
+    }
+
+
 }
 
-
-
-
-
-
-
-
-
+@media(min-width:1000px){
+    .responsive-inputA{
+        margin-left: 16%;
+    }
+}
