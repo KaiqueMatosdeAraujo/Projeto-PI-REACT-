@@ -1,14 +1,20 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 .menSuperior {
     background-color: #F7D794;
     text-align: center;
     color: white;
     height: 25px;
-
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
 }
 
 @media (max-width: 767px){ 
     .menSuperior{
         font-size: 12px;
+        font-size: 11px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
     }
 }

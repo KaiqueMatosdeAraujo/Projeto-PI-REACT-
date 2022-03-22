@@ -22,7 +22,7 @@ function Assessments() {
                         <div class="container row">
 
                             <br />
-                            <div class="col-12">De modo geral, qual foi sua experiência em comprar na Pimpolhos ?
+                            <div class="col-12 dentro">De modo geral, qual foi sua experiência em comprar na Pimpolhos ?
 
                                 <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                                     <option selected>Selecione como se sente.</option>
