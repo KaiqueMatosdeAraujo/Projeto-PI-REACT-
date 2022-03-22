@@ -1,13 +1,4 @@
-*{
-    /* font-family: 'Roboto Mono', monospace; */
-    font-family: 'Comfortaa', cursive;
-    max-width: 100%;
-    
-}
 
-body{
-    background-color: white;
-}
 
 .backgroundH{
     outline: 1px solid rgba(0,0,0,.125);

@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Roboto+Mono:wght@200;300&display=swap');
-
-*{
-    /* font-family: 'Roboto Mono', monospace; */
-    font-family: 'Comfortaa', cursive;
-}
 
 .hr-title{
     width: 300px;

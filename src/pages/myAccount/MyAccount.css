@@ -1,16 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
-
-*{
-    max-width: 100%;
-}
-
-body{
-    background-color: #ffcedf8f;
-    padding:0px;
-    margin:0px;
-    font-family: 'Comfortaa', cursive;
-}
 
 .num{
     font-size: 18px;
