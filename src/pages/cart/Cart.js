@@ -7,6 +7,8 @@ import BannerFreight from '../../components/freightBanner/FreightBanner'
 import Nav from '../../components/nav/Nav'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
+import Delivery from "../delivery/Delivery";
+import Product from "../product/Product";
 
 import ItemCart from '../../components/itemCart/itemCart'
 
@@ -54,18 +56,13 @@ function Cart(props) {
                         <p>Total: R$899,90</p>
                     </div>
                     <div className="cart-action-button">
-                        <Link to href="">Continuar comprando</Link>
-                        <Link to href="" className="btn-main">Finalizar compra</Link>
+                        <Link to="/Product" className="btn-main">Continuar comprando</Link>
+                        <Link to="/Delivery" className="btn-main">Finalizar compra</Link>
                     </div>
 
                 </div>
 
             </div>
-
-
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                crossorigin="anonymous"></script>
             <RelatableProductsContainer />
             <br />
             <Footer />

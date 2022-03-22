@@ -26,7 +26,7 @@ function MyRequests(props) {
                             <hr />
 
                             <div className="d-flex">
-                                <img src={cart} alt="" className='cart' />
+                                <img src={cart} alt="" className="cartimG" />
                                 <p className="dados-pedido-title">Dados do pedido:</p>
                             </div>
 

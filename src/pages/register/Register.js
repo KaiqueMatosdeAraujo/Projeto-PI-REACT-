@@ -15,7 +15,7 @@ function Register() {
             <Nav/>
             <div className="container-fluid mt-5">
                 <div className="row justify-content-center rowCentralized">
-                    <div className="card border-card col-11 col-md-10 col-lg-6">
+                    <div className="card card-form border-card col-11 col-md-10 col-lg-6">
                         <div className="row justify-content-center rowCentralized">
                             <div className="col-12 col-md-12 col-lg-11">
                                 <div className="row justify-content-center ">
@@ -44,6 +44,14 @@ function Register() {
                                                 <label className="mb-2 mt-2" for="usuario">Data Nascimento:</label>
                                                 <input type="text" className="form-control " placeholder="Insira a data de nascimento" />
                                             </div>
+                                            <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5">
+                                                <label className="mb-2 mt-2" for="usuario">Telefone:</label>
+                                                <input type="tel" className="form-control" placeholder="Insira o telefone" />
+                                            </div>
+                                            <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5">
+                                                <label className="mb-2 mt-2" for="usuario">Celular:</label>
+                                                <input type="cel" className="form-control" placeholder="Insira o celular" />
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="form-group font-weight-bold mb-2 mt-3 col-11 custom-input">
@@ -56,14 +64,17 @@ function Register() {
                                     </div>
                                     <div className="col-11">
                                         <div className="row custom-input">
+                                       
                                             <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5">
                                                 <label className="mb-2 mt-2" for="usuario">Senha:</label>
                                                 <input type="password" className="form-control" placeholder="Insira a senha" />
                                             </div>
+                                          
                                             <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5 input-media">
                                                 <label className="mb-2 mt-2" for="usuario">Confirme a senha:</label>
                                                 <input type="password" className="form-control" placeholder="Confirme a senha" />
                                             </div>
+                                           
                                         </div>
                                     </div>
                                     {/*<div className="d-flex justify-content-center">

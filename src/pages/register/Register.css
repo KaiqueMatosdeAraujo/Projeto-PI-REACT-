@@ -62,24 +62,26 @@
 }
 
 
-
+@media(max-width: 992px){
+     
+    .card-form{
+        margin-right: 4%;
+        padding-right: 23px;
+    }
+}
 
 @media (max-width: 767px){ 
 
+    
+    .card-form{
+        margin-right: 8%;
+        padding-right: 23px;
+    }
 
 
 
     .custom-input{
         display: block !important;
-
-    
-          
-            
-    
-
-          
-    
-    
   
     }
     .input-login{
