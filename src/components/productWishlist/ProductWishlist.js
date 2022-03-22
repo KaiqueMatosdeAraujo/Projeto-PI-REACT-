@@ -8,7 +8,7 @@ function ProductWishlist(props) {
       <div className="cardContent">
         <div className="produtoFav">
           <div className="col-md-2 col-8 ">
-            <img src={ props.image } width="75%" />
+            <img  className="BabyImage" src={ props.image } width="75%" />
           </div>
           <div className="col-sm-10 col-lg-5">
             <ul type="none">

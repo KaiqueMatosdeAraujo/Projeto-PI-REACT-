@@ -241,10 +241,22 @@ h1{
     }
 }
 
+@media (max-width:800px){
+.cartimG {
+    width: 5%;
+    height: 35px;
+}
+}
+@media (max-width:500px){
+.produtoFav{
+    justify-content:space-evenly;
 
-
-
-
+}
+.cartimG {
+    width: 11%;
+    height: 35px;
+}
+}
 
 
 
