@@ -1,310 +1,301 @@
-
-
-
-
 .produtosFav.row{
-  align-content: center;
-  flex-direction: column;
-}
-
-
-.dentro{
-    margin: 55px;
-}
-
-
-hr{
-    margin-right: 10px;
-}
-
-.foto-avaliacao{
-    width: 30px;
-    height: 30px;
-}
-
-
-
-.tab-content{
-    background-color: white;
-    padding:10px;
-    outline:1px solid rgb(199, 199, 199);
-    margin-bottom: 20px;
-    }
-    
-    .nav-item.principal{
-       outline:0.5px solid rgb(199, 199, 199);
-        background-color: #ffc79279;
-        border-top-right-radius:10px;
-        border-top-left-radius:10px;
-        
-    }
-    .nav-link.principal{
-        color:rgb(0, 0, 0);
-        font-weight:bold;
-    }
-    .nav-link.principal:active{
-        border-top-right-radius:10px;
-        border-top-left-radius:10px;
-        color:rgb(0, 0, 0);
-    }
-    .nav-link.principal:hover{
-       
-       color:rgb(255, 255, 255);
-        
-    }
-    .nav-item.principal  .nav-link{
-        font-weight: bold;
-        color:black
-    }
-    .nav-link.active.principal{
-         text-decoration-color: black;
-        border-top-right-radius:12px;
-        border-top-left-radius:12px;
-    }
-    
-    .titleCard{
-        padding: 5px;
-        outline: 0.5px solid rgb(199, 199, 199);
-        border-radius:8px;
-    }
-    
-    
-    
-    #titleCardMinhaConta h1{
-        font-size:25px;
-        font-weight: bold;
-        margin-bottom:20px;
-    }
-    
-    .container.row{
-        flex-direction: row;
-        justify-content: space-around;
-        
-    }
-    
-    h1{
-        font-weight: bold;
-        margin-top: 20px;
-        margin-left:10px
-    }
-    
-   .dentro{
-       margin: 55px;
-   }
-   
-    .cardContentTitleDC{
-        font-size:  20px;
-       font-weight: bold;
-       margin-left: 50px;
-       margin-top: 20px;
-    }
-    .cardContent{
-     
-        border: 0.5px solid rgb(199, 199, 199);
-        border-radius:8px;
-        padding: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    
-    
-    
-    
-    .input-group-text{
-        border:2px solid transparent;
-        height: 30px;
-        background-color:transparent;
-    }
-    .form-control{
-        font-size: 11px;
-       
-        
-    }
-    .form-control:disabled{
-        background-color: #e9e9e9a8;
-        border:2px solid transparent;
-    }
-    Label{
-        font-size: 11px;
-        
-    }
-    
-    .titleContainersecondary{
-        font-weight: bold;
-    }
-    
-    /* Endereço Principal*/
-    .titleContainer{
-        align-items: flex-end;
-    }
-    .textoapoio{
-        font-size: 11px;
-    }
-    
-    #AdicionarEnde{
-        margin-left: -117px;
-      
-    }
-    
-    .btn:focus{
-        box-shadow: none;
-    }
-    .cancelar{
-    background-color: rgb(172, 172, 172);
-    color: rgb(255, 255, 255);
-    }
-    
-    .salvar{
-        background-color: rgb(165, 201, 243);
-        color: rgb(255, 255, 255);
-    }
-    
-    .cancelar:hover{
-        background-color: rgb(134, 134, 156);
-        color: rgb(255, 255, 255);
-    }
-    .salvar:hover{
-        background-color: rgb(123, 164, 211);
-        color: rgb(255, 255, 255);
-    
-    }
-    .edit{
-        background-color: #74b9ff ;
-        color: rgb(255, 255, 255);
-        border-radius: 10px;
-    }
-    .edit:hover{
-        background-color: #74b9ff ;
-        color: rgb(255, 255, 255);
-    }
-    
+    align-content: center;
+    flex-direction: column;
+  }
   
-
-    
-    
-    .cardContent.row.modalEndereco{
-    justify-content:space-between;
-    }
-    .btn.lupa{
-    background-color: rgb(177, 236, 217);
-    
-    }
-    
-    .row.cepteste{
-        flex-wrap: nowrap;
-    }
-    
-    .cartaocadastrado{
-        height:30px;
-        
-    }
-    
-    .inputAddEndereco {
-        margin-top: 15px;
-    }
-    
-    
-    .imgApoio{
-        width:100%;
-        margin-top: -5px;
+  
+  
+  .dentro{
+      margin: 55px;
+  }
+  
+  
+  hr{
+      margin-right: 10px;
+  }
+  .foto-avaliacao{
+      width: 30px;
+      height: 30px;
+  }
+  .tab-content{
+      background-color: white;
+      padding:10px;
+      outline:1px solid rgb(199, 199, 199);
+      margin-bottom: 20px;
+      }
       
-    }
-    .emotes{
-        margin-right: 5px;
-    }
-    
-
-    
-    .nomeCartao{
-        font-size: 19px;
-        margin-top: 27px;
-    }
-    .helpCard{
-    
-        margin: -33px 10px 0px 103px;
-        font-size: 22px;
-        color: black;
-        text-decoration: none;
-    }
-    
-    .navtabContainer{
-       margin-top: 20px;
-    }
-    
-    @media (max-width: 820px){
-        .nav-item.principal{
-            width: 25%;  
-            height: 42px;
-            font-size: 12px;   
-        }
-    
-        .cartFake{
-            margin: 30px 0px 30px 50px;
-        }
-    
-        .Cadastro{
-            font-size: 15px;
-        }
-    }
-    
-    @media(max-width:520px){
-    
-        .row .teste{
-            
-            flex-direction: row;
-            justify-content:space-between;
-        }
-        .row.titleContainer{
-            justify-content: space-between;
-            flex-direction: row;
-        }
-        
-    }
-    
-    @media(max-width: 425px){
-        .nav-item.principal{
-            width: 100%;  
-            height: 42px;
-            font-size: 12px;  
-        }
-    
-        .nav-item.principal button{
-            width: 100%;
-        }
-    
-    
-        .edit{
-            font-size: 11px;
-        }
-    
-        .cadastraNVC button, .cadastraNVE button {
-            font-size: 11px;
-        }
-    
-        .dadosCadastrais{
-            width: 100%;
-            padding: 0px;
-        }
-        
-        .teste input{
-            width: 100px;
-        }
-    
-        #AdicionarEnde{
-            font-size: 9px;
+      .nav-item.principal{
+         outline:0.5px solid rgb(199, 199, 199);
+          background-color: #ffc79279;
+          border-top-right-radius:10px;
+          border-top-left-radius:10px;
           
-        }
-        .cardContentTitleDC{
-            font-size:  15px;
-           
-        }
+      }
+      .nav-link.principal{
+          color:rgb(0, 0, 0);
+          font-weight:bold;
+      }
+      .nav-link.principal:active{
+          border-top-right-radius:10px;
+          border-top-left-radius:10px;
+          color:rgb(0, 0, 0);
+      }
+      .nav-link.principal:hover{
+         
+         color:rgb(255, 255, 255);
+          
+      }
+      .nav-item.principal  .nav-link{
+          font-weight: bold;
+          color:black
+      }
+      .nav-link.active.principal{
+           text-decoration-color: black;
+          border-top-right-radius:12px;
+          border-top-left-radius:12px;
+      }
+      
+      .titleCard{
+          padding: 5px;
+          outline: 0.5px solid rgb(199, 199, 199);
+          border-radius:8px;
+      }
+      
+      
+      
+      #titleCardMinhaConta h1{
+          font-size:25px;
+          font-weight: bold;
+          margin-bottom:20px;
+      }
+      
+      .container.row{
+          flex-direction: row;
+          justify-content: space-around;
+  
+      }
+  
+      h1{
+          font-weight: bold;
+          margin-top: 20px;
+          margin-left:10px
+      }
+  
+     .dentro{
+         margin: 55px;
+     }
+  
+      .cardContentTitleDC{
+          font-size:  20px;
+         font-weight: bold;
+         margin-left: 50px;
+         margin-top: 20px;
+      }
+      .cardContent{
+       
+          border: 0.5px solid rgb(199, 199, 199);
+          border-radius:8px;
+          padding: 10px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
+      
+      
+      
+      
+      .input-group-text{
+          border:2px solid transparent;
+          height: 30px;
+          background-color:transparent;
+      }
+      .form-control{
+          font-size: 11px;
+         
+          
+      }
+      .form-control:disabled{
+          background-color: #e9e9e9a8;
+          border:2px solid transparent;
+      }
+      Label{
+          font-size: 11px;
+          
+      }
+      
+      .titleContainersecondary{
+          font-weight: bold;
+      }
+      
+      /* Endereço Principal*/
+      .titleContainer{
+          align-items: flex-end;
+      }
+      .textoapoio{
+          font-size: 11px;
+      }
+      
+      #AdicionarEnde{
+          margin-left: -117px;
+        
+      }
+      
+      .btn:focus{
+          box-shadow: none;
+      }
+      .cancelar{
+      background-color: rgb(172, 172, 172);
+      color: rgb(255, 255, 255);
+      }
+      
+      .salvar{
+          background-color: rgb(165, 201, 243);
+          color: rgb(255, 255, 255);
+      }
+      
+      .cancelar:hover{
+          background-color: rgb(134, 134, 156);
+          color: rgb(255, 255, 255);
+      }
+      .salvar:hover{
+          background-color: rgb(123, 164, 211);
+          color: rgb(255, 255, 255);
+      
+      }
+      .edit{
+          background-color: #74b9ff ;
+          color: rgb(255, 255, 255);
+          border-radius: 10px;
+      }
+      .edit:hover{
+          background-color: #74b9ff ;
+          color: rgb(255, 255, 255);
+      }
+      
     
-        .custom-card-content{
-            margin-left: 19px;
-        }
-    
-        .edit{
-            margin-left: 28px;
-        }
-    
-    }
+      
+      
+      .cardContent.row.modalEndereco{
+      justify-content:space-between;
+      }
+      .btn.lupa{
+      background-color: rgb(177, 236, 217);
+      
+      }
+      
+      .row.cepteste{
+          flex-wrap: nowrap;
+      }
+      
+      .cartaocadastrado{
+          height:30px;
+          
+      }
+      
+      .inputAddEndereco {
+          margin-top: 15px;
+      }
+      
+      
+      .imgApoio{
+          width:100%;
+          margin-top: -5px;
+        
+      }
+      .emotes{
+          margin-right: 5px;
+      }
+      
+      
+      .nomeCartao{
+          font-size: 19px;
+          margin-top: 27px;
+      }
+      .helpCard{
+      
+          margin: -33px 10px 0px 103px;
+          font-size: 22px;
+          color: black;
+          text-decoration: none;
+      }
+      
+      .navtabContainer{
+         margin-top: 20px;
+      }
+      
+      @media (max-width: 820px){
+          .nav-item.principal{
+              width: 25%;  
+              height: 42px;
+              font-size: 12px;   
+          }
+      
+          .cartFake{
+              margin: 30px 0px 30px 50px;
+          }
+      
+          .Cadastro{
+              font-size: 15px;
+          }
+      }
+      
+      @media(max-width:520px){
+      
+          .row .teste{
+              
+              flex-direction: row;
+              justify-content:space-between;
+          }
+          .row.titleContainer{
+              justify-content: space-between;
+              flex-direction: row;
+          }
+          
+      }
+      
+      @media(max-width: 425px){
+          .nav-item.principal{
+              width: 100%;  
+              height: 42px;
+              font-size: 12px;  
+          }
+      
+          .nav-item.principal button{
+              width: 100%;
+          }
+      
+      
+          .edit{
+              font-size: 11px;
+          }
+      
+          .cadastraNVC button, .cadastraNVE button {
+              font-size: 11px;
+          }
+      
+          .dadosCadastrais{
+              width: 100%;
+              padding: 0px;
+          }
+          
+          .teste input{
+              width: 100px;
+          }
+      
+          #AdicionarEnde{
+              font-size: 9px;
+            
+          }
+          .cardContentTitleDC{
+              font-size:  15px;
+             
+          }
+      
+          .custom-card-content{
+              margin-left: 19px;
+          }
+      
+          .edit{
+              margin-left: 28px;
+          }
+      
+      }

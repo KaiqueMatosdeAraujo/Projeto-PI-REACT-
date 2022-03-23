@@ -1,23 +1,24 @@
 .paginacao{
-    width: 40px;
-    color: gray;
-    padding: 6px;
-    align-items: center;
-    font-weight: bold;
+   width: 40px;
+   color: gray;
+   padding: 6px;
+   align-items: center;
+   font-weight: bold;
 }
 
 .paginacao:hover {
-   color: gray;
+  color: gray;
 }
 
 .paginacao1 {
-   display: flex;
-   justify-content:center;
-}
+  display: flex;
+  justify-content:center;
+} 
+
 
 .page-link:hover {
-   z-index: 2;
-   color: gray;
-   background-color: #e9ecef;
-   border-color: none;
+  z-index: 2;
+  color: gray;
+  background-color: #e9ecef;
+  border-color: none;
 }

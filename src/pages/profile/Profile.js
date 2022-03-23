@@ -80,7 +80,6 @@ function Profile() {
                         methodPayment="Cartão de Crédito"
                         cardNumber="5622 XXXX XXXX XXXX 1589"
                     />
-                    <MoreDetails />
                    <MyAccount/>
                    <Wishlist/>
                 </div>

@@ -17,6 +17,10 @@ import checklist from './img-myAccount/checklist.png'
 import desejos from './img-myAccount/desejos.png'
 import user from './img-myAccount/user.png'
 import { Link } from 'react-router-dom'
+import LogoMaster from '../delivery/imgs/logo-mastercard-4096.png'
+import LogoAmerican from '../delivery/imgs/logo-american-express-4096.png'
+import LogoVisa from '../delivery/imgs/logo-visa-4096.png'
+import ChipCartaoCred from '../delivery/imgs/chip-de-cartao-de-credito.png'
 
 import {useState} from 'react'
 
@@ -455,94 +459,105 @@ function MyAccount() {
                             {/* <!--Modal Cartão--> */}
 
                             <div className="modal fade" id="novocartao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div className="modal-dialog">
+                            <div className="modal-dialog">
                                     <div className="modal-content">
-                                        <div className="modal-header myprofileModal">
-                                            <div className="modalcontentTitle" id="exampleModalLabel">Novo Cartão</div>
-                                            <button type="button" className="btn modalclose" data-bs-dismiss="modal" aria-label="Close">x</button>
-                                        </div>
-                                        <div className="modal-body">
-                                            <div className="pag">
-                                                <div className="row">
-                                                    <div className=" imagens col-12">
-                                                        <a href="#"><img src={mastercard} width="7%" /></a>
-                                                        <a href="#"> <img src={visa} width="34px" /></a>
-                                                        <a href="#"> <img src={american} width="34px" /></a>
-                                                        <a href="#"> <img src={elo} width="34px" /></a>
-                                                        <a href="#"> <img src={hipercard} width="42px" /></a>
-                                                    </div>
+                                        <div className="pag">
+                                            <div className="row">
+                                                <div className=" imagens col-8">
+                                                    <img src={LogoMaster} width="7%" />
+                                                    <img src={LogoAmerican} width="7%" />
+                                                    <img src={LogoVisa} width="7%" />
+
                                                 </div>
-                                                <hr />
-                                                <div className="row">
-                                                    <div className="cartFake col-9">
-                                                        <div className="row">
-                                                            <div className="col-3">
-                                                                <img src={chip} alt="" />
-                                                            </div>
-                                                        </div><br />
-                                                        <div className="row">
-                                                            <div className="num col-8">
-                                                                <strong>5858 6858 6989 5875</strong>
-                                                            </div>
-                                                        </div>
-                                                        <div className="row">
-                                                            <div className="nomeCartao col-7">
-                                                                <strong>Osvaldo Silva</strong>
-                                                            </div>
-                                                            <div className="data col-3">
-                                                                <strong>05/25</strong>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="form">
+                                                <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <hr />
+                                            <div className="row">
+                                                <div className="cartFake col-10 col-md-8">
                                                     <div className="row">
-                                                        <div className=" col-8">
-                                                            <label for=""><strong>Número do cartão</strong> </label>
-                                                            <input className="form-control form-control-lg" type="" placeholder="5858 6858 6989 5875"
-                                                                aria-label=".form-control-lg example" />
-                                                            <br />
+                                                        <div className="col-3">
+                                                            <img src={ChipCartaoCred} alt="" />
                                                         </div>
-
-                                                        <div className=" col-4">
-                                                            <label for=""><strong>Validade</strong> </label>
-                                                            <input className="form-control form-control-lg" type="" placeholder="05/25"
-                                                                aria-label=".form-control-lg example" />
-                                                            <br />
-
+                                                    </div>
+                                                    <div className="row">
+                                                        <div className="num col-10">
+                                                            <strong>5858 6858 6989 5875</strong>
                                                         </div>
-
-                                                        <div className="row">
-                                                            <div className="col-12">
-                                                                <label for=""><strong>Nome do Títular</strong> </label>
-                                                                <input className="form-control form-control-lg" type="" placeholder="Osvaldo Silva"
-                                                                    aria-label=".form-control-lg example" />
-                                                                <br />
-
-                                                            </div>
-
-                                                            <div className="row">
-                                                                <div className="col-3">
-                                                                    <label for=""><strong>Cod. Seg</strong> </label>
-                                                                    <input className="form-control form-control-lg" type="" placeholder="CCV"
-                                                                        aria-label=".form-control-lg example" />
-                                                                </div>
-                                                                <a className="helpCard" href="">?</a>
-
-
-
-                                                            </div>
-                                                            <div className="modal-footer Card">
-                                                                <button type="button" className="btn cancelar" data-bs-dismiss="modal">Cancelar</button>
-                                                                <button type="button" className="btn salvar" data-bs-dismiss="modal">Salvar</button>
-                                                            </div>
+                                                    </div>
+                                                    <div className="row">
+                                                        <div className="nome col-7 col-md-6">
+                                                            <strong>Osvaldo Silva</strong>
+                                                        </div>
+                                                        <div className="dataCard col-2 col-md-4">
+                                                            <strong>05/25</strong>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div className="form">
+                                                <div className="row">
+                                                    <div className=" col-8 col-md-8">
+                                                        <label for=""><strong>Número do cartão</strong> </label>
+                                                        <input className="form-control form-control-lg" type=""
+                                                            placeholder="5858 6858 6989 5875"
+                                                            aria-label=".form-control-lg example" />
+                                                        <br />
+                                                    </div>
+
+                                                    <div className=" col-4 col-md-4">
+                                                        <label for=""><strong>Validade</strong> </label>
+                                                        <input className="form-control form-control-lg" type="" placeholder="05/25"
+                                                            aria-label=".form-control-lg example" />
+                                                        <br />
+                                                    </div>
+                                                </div>
+
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <label for=""><strong>Nome do Títular</strong> </label>
+                                                        <input className="form-control form-control-lg" type=""
+                                                            placeholder="Osvaldo Silva" aria-label=".form-control-lg example" />
+                                                        <br />
+                                                    </div>
+                                                </div>
+
+                                                <div className="row">
+                                                    <div className="col-4 col-md-3">
+                                                        <label for=""><strong>Cod. Seg</strong> </label>
+                                                        <input className="form-control form-control-lg" type="" placeholder="CCV"
+                                                            aria-label=".form-control-lg example" />
+                                                    </div>
+                                                    <a className="col-4" href=""><strong>?</strong></a>
+
+                                                    <div className="col-7 col-md-8">
+                                                        <label for=""><strong>Parcelas</strong> </label>
+                                                        <br />
+                                                        <select className="form-select" aria-label="Default select example">
+                                                            <option selected>Selecione</option>
+                                                            <option value="1">1x de R$549,99</option>
+                                                            <option value="2">2x de R$274,95</option>
+                                                            <option value="3">3x de R$183,33</option>
+                                                            <option value="4">4x de R$137,49</option>
+                                                            <option value="5">5x de R$109,99</option>
+                                                            <option value="6">6x de R$91,66</option>
+                                                            <option value="7">7x de R$78,57</option>
+                                                            <option value="8">8x de R$68,74</option>
+                                                            <option value="9">9x de R$61,11</option>
+                                                            <option value="10">10x de R$54,99</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div className="row">
+                                                    <div className="addPagamento col-12">
+                                                        <button><strong>Adicionar Pagamento</strong></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

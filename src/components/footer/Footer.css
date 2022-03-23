@@ -145,10 +145,10 @@ a, .nav-link .nav{
     }
 
     .accordion-button:not(.collapsed) {
-        color: #ffffff;
-        background-color: transparent;
-        box-shadow: none;
-    }
+    color: #ffffff;
+    background-color: transparent;
+    box-shadow: none;
+}
 
     .accordion-button:focus {
         z-index: 3;
