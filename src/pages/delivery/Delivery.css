@@ -1,20 +1,4 @@
 
-
-
-.menSuperior{
-    background-color: #F7D794;
-    text-align: center;
-    color: white;
-    height: 25px;
-    font-family: 'Dancing Script', cursive;
-    width: 1400px;
-    
-}
-
-.btn-close.fechar3 {    
-    margin-top: -1%;
-    background-color:white;
-}
 .btn-close.fechar {    
     margin-top: 0%;
     background-color: white;
@@ -23,53 +7,13 @@
 .btn-close.fechar:active {
      background-color:white;
 }
-.btn-close.fechar2:active {
-    background-color:white;
-}
-.btn-close.fechar2{
-    margin-left: 422px;
-    background-color:white;
-}
-.btn-close.fechar2:hover{
-    background-color:white;
-}
+
 .btn-close.fechar:hover{
 
     background-color:white;
 }
 
-/* <!-- NAV--> */
 
-/* .menu{
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Comfortaa', cursive;
-    background-color: white;
-    width: 100%;
-    
-}
-
-.menu-a li a, .dropdown-toggle{
-    list-style: none;
-    text-decoration-line: none;
-    color: #E6889A;
-    font-weight: bold;
-    margin: 0px 60px;
-}
-
-.menu-a li a:hover{
-    color: grey;
-}
-
-.dropdown-toggle:hover{
-    color:grey;
-}
-
-.dropdown-toggle{
-padding: 0.5rem 1rem;
-text-decoration-line: none;
-} */
-/* <!-- FINAL NAV --> */
 
 
 /* <!-- RESUMO --> */
@@ -282,7 +226,7 @@ width:50%;
 }
 
 
-.form{
+.formCard{
     margin: 20px 10px 20px 10px;
     font-size: 16px;
 }
@@ -643,10 +587,6 @@ div.boleto img{
     
     }
 
-    .card{
-        font-size: 9px;
-        padding: 6px;
-    }
 
     .btnFinalizarCompra button{
         font-size: 16px;

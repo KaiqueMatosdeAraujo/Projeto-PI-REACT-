@@ -530,7 +530,7 @@ function Delivery(props) {
                                             </div>
                                             <div className="col-9 col-md-8 col-lg-10">
                                                 <ul type="none">
-                                                    <li><strong>Nubank **** 4135</strong></li>
+                                                    <li><strong>**** **** 4135</strong></li>
                                                     <li>Você pagara 10x de R$ 54,99</li>
                                                 </ul>
                                             </div>
@@ -543,7 +543,7 @@ function Delivery(props) {
                             <div className="row justify-content-center">
 
                                 <div className="btnFinalizarCompra col-6">
-                                    <a href="../sucesso-compra/index.html"><button><strong>Finalizar Compra</strong></button></a>
+                                <Link to="../successPurchase"> <button><strong>Finalizar Compra</strong></button></Link>
                                 </div>
 
                             </div>
