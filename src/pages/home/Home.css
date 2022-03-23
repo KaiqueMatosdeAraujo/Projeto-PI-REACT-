@@ -8,3 +8,10 @@
     margin-bottom: 50px;
     margin-left: 17px;
 }
+
+.cards-home{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
