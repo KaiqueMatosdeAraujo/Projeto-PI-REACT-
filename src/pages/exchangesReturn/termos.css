@@ -2,7 +2,12 @@
 
 .Principal{
   margin-left:35px;
+  color:black;
 
+}
+
+.global{
+    background-color:#fdcfd8;
 }
 br {
     background-color: white;
@@ -12,6 +17,7 @@ p {
     
      /* text-align: start; */
      font-family: 'Comfortaa', cursive;
+     color:black;
     }
 
 b { 
