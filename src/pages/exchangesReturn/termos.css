@@ -5,7 +5,7 @@
 }
 
 .global{
-    background-color:#ffcedf8f;
+    background-color:white;
 }
 br {
     background-color: white;
@@ -17,16 +17,16 @@ br {
     background-color:white;
 }
 .titulo2{
-    color:rgb(247, 93, 119);
+    color:#E6889A;
 }
 .titulo{
-    color:rgb(247, 93, 119);
+    color:#E6889A;
 }
-p {
-    
+.texto {
+    color:black;
      /* text-align: start; */
      font-family: 'Comfortaa', cursive;
-     color: black;
+    
     }
 
 b { 

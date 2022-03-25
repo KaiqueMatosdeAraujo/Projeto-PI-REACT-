@@ -16,7 +16,10 @@ padding-top: 10px;
 .num{
     font-size: 18px;
 }
-
+.imgLocation{
+    width:6%;
+    
+}
 .data{
     margin-top: 26px;
 }
@@ -211,7 +214,7 @@ background-color: rgb(177, 236, 217);
 }
 .imgLocation{
     height: 4%;
-    width: 4%;
+    width: 6%;
 }
 .row.cepteste{
     flex-wrap: nowrap;
@@ -266,6 +269,10 @@ background-color: rgb(177, 236, 217);
         display:flex;
         flex-direction: row;
         justify-content:space-evenly;
+    }
+    .imgLocation{
+        width: 8%;
+        
     }
     .row .teste{
         
