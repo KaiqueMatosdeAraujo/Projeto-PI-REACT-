@@ -1,6 +1,16 @@
 
+.title-wishlist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
+.wishlist-title{
+display: flex;
+align-items: center;
+justify-content: center;
+color: gray;
+}
 
 ul{
     line-height: 2;
@@ -159,6 +169,6 @@ h1{
     display: flex;
     align-items: center;
     width: 35%;
-    margin-left: 173px;
+    margin-left: 60%;
     }
 }

@@ -1,10 +1,12 @@
 import './Wishlist.css'
-import Header from '../../components/header/Header'
-import Footer from '../../components/footer/Footer'
+
 import bebe1 from './img_wishlist/bebe1.png'
 import bebe2 from './img_wishlist/bebe2.jpg'
 import bebe3 from './img_wishlist/bebe3.jpg'
 import ListProduct from '../../components/productWishlist/ProductWishlist'
+import Header from '../../components/header/Header'
+import Nav from '../../components/nav/Nav'
+import Footer from '../../components/footer/Footer'
 
 
 
@@ -12,12 +14,13 @@ function Wishlist() {
     return (
         <>
           
+            <Header/>
+            <Nav/>
+            {/* <div className="titleCard" id="titleCardMinhaConta"> */}
 
-            <div className="titleCard" id="titleCardMinhaConta">
-
-                <div className="nome row">
+                <div className="title-wishlist row">
                     <div className="col-12">
-                        <h1>Lista de Desejos</h1>
+                        <h2 className='wishlist-title'>Lista de Desejos</h2>
                     </div>
                 </div>
 
@@ -32,8 +35,8 @@ function Wishlist() {
                         </div>
                     </div>
                 </div>
-            </div>
-
+            {/* </div> */}
+        <Footer/>
          
         </>
     )
