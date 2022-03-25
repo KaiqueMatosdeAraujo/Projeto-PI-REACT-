@@ -1,6 +1,6 @@
-body {
+/* body {
     background-color: #9abdff;
-}
+} */
 .btn-close.fechar3 {    
     margin-top: -1%;
     background-color:white;
@@ -634,10 +634,6 @@ div.boleto img{
     
     }
 
-    .card{
-        font-size: 9px;
-        padding: 6px;
-    }
 
     .btnFinalizarCompra button{
         font-size: 16px;

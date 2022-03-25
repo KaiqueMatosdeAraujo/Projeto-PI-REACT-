@@ -19,7 +19,7 @@ function Register() {
                         <div className="row justify-content-center rowCentralized">
                             <div className="col-12 col-md-12 col-lg-11">
                                 <div className="row justify-content-center ">
-                                    <div className="col-2">
+                                    <div className="col-2 col-mobile">
                                         <div className="col-12">
                                             <img src={babyCadastro} alt="" className='user-cadastro' />
                                         </div>
@@ -77,9 +77,7 @@ function Register() {
                                            
                                         </div>
                                     </div>
-                                    {/*<div className="d-flex justify-content-center">
-                                    <Link to="/login">  <button type="button" className="btn custom-button">Cadastrar</button></Link>
-                                    </div>*/}
+
                                     <SupportButton 
                                         class="d-flex justify-content-center"
                                         link="/login"

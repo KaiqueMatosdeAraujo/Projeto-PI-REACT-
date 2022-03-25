@@ -3,29 +3,14 @@
 .backgroundH{
     outline: 1px solid rgba(0,0,0,.125);
 }
+
 .user-login{
-    width: 49px;
+    /* width: 49px; */
     height: 44px;
     position: relative;
     left: 12px;
     margin-top: 15px;
 }
-
-.custom-button{
-    background-color: #9ACCFF;
-    width: 210px;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    /* border-radius: 30%; */
-    height: 40px;
-    text-align: center;
-    /* padding-bottom: 40px; */
-}
-
-
 
 .text-title{
     font-size: 24px;
@@ -68,28 +53,10 @@
         border: none;
         outline: none;
     }
-
-   
-   
-    .card-form{
-        margin-right: 4%;
-        padding-right: 23px;
-    }
 }
 
+
 @media (max-width: 767px){ 
-    
-   
-    .card-form{
-        margin-right: 8%;
-        padding-right: 23px;
-    }
-  
-
-    .custom-button{
-        width: 159px;
-    }
-
     hr{
         width: 260px;
         margin-left: 13px;
@@ -97,5 +64,11 @@
 
     .text-title{
         font-size: 19px;
+    }
+}
+
+@media (min-width: 768px){
+    .user-login{
+        left: 30px;
     }
 }

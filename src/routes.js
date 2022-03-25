@@ -15,7 +15,7 @@ import MyAccount from './pages/myAccount/MyAccount'
 import ForgotPassword from './pages/forgotPassword/ForgotPassword'
 import Register from './pages/register/Register'
 import UpdatePassword from "./pages/updatePassword/UpdatePassword";
-import Assessments from "./pages/assessments/Assessments";
+import Assessments from "./components/assessments/Assessments";
 import MoreDetails from './components/moreDetails/MoreDetails'
 import Delivery from './pages/delivery/Delivery'
 import ExchangesReturn from './pages/exchangesReturn/exchangesReturn'

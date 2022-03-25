@@ -10,8 +10,13 @@
     height: 126;
 }
 
-.infosBebe-mais-detalhes{
-    margin-left: 130px;
+.div-infosBebe{
+    justify-content: space-between;
+    margin-top: 8%;
+}
+
+.row-modal-moreDetails{
+    display: flex;
 }
 
 .container-mais-detalhes-endereco{
@@ -19,9 +24,9 @@
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    width: 500px;
+    /* width: 500px; */
     height: 235px;
-    margin-right: 20px;
+    margin-right: 57px; 
 }
 
 .container-mais-detalhes-pagamento{
@@ -29,7 +34,7 @@
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    width: 500px;
+    /* width: 500px; */
 }
 
 .p-cidade{
@@ -41,7 +46,7 @@
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    width: 460px;
+    /* width: 460px; */
 }
 
 .title-container{
@@ -57,11 +62,11 @@
     border: 1px solid #E7E6E6;
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px;
-    width: 500px;
-    margin-right: 579px;
-    margin-top: -144px;
-    height: 123px;
+    /* margin-bottom: 20px; */
+    /* width: 500px; */
+    /* margin-right: 54%; */
+    margin-top: 14%;
+    margin-top: 8%;
 }
 
 .container-status-pagamento p{
@@ -79,7 +84,69 @@
         margin-top: 0px;
     }
 
-    .infosBebe-mais-detalhes{
+    /* .infosBebe-mais-detalhes{
         margin-left: 53px;
+    } */
+}
+
+@media (max-width:768px){
+    .container-status-pagamento{
+        padding: 8px;
+        margin-top: 10%;
+    }
+
+    .container-status-pagamento p{
+        font-size: 21px;
+    }
+
+    .title-container{
+        font-size: 18px;
+    }
+
+    .p-container{
+        font-size: 18px;
+    }
+
+    .bairro-cidade{
+        display: block !important;
+    }
+
+    .p-cidade{
+        margin-left: 0px;
+    }
+
+    .container-mais-detalhes-endereco{
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px){
+    .div-infosBebe{
+        display: block !important;
+        /* margin-left: 21%; */
+    }
+
+    .infosBebe-mais-detalhes{
+        margin-top: 20%;
+    }
+
+    .container-status-pagamento p{
+        font-size: 18px;
+    }
+
+    .title-container{
+        font-size: 14px;
+    }
+
+    .bairro-cidade{
+        display: block !important;
+    }
+
+    .p-cidade{
+        margin-left: 0px;
+    }
+
+    .title-pedido{
+        font-size: 16px;
     }
 }

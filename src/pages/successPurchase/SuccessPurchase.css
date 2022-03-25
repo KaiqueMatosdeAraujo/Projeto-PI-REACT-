@@ -116,12 +116,12 @@ hr{
     width: 170px;
     margin-left: 81px;
 }
-.card{
+.cardSuccessPerchase{
     margin-left: 27px;
 }
     }
 @media (max-width:767px){
-.card {
+.cardSuccessPerchase {
     font-size: 9px;
     padding: 6px;
     margin-left: 28px;
