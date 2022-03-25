@@ -229,16 +229,16 @@ function Delivery(props) {
                                     <div className="modal-content">
                                         <div className="pag">
                                             <div className="row">
-                                                <div className=" imagens col-8">
-                                                    <img src={LogoMaster} width="7%" />
-                                                    <img src={LogoAmerican} width="7%" />
-                                                    <img src={LogoVisa} width="7%" />
+                                                <div className=" imagens col-10">
+                                                    <img src={LogoMaster} width="10%" />
+                                                    <img src={LogoAmerican} width="10%" />
+                                                    <img src={LogoVisa} width="10%" />
 
                                                 </div>
-                                                <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <button type="button" class="btn-close fechar col-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <hr />
-                                            <div className="row">
+                                            <div className="row cartFake1">
                                                 <div className="cartFake col-10 col-md-8">
                                                     <div className="row">
                                                         <div className="col-3">
@@ -293,9 +293,14 @@ function Delivery(props) {
                                                         <input className="form-control form-control-lg" type="" placeholder="CCV"
                                                             aria-label=".form-control-lg example" />
                                                     </div>
-                                                    <a className="col-4" href=""><strong>?</strong></a>
+                                                    <div className="btnInterrogacao col-2 col-md-3">
+                                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Três últimos números no verso do cartão.">
+                                                            <strong>?</strong>
+                                                        </button>
+                                                    </div>
+                                                    
 
-                                                    <div className="col-7 col-md-8">
+                                                    <div className="col-6 col-md-6">
                                                         <label for=""><strong>Parcelas</strong> </label>
                                                         <br />
                                                         <select className="form-select" aria-label="Default select example">
@@ -359,11 +364,11 @@ function Delivery(props) {
                                     <div className="modal-content">
                                         
                                         <div className="row">
-                                        <div className="imagemPix col-8">
+                                        <div className="imagemPix col-10">
                                             <img src={Pix} width="20%" />
                                         
                                         </div>
-                                        <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close fechar col-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <hr />
 
@@ -424,12 +429,12 @@ function Delivery(props) {
                                 <div className="modal-dialog">
                                     <div className="modal-content">
                                         <div className="row">
-                                        <div className="imagemBoleto col-8">
-                                            <img src={Boleto} width="20%" />
+                                        <div className="imagemBoleto col-10">
+                                            <img src={Boleto} width="25%" />
                                             
                     
                                         </div>
-                                        <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close fechar col-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <hr />
                                         <div className="textBoleto">
@@ -441,8 +446,8 @@ function Delivery(props) {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <ul type="none">
-                                                        <li>O boleto bancário será enviado no seu e-mail após a finalização do
-                                                            pedido.</li>
+                                                        <li>O boleto bancário será gerado no CPF: <strong>568.***.***-72</strong>. </li>
+                                                        <li>E Será enviado no seu e-mail após a finalização do pedido.</li>
                                                     </ul>
                                                 </div>
                                             </div>
