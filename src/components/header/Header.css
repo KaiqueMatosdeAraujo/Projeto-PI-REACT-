@@ -20,9 +20,9 @@
 .input-group-addon{
     display:none;
 }
-.navLinks .nav-link.active:hover{
+.navLinks a.nav-link.active:hover{
 
-    color:rgb(191, 191, 191);
+    color:rgb(151, 228, 238);
     }
 .navLinks a{
     padding:0;
