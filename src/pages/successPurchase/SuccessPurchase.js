@@ -24,7 +24,7 @@ function SucessPurchase(props) {
       <div className="col-md-12">
 
         <div className="container">
-          <div className="card ">
+          <div className="card ContainerCompleto col-12">
 
             <div className="row justify-content-center">
             <img src={ImagemSucesso} alt="" className='img-checked' />

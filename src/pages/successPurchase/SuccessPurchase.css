@@ -2,13 +2,8 @@
     font-family: 'Comfortaa', cursive;
 }
 
-body{
-    background-color: #ffcedf8f;
-}
 
-hr{
-    width: 600px;
-}
+
 .p-sucesso-title{
     text-align: center;
     margin-top: 5px;
@@ -42,14 +37,11 @@ hr{
     margin-top: 15px;
 }
 
-.card-input{
+.ContainerCompleto-input{
     width: 600px;
 }
 
-.custom-input{
-    /* width: 375px; */
-    margin-left: 10px;
-}
+
 
 .custom-label{
     margin-left: 25px;
@@ -68,10 +60,10 @@ hr{
     text-align: center;
     /* padding-bottom: 40px; */
 }
-.custom-input input{
-    font-size: 12px;
-    
+.custom-button1:hover{
+    color: rgb(189, 178, 178);
 }
+
 .segunto-texto{
     margin-left: 56px;
 }
@@ -91,25 +83,26 @@ hr{
 }
 
 .img-checked{
-    width: 158px;
+    width: 133px;
     margin-top: 10px;
-    height: 94px;
+    height: 82px;
     margin-left: 54px;
 }
 
 .p-segunto-texto{
     margin-left: 12px;
+    text-align: center;
 }
 
 @media (max-width: 1200px){
-    .table{
+    .sucessoComprasucessoCompraTable{
         font-size: 13px;
     }
     .img-checked {
-        width: 107px;
-        margin-top: 10px;
-        height: 94px;
-        margin-left: 29px;
+        width: 104px;
+    margin-top: 10px;
+    height: 80px;
+    margin-left: 29px;
     }
     .p-segunto-texto {
         margin-left: 10px;
@@ -126,20 +119,20 @@ hr{
     width: 170px;
     margin-left: 81px;
 }
-.card{
-    margin-left: 27px;
+.ContainerCompleto{
+    margin-left: 11px;
 }
     }
 @media (max-width:767px){
-.card {
+.ContainerCompleto {
     font-size: 9px;
-    padding: 6px;
-    margin-left: 28px;
+    padding: 4px;
+    margin-left: 12px;
 }
 .img-checked {
-    width: 107px;
+    width: 102px;
     margin-top: 10px;
-    height: 94px;
+    height: 80px;
     margin-left: 29px;
 }
 .p-segunto-texto {
@@ -157,7 +150,7 @@ p {
     height: 35px;
     width: 175px;
 }
-.table{
+.sucessoComprasucessoCompraTable{
     margin-left: 8px;
     width: 249px;
     font-size: 11px;
@@ -169,7 +162,7 @@ p {
     height: 35px;
     width: 170px;
 }
-.table{
+.sucessoCompraTable{
     font-size: 13px;
 }
 }
