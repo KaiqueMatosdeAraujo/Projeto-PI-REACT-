@@ -18,6 +18,8 @@
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
+    margin-left: 38px;
+    width: 1007px;
 }
 
 .bebe-mais-detalhes{
@@ -27,6 +29,7 @@
 
 .infosBebe-mais-detalhes{
     margin-left: 130px;
+    
 }
 
 .container-mais-detalhes-endereco{
@@ -35,8 +38,8 @@
     padding: 20px;
     margin-bottom: 20px;
     width: 500px;
-    height: 235px;
-    margin-right: 20px;
+    height: 276px;
+    margin-right: -28px
 }
 
 .container-mais-detalhes-pagamento{
@@ -45,6 +48,7 @@
     padding: 20px;
     margin-bottom: 20px;
     width: 500px;
+    margin-left: 61px;
 }
 
 .p-cidade{
@@ -74,11 +78,11 @@
     padding: 20px;
     margin-bottom: 20px;
     width: 500px;
-    margin-right: 738px;
+    margin-right: 558px;
     margin-top: -144px;
     height: 123px;
+    
 }
-
 .container-status-pagamento p{
     font-size: 25px;
     text-align: center;

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './SuccessPurchase.css'
-import Nav from '../../components/nav/Nav'
 import BannerFreight from '../../components/freightBanner/FreightBanner'
 import ImagemSucesso from './imgs/checked.png'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
+import Nav from '../../components/nav/Nav'
 import SuccessPurschaseItens from '../../components/successPurchaseItens/SuccessPurchaseItens'
 import ItensProducts from '../../components/successPurchaseItens/ItensProducts'
 
@@ -24,7 +24,7 @@ function SucessPurchase(props) {
       <div className="col-md-12">
 
         <div className="container">
-          <div className="card ">
+          <div className="card ContainerCompleto col-12">
 
             <div className="row justify-content-center">
             <img src={ImagemSucesso} alt="" className='img-checked' />

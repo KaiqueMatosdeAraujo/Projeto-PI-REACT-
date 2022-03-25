@@ -10,16 +10,7 @@
 .btn-close.fechar:active {
      background-color:white;
 }
-.btn-close.fechar2:active {
-    background-color:white;
-}
-.btn-close.fechar2{
-    margin-left: 422px;
-    background-color:white;
-}
-.btn-close.fechar2:hover{
-    background-color:white;
-}
+
 .btn-close.fechar:hover{
 
     background-color:white;
@@ -238,7 +229,7 @@ width:50%;
 }
 
 
-.form{
+.formCard{
     margin: 20px 10px 20px 10px;
     font-size: 16px;
 }
@@ -254,7 +245,7 @@ width:50%;
     border: 1px solid #ced4da;
 }
 
-.form option{
+.form option opcaoFrete{
     font-size: 16px;
     font-family: 'Dancing Script', cursive;
 }
@@ -600,10 +591,6 @@ div.boleto img{
     
     }
 
-    .card{
-        font-size: 9px;
-        padding: 6px;
-    }
 
     .btnFinalizarCompra button{
         font-size: 16px;

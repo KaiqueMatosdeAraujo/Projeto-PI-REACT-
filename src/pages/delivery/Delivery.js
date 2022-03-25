@@ -181,7 +181,7 @@ function Delivery(props) {
                                         </div>
                                     </div>
                                     <input type="text" className="form-control" aria-label="Input text com checkbox"
-                                        placeholder="R$0,00         9 dias úteis        Frete Grátis " disabled />
+                                        placeholder="R$0,00         9 dias úteis        Frete Comum " disabled />
                                 </div>
                                 <div className="input-group ">
                                     <div className="input-group-prepend">
@@ -190,7 +190,7 @@ function Delivery(props) {
                                         </div>
                                     </div>
                                     <input type="text" className="form-control" aria-label="Input text com checkbox"
-                                        placeholder="R$15,90         5 dias úteis        Correios " disabled />
+                                        placeholder="R$15,90         5 dias úteis        Frete Expresso " disabled />
                                 </div>
                             </div>
                         </div>
@@ -260,7 +260,7 @@ function Delivery(props) {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="form">
+                                            <div className="formCard">
                                                 <div className="row">
                                                     <div className=" col-8 col-md-8">
                                                         <label for=""><strong>Número do cartão</strong> </label>
@@ -530,7 +530,7 @@ function Delivery(props) {
                                             </div>
                                             <div className="col-9 col-md-8 col-lg-10">
                                                 <ul type="none">
-                                                    <li><strong>Nubank ** 4135</strong></li>
+                                                    <li><strong>**** **** 4135</strong></li>
                                                     <li>Você pagara 10x de R$ 54,99</li>
                                                 </ul>
                                             </div>

@@ -24,7 +24,7 @@ function Footer() {
                     <div class="accordion accordion-flush accordionFooter" id="accordionFlushExample">
                         <div class="accordion-item footerAccordion">
                             <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                     Pimpolhos
                                 </button>
                             </h2>

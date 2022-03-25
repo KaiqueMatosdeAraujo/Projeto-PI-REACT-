@@ -1,13 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
-
-body{
-    margin: 0px;
-    padding: 0px;
-}
-
-
-
-
 
 
 ul{
@@ -240,7 +230,13 @@ h1{
     margin-left: 3px;
     }
 }
+@media (max-width:500px){
+.produtoFav{
+    justify-content:space-evenly;
 
+}   
+
+}
 @media (max-width:500px){
     .produtoFav{
         justify-content:space-evenly;
@@ -264,4 +260,7 @@ h1{
         height: 35px;
     
     }
+
+
 }
+

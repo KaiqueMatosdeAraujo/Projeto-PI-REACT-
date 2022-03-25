@@ -3,14 +3,30 @@
   padding: 30px;
 
 }
+
+.global{
+    background-color:#ffcedf8f;
+}
 br {
     background-color: white;
 }
-
+.containerPrincipal{
+    background-color:white;
+}
+.containerPrincipal1{
+    background-color:white;
+}
+.titulo2{
+    color:rgb(247, 93, 119);
+}
+.titulo{
+    color:rgb(247, 93, 119);
+}
 p {
     
      /* text-align: start; */
      font-family: 'Comfortaa', cursive;
+     color: black;
     }
 
 b { 

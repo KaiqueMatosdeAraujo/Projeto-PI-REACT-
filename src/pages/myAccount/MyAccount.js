@@ -25,6 +25,8 @@ import TabsMyAccount from '../../components/tabsMyAccount/TabsMyAccount'
 
 import { useState } from 'react'
 
+
+
 function MyAccount() {
 
     const [toggleState, setToggleState] = useState(1)
@@ -32,11 +34,10 @@ function MyAccount() {
     const toggleTab = (index) => {
         setToggleState(index)
     }
-
+    
     return (
         <>
-            <Header />
-            <Nav />
+         
             {/* <!-- INÍCIO DO NAV/TAB --> */}
 
 
@@ -46,7 +47,6 @@ function MyAccount() {
             {/* <div class="tab-content" id="myTabContent">*/}
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-              <TabsMyAccount/>
 
 
                 {/* <h2 className='minha-contah1'>Minha Conta</h2> */}
@@ -418,37 +418,30 @@ function MyAccount() {
                     </div>
 
                     {/* <!--  Final Outros Endereços --> */}
-
-                    <div className="cardContentAccount col-md-11 col-12" id="cardenderecos">
-                        <div className="row  teste titleContainer">
-                            <div className=" col-md-5 col-12 titleContainersecondary">Meus Cartões</div>
-                        </div>
-                        <br />
-                        <div className="row rowCentralized enderecoCartao">
-                            <div className="col-12 col-md-8">
-                                <div className="row rowCentralized enderecoCartao">
-                                    <div className="col-12 col-md-12">
-                                        <div className="input-group mb-3">
-                                            <span className="input-group-text"><img className="cartaocadastrado" src={mastercard}
-                                                alt="" /></span>
-                                            <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 XXXX XXXX XXXX 9867"
-                                                aria-label="Disabled input example" Disabled />
-                                            <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
-                                        </div>
-
-
-                                        <div className="input-group mb-3">
-                                            <span className="input-group-text"><img src={visa} alt="" /></span>
-                                            <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 XXXX XXXX XXXX 9867"
-                                                aria-label="Disabled input example" Disabled />
-                                            <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
-                                        </div>
-                                    </div>
-
+                            <div className="cardContentAccount col-md-11 col-12" id="cardenderecos">
+                                <div className="row  teste titleContainer">
+                                    <div className=" col-md-5 col-12 titleContainersecondary">Meus Cartões</div>
                                 </div>
-                            </div>
+                                <br />
+                                <div className="row rowCentralized enderecoCartao">
+                                    <div className="col-12 col-md-8">
+                                        <div className="row rowCentralized enderecoCartao">
+                                            <div className="col-12 col-md-12">
+                                                <div className="input-group mb-3">
+                                                    <span className="input-group-text"><input className="form-check-input checkboCartao" type="checkbox"/><img className="cartaocadastrado" src={mastercard}
+                                                        alt="" /></span>
+                                                   <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 **** **** 9867"
+                                                        aria-label="Disabled input example" Disabled />
+                                                    <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
+                                                </div>
 
-
+                                                <div className="input-group mb-3">
+                                                    <span className="input-group-text"><input className="form-check-input checkboCartao" type="checkbox"/><img src={visa} alt="" /></span>
+                                                    <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 **** **** 9867"
+                                                        aria-label="Disabled input example" Disabled />
+                                                    <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
+                                                </div>
+                                            </div>
                             <div className="col-8 col-md-4">
                                 <button type="button" className="btn Cadastro" data-bs-toggle="modal" data-bs-target="#novocartao">
                                     <strong>+</strong> Cadastrar novo cartão
@@ -523,32 +516,6 @@ function MyAccount() {
                                             </div>
                                         </div>
 
-                                        {/* <div className="row">
-                                            <div className="col-4 col-md-3">
-                                                <label for=""><strong>Cod. Seg</strong> </label>
-                                                <input className="form-control form-control-lg" type="" placeholder="CCV"
-                                                    aria-label=".form-control-lg example" />
-                                            </div>
-                                            <a className="col-4" href=""><strong>?</strong></a>
-
-                                            <div className="col-7 col-md-8">
-                                                <label for=""><strong>Parcelas</strong> </label>
-                                                <br />
-                                                <select className="form-select" aria-label="Default select example">
-                                                    <option selected>Selecione</option>
-                                                    <option value="1">1x de R$549,99</option>
-                                                    <option value="2">2x de R$274,95</option>
-                                                    <option value="3">3x de R$183,33</option>
-                                                    <option value="4">4x de R$137,49</option>
-                                                    <option value="5">5x de R$109,99</option>
-                                                    <option value="6">6x de R$91,66</option>
-                                                    <option value="7">7x de R$78,57</option>
-                                                    <option value="8">8x de R$68,74</option>
-                                                    <option value="9">9x de R$61,11</option>
-                                                    <option value="10">10x de R$54,99</option>
-                                                </select>
-                                            </div>
-                                        </div> */}
 
                                         <div className="row">
                                             <div className="addPagamento col-12">
@@ -567,11 +534,12 @@ function MyAccount() {
 
 
             </div>
-            {/* {/</div>/} */}
+            </div>
+            </div>
+           
 
 
 
-            <Footer />
         </>
     )
 }

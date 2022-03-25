@@ -86,8 +86,11 @@ function MoreDetails() {
                 <div className="modal-dialog modal-xl ">
                     <div className="modal-content">
                         <div className="modal-header ">
-                            <h1 className="modal-title" id="exampleModalLabel">Detalhes</h1>
-                            <button type="button" className="btn modalclose" data-bs-dismiss="modal" aria-label="Close">X</button>
+                            <div className="row">
+                            <h1 className="modal-title col-5" id="exampleModalLabel">Detalhes</h1>
+                            <strong>Pedido #58685</strong>
+                            <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         </div>
                         <div className="modal-body">
                             <div className="container container-mais-detalhes">

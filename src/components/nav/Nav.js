@@ -21,7 +21,7 @@ function Nav() {
                     <li>
                         <Link to="/product" className="dropdown-item" >Meninos</Link></li>
                     <li>
-                        <hr className="dropdown-divider" />
+                        
                     </li>
                     <li><Link to="/product" className="dropdown-item" >Acessórios</Link></li>
                 </ul>
