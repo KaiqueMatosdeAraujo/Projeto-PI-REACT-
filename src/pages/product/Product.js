@@ -17,6 +17,7 @@ import joelma from './imgs/joelma.jpg'
 import camila from './imgs/camila.jpg'
 import  Nav  from '../../components/nav/Nav'
 import ItemPage from '../itemPage/ItemPage'
+import Filter from '../../components/filter/Filter'
 
 
 function Product(props) {
@@ -31,6 +32,8 @@ function Product(props) {
             <div className="row nomePagina">
                 <h2>MENINAS</h2>
             </div>
+
+            <Filter />
 
             <div className="cards">
             <Link to="/ItemPage" > <CardP Image={ emilly } Name="Bebê Reborn Emilly" price="619" parcel="61,90"/></Link>
