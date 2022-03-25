@@ -181,7 +181,7 @@ function Delivery(props) {
                                         </div>
                                     </div>
                                     <input type="text" className="form-control" aria-label="Input text com checkbox"
-                                        placeholder="R$0,00         9 dias úteis        Frete Grátis " disabled />
+                                        placeholder="R$0,00         9 dias úteis        Frete Comum " disabled />
                                 </div>
                                 <div className="input-group ">
                                     <div className="input-group-prepend">
@@ -190,7 +190,7 @@ function Delivery(props) {
                                         </div>
                                     </div>
                                     <input type="text" className="form-control" aria-label="Input text com checkbox"
-                                        placeholder="R$15,90         5 dias úteis        Correios " disabled />
+                                        placeholder="R$15,90         5 dias úteis        Frete Expresso " disabled />
                                 </div>
                             </div>
                         </div>
@@ -260,7 +260,7 @@ function Delivery(props) {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="form">
+                                            <div className="formCard">
                                                 <div className="row">
                                                     <div className=" col-8 col-md-8">
                                                         <label for=""><strong>Número do cartão</strong> </label>

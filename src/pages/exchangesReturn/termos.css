@@ -1,23 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Roboto+Mono:wght@200;300&display=swap');
 
 .Principal{
-  margin-left:35px;
-  color:black;
+  padding: 30px;
 
 }
 
 .global{
-    background-color:#fdcfd8;
+    background-color:#ffcedf8f;
 }
 br {
     background-color: white;
 }
-
+.containerPrincipal{
+    background-color:white;
+}
+.containerPrincipal1{
+    background-color:white;
+}
+.titulo2{
+    color:rgb(247, 93, 119);
+}
+.titulo{
+    color:rgb(247, 93, 119);
+}
 p {
     
      /* text-align: start; */
      font-family: 'Comfortaa', cursive;
-     color:black;
+     color: black;
     }
 
 b { 
@@ -31,5 +40,14 @@ h3 h4 {
     padding-top: 24px;
 }
 
+.bold{
+    text-align: justify;
+}
+
+.lh-base{
+    border: 2px solid rgba(255, 0, 179, 0.125);
+    padding: 10px;
+    text-align: justify;
+}
 
 

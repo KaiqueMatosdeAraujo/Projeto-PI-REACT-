@@ -423,17 +423,17 @@ function MyAccount() {
                                         <div className="row rowCentralized enderecoCartao">
                                             <div className="col-12 col-md-12">
                                                 <div className="input-group mb-3">
-                                                    <span className="input-group-text"><img className="cartaocadastrado" src={mastercard}
+                                                    <span className="input-group-text"><input className="form-check-input checkboCartao" type="checkbox"/><img className="cartaocadastrado" src={mastercard}
                                                         alt="" /></span>
-                                                    <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 XXXX XXXX XXXX 9867"
+                                                   <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 **** **** 9867"
                                                         aria-label="Disabled input example" Disabled />
                                                     <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
                                                 </div>
 
 
                                                 <div className="input-group mb-3">
-                                                    <span className="input-group-text"><img src={visa} alt="" /></span>
-                                                    <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 XXXX XXXX XXXX 9867"
+                                                    <span className="input-group-text"><input className="form-check-input checkboCartao" type="checkbox"/><img src={visa} alt="" /></span>
+                                                    <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 **** **** 9867"
                                                         aria-label="Disabled input example" Disabled />
                                                     <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
                                                 </div>

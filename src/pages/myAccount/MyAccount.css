@@ -11,7 +11,11 @@ body{
     margin:0px;
     font-family: 'Comfortaa', cursive;
 }
-
+.checkboCartao{
+    width: 25px;
+    height: 29px;
+    margin-right: 8px;
+}
 .num{
     font-size: 18px;
 }
@@ -205,7 +209,8 @@ background-color: rgb(177, 236, 217);
 
 }
 .imgLocation{
-    width:9%;
+    width:4%;
+    height: 36px;
 }
 .row.cepteste{
     flex-wrap: nowrap;
