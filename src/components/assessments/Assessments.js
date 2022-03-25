@@ -19,7 +19,7 @@ function Assessments() {
                 <div className="tab-pane fade" id="Avaliacoes" role="tabpanel" aria-labelledby="avaliacoes-tab">
                     <div class="titleCard" id="titleCardMinhaConta">
                         <h1>Avaliações de Clientes</h1>
-                        <div class="container row">
+                        <div class="container row ">
 
                             <br />
                             <div class="col-12 dentro">De modo geral, qual foi sua experiência em comprar na Pimpolhos ?
