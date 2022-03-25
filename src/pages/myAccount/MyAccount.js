@@ -16,6 +16,7 @@ import visa from './img-myAccount/visa.png'
 import checklist from './img-myAccount/checklist.png'
 import desejos from './img-myAccount/desejos.png'
 import user from './img-myAccount/user.png'
+import lapis from './img-myAccount/icone-lapis.png'
 import { Link } from 'react-router-dom'
 
 import {useState} from 'react'
@@ -423,19 +424,21 @@ function MyAccount() {
                                         <div className="row rowCentralized enderecoCartao">
                                             <div className="col-12 col-md-12">
                                                 <div className="input-group mb-3">
-                                                    <span className="input-group-text"><input className="form-check-input checkboCartao" type="checkbox"/><img className="cartaocadastrado" src={mastercard}
+                                                    <span className="input-group-text"><img className="cartaocadastrado" src={mastercard}
                                                         alt="" /></span>
                                                    <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 **** **** 9867"
                                                         aria-label="Disabled input example" Disabled />
                                                     <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
+                                                    <button type="button" className="btn Cadastro" data-bs-toggle="modal" data-bs-target="#editarcartao"><img src={lapis} className="ImagemLapis" width="3%" /></button>
                                                 </div>
 
 
                                                 <div className="input-group mb-3">
-                                                    <span className="input-group-text"><input className="form-check-input checkboCartao" type="checkbox"/><img src={visa} alt="" /></span>
+                                                    <span className="input-group-text"><img src={visa} alt="" /></span>
                                                     <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 **** **** 9867"
                                                         aria-label="Disabled input example" Disabled />
                                                     <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
+                                                    <button type="button" className="btn Cadastro" data-bs-toggle="modal" data-bs-target="#editarcartao"><img src={lapis} className="ImagemLapis" width="3%" /></button>
                                                 </div>
                                             </div>
 
@@ -550,6 +553,83 @@ function MyAccount() {
 
 
                     </div>
+                    <div className="modal fade" id="editarcartao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-header myprofileModal">
+                                            <div className="modalcontentTitle" id="exampleModalLabel">Editar Cartão</div>
+                                            <button type="button" className="btn modalclose" data-bs-dismiss="modal" aria-label="Close">x</button>
+                                        </div>
+                                        <div className="modal-body">
+                                            <div className="pag">
+                                                
+                                                <hr />
+                                                <div className="row">
+                                                    <div className="cartFake col-9">
+                                                        <div className="row">
+                                                            <div className="col-3">
+                                                                <img src={chip} alt="" />
+                                                            </div>
+                                                        </div><br />
+                                                        <div className="row">
+                                                            <div className="num col-8">
+                                                                <strong>5858 6858 6989 5875</strong>
+                                                            </div>
+                                                        </div>
+                                                        <div className="row">
+                                                            <div className="nomeCartao col-7">
+                                                                <strong>Osvaldo Silva</strong>
+                                                            </div>
+                                                            <div className="data col-3">
+                                                                <strong>05/25</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="form">
+                                                    <div className="row">
+                                                        <div className=" col-8">
+                                                            <label for=""><strong>Número do cartão</strong> </label>
+                                                            <input className="form-control form-control-lg" type="" placeholder="5858 6858 6989 5875"
+                                                                aria-label=".form-control-lg example" />
+                                                            <br />
+                                                        </div>
+
+                                                        <div className=" col-4">
+                                                            <label for=""><strong>Validade</strong> </label>
+                                                            <input className="form-control form-control-lg" type="" placeholder="05/25"
+                                                                aria-label=".form-control-lg example" />
+                                                            <br />
+
+                                                        </div>
+
+                                                        <div className="row">
+                                                            <div className="col-12">
+                                                                <label for=""><strong>Nome do Títular</strong> </label>
+                                                                <input className="form-control form-control-lg" type="" placeholder="Osvaldo Silva"
+                                                                    aria-label=".form-control-lg example" />
+                                                                <br />
+
+                                                            </div>
+
+                                                            
+
+
+
+                                                    
+                                                            <div className="modal-footer Card">
+                                                
+                                                                <button type="button" className="btn salvar2" data-bs-dismiss="modal">Adicionar Forma Pagamento</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                 {/* {/</div>/} */}
             
 

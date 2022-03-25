@@ -11,11 +11,7 @@ body{
     margin:0px;
     font-family: 'Comfortaa', cursive;
 }
-.checkboCartao{
-    width: 25px;
-    height: 29px;
-    margin-right: 8px;
-}
+#Endereço
 .num{
     font-size: 18px;
 }
@@ -172,6 +168,10 @@ color: rgb(255, 255, 255);
     background-color: rgb(165, 201, 243);
     color: rgb(255, 255, 255);
 }
+.salvar2:hover{
+    background-color: rgb(134, 134, 156);
+    color: rgb(255, 255, 255);
+}
 
 .cancelar:hover{
     background-color: rgb(134, 134, 156);
@@ -253,7 +253,16 @@ background-color: rgb(177, 236, 217);
 .navtabContainer{
    margin-top: 20px;
 }
+.btn.salvar2{
+    width: 357px;
+    align-items: center;
+    margin-right: 2px;
+}
+.ImagemLapis{
+    width: 16%;
+    margin-left: -95px;
 
+}
 .modal-footer.Card{
     background-color:white;
 }
