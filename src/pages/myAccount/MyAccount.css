@@ -1,5 +1,18 @@
+.minha-contah1{
+    display: flex;
+    justify-content: center;
+}
 
+.nav-minha-conta{
+padding-top: 10px;
+}
 
+.minha-conta{
+    display: flex;
+    justify-content: center;
+    margin-left: 68px;
+
+}
 .num{
     font-size: 18px;
 }
@@ -12,7 +25,7 @@
     background-image: url(./img-myAccount/backgroundCart.png);
     border-radius: 20px;
     padding: 10px;
-    margin-left: 64px;
+    margin-left: 97px;
     margin-bottom: 21px;
     height: 175px;
 }
@@ -184,6 +197,10 @@ color: rgb(255, 255, 255);
 
 }
 
+/* .cartaocadastrado{
+    height: 4%;
+    width: 4%;
+} */
 
 .cardContentAccount.row.modalEndereco{
 justify-content:space-between;
@@ -193,7 +210,8 @@ background-color: rgb(177, 236, 217);
 
 }
 .imgLocation{
-    width:9%;
+    height: 4%;
+    width: 4%;
 }
 .row.cepteste{
     flex-wrap: nowrap;
