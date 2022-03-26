@@ -8,16 +8,10 @@
 
 .custom-button-contact{
     background-color: #9ACCFF;
-    /*width: 210px;*/
     color: white;
     font-size: 12px;
     font-weight: bold;
-    /*margin-top: 20px;
-    margin-bottom: 20px;
-     border-radius: 30%; 
-    height: 40px;*/
     text-align: center;
-    /* padding-bottom: 40px; */
 }
 
 
@@ -33,7 +27,12 @@
 }
 
 
-
+.rowButton{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20%;
+    margin-top: 3%;
+}
 
 
 .custom-input input{
@@ -49,16 +48,11 @@
     color: black;
 }
 
-
+.teste-contact{
+    display: flex;
+}
 
 @media (max-width: 767px){ 
-    .card-input{
-
-        border: none;
-        padding-left: 22px;
-    }
-
-
     .custom-input{
         display: block !important;
     }
@@ -78,5 +72,43 @@
     hr{
         width: 285px;
         margin-left: 28px;
+    }
+
+    .cardContact{
+        margin-left: 0px
+    }
+}
+
+@media (max-width: 810px){ 
+    .text-atendimento{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px){ 
+    .teste-contact{
+        display: block;
+    }
+
+    .rowButton{
+        margin-left: 144px
+    }
+}
+
+@media (min-width: 415px){ 
+    .btn-mobile{
+        display: none;
+    }
+}
+
+@media (max-width: 700px){ 
+    .btn-ipad{
+        display: none;
+    }
+}
+
+@media (max-width: 320px){ 
+    .rowButton{
+        margin-left: 113px
     }
 }

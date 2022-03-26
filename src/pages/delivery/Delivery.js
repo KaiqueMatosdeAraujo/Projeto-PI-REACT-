@@ -535,7 +535,6 @@ function Delivery(props) {
                                                 </ul>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

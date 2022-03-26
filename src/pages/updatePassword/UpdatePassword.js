@@ -28,24 +28,15 @@ function UpdatePassword() {
                                 </div>
 
                                     <div class="card card-input mb-4">
-                                        <div class="form-group font-weight-bold mb-3 mt-3 col-12 col-md-12 col-lg-11 custom-input">
+                                        <div class="form-group font-weight-bold mb-3 mt-3 col-11 col-md-12 col-lg-11 custom-input">
                                             <label class="mb-2" for="usuario">Nova Senha:</label>
                                             <input class="form-control" type="password" placeholder="Insira a nova senha" />
                                         </div>
 
-                                        <div class="form-group font-weight-bold mb-3 mt-3 col-12 col-md-12 col-lg-11 custom-input">
+                                        <div class="form-group font-weight-bold mb-3 mt-3 col-11 col-md-12 col-lg-11 custom-input">
                                             <label class="mb-2" for="usuario">Confirmar Senha:</label>
                                             <input class="form-control" type="password" placeholder="Confirme a nova senha" />
                                         </div>
-
-                                        {/*<div class="d-flex justify-content-center">
-                                            <Link to="/SuccessPassword"><button type="button" class="btn custom-button-update">Atualizar</button></Link>
-                                        </div>
-
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <p class="text-atualizar-senha"><Link to="/">Cancelar</Link></p>
-                                        </div>*/}
-
 
                                         <div className="row div-buttons">
                                             <SupportButton 

@@ -78,7 +78,7 @@ function Profile() {
                         data="27/12/2021"
                         price="549,90"
                         methodPayment="Cartão de Crédito"
-                        cardNumber="5622 XXXX XXXX XXXX 1589"
+                        cardNumber="5622 **** **** 1589"
                     />
                    <MyAccount/>
                    <Wishlist/>

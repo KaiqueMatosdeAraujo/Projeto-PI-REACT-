@@ -131,10 +131,7 @@ margin-bottom: 10px;
    
     
 }
-.form-control:disabled{
-    background-color: #ffc792a8;
-    border:2px solid transparent;
-}
+
 Label{
     font-size: 11px;
     

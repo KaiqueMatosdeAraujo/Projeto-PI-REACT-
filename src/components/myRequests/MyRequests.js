@@ -45,7 +45,7 @@ function MyRequests(props) {
                                             10x sem juros  </p>
                                     </div>
 
-                                    <div className="col-md-4 col-8">
+                                    <div className="col-md-4 col-10">
                                         <button type="button" className="btn custom-btn-meus-pedidos" data-bs-toggle="modal" data-bs-target="#maisdetalhes1">Mais detalhes</button>
                                     </div>
                                 </div>
@@ -61,17 +61,20 @@ function MyRequests(props) {
                    nameBaby="Bebê Reborn Guilherme"
                    codProduct="S48002"
                    priceProduct="549,90"
-                   address=""
-                   neighborhood=""
-                   city=""
+                   address="Rua Santo Antônio"
+                   number = "467"
+                   neighborhood="Boa Vista"
+                   city=" Rio Branco"
+                   state = "AC"
                    reference=""
                    paymentMethod="Cartão de crédito"
-                   cardNumber="4658 XXXX XXXX XXXX 9867"
+                   cardNumber="4658 **** **** 9867"
                    subtotal="549,00"
                    freight="GRÁTIS"
                    priceRequest="549,90"
                    installment="54,90"
-                   status="Processando pagamento"  />
+                   status="Processando pagamento"
+                     />
 
 
                    <MoreDetails 
@@ -85,7 +88,7 @@ function MyRequests(props) {
                    city=""
                    reference=""
                    paymentMethod="Cartão de crédito"
-                   cardNumber="4658 XXXX XXXX XXXX 9867"
+                   cardNumber="4658 **** **** 9867"
                    subtotal="549,00"
                    freight="GRÁTIS"
                    priceRequest="549,90"

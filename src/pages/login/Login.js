@@ -6,6 +6,7 @@ import Nav from '../../components/nav/Nav'
 import babyLogin from './imgs/baby-login.png'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
+import SupportButton from '../../components/supportButton/SupportButton'
 
 
 function Login() {
@@ -54,9 +55,11 @@ function Login() {
                                             <Link to="/forgotPassword">  <p className="text-esqueci-senha"><a href="../esqueci-minha-senha/index.html">Esqueceu sua senha?</a></p></Link>
                                             </div>
 
-                                            <div className="d-flex justify-content-center">
-                                            <Link to="/"><button type="button" className="btn custom-button">Login</button></Link>
-                                            </div>
+                                            <SupportButton 
+                                                class="d-flex justify-content-center"
+                                                link="/"
+                                                title="Login"
+                                            />
 
                                         </div>
 
