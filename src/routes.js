@@ -20,7 +20,7 @@ import MoreDetails from './components/moreDetails/MoreDetails'
 import Delivery from './pages/delivery/Delivery'
 import ExchangesReturn from './pages/exchangesReturn/exchangesReturn'
 import Login from './pages/login/Login'
-
+import Teste from './pages/teste/Teste'
 
 export const Routes = () => {
     return (
@@ -45,6 +45,7 @@ export const Routes = () => {
             <Route path="/exchangesReturn" component={ExchangesReturn} />
             <Route path="/login" component={Login} />
             <Route path="/myAccount" component={MyAccount} />
+            <Route path="/Teste" component={Teste}/>
         </Switch>
     )
 }

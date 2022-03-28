@@ -20,7 +20,7 @@ function Login() {
             {/*  INÍCIO DO CARD LOGIN  */}
             <div className="container-fluid mt-5">
                 <div className="row justify-content-center rowCentralized">
-                    <div className="card border-card col-11 col-md-10 col-lg-6">
+                    <div className="card card-form border-card col-11 col-md-10 col-lg-6">
                         <div className="row justify-content-center rowCentralized">
                             <div className="col-12 col-md-12 col-lg-10">
 

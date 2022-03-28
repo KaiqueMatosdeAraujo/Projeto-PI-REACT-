@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Home.css'
 import Freight from '../../components/freightBanner/FreightBanner'
 import Header from '../../components/header/Header'
@@ -17,6 +18,7 @@ import Rafael from '../product/imgs/rafael.jpg'
 import Heitor from '../product/imgs/thiago.jpg'
 import Lucas from '../product/imgs/LUCAS1.jpg'
 import AssessmentsHome from '../../components/assessmentsHome/AssessmentsHome'
+import ItemPage from '../itemPage/ItemPage'
 
 
 function Home() {
@@ -29,17 +31,15 @@ function Home() {
             <BannerSecondary/>
             <Categories/>
             <p className="destaques"> PRODUTOS EM DESTAQUE </p>
-            <div className="cards">
-                <CardP Image={ Bruna } Name="Bebê Reborn Bruna" price="499" parcel="49,90"/>
-                <CardP Image={ Emilly } Name="Bebê Reborn Arthur" price="499" parcel="49,90"/>
-                <CardP Image={ Bianca } Name="Bebê Reborn Bianca" price="599" parcel="59,90"/>
-                <CardP Image={ Alice } Name="Bebê Reborn Samuel" price="659" parcel="45,90"/>
-            </div>
-            <div className="cards">
-                <CardP Image={ Camila } Name="Bebê Reborn Camila" price="450" parcel="45,90"/>
-                <CardP Image={ Rafael } Name="Bebê Reborn Rafael" price="799" parcel="79,90"/>
-                <CardP Image={ Heitor } Name="Bebê Reborn Heitor" price="659" parcel="65,90"/>
-                <CardP Image={ Lucas }  Name="Bebê Reborn Lucas" price="599" parcel="59,90"/>
+            <div className="cards-home">
+                <Link to="/ItemPage"><CardP Image={ Bruna } Name="Bebê Reborn Bruna" price="499" parcel="49,90"/></Link>
+                <Link to="/ItemPage"><CardP Image={ Emilly } Name="Bebê Reborn Arthur" price="499" parcel="49,90"/></Link>
+                <Link to="/ItemPage"><CardP Image={ Bianca } Name="Bebê Reborn Bianca" price="599" parcel="59,90"/></Link>
+                <Link to="/ItemPage"><CardP Image={ Alice } Name="Bebê Reborn Samuel" price="659" parcel="45,90"/></Link>
+                <Link to="/ItemPage"><CardP Image={ Camila } Name="Bebê Reborn Camila" price="450" parcel="45,90"/></Link>
+                <Link to="/ItemPage"><CardP Image={ Rafael } Name="Bebê Reborn Rafael" price="799" parcel="79,90"/></Link>
+                <Link to="/ItemPage"><CardP Image={ Heitor } Name="Bebê Reborn Heitor" price="659" parcel="65,90"/></Link>
+                <Link to="/ItemPage"><CardP Image={ Lucas }  Name="Bebê Reborn Lucas" price="599" parcel="59,90"/></Link>
             </div>
          
             <AssessmentsHome/>

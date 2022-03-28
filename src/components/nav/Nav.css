@@ -31,3 +31,9 @@ color: #E6889A;
 padding: 0.5rem 1rem;
 text-decoration-line: none;
 }
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+     box-shadow: none;
+}

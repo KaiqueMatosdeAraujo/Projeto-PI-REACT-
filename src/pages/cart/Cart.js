@@ -7,8 +7,10 @@ import BannerFreight from '../../components/freightBanner/FreightBanner'
 import Nav from '../../components/nav/Nav'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
-
+import Delivery from "../delivery/Delivery";
+import Product from "../product/Product";
 import ItemCart from '../../components/itemCart/itemCart'
+import Check from '../cart/imgs/sucesso.png'
 
 import RelatableProductsContainer from "../../components/relatableProductsContainer/RelatableProductsContainer"
 function Cart(props) {
@@ -21,10 +23,10 @@ function Cart(props) {
 
 
 
-            <section className="page-banner bg-secondary"/>
+            <section className="page-banner bg-secondary" />
 
             <div className="product-cart">
-               
+
                 <div className="wrapper">
 
 
@@ -45,27 +47,41 @@ function Cart(props) {
                                     total="399,99"
                                 />
 
-                               
+                            </form>
+                            <form action="">
+                                <ItemCart
+                                    doll1={doll2}
+                                    name="Gabi com girafinha"
+                                    price="399,99"
+                                    unity="399,99"
+                                    total="399,99"
+                                />
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                    <div className="campo-infos-cart">
+                        <div className="campo-cep">
+                            <Link to="" className="text-cep">Calcule o frete</Link>
+                            <form class="d-flex ">
+                                <input type="text" className="input-cep" cep-mask="0000-000" placeholder="0000-000" />
+                                <button class="btn-cep" type="submit"><img src={Check} alt="Logo" width="20px" /></button>
                             </form>
                         </div>
-                    </div>
 
-                    <div className="cart-total-holder">
-                        <p>Total: R$899,90</p>
+                        <div className="cart-total-holder">
+                            <p className="total-carrinho">Total: R$399,90</p>
+                        </div>
                     </div>
                     <div className="cart-action-button">
-                        <Link to href="">Continuar comprando</Link>
-                        <Link to href="" className="btn-main">Finalizar compra</Link>
+                        <Link to="/Product" className="btn-main">Continuar comprando</Link>
+                        <Link to="/Delivery" className="btn-main">Finalizar compra</Link>
                     </div>
 
                 </div>
-
             </div>
-
-
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                crossorigin="anonymous"></script>
             <RelatableProductsContainer />
             <br />
             <Footer />

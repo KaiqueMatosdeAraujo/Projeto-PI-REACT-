@@ -543,7 +543,7 @@ function Delivery(props) {
                             <div className="row justify-content-center">
 
                                 <div className="btnFinalizarCompra col-6">
-                                <Link to="../successPurchase"> <button><strong>Finalizar Compra</strong></button></Link>
+                                    <a ><Link to="/successPurchase"><button><strong>Finalizar Compra</strong></button></Link></a>
                                 </div>
 
                             </div>
