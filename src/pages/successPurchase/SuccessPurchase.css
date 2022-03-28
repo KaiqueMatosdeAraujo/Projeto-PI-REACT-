@@ -4,26 +4,27 @@
 .p-sucesso-title{
     text-align: center;
     margin-top: 5px;
-    font-size: 18px;
-    margin-left: 10px;
+    font-size: 21px;
     font-weight: bold;
 }
 .custom-button1{
     background-color: #9ACCFF;
-    width: 80px;
     color: white;
     font-size: 16px;
     font-weight: bold;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    margin-left: 80px;
-    margin-right: 65px;
-    /* border-radius: 30%; */
-    height: 40px;
+    border-radius: 8px;
     text-align: center;
-    /* padding-bottom: 40px;*/
+    margin-bottom: 11%;
 }
-
+.custom-button1:hover{
+    color: rgb(255, 255, 255);
+    background-color: #80bffd;
+}
+.p-segunto-texto{
+    text-align: center;
+    font-size:15px;
+    
+}
 
 
 
@@ -34,9 +35,7 @@
     margin-top: 15px;
 }
 
-.ContainerCompleto-input{
-    width: 600px;
-}
+
 
 
 
@@ -44,121 +43,54 @@
     margin-left: 25px;
 }
 
-.custom-button1{
-    background-color: #9ACCFF;
-    width: 210px;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    /* border-radius: 30%; */
-    height: 40px;
-    text-align: center;
-    /* padding-bottom: 40px; */
-}
-.custom-button1:hover{
-    color: rgb(189, 178, 178);
-}
-
-.segunto-texto{
-    margin-left: 56px;
-}
-.input-login{
-    margin-left: 29px;
-}
 
 
 
-.infos-loja{
-    margin-top: 15px;
-    margin-left: 45px;
-}
 
-.input-message{
-    height:70px;
-}
+
+
+
+
+
 
 .img-checked{
-    width: 133px;
+    width: 100%;
     margin-top: 10px;
-    height: 82px;
-    margin-left: 54px;
 }
 
-.p-segunto-texto{
-    margin-left: 12px;
-    text-align: center;
-}
+
 
 @media (max-width: 1200px){
     .sucessoComprasucessoCompraTable{
         font-size: 13px;
     }
-    .img-checked {
-        width: 104px;
-    margin-top: 10px;
-    height: 80px;
-    margin-left: 29px;
-    }
+    
     .p-segunto-texto {
-        margin-left: 10px;
+      
         font-size: 13px;
     }
-    p {
-        /* text-align: start; */
-        font-family: 'Comfortaa', cursive;
-        margin-left: 6px;
-        font-size: 13px;
-    }
-    .custom-button1 {
-    height: 43px;
-    width: 170px;
-    margin-left: 81px;
-}
-.cardSuccessPerchase{
-    margin-left: 27px;
-}
+ 
+  
+
     }
 @media (max-width:767px){
 .cardSuccessPerchase {
     font-size: 9px;
     padding: 4px;
-    margin-left: 12px;
+   
 }
-.img-checked {
-    width: 102px;
-    margin-top: 10px;
-    height: 80px;
-    margin-left: 29px;
+
 }
-.p-segunto-texto {
-    margin-left: 10px;
-    font-size: 13px;
-}
-p {
-    /* text-align: start; */
-    font-family: 'Comfortaa', cursive;
-    margin-left: 6px;
-    font-size: 13px;
-}
-.custom-button1 {
-    margin-left: 25px;
-    height: 35px;
-    width: 175px;
-}
+
+
+
 .sucessoComprasucessoCompraTable{
-    margin-left: 8px;
     width: 249px;
     font-size: 11px;
 }
-}
+
 @media (max-width:400px){
-.custom-button1{
-    margin-left: 32px;
-    height: 35px;
-    width: 170px;
-}
+
 .sucessoCompraTable{
     font-size: 13px;
 }

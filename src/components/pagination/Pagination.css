@@ -5,7 +5,9 @@
    align-items: center;
    font-weight: bold;
 }
+  .paginacao :onclick{
 
+  }
 .paginacao:hover {
   color: gray;
 }
