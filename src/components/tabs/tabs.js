@@ -79,6 +79,7 @@ function Tabs() {
                     className={toggleState === 2 ? "tab-content  active-content" : "content"}
                 ><div className="titleCard">
                     <h2 className='tabInfoTitle'>Meus Pedidos</h2> 
+<<<<<<< HEAD
                     <MyRequests 
                         status = "Processando pagamento"
                         data = "27/02/2022"
@@ -86,6 +87,13 @@ function Tabs() {
                         methodPayment = "Cartão de crédito"
                         cardNumber = "4658 **** **** 9867"
                     />
+=======
+                    <MyRequests     status = "Processando pagamento"
+                        data = "27/02/2022"
+                        price = "549,00"
+                        methodPayment = "Cartão de crédito"
+                        cardNumber = "4658 ** ** 9867"/>
+>>>>>>> 79184e809747004f63d28d225819879037880e25
                     </div>
                 </div>
 

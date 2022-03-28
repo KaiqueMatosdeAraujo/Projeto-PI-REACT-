@@ -28,6 +28,7 @@ h2.tabInfoTitle{
     height: 50px;
     font-size: 16px;
     font-weight: bold;
+    
 
   }
   .tabsProfile:not(:last-child){
@@ -53,6 +54,9 @@ h2.tabInfoTitle{
   }
   .content-tabs {
     flex-grow : 1;
+    border-radius: 11px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
   }
   .content {
     background: white;
