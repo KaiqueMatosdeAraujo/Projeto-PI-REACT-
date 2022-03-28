@@ -1,3 +1,35 @@
+.disabledBox{
+    display: flex;
+    background-color: #f4f4f4;
+    border-radius: 9px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 2%;
+}
+.disabledBox .form-control{
+    border: 1px solid #ffffff00;
+    background-color: #f4f4f4;;
+}
+.imageDisableBox{
+    padding:3px;
+}
+.cadastroButton{
+    text-align:center;
+}
+.enderecoExtra1{
+  width:80%
+}
+.modalHeaderRow{
+    background-color: #f897a9;
+    font-weight: bold;
+    font-size: 25px;
+    align-items: center;
+    justify-content: space-between;
+    height: 47px;
+    color: white;
+    
+}
 .minha-contah1{
     display: flex;
     justify-content: center;
@@ -25,11 +57,11 @@ padding-top: 10px;
 }
 
 
-.cartFake {
+.cartFakeAccount {
     background-image: url(./img-myAccount/backgroundCart.png);
     border-radius: 20px;
     padding: 10px;
-    margin: 0px 0px 21px 32px;
+    margin: 2% 0%;
     height: 175px;
 }
 
@@ -234,11 +266,11 @@ background-color: rgb(177, 236, 217);
     margin-right: 2px;
 }
 
-.btn.modalclose{
+/* .btn.modalclose{
    font-size: 30px;
   color: white;
   font-weight: bold;
-}
+} */
 
 .nomeCartao{
     font-size: 19px;
@@ -271,13 +303,25 @@ background-color: rgb(177, 236, 217);
     font-size: 12px;
     height: 40px;
 }
+@media(max-width:768px){
+    .row.disableBoxRow {
+        --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    justify-content: center;
+    }
+}
 @media(max-width:520px){
 
-        .input-group img {
+        /* .input-group img {
             margin-right: 8px;
             width: 28px;
             margin-left: -10px;
-        }
+        } */
     .row.enderecoCartao{
         display:flex;
         flex-direction: row;
@@ -312,14 +356,17 @@ background-color: rgb(177, 236, 217);
 
 
 }
+@media (min-width: 575px){
+
+}
 
 @media(min-width:1000px){
     .responsive-inputA{
         margin-left: 16%;
     }
-    .input-group img {
+    /* .input-group img {
         margin-right: 8px;
         width: 28px;
         margin-left: -10px;
-    }
+    } */
 }

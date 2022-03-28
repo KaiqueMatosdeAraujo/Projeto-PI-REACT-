@@ -46,7 +46,7 @@ function ForgotPassword() {
                                         />
 
                                         <SupportButton 
-                                            class="col-5 col-md-5 col-lg-5"
+                                            class="col-5 col-md-5 col-lg-5 teste"
                                             link="/login"
                                             title="Cancelar"
                                         />

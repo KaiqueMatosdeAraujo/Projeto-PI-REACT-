@@ -103,6 +103,10 @@ em{
     font-size: 30px;
     justify-content: space-around;
 }
+.img-cliente{
+    width: 70%;
+}
+
 
 .avaliacoes{
     margin-left: 0%;

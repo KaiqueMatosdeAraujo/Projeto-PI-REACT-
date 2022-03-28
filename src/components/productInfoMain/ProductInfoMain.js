@@ -14,8 +14,8 @@ function ProductInfoMain(props) {
 
         <div className="container container-imagem">
 
-          <div className="row">
-            <div className="col-12 col-lg-5 ">
+          <div className="row imgMaiorFlex">
+            <div className="col-12 col-lg-5 col-md-10">
               <img src={props.MainImg} className="img-thumbnail imgMaior" alt="ImagemPrincipal" />
 
               <div className="row miniImg">
@@ -56,7 +56,7 @@ function ProductInfoMain(props) {
                     <input type="text" className="campo-qtd col-lg-1 col-md-1 col-2" name="format" value="0" id="format" size="2" />
                     <input type="button" className="adicionar col-lg-1 col-md-1 col-2" name="mais" id="mais" value="+" />
 
-                      <Link to="../cart" className="col-xl-6 col-lg-10 col-md-5 col-12 " ><button className="btn btnAdicionarAoCarrinho "
+                      <Link to="../cart" className="col-xl-6 col-lg-10 col-md-5 col-12 btnItemProduct" ><button className="btn btnAdicionarAoCarrinho "
                       type="submit">Adicionar Ao Carrinho</button></Link>
                   </div>
                 </div>
