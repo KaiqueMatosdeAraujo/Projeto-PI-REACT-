@@ -13,7 +13,7 @@ function MoreDetails(props) {
                 <div className="modal-dialog modal-xl ">
                     <div className="modal-content">
                         <div className="modal-header ">
-                            <div className="modalcontentTitle" id="exampleModalLabel">Detalhes</div>
+                            <div className="modalcontentTitle" id="exampleModalLabel">Pedido {props.codRequest}</div>
                             <button type="button" className="btn modalclose" data-bs-dismiss="modal" aria-label="Close">X</button>
                         </div>
                         <div className="modal-body">
@@ -22,7 +22,7 @@ function MoreDetails(props) {
 
                             <div className="row rowCentralized row-modal-moreDetails">
                                 <div className="container container-mais-detalhes col-md-11 col-lg-5">
-                                    <p className='title-pedido'><strong>Pedido {props.codRequest}</strong></p>
+                                    
 
                                     <div className="d-flex div-infosBebe">
                                         <div>
@@ -39,7 +39,7 @@ function MoreDetails(props) {
                                     <StatusContainer
                                     class="container container-status-pagamento col-12 col-md-11 col-lg-12" vermelho
                                     status="Processando pagamento"
-                                />
+                                    />
                                 </div>
 
                                 <div className="container container-mais-detalhes-pagamento col-md-11 col-lg-5">

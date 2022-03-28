@@ -487,9 +487,9 @@ function MyAccount() {
                                     <img src={mastercard}  />
                                     <img src={AmericanMini}  />
                                     <img src={visa}  />
-                                    </div>
-                                    <div className="col-7 ">Editar Cartão</div>
-                                <div class="col-1"><button type="button" class="btn-close  " data-bs-dismiss="modal" aria-label="Close"></button></div>
+                                </div>
+                                <div className="col-9 col-md-7 titulo-cadastrar-cartao">Cadastrar novo cartão</div>
+                                <div class="col-2 col-md-1"><button type="button" class="btn-close  " data-bs-dismiss="modal" aria-label="Close"></button></div>
                             </div>
                             <hr />
                             <div className="row justify-content-center">

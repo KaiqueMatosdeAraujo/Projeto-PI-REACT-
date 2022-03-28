@@ -108,9 +108,10 @@ em{
 }
 
 
-.avaliacoes{
-    margin-left: 0%;
-}
+
+    .avaliacoes{
+        margin-left: 0%;
+    }
 }
 
 @media(max-width:416px){

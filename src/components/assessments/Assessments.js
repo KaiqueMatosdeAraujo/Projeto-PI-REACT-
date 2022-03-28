@@ -38,12 +38,15 @@ function Assessments() {
                                 <textarea class="form-control textareaAssessments" id="exampleFormControlTextarea1" rows="3"
                                     placeholder="Escreva aqui sua mensagem."></textarea>
                                     <div className="col-md-12 col-12 div-button">
-                                        <button type="button" className="btn custom-btn-assessments">Enviar</button>
+                                        <button type="button" className="btn custom-btn-assessments btn-normal">Enviar</button>
                                     </div>
                                 <p class="foto-bebe">
                                     Insira uma foto com o seu bebê.
                                 </p>
                                 <button class="btn"><img src={camera} alt="" className='foto-avaliacao' /></button>
+                                <div className="col-md-12 col-12 div-button">
+                                    <button type="button" className="btn custom-btn-assessments btn-mobile">Enviar</button>
+                                </div>
                             </div>
                         </div>
 

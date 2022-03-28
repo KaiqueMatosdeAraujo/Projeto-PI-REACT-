@@ -221,7 +221,11 @@
     }
     
     .custom-btn-assessments:hover{
-        color: rgb(107, 107, 107);
+        color: white;
+    }
+
+    button.custom-btn-assessments:hover{
+        background-color: #8dc1f5;
     }
 
     .div-button{
@@ -380,3 +384,20 @@
         }
     
     } */
+
+    @media (min-width: 415px){ 
+        .btn-mobile{
+            display: none;
+        }
+
+    }
+    
+    @media (max-width: 700px){ 
+        .btn-normal{
+            display: none;
+        }
+
+        .textareaAssessments{
+            margin-bottom: 10%;
+        }
+    }
