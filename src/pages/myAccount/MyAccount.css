@@ -266,11 +266,11 @@ background-color: rgb(177, 236, 217);
     margin-right: 2px;
 }
 
-.btn.modalclose{
+/* .btn.modalclose{
    font-size: 30px;
   color: white;
   font-weight: bold;
-}
+} */
 
 .nomeCartao{
     font-size: 19px;
@@ -317,11 +317,11 @@ background-color: rgb(177, 236, 217);
 }
 @media(max-width:520px){
 
-        .input-group img {
+        /* .input-group img {
             margin-right: 8px;
             width: 28px;
             margin-left: -10px;
-        }
+        } */
     .row.enderecoCartao{
         display:flex;
         flex-direction: row;
@@ -364,9 +364,9 @@ background-color: rgb(177, 236, 217);
     .responsive-inputA{
         margin-left: 16%;
     }
-    .input-group img {
+    /* .input-group img {
         margin-right: 8px;
         width: 28px;
         margin-left: -10px;
-    }
+    } */
 }

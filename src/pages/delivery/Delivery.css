@@ -117,11 +117,14 @@
 .cep {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2%;
 }
 
 .cep img {
   margin-bottom: 2%;
   margin-right: 1%;
+  
 }
 
 .cep button {
@@ -155,6 +158,10 @@
 
 .check input {
   font-size: 14px;
+}
+.inputs-numero-bairro{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* <!-- FINAL ENTREGA --> */
@@ -699,6 +706,7 @@ ul {
   .resumo3 {
     font-size: 13px;
     margin: 5px 0px 0px 0px;
+    padding: 0px;
   }
 
   .resumo2 {
@@ -734,6 +742,19 @@ ul {
     padding-top: 12px;
     padding-bottom: 12px;
   }
+  .cidadeUf{
+    display: block;
+  }
+
+  .espacamento-input{
+    margin-right: 2%;
+  }
+
+  .formEntrega, .formPagamento{
+    padding: 0px;
+  }
+
+
 }
 
 @media (max-width: 770px) {
