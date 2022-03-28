@@ -8,18 +8,18 @@ import Footer from '../../components/footer/Footer'
 function exchangesReturn() {
     return (
         <>
-        <div className="global">
+        <div className="myProfilePage">
         <BannerFreight/>
         <Header/>
         <Nav/>
-        <div className='row'>
-            <div className="Principal" >
-                <h4 className="fw-bold"> Trocas e Devoluções</h4>
+        <div className="row justify-content-center">
+            <div className="lh-base containerPrincipal1 col-10 col-sm-11" >
+                <h4 className="fw-bold titulo"> Trocas e Devoluções</h4>
                 <br/>
-                <p className="bold texto" style={{fontWeight: 'bold'}}>Este documento estabelece os procedimentos de Garantia que abrangem a Política de Troca e Devolução dos produtos adquiridos no site oficial PIMPOLHOS. Sua leitura é indispensável para que o visitante finalize um pedido e conheça as normas fixadas para aproveitar da melhor forma possível a facilidade oferecida através desse website.</p>
+                <p className="bold texto">Este documento estabelece os procedimentos de Garantia que abrangem a Política de Troca e Devolução dos produtos adquiridos no site oficial PIMPOLHOS. Sua leitura é indispensável para que o visitante finalize um pedido e conheça as normas fixadas para aproveitar da melhor forma possível a facilidade oferecida através desse website.</p></div>
                 <br />
                 <br />
-                <div className='lh-base containerPrincipal1'>
+                <div className='lh-base containerPrincipal1 col-10 col-sm-11'>
                     <h4 className="fw-bold titulo">1- Troca de Produtos.</h4>
                     <p></p>
                     <p className="texto"><strong>1.1</strong> Conforme prevê o Código de Defesa do Consumidor, Artigo 26, a PIMPOLHOS realizará a troca dos produtos adquiridos por seus clientes, desde que seja constatado vício ou defeito em até 90 dias da data do recebimento, devendo o cliente, obrigatoriamente, comunicar a Equipe de Atendimento através dos canais Email sac@pimpolhos.com.br ou na Guia Atendimentos disponíveis no website e seguir as instruções recebidas para que o pedido de troca seja analisado e processado.</p>
@@ -31,7 +31,7 @@ function exchangesReturn() {
                     <p className="texto"> A garantia não cobre problemas ocasionados por má utilização da boneca, vide Manual de Cuidados, ou seja, quando a sua utilização é diversa da proposta do produto. Por exemplo: uma Boneca Bebê Reborn de Pano não é adequada ao banho, e caso isso ocorra, não haverá garantia.</p>
                 </div>
                 <br />
-                <div className='lh-base containerPrincipal'>
+                <div className='lh-base containerPrincipal col-10 col-sm-11'>
                     <h4 className="fw-bold titulo2">2-Devolução de Produtos:</h4>
                     <br />
                     <p className="texto"><strong>2.1</strong> Caso o cliente PIMPOLHOS deseje devolver um produto adquirido pela loja virtual, independentemente do motivo ou causa (arrependimento da compra), poderá fazê-lo no prazo de até 7 dias a contar de seu recebimento, devendo comunicar seu interesse dentro do prazo legal, entrando em contato com a equipe de Atendimento, através dos canais disponíveis no website e aguardar as instruções de procedimento. Vide CDC Artigo 49.</p>
@@ -40,12 +40,13 @@ function exchangesReturn() {
                     <p className="texto"><strong>2.1.3</strong> A PIMPOLHOS terá o prazo de até 10 (dez) dias úteis, após a confirmação do recebimento do(s) produto(s) em seu Centro Administrativo em São Paulo para analisar o pedido de devolução e, ocorrendo o preenchimento dos requisitos apresentados anteriormente, a compra será cancelada e os valores pagos serão restituídos ao cliente, na mesma modalidade em que foi efetuado o pagamento.</p>
                 </div>
                     
+                   <div className="col-10 col-sm-11 sining-text">
+                    <p >Atualização: 26 de Dezembro de 2021</p>
                     <br />
-                    <p className="texto">Atualização: 26 de Dezembro de 2021</p>
-                    <br />
-                    <p className="texto">PIMPOLHOS</p>
+                    <p>PIMPOLHOS</p>
+                    </div>
             </div>
-        </div>
+       
 
             {/* FIM DO CONTEUDO DE TERMOS   */}
             <br />
