@@ -6,20 +6,16 @@ import {useState} from 'react'
 
 function Assessments() {
 
-    const [toggleState, setToggleState] = useState(1)
 
-    const toggleTab = (index) => {
-        setToggleState(index)
-    }
 
     return (
         <>
-        {/*<div className="tab-content" id="myTabContent">*/}
-            <div className={toggleState === 4 ? "tab-pane fade show active": "content"} id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div className="tab-pane fade" id="Avaliacoes" role="tabpanel" aria-labelledby="avaliacoes-tab">
-                    <div class="titleCard" id="titleCardMinhaConta">
-                        <h1>Avaliações de Clientes</h1>
-                        <div class="container row ">
+     
+            
+              
+                   
+                    
+                        <div class="container containerAssessments row rowAssessments">
 
                             <br />
                             <div class="col-12 dentro">De modo geral, qual foi sua experiência em comprar na Pimpolhos ?
@@ -39,9 +35,11 @@ function Assessments() {
 
                             <div class="mb-3 col-12">
 
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                <textarea class="form-control textareaAssessments" id="exampleFormControlTextarea1" rows="3"
                                     placeholder="Escreva aqui sua mensagem."></textarea>
-                                <br />
+                                    <div className="col-md-12 col-12 div-button">
+                                        <button type="button" className="btn custom-btn-assessments">Enviar</button>
+                                    </div>
                                 <p class="foto-bebe">
                                     Insira uma foto com o seu bebê.
                                 </p>
@@ -49,14 +47,11 @@ function Assessments() {
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-        {/*</div>*/}
+                   
+             
+       
 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                    crossorigin="anonymous"></script>
+               
             </>
             )
 }

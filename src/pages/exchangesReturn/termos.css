@@ -4,9 +4,7 @@
 
 }
 
-.global{
-    background-color:white;
-}
+
 br {
     background-color: white;
 }
@@ -45,9 +43,14 @@ h3 h4 {
 }
 
 .lh-base{
-    border: 2px solid rgba(255, 0, 179, 0.125);
+    outline:1px solid rgb(209, 209, 209);
     padding: 10px;
-    text-align: justify;
+    border-radius: 8px;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
-
+.sining-text{
+    font-weight:bold;
+   color:#494949;
+}
 

@@ -10,3 +10,7 @@
     text-align: center;
     margin-bottom: 15%;
 }
+
+.supportButton:hover{
+    color: gray;
+}

@@ -29,12 +29,6 @@ import { useState } from 'react'
 
 
 function MyAccount() {
-
-    const [toggleState, setToggleState] = useState(1)
-
-    const toggleTab = (index) => {
-        setToggleState(index)
-    }
     
     return (
         <>
@@ -50,10 +44,11 @@ function MyAccount() {
 
 
 
-                {/* <h2 className='minha-contah1'>Minha Conta</h2> */}
-                <div className={toggleState === 1 ? "minha-conta container row rowCentralized " : "content"}>
+                 
+           
 
-
+                
+                <div class="row justify-content-around rowCentralized">
                     <div className="col-lg-5 col-md-11 col-12">
                         <div className="cardContentTitleDC"> <img className="emotes" src={cadastro} />Dados Cadastrais</div>
                         <div className="container containerAccount">
@@ -62,14 +57,14 @@ function MyAccount() {
                                     <label for="inputAddressEndereco" id="InputEnderecoTitle">
                                         Nome:</label>
                                     <input type="text" className="form-control" id="inputAddressEndereco" placeholder="Osvaldo Silva"
-                                        aria-label="Disabled input example" Disabled />
+                                        aria-label="Disabled input example" disabled />
                                 </div>
 
                                 <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
                                     <label for="inputAddressBairro" id="InputBairroTitle">
                                         CPF:</label>
                                     <input type="text" className="form-control col-12" id="inputAddressBairro" placeholder="000.000.000-00"
-                                        aria-label="Disabled input example" Disabled />
+                                        aria-label="Disabled input example" disabled />
                                 </div>
 
 
@@ -77,13 +72,13 @@ function MyAccount() {
                                     <label for="inputAddressCidade" id="InputCidadeTitle">
                                         Nascimento:</label>
                                     <input type="text" className="form-control" id="inputAddressCidade" placeholder="01/01/2021"
-                                        aria-label="Disabled input example" Disabled />
+                                        aria-label="Disabled input example" disabled />
                                 </div>
 
                                 <div className="col-12 custom-inputAccount">
                                     <label for="inputAddressCEP" id="InputCEPTitle">E-mail:</label>
                                     <input type="text" className="form-control" id="inputAddressCEP" placeholder="osvaldoSilva@gmail.com"
-                                        aria-label="Disabled input example" Disabled />
+                                        aria-label="Disabled input example" disabled />
                                 </div>
 
 
@@ -91,13 +86,13 @@ function MyAccount() {
                                 <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
                                     <label for="inputAddressComplemento" id="InputComplementoTitle">Telefone:</label>
                                     <input type="text" className="form-control" id="inputAddressComplemento" placeholder="(11) 99999-9999 "
-                                        aria-label="Disabled input example" Disabled />
+                                        aria-label="Disabled input example" disabled />
                                 </div>
 
                                 <div className="col-12 col-md-12 col-lg-5 custom-inputAccount responsive-inputA">
                                     <label for="inputAddressPontodeReferencia" id="InputPontodeReferenciaTitle"> Celular:</label>
                                     <input type="text" className="form-control" id="inputAddressPontodeReferencia"
-                                        placeholder=" (11) 99999-9999 " aria-label="Disabled input example" Disabled />
+                                        placeholder=" (11) 99999-9999 " aria-label="Disabled input example" disabled />
                                 </div>
                             </div>
                         </div>
@@ -114,28 +109,28 @@ function MyAccount() {
                                 <label for="inputAddressEndereco" id="InputEnderecoTitle">
                                     Endereço:</label>
                                 <input type="text" className="form-control" id="inputAddressEndereco"
-                                    placeholder="Av. Corifeu de Azevedo Marques, 3097" aria-label="Disabled input example" Disabled />
+                                    placeholder="Av. Corifeu de Azevedo Marques, 3097" aria-label="Disabled input example" disabled />
                             </div>
 
                             <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
                                 <label for="inputAddressBairro" id="InputBairroTitle">
                                     Bairro:</label>
                                 <input type="text" className="form-control" id="inputAddressBairro" placeholder="Vila Butantã"
-                                    aria-label="Disabled input example" Disabled />
+                                    aria-label="Disabled input example" disabled />
                             </div>
 
                             <div className="col-12 col-md-12 col-lg-5 custom-inputAccount responsive-inputA">
                                 <label for="inputAddressCidade" id="InputCidadeTitle">
                                     Cidade:</label>
                                 <input type="text" className="form-control" id="inputAddressCidade" placeholder="São Paulo"
-                                    aria-label="Disabled input example" Disabled />
+                                    aria-label="Disabled input example" disabled />
                             </div>
 
                             <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
                                 <label for="inputAddressUF" id="InputUFTitle">
                                     UF:</label>
                                 <input type="text" className="form-control" id="inputAddressUF" placeholder="SP"
-                                    aria-label="Disabled input example" Disabled />
+                                    aria-label="Disabled input example" disabled />
                             </div>
 
 
@@ -143,21 +138,21 @@ function MyAccount() {
                                 <label for="inputAddressCEP" id="InputCEPTitle">
                                     CEP:</label>
                                 <input type="text" className="form-control" id="inputAddressCEP" placeholder="05212040"
-                                    aria-label="Disabled input example" Disabled />
+                                    aria-label="Disabled input example" disabled />
                             </div>
 
                             <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
                                 <label for="inputAddressComplemento" id="InputComplementoTitle">
                                     Complemento:</label>
                                 <input type="text" className="form-control" id="inputAddressComplemento" placeholder=" "
-                                    aria-label="Disabled input example" Disabled />
+                                    aria-label="Disabled input example" disabled />
                             </div>
 
                             <div className="col-12 col-md-12 col-lg-5 custom-inputAccount responsive-inputA">
                                 <label for="inputAddressPontodeReferencia" id="InputPontodeReferenciaTitle">
                                     Ponto de Referência:</label>
                                 <input type="text" className="form-control" id="inputAddressPontodeReferencia"
-                                    placeholder=" Em frente a USP " aria-label="Disabled input example" Disabled />
+                                    placeholder=" Em frente a USP " aria-label="Disabled input example" disabled />
                             </div>
                         </div>
                     </div>
@@ -166,7 +161,7 @@ function MyAccount() {
 
                     <button type="button" className="btn edit col-md-6 col-8" data-bs-toggle="modal"
                         data-bs-target="#modalEditarDados">Editar Dados Cadastrais</button>
-
+</div>
                     {/* <!-- Modal Cadastro botão --> */}
 
                     <div className="modal fade" id="modalEditarDados" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -196,14 +191,14 @@ function MyAccount() {
                                                     <div className="col-12 col-md-12 col-xl-12">
                                                         <label for="inputAddressEmail" id="inputEmail">E-mail:</label>
                                                         <input type="text" className="form-control" id="inputAddressEmail"
-                                                            placeholder="osvaldoSilva@gmail.com" aria-label="Disabled input example" Disabled />
+                                                            placeholder="osvaldoSilva@gmail.com" aria-label="Disabled input example" disabled />
                                                     </div>
 
                                                     <div className="col-12 col-md-12 col-xl-5">
                                                         <label for="inputAddressSexo" id="inputSexo">
                                                             CPF:</label>
                                                         <input type="text" className="form-control col-12" id="inputAddressSexo" placeholder="000.000.000-00"
-                                                            aria-label="Disabled input example" Disabled />
+                                                            aria-label="Disabled input example" disabled />
                                                     </div>
 
 
@@ -211,7 +206,7 @@ function MyAccount() {
                                                         <label for="inputAddressNascimento" id="inputNascimento">
                                                             Nascimento:</label>
                                                         <input type="text" className="form-control" id="inputAddressNascimento" placeholder="01/01/2021"
-                                                            aria-label="Disabled input example" Disabled />
+                                                            aria-label="Disabled input example" disabled />
                                                     </div>
 
 
@@ -221,12 +216,12 @@ function MyAccount() {
                                                     <div className="col-12 col-md-12 col-xl-5 ">
                                                         <label for="inputAddressTelefone" id="inputTelefone">Telefone:</label>
                                                         <input type="text" className="form-control" id="inputAddressTelefone"
-                                                            placeholder="(11) 99999-9999 " />
+                                                            placeholder="" />
                                                     </div>
 
                                                     <div className="col-12 col-md-12 col-xl-5 responsive-inputA">
                                                         <label for="inputAddress" id="inputCelular"> Celular:</label>
-                                                        <input type="text" className="form-control" id="inputCelular" placeholder=" Em frente a USP " />
+                                                        <input type="text" className="form-control" id="inputCelular" placeholder="(11) 99999-9999 " />
                                                     </div>
                                                 </div>
                                             </div>
@@ -307,7 +302,7 @@ function MyAccount() {
                     </div>
 
                     {/* <!-- Outros Endereços --> */}
-
+                    <div className="row rowCentralized justify-content-center">
                     <div className="cardContentAccount col-md-11" id="cardenderecos">
                         <div className="row titleContainer">
                             <div className="col-md-5 col-8 titleContainersecondary">Outros Endereços</div>
@@ -417,8 +412,9 @@ function MyAccount() {
                         </div>
 
                     </div>
-
+</div>
                     {/* <!--  Final Outros Endereços --> */}
+                    <div className="row row rowCentralized justify-content-center">
                             <div className="cardContentAccount col-md-11 col-12" id="cardenderecos">
                                 <div className="row  teste titleContainer">
                                     <div className=" col-md-5 col-12 titleContainersecondary">Meus Cartões</div>
@@ -617,9 +613,9 @@ function MyAccount() {
                             </div>
                         </div>
                     </div>
-                                
-                            </div>
-                {/* {/</div>/} */}
+                           </div>     
+                            
+            
             
 
 

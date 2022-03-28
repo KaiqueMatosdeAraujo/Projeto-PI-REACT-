@@ -1,4 +1,7 @@
-
+.myProfilePage{
+ 
+    background-color: rgb(255 247 249);
+}
 .container-profile {
     display: flex;
     justify-content: center;

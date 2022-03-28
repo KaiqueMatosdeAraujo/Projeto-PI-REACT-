@@ -29,8 +29,7 @@ padding-top: 10px;
     background-image: url(./img-myAccount/backgroundCart.png);
     border-radius: 20px;
     padding: 10px;
-    margin-left: 97px;
-    margin-bottom: 21px;
+    margin: 0px 0px 21px 32px;
     height: 175px;
 }
 
@@ -131,10 +130,7 @@ margin-bottom: 10px;
    
     
 }
-.form-control:disabled{
-    background-color: #ffc792a8;
-    border:2px solid transparent;
-}
+
 Label{
     font-size: 11px;
     
@@ -184,11 +180,11 @@ color: rgb(255, 255, 255);
 
 }
 .edit{
-    background-color: rgb(123, 164, 211);
+    background-color: rgb(165, 201, 243);
     color: rgb(255, 255, 255);
 }
 .edit:hover{
-    background-color: rgb(245, 146, 184);
+    background-color: rgb(109, 146, 189);
     color: rgb(255, 255, 255);
 }
 
@@ -235,7 +231,7 @@ background-color: rgb(177, 236, 217);
   
 }
 .emotes{
-    margin-right: 10px;
+    margin-right: 2px;
 }
 
 .btn.modalclose{

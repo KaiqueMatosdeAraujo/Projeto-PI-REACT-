@@ -32,19 +32,13 @@ function ForgotPassword() {
                                     </div>
 
                                     <div className="card card-input mb-3">
-                                        <div className="form-group font-weight-bold mb-2 mt-3 col-12 col-md-12 col-lg-11 custom-input">
+                                        <div className="form-group font-weight-bold mb-2 mt-3 col-11 col-md-12 col-lg-11 custom-input">
                                             <label className="mb-2" for="usuario">E-mail</label>
                                             <input className="form-control" type="text" placeholder="Insira o e-mail" />
                                         </div>
 
                                         <div className="row div-buttons">
-                                        {/*<div className="col-5 col-md-5 col-lg-5">
-                                            <Link to="/updatePassword"> <button type="button" className="btn custom-button-proximo">Próximo</button></Link>
-                                            </div>
-
-                                            <div className="col-5 col-md-5 col-lg-5">
-                                            <Link to="/login"> <button type="button" className="btn custom-button-cancelar">Cancelar</button></Link>
-                                        </div>*/}
+                                       
                                         <SupportButton 
                                             class="col-5 col-md-5 col-lg-5"
                                             link="/updatePassword"
