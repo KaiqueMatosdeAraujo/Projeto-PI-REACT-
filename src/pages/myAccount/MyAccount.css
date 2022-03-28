@@ -118,8 +118,7 @@ margin-bottom: 10px;
 }
 
 .input-group img{
-
-    margin-right: 12px;
+        margin-left: 1px;
 }
 
 .input-group-text{
@@ -265,9 +264,8 @@ background-color: rgb(177, 236, 217);
     margin-right: 2px;
 }
 .ImagemLapis{
-    width: 16%;
-    margin-left: -95px;
-
+    width: 22px;
+    height: 24px;
 }
 .modal-footer.Card{
     background-color:white;
@@ -322,5 +320,10 @@ background-color: rgb(177, 236, 217);
 @media(min-width:1000px){
     .responsive-inputA{
         margin-left: 16%;
+    }
+    .input-group img {
+        margin-right: 8px;
+        width: 28px;
+        margin-left: -10px;
     }
 }

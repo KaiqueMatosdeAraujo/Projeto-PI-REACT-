@@ -538,8 +538,13 @@ function MyAccount() {
 
                     </div>
                     <div className="modal fade" id="editarcartao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                
                         <div className="modal-dialog">
+                    
                             <div className="modal-content">
+                            <div className="row">
+                           <h5 className="text-center titulo-Modal">Editar Cartão</h5>
+                           </div> 
                                 <div className="pag">
                                     <div className="row">
                                         <div className=" imagens col-8">
