@@ -236,7 +236,7 @@ background-color: rgb(177, 236, 217);
 
 .btn.modalclose{
    font-size: 30px;
-  color: white;
+  /* color: white; */
   font-weight: bold;
 }
 
