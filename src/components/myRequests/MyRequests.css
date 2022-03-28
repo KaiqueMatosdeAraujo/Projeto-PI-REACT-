@@ -33,7 +33,8 @@
 }
 
 .custom-btn-meus-pedidos:hover{
-    color: rgb(107, 107, 107);
+    color: rgb(255 255 255);
+    background-color: #86c0fc;
 }
 
 .container-meus-pedidos{

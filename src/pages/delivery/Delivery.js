@@ -456,7 +456,7 @@ function Delivery(props) {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <ul type="none">
-                                                        <li>O boleto bancário será gerado no CPF: <strong>568.***.***-72</strong>. </li>
+                                                        <li>O boleto bancário será gerado no CPF: <strong>568.*.*-72</strong>. </li>
                                                         <li>E Será enviado no seu e-mail após a finalização do pedido.</li>
                                                     </ul>
                                                 </div>
@@ -545,7 +545,7 @@ function Delivery(props) {
                                             </div>
                                             <div className="col-9 col-md-8 col-lg-10">
                                                 <ul type="none">
-                                                    <li><strong>**** **** 4135</strong></li>
+                                                    <li><strong>** ** 4135</strong></li>
                                                     <li>Você pagara 10x de R$ 54,99</li>
                                                 </ul>
                                             </div>

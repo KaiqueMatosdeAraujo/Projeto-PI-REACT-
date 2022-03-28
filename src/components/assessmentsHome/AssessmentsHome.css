@@ -97,6 +97,7 @@ em{
 
 @media(max-width:900px)
 {  .clientes{
+<<<<<<< HEAD
         width: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -106,6 +107,18 @@ em{
     .img-cliente{
         width: 70%;
     }
+=======
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    justify-content: space-around;
+}
+.img-cliente{
+    width: 70%;
+}
+
+>>>>>>> 79184e809747004f63d28d225819879037880e25
 
 
     .avaliacoes{

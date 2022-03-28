@@ -21,7 +21,7 @@ function Profile() {
 
     return (
         <>
-        <div className="myProfilePage">
+        <div className="bgPage">
            <BannerFreight/>
             <Header />
             <Nav/>
