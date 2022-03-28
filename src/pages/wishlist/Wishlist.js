@@ -14,8 +14,7 @@ function Wishlist() {
     return (
         <>
           
-            <Header/>
-            <Nav/>
+          
             {/* <div className="titleCard" id="titleCardMinhaConta"> */}
 
                 <div className="title-wishlist row">
@@ -36,7 +35,7 @@ function Wishlist() {
                     </div>
                 </div>
             {/* </div> */}
-        <Footer/>
+  
          
         </>
     )

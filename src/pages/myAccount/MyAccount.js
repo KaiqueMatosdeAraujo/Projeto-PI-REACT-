@@ -28,12 +28,6 @@ import { useState } from 'react'
 
 
 function MyAccount() {
-
-    const [toggleState, setToggleState] = useState(1)
-
-    const toggleTab = (index) => {
-        setToggleState(index)
-    }
     
     return (
         <>
@@ -49,10 +43,11 @@ function MyAccount() {
 
 
 
-                {/* <h2 className='minha-contah1'>Minha Conta</h2> */}
-                <div className={toggleState === 1 ? "minha-conta container row rowCentralized " : "content"}>
+                 
+           
 
-
+                <h2 className='minha-contah1'>Minha Conta</h2> 
+                <div class="row justify-content-around rowCentralized">
                     <div className="col-lg-5 col-md-11 col-12">
                         <div className="cardContentTitleDC"> <img className="emotes" src={cadastro} />Dados Cadastrais</div>
                         <div className="container containerAccount">
@@ -165,7 +160,7 @@ function MyAccount() {
 
                     <button type="button" className="btn edit col-md-6 col-8" data-bs-toggle="modal"
                         data-bs-target="#modalEditarDados">Editar Dados Cadastrais</button>
-
+</div>
                     {/* <!-- Modal Cadastro botão --> */}
 
                     <div className="modal fade" id="modalEditarDados" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -535,7 +530,7 @@ function MyAccount() {
 
             </div>
             </div>
-            </div>
+           
            
 
 
