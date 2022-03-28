@@ -16,6 +16,7 @@ function SucessPurchase(props) {
 
     return (
         <>
+        <div className="pageSucessPurchase">
         <BannerFreight/>
         <Header/>
         <Nav/>
@@ -70,6 +71,7 @@ function SucessPurchase(props) {
       </div>
     </div>
     <Footer/>
+    </div>
         </>
     )
 }

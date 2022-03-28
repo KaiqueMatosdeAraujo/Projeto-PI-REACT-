@@ -15,6 +15,7 @@ function Login() {
 
     return (
         <>
+        <div className="pageLogin">
             <BannerFreight />
             <Header />
             <Nav />
@@ -74,6 +75,7 @@ function Login() {
             </div>
 
             <Footer />
+            </div>
         </>
     )
 }

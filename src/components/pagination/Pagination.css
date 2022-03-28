@@ -14,11 +14,21 @@
   display: flex;
   justify-content:center;
 } 
-
+.paginacao:active{
+  color: white;
+}
 
 .page-link:hover {
   z-index: 2;
   color: gray;
   background-color: #e9ecef;
   border-color: none;
+}
+
+.page-link:focus {
+  z-index: 3;
+  color: gray;
+  background-color: #e9ecef;
+  outline: 0;
+  /* box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%); */
 }

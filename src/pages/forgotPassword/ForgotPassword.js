@@ -8,6 +8,7 @@ import SupportButton from '../../components/supportButton/SupportButton'
 function ForgotPassword() {
     return (
         <>
+        <div className="pageForgotPassword">
         <BannerFreight/>
             <Header></Header>
             <Nav/>
@@ -60,6 +61,7 @@ function ForgotPassword() {
                 </div>
             </div>
         <Footer/>
+        </div>
         </>
     )
 }
