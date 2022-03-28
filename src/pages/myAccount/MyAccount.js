@@ -16,6 +16,7 @@ import visa from './img-myAccount/visa.png'
 import checklist from './img-myAccount/checklist.png'
 import desejos from './img-myAccount/desejos.png'
 import user from './img-myAccount/user.png'
+import lapis from './img-myAccount/icone-lapis.png'
 import { Link } from 'react-router-dom'
 import LogoMaster from '../delivery/imgs/logo-mastercard-4096.png'
 import LogoAmerican from '../delivery/imgs/logo-american-express-4096.png'
@@ -39,7 +40,7 @@ function MyAccount() {
 
             {/* <!-- INICIO DO CONTEUDO NAV/TAB --> */}
             {/* <div class="tab-content" id="myTabContent">*/}
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"/>
 
 
 
@@ -317,7 +318,7 @@ function MyAccount() {
                                     <div className="col-12 col-md-12">
                                         <div className="input-group">
                                             <img className="imgLocation" src={localizacao} />
-                                            <input type="text" className="form-control" id="enderecoExtra1" placeholder="Rua Lorem,1689"
+                                            <input type="text" className="form-control enderecoExtra1" placeholder="Rua Lorem,1689"
                                                 aria-label="Disabled input example" Disabled />
                                             <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
                                         </div>
@@ -423,18 +424,20 @@ function MyAccount() {
                                         <div className="row rowCentralized enderecoCartao">
                                             <div className="col-12 col-md-12">
                                                 <div className="input-group mb-3">
-                                                    <span className="input-group-text"><input className="form-check-input checkboCartao" type="checkbox"/><img className="cartaocadastrado" src={mastercard}
+                                                    <span className="input-group-text"><img className="cartaocadastrado" src={mastercard}
                                                         alt="" /></span>
-                                                   <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 **** **** 9867"
+                                                   <input type="text" className="form-control enderecoExtra1"  placeholder="4658 **** **** 9867"
                                                         aria-label="Disabled input example" Disabled />
                                                     <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
+                                                    <button type="button" className="btn Cadastro" data-bs-toggle="modal" data-bs-target="#editarcartao"><img src={lapis} className="ImagemLapis" width="3%" /></button>
                                                 </div>
 
                                                 <div className="input-group mb-3">
-                                                    <span className="input-group-text"><input className="form-check-input checkboCartao" type="checkbox"/><img src={visa} alt="" /></span>
-                                                    <input type="text" className="form-control" id="enderecoExtra1" placeholder="4658 **** **** 9867"
+                                                    <span className="input-group-text"><img src={visa} alt="" /></span>
+                                                    <input type="text" className="form-control enderecoExtra1"  placeholder="4658 **** **** 9867"
                                                         aria-label="Disabled input example" Disabled />
                                                     <button className="btn "><img src={lixeira} alt="" width="35%" /></button>
+                                                    <button type="button" className="btn Cadastro" data-bs-toggle="modal" data-bs-target="#editarcartao"><img src={lapis} className="ImagemLapis" width="3%" /></button>
                                                 </div>
                                             </div>
                             <div className="col-8 col-md-4">
@@ -528,11 +531,91 @@ function MyAccount() {
 
 
 
-            </div>
-            </div>
-           
-           
+                    </div>
+                    <div className="modal fade" id="editarcartao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                
+                        <div className="modal-dialog">
+                    
+                            <div className="modal-content">
+                            <div className="row">
+                           <h5 className="text-center titulo-Modal">Editar Cartão</h5>
+                           </div> 
+                                <div className="pag">
+                                    <div className="row">
+                                        <div className=" imagens col-8">
+                                            <img src={LogoMaster} width="7%" />
+                                            
 
+                                        </div>
+                                        <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <hr />
+                                    <div className="row">
+                                        <div className="cartFake col-10 col-md-8">
+                                            <div className="row">
+                                                <div className="col-3">
+                                                    <img src={ChipCartaoCred} alt="" />
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="num col-10">
+                                                    <strong>5858 6858 6989 5875</strong>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="nome col-7 col-md-6">
+                                                    <strong>Osvaldo Silva</strong>
+                                                </div>
+                                                <div className="dataCard col-2 col-md-4">
+                                                    <strong>05/25</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="form">
+                                        <div className="row">
+                                            <div className=" col-8 col-md-8">
+                                                <label for=""><strong>Número do cartão</strong> </label>
+                                                <input className="form-control form-control-lg" type=""
+                                                    placeholder="5858 6858 6989 5875"
+                                                    aria-label=".form-control-lg example" />
+                                                <br />
+                                            </div>
+
+                                            <div className=" col-4 col-md-4">
+                                                <label for=""><strong>Validade</strong> </label>
+                                                <input className="form-control form-control-lg" type="" placeholder="05/25"
+                                                    aria-label=".form-control-lg example" />
+                                                <br />
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <label for=""><strong>Nome do Títular</strong> </label>
+                                                <input className="form-control form-control-lg" type=""
+                                                    placeholder="Osvaldo Silva" aria-label=".form-control-lg example" />
+                                                <br />
+                                            </div>
+                                        </div>
+
+
+                                        <div className="row">
+                                            <div className="addPagamento col-12">
+                                                <button><strong>Editar Cartão </strong></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                
+                            
+            
+            
 
 
         </>
