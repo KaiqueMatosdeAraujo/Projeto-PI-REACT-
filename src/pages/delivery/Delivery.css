@@ -26,6 +26,26 @@ body {
   background-color: white;
 }
 
+/* <!-- NAV--> */
+
+/* .menu{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Comfortaa', cursive;
+    background-color: white;
+    width: 100%;
+    
+}
+.btn-close.fechar2 {
+  margin-left: 422px;
+  background-color: white;
+}
+.btn-close.fechar2:hover {
+  background-color: white;
+}
+.btn-close.fechar:hover {
+  background-color: white;
+}
 
 
 /* <!-- RESUMO --> */
@@ -258,7 +278,6 @@ body {
     margin: 20px 10px 20px 10px;
     font-size: 16px;
 }
-
 
 .form input {
   height: 30px;
@@ -514,6 +533,12 @@ ul {
   margin-top: 10px;
 }
 
+/* <!-- FINAL CHECKOUT-> */
+@media (max-width: 820px) {
+
+
+}
+
 .checkoutPagamento button:hover,
 .checkoutEntrega button:hover {
   background-color: #9abdff;
@@ -577,6 +602,18 @@ ul {
     margin: 20px 0px 5px 10px;
   }
 
+  .chek h5 {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.747);
+  }
+
+  .checkoutResumo {
+    display: flex;
+    font-size: 11px;
+    line-height: 2;
+  }
 
   .checkoutEntrega button {
     background-color: #9accff;
