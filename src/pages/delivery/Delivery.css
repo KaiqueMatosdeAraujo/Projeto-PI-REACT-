@@ -26,28 +26,10 @@
   background-color: white;
 }
 
-/* <!-- NAV--> */
-
-/* .menu{
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Comfortaa', cursive;
-    background-color: white;
-    width: 100%;
-    
-}
-.btn-close.fechar2 {
-  margin-left: 422px;
-  background-color: white;
-}
-.btn-close.fechar2:hover {
-  background-color: white;
-}
-.btn-close.fechar:hover {
-  background-color: white;
-}
-
-
+.btn-close.fechar:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  }
 /* <!-- RESUMO --> */
 
 .resumo {
