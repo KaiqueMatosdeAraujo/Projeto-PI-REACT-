@@ -111,28 +111,29 @@ function Delivery(props) {
                         </div>
 
                         <div className="caixaIntEnd">
-                            <div className="row rowCentralized">
-                                <div className="form-group col-9 col-md-9">
+                                <div className="form-group col-12 col-md-12">
                                     <label for="inputAddress2">Endereço</label>
                                     <input type="text" className="  form-control" id="inputAddress2" placeholder="Ex: Rua Pacheco" />
                                 </div>
-                                <div className="form-group col-2 col-md-2">
+                            <div className="row rowCentralized inputs-numero-bairro">
+                                <div className="form-group col-12 col-md-2">
                                     <label for="inputAddress2">Nº</label>
                                     <input type="text" className=" col-2 form-control" id="inputAddress2" placeholder="100" />
+                                </div>
+                                <div className="form-group col-12 col-md-9">
+                                    <label for="inputCity">Bairro</label>
+                                    <input type="text" className="form-control" id="inputCity" placeholder="Ex: Vl. Sonia" />
                                 </div>
                             </div>
 
                             <div className="form-row">
-                                <div className="form-group col-md-12">
-                                    <label for="inputCity">Bairro</label>
-                                    <input type="text" className="form-control" id="inputCity" placeholder="Ex: Vl. Sonia" />
-                                </div>
+                                
                                 <div className="cidadeUf">
-                                    <div className="form-group col-md-9">
+                                    <div className="form-group col-12 col-md-9">
                                         <label for="inputCity">Cidade</label>
                                         <input type="text" className="form-control" id="inputCity" placeholder="Ex: Vl. Sonia" />
                                     </div>
-                                    <div className="form-group col-4 col-md-2">
+                                    <div className="form-group col-12 col-md-2">
                                         <label for="inputEstado">Estado</label>
                                         <select id="inputEstado" className="form-control">
                                             <option selected>UF</option>
@@ -189,7 +190,7 @@ function Delivery(props) {
                                             <input type="checkbox" aria-label="Chebox para permitir input text" />
                                         </div>
                                     </div>
-                                    <input type="text" className="form-control" aria-label="Input text com checkbox"
+                                    <input type="text" className="form-control espacamento-input" aria-label="Input text com checkbox"
                                         placeholder="R$0,00         9 dias úteis        Frete Comum " disabled />
                                 </div>
                                 <div className="input-group ">
@@ -198,8 +199,8 @@ function Delivery(props) {
                                             <input type="checkbox" aria-label="Chebox para permitir input text" />
                                         </div>
                                     </div>
-                                    <input type="text" className="form-control" aria-label="Input text com checkbox"
-                                        placeholder="R$15,90         5 dias úteis        Frete Expresso " disabled />
+                                    <input type="text" className="form-control espacamento-input" aria-label="Input text com checkbox"
+                                        placeholder="R$15,90         5 dias úteis      Frete Expresso " disabled />
                                 </div>
                             </div>
                         </div>
