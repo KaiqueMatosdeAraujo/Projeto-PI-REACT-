@@ -121,7 +121,7 @@ h5 {
 .row.botoesInfoProduto{
     justify-content: flex-start;
     margin-top:7%;
-    margin-left: 1%;
+    
 }
 .descricaoTecContent{
    color: #666565;
@@ -185,12 +185,14 @@ h5 {
     .imgFav{
     width:50%;
     }
+
+    
 }
 
 
 @media (max-width:414px){
     .imgFav{
-        width: 124%;
+        width: 100%;
     }
     h2.nomeBebe{
         Font-size: 18px;
@@ -244,7 +246,7 @@ h5 {
 
     .imgFav{
         margin-bottom: 70%;
-        margin-left: 80%;
+        margin-left: 30%;
     }
 
     .infoBonecos{
@@ -292,3 +294,17 @@ h5 {
 }
 
 
+@media (max-width: 992px){
+    .imgMaiorFlex{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px){
+    .btnItemProduct{
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+    }
+}
