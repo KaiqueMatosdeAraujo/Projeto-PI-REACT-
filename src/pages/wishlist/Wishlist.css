@@ -164,11 +164,12 @@ h1{
 }
 
 
+
 @media (max-width: 1024px){
     .lixeiraBtnAdd {
     display: flex;
     align-items: center;
     width: 35%;
-    margin-left: 60%;
+    margin-left: 50%;
     }
 }

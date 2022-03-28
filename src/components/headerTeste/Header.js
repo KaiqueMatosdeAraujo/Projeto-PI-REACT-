@@ -5,7 +5,7 @@ import user from '../header/imgs/baby-user.png';
 import SearchIcon from '../header/imgs/search.png'
 import Logo from '../header/imgs/logo-pimpolhos-certo.png'
 import BabyUser from '../header/imgs/baby-user.png'
-import MiniCartButton from '../minicartButton/MiniCartButton'
+import MiniCartButton from '../miniCartButton/MiniCartButton'
 function Header(props) {
     return (
         <>
