@@ -28,12 +28,12 @@ function Delivery(props) {
 
     return (
         <>
-<BannerFreight/>
-<Header/>
-<Nav/>
+            <BannerFreight/>
+            <Header/>
+            <Nav/>
             <div className="row rowCentralized justify-content-center">
                 <div className="resumo col-11">
-                    <div className="row justify-content-around">
+                    <div className="row">
                         <div className="col-5 col-lg-5">
                             <strong>Produtos</strong>
                         </div>
@@ -46,23 +46,18 @@ function Delivery(props) {
                     </div>
 
                 </div>
+            
 
 
 
 
-           <div className="resumo2 col-11">
-           <ProductCheckoutSimple nameProduct="Bebê Reborn Nicole Pandinha" qtd={1} price="549,90"/>
+                <div className="resumo2 col-11">
+                    <ProductCheckoutSimple nameProduct="Bebê Reborn Nicole Pandinha" qtd={1} price="549,90"/>
                 </div>
-
-
-
-
-
                 <div className="resumo3 col-11">
                     <div className="row">
                         <div className="col-5 col-md-5">
                             <ul type="none">
-
                                 <li><strong>Subtotal:</strong></li>
                                 <li><strong>Frete:</strong></li>
                                 <li><strong>Total:</strong></li>
@@ -78,6 +73,7 @@ function Delivery(props) {
 
                     </div>
                 </div>
+                
             </div>
 
             { /* FINAL RESUMO */}
@@ -85,7 +81,7 @@ function Delivery(props) {
 
             { /* ENTREGA   */}
 
-            <div className="row rowCentralized justify-content-around">
+            <div className="row rowCentralized ">
                 <div className=" col-xl-4  col-11 formEntrega">
 
                     <div className="entrega">
@@ -98,28 +94,81 @@ function Delivery(props) {
                             <div className="form-group col-5 col-md-4 col-lg-4 col-xl-5">
                                 <label for="inputCep">CEP</label>
                                 <input type="CEP" className="form-control" id="inputCEP" placeholder="Digite seu CEP" />
+                                
                             </div>
-                            <div className="col-6 col-md-7  col-lg-7 col-xl-6 searchCep">
 
+                            <div className="col-1">
+                                <button><img className="LupaImgFrete " src={Lupa} alt="Lupa" /></button>
+                            </div>
+
+                            <div className="col-5 col-md-7  col-lg-7 col-xl-5 searchCep">
                                 <a className="correios" href="https://buscacepinter.correios.com.br/app/endereco/index.php"
                                     target="_blank">
-                                    <img className="LupaImgFrete" src={Lupa} alt="Lupa" />Não sei meu CEP</a>
+                                    Não sei meu CEP
+                                </a>
                             </div>
 
                         </div>
 
                         <div className="caixaIntEnd">
                             <div className="row rowCentralized">
-                                <div className="form-group col-md-9">
+                                <div className="form-group col-9 col-md-9">
                                     <label for="inputAddress2">Endereço</label>
                                     <input type="text" className="  form-control" id="inputAddress2" placeholder="Ex: Rua Pacheco" />
                                 </div>
-                                <div className="form-group col-4 col-md-2">
+                                <div className="form-group col-2 col-md-2">
                                     <label for="inputAddress2">Nº</label>
                                     <input type="text" className=" col-2 form-control" id="inputAddress2" placeholder="100" />
                                 </div>
                             </div>
-                            <div className="form-group col-12 col-md-9 col-lg-9">
+
+                            <div className="form-row">
+                                <div className="form-group col-md-12">
+                                    <label for="inputCity">Bairro</label>
+                                    <input type="text" className="form-control" id="inputCity" placeholder="Ex: Vl. Sonia" />
+                                </div>
+                                <div className="cidadeUf">
+                                    <div className="form-group col-md-9">
+                                        <label for="inputCity">Cidade</label>
+                                        <input type="text" className="form-control" id="inputCity" placeholder="Ex: Vl. Sonia" />
+                                    </div>
+                                    <div className="form-group col-4 col-md-2">
+                                        <label for="inputEstado">Estado</label>
+                                        <select id="inputEstado" className="form-control">
+                                            <option selected>UF</option>
+                                            <option>AC</option>
+                                            <option>AL</option>
+                                            <option>AM</option>
+                                            <option>BA</option>
+                                            <option>CE</option>
+                                            <option>DF</option>
+                                            <option>ES</option>
+                                            <option>GO</option>
+                                            <option>MA</option>
+                                            <option>MT</option>
+                                            <option>MS</option>
+                                            <option>MG</option>
+                                            <option>PA</option>
+                                            <option>PB</option>
+                                            <option>PR</option>
+                                            <option>PE</option>
+                                            <option>PI</option>
+                                            <option>RJ</option>
+                                            <option>RN</option>
+                                            <option>RS</option>
+                                            <option>RO</option>
+                                            <option>RR</option>
+                                            <option>SC</option>
+                                            <option>SP</option>
+                                            <option>SE</option>
+                                            <option>TO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                    
+                            </div>
+
+                            <div className="form-group col-12 col-md-12 col-lg-12">
                                 <label for="inputCity">Complemento</label>
                                 <input type="text" className="form-control" id="inputCity" placeholder="Casa 1" />
                             </div>
@@ -127,48 +176,7 @@ function Delivery(props) {
                                 <label for="inputCity">Ponto de Referência</label>
                                 <input type="text" className="form-control" id="inputCity" placeholder="Proximo ao Supermercado" />
                             </div>
-                            <div className="form-row">
-                                <div className="form-group col-md-12">
-                                    <label for="inputCity">Bairro</label>
-                                    <input type="text" className="form-control" id="inputCity" placeholder="Ex: Vl. Sonia" />
-                                </div>
-                                <div className="form-group col-md-12">
-                                    <label for="inputCity">Cidade</label>
-                                    <input type="text" className="form-control" id="inputCity" placeholder="Ex: Vl. Sonia" />
-                                </div>
-                                <div className="form-group col-md-3">
-                                    <label for="inputEstado">Estado</label>
-                                    <select id="inputEstado" className="form-control">
-                                        <option selected>UF</option>
-                                        <option>AC</option>
-                                        <option>AL</option>
-                                        <option>AM</option>
-                                        <option>BA</option>
-                                        <option>CE</option>
-                                        <option>DF</option>
-                                        <option>ES</option>
-                                        <option>GO</option>
-                                        <option>MA</option>
-                                        <option>MT</option>
-                                        <option>MS</option>
-                                        <option>MG</option>
-                                        <option>PA</option>
-                                        <option>PB</option>
-                                        <option>PR</option>
-                                        <option>PE</option>
-                                        <option>PI</option>
-                                        <option>RJ</option>
-                                        <option>RN</option>
-                                        <option>RS</option>
-                                        <option>RO</option>
-                                        <option>RR</option>
-                                        <option>SC</option>
-                                        <option>SP</option>
-                                        <option>SE</option>
-                                        <option>TO</option>
-                                    </select>
-                                </div>
-                            </div>
+                            
 
                         </div>
                         <br />
@@ -229,16 +237,16 @@ function Delivery(props) {
                                     <div className="modal-content">
                                         <div className="pag">
                                             <div className="row">
-                                                <div className=" imagens col-8">
-                                                    <img src={LogoMaster} width="7%" />
-                                                    <img src={LogoAmerican} width="7%" />
-                                                    <img src={LogoVisa} width="7%" />
+                                                <div className=" imagens col-10">
+                                                    <img src={LogoMaster} width="10%" />
+                                                    <img src={LogoAmerican} width="10%" />
+                                                    <img src={LogoVisa} width="10%" />
 
                                                 </div>
-                                                <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <button type="button" class="btn-close fechar col-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <hr />
-                                            <div className="row">
+                                            <div className="row cartFake1">
                                                 <div className="cartFake col-10 col-md-8">
                                                     <div className="row">
                                                         <div className="col-3">
@@ -293,9 +301,14 @@ function Delivery(props) {
                                                         <input className="form-control form-control-lg" type="" placeholder="CCV"
                                                             aria-label=".form-control-lg example" />
                                                     </div>
-                                                    <a className="col-4" href=""><strong>?</strong></a>
+                                                    <div className="btnInterrogacao col-2 col-md-3">
+                                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Três últimos números no verso do cartão.">
+                                                            <strong>?</strong>
+                                                        </button>
+                                                    </div>
+                                                    
 
-                                                    <div className="col-7 col-md-8">
+                                                    <div className="col-6 col-md-6">
                                                         <label for=""><strong>Parcelas</strong> </label>
                                                         <br />
                                                         <select className="form-select" aria-label="Default select example">
@@ -359,11 +372,11 @@ function Delivery(props) {
                                     <div className="modal-content">
                                         
                                         <div className="row">
-                                        <div className="imagemPix col-8">
+                                        <div className="imagemPix col-10">
                                             <img src={Pix} width="20%" />
                                         
                                         </div>
-                                        <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close fechar col-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <hr />
 
@@ -424,12 +437,12 @@ function Delivery(props) {
                                 <div className="modal-dialog">
                                     <div className="modal-content">
                                         <div className="row">
-                                        <div className="imagemBoleto col-8">
-                                            <img src={Boleto} width="20%" />
+                                        <div className="imagemBoleto col-10">
+                                            <img src={Boleto} width="25%" />
                                             
                     
                                         </div>
-                                        <button type="button" class="btn-close fechar col-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close fechar col-1" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <hr />
                                         <div className="textBoleto">
@@ -441,8 +454,8 @@ function Delivery(props) {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <ul type="none">
-                                                        <li>O boleto bancário será enviado no seu e-mail após a finalização do
-                                                            pedido.</li>
+                                                        <li>O boleto bancário será gerado no CPF: <strong>568.***.***-72</strong>. </li>
+                                                        <li>E Será enviado no seu e-mail após a finalização do pedido.</li>
                                                     </ul>
                                                 </div>
                                             </div>
