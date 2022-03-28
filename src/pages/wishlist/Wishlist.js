@@ -15,13 +15,9 @@ function Wishlist() {
         <>
           
           
-            {/* <div className="titleCard" id="titleCardMinhaConta"> */}
+           
 
-                <div className="title-wishlist row">
-                    <div className="col-12">
-                        <h2 className='wishlist-title'>Lista de Desejos</h2>
-                    </div>
-                </div>
+                
 
                 <div className="row row-wishlist">
                     <div className="produtosFav row">
@@ -34,7 +30,7 @@ function Wishlist() {
                         </div>
                     </div>
                 </div>
-            {/* </div> */}
+        
   
          
         </>

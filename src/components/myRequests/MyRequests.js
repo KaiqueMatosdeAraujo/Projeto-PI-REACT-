@@ -15,7 +15,7 @@ function MyRequests(props) {
  
             
           
-                  <h1>Meus pedidos</h1>
+      
 
                         <div className="container container-meus-pedidos">
                             <p><strong>Pedido # {props.codPedido}</strong></p>

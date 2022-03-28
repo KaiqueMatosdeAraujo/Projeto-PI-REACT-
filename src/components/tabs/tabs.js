@@ -23,9 +23,9 @@ function Tabs() {
                     onClick={() => toggleTab(1)}
                 >
                     <div className="row rowCentralized">
-                        <div className="col-2">
+                        <div className="col-md-2 col-2">
                             <img src={User} alt="" className='emotes' /></div>
-                        <div className="col-9">Minha Conta</div>
+                        <div className="col-9 col-5">Minha Conta</div>
                     </div>
                 </button>
                 <button
@@ -68,25 +68,37 @@ function Tabs() {
                 <div
                     className={toggleState === 1 ? "tab-content active-content" : "content"}
                 >
+                    <div className="titleCard">
+                        
+                    <h2 className='tabInfoTitle'>Minha Conta</h2> 
                     <MyAccount />
+                    </div>
                 </div>
 
                 <div
                     className={toggleState === 2 ? "tab-content  active-content" : "content"}
-                >
+                ><div className="titleCard">
+                    <h2 className='tabInfoTitle'>Meus Pedidos</h2> 
                     <MyRequests />
+                    </div>
                 </div>
 
                 <div
                     className={toggleState === 3 ? "tab-content  active-content" : "content"}
                 >
+                    <div className="titleCard">
+                    <h2 className='tabInfoTitle'>Lista de Desejos</h2> 
                     <WishList />
+                    </div>
                 </div>
 
                 <div
                     className={toggleState === 4 ? "tab-content  active-content" : "content"}
                 >
+                    <div className="titleCard">
+                    <h2 className='tabInfoTitle'>Avaliações</h2> 
                     <Review />
+                    </div>
                 </div>
             </div>
         </div>

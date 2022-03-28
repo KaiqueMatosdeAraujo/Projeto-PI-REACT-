@@ -180,11 +180,11 @@ color: rgb(255, 255, 255);
 
 }
 .edit{
-    background-color: rgb(123, 164, 211);
+    background-color: rgb(165, 201, 243);
     color: rgb(255, 255, 255);
 }
 .edit:hover{
-    background-color: rgb(245, 146, 184);
+    background-color: rgb(109, 146, 189);
     color: rgb(255, 255, 255);
 }
 

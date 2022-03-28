@@ -31,7 +31,7 @@ function Delivery(props) {
             <BannerFreight/>
             <Header/>
             <Nav/>
-            <div className="row rowCentralized justify-content-center">
+            <div className="row rowCentralized justify-content-center checkoutCentralized">
                 <div className="resumo col-11">
                     <div className="row">
                         <div className="col-5 col-lg-5">
@@ -81,7 +81,7 @@ function Delivery(props) {
 
             { /* ENTREGA   */}
 
-            <div className="row rowCentralized ">
+            <div className="row rowCentralized checkoutCentralized">
                 <div className=" col-xl-4  col-11 formEntrega">
 
                     <div className="entrega">

@@ -13,8 +13,8 @@ function Assessments() {
      
             
               
-                    <div class="titleCard" id="titleCardMinhaConta">
-                        <h1>Avaliações de Clientes</h1>
+                   
+                    
                         <div class="container containerAssessments row rowAssessments">
 
                             <br />
@@ -47,7 +47,7 @@ function Assessments() {
                             </div>
                         </div>
 
-                    </div>
+                   
              
        
 

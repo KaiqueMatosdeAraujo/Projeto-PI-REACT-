@@ -5,7 +5,17 @@
     width: 100%;
     flex-direction: column;
 }
-  
+  .titleCard{
+padding: 5px;
+    outline: 0.5px solid rgb(199, 199, 199);
+    border-radius: 8px;
+}
+h2.tabInfoTitle{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    font-weight: bold;
+}
   .bloc-tabs {
     display: flex;
   }
@@ -18,6 +28,7 @@
     height: 50px;
     font-size: 16px;
     font-weight: bold;
+
   }
   .tabsProfile:not(:last-child){
     border-right: 1px solid rgba(0, 0, 0, 0.274);
@@ -27,7 +38,7 @@
 }
 
   .active-tabs  {
-    background: #ffc792a8;
+    background: #ffcd9f;
     border-bottom: 1px solid transparent;
     outline: 0.5px solid rgb(199, 199, 199);
   }
@@ -69,4 +80,21 @@
   .svgReview{
     margin-right: 2%;
     margin-top: -1%;
+  }
+  @media (max-width: 767px) {
+    .bloc-tabs {
+        display: flex;
+        flex-direction: column;
+    }
+    .tabsProfile{
+        margin-bottom:-2%;
+    }
+    h2.tabInfoTitle {
+        text-align: center;
+    }
+    .titleCard{
+        padding: none;
+        outline: none;
+        border-radius: none;
+    }
   }

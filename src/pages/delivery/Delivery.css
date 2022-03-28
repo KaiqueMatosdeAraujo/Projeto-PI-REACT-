@@ -81,18 +81,18 @@ body {
 
 /* <!-- ENTREGA --> */
 
-.rowCentralized {
+.rowCentralized.checkoutCentralized {
   display: flex;
   justify-content: space-around !important;
 }
 
-.cep.row.rowCentralized {
+.cep.row.rowCentralized.checkoutCentralized {
   margin-bottom: 4%;
   display: flex;
   justify-content: space-between !important;
 }
 
-.caixaIntEnd .row.rowCentralized {
+.caixaIntEnd .row.rowCentralized.checkoutCentralized {
   justify-content: space-between !important;
 }
 .searchCep {
