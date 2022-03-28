@@ -197,8 +197,8 @@ h1{
     .lixeiraBtnAdd {
         display: flex;
         align-items: center;
-        width: 50rem;
-        margin-left: 3px;
+        width: 10rem;
+        margin-left: -67px;
     }
 }
 
