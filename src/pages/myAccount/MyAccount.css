@@ -269,9 +269,9 @@ background-color: rgb(177, 236, 217);
 .btn.modalclose{
    font-size: 30px;
   /* color: white; */
-  font-weight: bold;
-} 
+  /* font-weight: bold; */
 
+}
 .nomeCartao{
     font-size: 19px;
     margin-top: 27px;

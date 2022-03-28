@@ -739,8 +739,6 @@ ul {
   .formEntrega, .formPagamento{
     padding: 0px;
   }
-
-
 }
 
 @media (max-width: 770px) {
