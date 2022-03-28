@@ -303,6 +303,11 @@ background-color: rgb(177, 236, 217);
     font-size: 12px;
     height: 40px;
 }
+
+.titulo-cadastrar-cartao{
+    font-size: 20px;
+}
+
 @media(max-width:768px){
     .row.disableBoxRow {
         --bs-gutter-x: 1.5rem;
@@ -314,6 +319,12 @@ background-color: rgb(177, 236, 217);
     margin-left: calc(-.5 * var(--bs-gutter-x));
     justify-content: center;
     }
+
+    .titulo-cadastrar-cartao{
+        font-size: 20px;
+    }
+
+  
 }
 @media(max-width:520px){
 
@@ -354,7 +365,14 @@ background-color: rgb(177, 236, 217);
         padding: 0px;
     }
 
+    .imagens{
+        display: none;
+    }
 
+    .titulo-cadastrar-cartao{
+        display: flex;
+        justify-content: center;
+    }
 }
 @media (min-width: 575px){
 

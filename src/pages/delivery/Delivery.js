@@ -304,7 +304,7 @@ function Delivery(props) {
                                                             aria-label=".form-control-lg example" />
                                                     </div>
                                                     <div className="btnInterrogacao col-2 col-md-3">
-                                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Três últimos números no verso do cartão.">
+                                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Três números no verso do cartão.">
                                                             <strong>?</strong>
                                                         </button>
                                                     </div>
