@@ -7,6 +7,7 @@ import FreightBanner from '../../components/freightBanner/FreightBanner';
 function Contact() {
     return (
         <>
+        <div className="pageContact">
             <FreightBanner />
             <Header />
             <Nav />
@@ -131,7 +132,7 @@ function Contact() {
             </div>
 
             <Footer />
-
+            </div>
         </>
     );
 }

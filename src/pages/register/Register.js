@@ -10,6 +10,7 @@ import SupportButton from '../../components/supportButton/SupportButton'
 function Register() {
     return (
         <>
+        <div className="pageRegister">
         <Freight/>
             <Header></Header>
             <Nav/>
@@ -90,6 +91,7 @@ function Register() {
                 </div>
             </div>
             <Footer/>
+            </div>
         </>
     )
 }

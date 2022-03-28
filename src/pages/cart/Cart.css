@@ -1,6 +1,10 @@
 
-    
-    
+    .containerMaior{
+       border:1px solid #efefef;
+    }
+    .pageCart{
+        background-color: rgb(255 247 249);
+    }
     .resumo{
         font-weight: bold;
         padding-top: 20px;

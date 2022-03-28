@@ -16,7 +16,7 @@ import RelatableProductsContainer from "../../components/relatableProductsContai
 function Cart(props) {
     return (
         <>
-
+        <div className="pageCart">
             <BannerFreight />
             <Header />
             <Nav />
@@ -29,16 +29,16 @@ function Cart(props) {
 
                 <div className="wrapper">
 
-
+            
                     <div className="cart-collection">
-                        <div className="cart-header">
+                        <div className="cart-header"style={{backgroundColor:'white'}}>
                             <p className="item">Item</p>
                             <p>Qnt.</p>
                             <p>Preço Unitário</p>
                             <p>Total</p>
                         </div>
                         <div className="cart-item">
-                            <form action="">
+                            <form action="" style={{backgroundColor:'white'}}>
                                 <ItemCart
                                     doll1={doll2}
                                     name="Gabi com girafinha"
@@ -48,7 +48,7 @@ function Cart(props) {
                                 />
 
                             </form>
-                            <form action="">
+                            <form action="" style={{backgroundColor:'white'}}>
                                 <ItemCart
                                     doll1={doll2}
                                     name="Gabi com girafinha"
@@ -62,7 +62,7 @@ function Cart(props) {
                         </div>
 
                     </div>
-                    <div className="campo-infos-cart">
+                    <div className="campo-infos-cart" style={{backgroundColor:'white'}}>
                         <div className="campo-cep">
                             <Link to="" className="text-cep">Calcule o frete</Link>
                             <form class="d-flex ">
@@ -85,6 +85,7 @@ function Cart(props) {
             <RelatableProductsContainer />
             <br />
             <Footer />
+            </div>
         </>
     )
 }

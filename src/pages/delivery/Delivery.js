@@ -28,6 +28,7 @@ function Delivery(props) {
 
     return (
         <>
+            <div className="pageDelivery">
             <BannerFreight/>
             <Header/>
             <Nav/>
@@ -567,7 +568,7 @@ function Delivery(props) {
                 </div>
             </div>
               <Footer />
-
+              </div>
         </>
     )
 }
