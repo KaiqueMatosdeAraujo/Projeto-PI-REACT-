@@ -36,6 +36,7 @@ function Home() {
                 <Link to="/ItemPage"><CardP Image={ Emilly } Name="Bebê Reborn Arthur" price="499" parcel="49,90"/></Link>
                 <Link to="/ItemPage"><CardP Image={ Bianca } Name="Bebê Reborn Bianca" price="599" parcel="59,90"/></Link>
                 <Link to="/ItemPage"><CardP Image={ Alice } Name="Bebê Reborn Samuel" price="659" parcel="45,90"/></Link>
+            
                 <Link to="/ItemPage"><CardP Image={ Camila } Name="Bebê Reborn Camila" price="450" parcel="45,90"/></Link>
                 <Link to="/ItemPage"><CardP Image={ Rafael } Name="Bebê Reborn Rafael" price="799" parcel="79,90"/></Link>
                 <Link to="/ItemPage"><CardP Image={ Heitor } Name="Bebê Reborn Heitor" price="659" parcel="65,90"/></Link>

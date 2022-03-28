@@ -8,7 +8,7 @@
     /* width: 49px; */
     height: 44px;
     position: relative;
-    left: 12px;
+   
     margin-top: 15px;
 }
 
@@ -69,6 +69,6 @@
 
 @media (min-width: 768px){
     .user-login{
-        left: 30px;
+        left: 25%;
     }
 }
