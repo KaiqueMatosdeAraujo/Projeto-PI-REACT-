@@ -1,4 +1,6 @@
 .paginacao{
+  box-shadow: 0 0 0 0;
+  outline: 0;
    width: 40px;
    color: gray;
    padding: 6px;
@@ -7,23 +9,44 @@
 }
 
 .paginacao:hover {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  color: gray;
+}
+.paginacao:active {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  color: gray;
+}
+.paginacao:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
   color: gray;
 }
 
 .paginacao1 {
+  box-shadow: 0 0 0 0;
+  outline: 0;
   display: flex;
   justify-content:center;
 } 
 .paginacao:active{
-  color: white;
+  color: gray;
 }
 
 .page-link:hover {
+  box-shadow: 0 0 0 0;
+  outline: 0;
   z-index: 2;
   color: gray;
   background-color: #e9ecef;
   border-color: none;
 }
+.page-link:active {
+  color: gray;
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  }
 
 /* .page-link:focus {
   z-index: 3;
@@ -33,6 +56,33 @@
   /* box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%); */
  */
 .page-link:focus {
+  color: gray;
   box-shadow: 0 0 0 0;
   outline: 0;
   }
+  .page-item:focus {
+    color: gray;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    }
+    .page-item:active {
+      color: gray;
+      box-shadow: 0 0 0 0;
+      outline: 0;
+      }
+      .page-item:hover {
+        color: gray;
+        box-shadow: 0 0 0 0;
+        outline: 0;
+        }
+  .page-link {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    position: relative;
+    display: block;
+    color: gray;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    /* transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
+}
