@@ -1,6 +1,6 @@
-body {
+/* body {
   background-color: #9abdff;
-}
+} */
 .btn-close.fechar3 {
   margin-top: -1%;
   background-color: white;
@@ -119,6 +119,8 @@ body {
 .cep {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2%;
 }
 
 .cep img {
@@ -157,6 +159,11 @@ body {
 
 .check input {
   font-size: 14px;
+}
+
+.inputs-numero-bairro{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* <!-- FINAL ENTREGA --> */
@@ -701,6 +708,7 @@ ul {
   .resumo3 {
     font-size: 13px;
     margin: 5px 0px 0px 0px;
+    padding: 0px;
   }
 
   .resumo2 {
@@ -735,6 +743,18 @@ ul {
     border-radius: 8px;
     padding-top: 12px;
     padding-bottom: 12px;
+  }
+
+  .cidadeUf{
+    display: block;
+  }
+
+  .espacamento-input{
+    margin-right: 2%;
+  }
+
+  .formEntrega, .formPagamento{
+    padding: 0px;
   }
 }
 
