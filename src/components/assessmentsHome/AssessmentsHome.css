@@ -97,16 +97,20 @@ em{
 
 @media(max-width:900px)
 {  .clientes{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 30px;
-    justify-content: space-around;
-}
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 30px;
+        justify-content: space-around;
+    }
+    .img-cliente{
+        width: 70%;
+    }
 
-.avaliacoes{
-    margin-left: 0%;
-}
+
+    .avaliacoes{
+        margin-left: 0%;
+    }
 }
 
 @media(max-width:416px){
