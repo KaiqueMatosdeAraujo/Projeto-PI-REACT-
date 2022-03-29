@@ -40,8 +40,8 @@ function MyAccount() {
 
 
             {/* <!-- INICIO DO CONTEUDO NAV/TAB --> */}
-            {/* <div class="tab-content" id="myTabContent">*/}
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" />
+            {/* <div className="tab-content" id="myTabContent">*/}
+            <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" />
 
 
 
@@ -49,7 +49,7 @@ function MyAccount() {
 
 
 
-            <div class="row justify-content-around rowCentralized">
+            <div className="row justify-content-around rowCentralized">
                 <div className="col-lg-5 col-md-11 col-12">
                     <div className="cardContentTitleDC"> <img className="emotes" src={cadastro} />Dados Cadastrais</div>
                     <div className="container containerAccount">
@@ -171,7 +171,7 @@ function MyAccount() {
                     <div className="modal-content">
                         <div className="modal-header myprofileModal">
                             <div className="modalcontentTitle" id="exampleModalLabel">Editar Dados</div>
-                            <button type="button" className="btn modalclose" data-bs-dismiss="modal" aria-label="Close">X</button>
+                            <button type="button" className="btn modalclose fechar4" data-bs-dismiss="modal" aria-label="Close">X</button>
                         </div>
                         <div className="modal-body">
                             <div className="container row rowCentralized">
@@ -487,9 +487,9 @@ function MyAccount() {
                                     <img src={mastercard}  />
                                     <img src={AmericanMini}  />
                                     <img src={visa}  />
-                                </div>
-                                <div className="col-9 col-md-7 titulo-cadastrar-cartao">Cadastrar novo cartão</div>
-                                <div class="col-2 col-md-1"><button type="button" class="btn-close  " data-bs-dismiss="modal" aria-label="Close"></button></div>
+                                    </div>
+                                    <div className="col-7 ">Editar Cartão</div>
+                                <div className="col-1"><button type="button" className="btn-close fechar4 " data-bs-dismiss="modal" aria-label="Close"></button></div>
                             </div>
                             <hr />
                             <div className="row justify-content-center">
@@ -573,7 +573,7 @@ function MyAccount() {
                                     <img src={mastercard}  />
                                     </div>
                                     <div className="col-7 ">Editar Cartão</div>
-                                <div class="col-1"><button type="button" class="btn-close  " data-bs-dismiss="modal" aria-label="Close"></button></div>
+                                <div className="col-1"><button type="button" className="btn-close fechar4" data-bs-dismiss="modal" aria-label="Close"></button></div>
                             </div>
                             <hr />
                             <div className="row justify-content-center">

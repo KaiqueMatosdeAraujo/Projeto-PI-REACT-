@@ -3,7 +3,7 @@
 
 .avaliacoes{
     display: flex;
-    justify-content: center;
+ 
 }
 
 .linha{
@@ -115,7 +115,11 @@ em{
       margin-left: 0%;
     }
 }
-
+@media(max-width:768px){
+    .avaliacoes{
+        justify-content: center;
+    }
+}
 @media(max-width:416px){
     .avaliacoes{
         margin-left: 1vw;

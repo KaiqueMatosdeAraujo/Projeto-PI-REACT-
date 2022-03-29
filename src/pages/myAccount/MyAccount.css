@@ -17,6 +17,21 @@
 .cadastroButton{
     text-align:center;
 }
+
+.btn-close.fechar4:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    }
+.btn-close.fechar4:active {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+        background-color: #f897a9;
+}
+.btn-close.fechar4:hover {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    background-color: #f897a9;
+}
 .enderecoExtra1{
   width:80%
 }

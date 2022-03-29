@@ -28,7 +28,7 @@ function Delivery(props) {
 
     return (
         <>
-            <div className="pageDelivery">
+             <div className="bgPage">
             <BannerFreight/>
             <Header/>
             <Nav/>

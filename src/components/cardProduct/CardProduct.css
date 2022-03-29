@@ -10,7 +10,9 @@ a:hover{
     color: rgb(153, 153, 153);
 }
 
-
+.comprar a:hover{
+    color:white;
+}
 
 .container-card{
     flex-direction: row;

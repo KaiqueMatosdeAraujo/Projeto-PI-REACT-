@@ -10,7 +10,13 @@
         padding-top: 20px;
     }
     
-    
+    .cart-action-button:hover{
+        color:white;
+        
+    }
+    .cart-action-button a:hover{
+color:white;
+    }
     .menu-produto{
         background-color: #ffcedf;
 
@@ -696,4 +702,10 @@ display: flex;
     .cart-collection{
         padding-bottom: 2rem;
     }
+}
+@media (max-width: 400px){
+    .cart-action-button{
+        font-size:14px;
+    }
+
 }

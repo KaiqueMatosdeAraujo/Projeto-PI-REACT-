@@ -20,7 +20,7 @@ import MiniImg3 from '../../pages/product/imgs/detalheBanheiraCamila.jpg'
 function ItemPage() {
     return (
         <>
-
+  <div className="bgPage">
             <Freight />
             <Header />
             <Nav />
@@ -46,6 +46,7 @@ function ItemPage() {
             <RelatableContainer>
             </RelatableContainer>
             <Footer />
+            </div>
         </>
     )
 }

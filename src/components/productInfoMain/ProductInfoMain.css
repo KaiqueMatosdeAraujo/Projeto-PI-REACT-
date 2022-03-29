@@ -3,6 +3,7 @@
     outline:1px solid rgb(209, 209, 209);
     border-radius: 8px;
     background-color:white;
+    margin-top:2%;
 
 
 }
@@ -234,6 +235,7 @@ h5 {
     .containerConteudo-ProductInfoMain{
         outline: none;
         border-radius: none;
+        
     }
 
     .produtoSubtitulo{
