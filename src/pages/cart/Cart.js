@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
 import './Cart.css'
 // import lixeira from '../../imgs/lixeira.png';
 import doll1 from '../cart/img/alice.jpg'
@@ -11,9 +12,17 @@ import Delivery from "../delivery/Delivery";
 import Product from "../product/Product";
 import ItemCart from '../../components/itemCart/itemCart'
 import Check from '../cart/imgs/sucesso.png'
+import ProductList from '../../components/productList/ProductList'
 
 import RelatableProductsContainer from "../../components/relatableProductsContainer/RelatableProductsContainer"
-function Cart(props) {
+function Cart() {
+    const [cart, getCart] = useState([])
+
+    useEffect(() => {
+        getCart()
+    }, [])
+
+    
     return (
         <>
         <div className="pageCart">
@@ -38,7 +47,7 @@ function Cart(props) {
                             <p>Total</p>
                         </div>
                         <div className="cart-item">
-                            <form action="" style={{backgroundColor:'white'}}>
+                            {/* <form action="" style={{backgroundColor:'white'}}>
                                 <ItemCart
                                     doll1={doll2}
                                     name="Gabi com girafinha"
@@ -47,17 +56,8 @@ function Cart(props) {
                                     total="399,99"
                                 />
 
-                            </form>
-                            <form action="" style={{backgroundColor:'white'}}>
-                                <ItemCart
-                                    doll1={doll2}
-                                    name="Gabi com girafinha"
-                                    price="399,99"
-                                    unity="399,99"
-                                    total="399,99"
-                                />
-
-                            </form>
+                            </form> */}
+                            <ProductList products={cart} cart />
 
                         </div>
 
