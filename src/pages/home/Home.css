@@ -9,9 +9,10 @@
     margin-left: 17px;
 }
 
-.cards-home{
+.cardsHome{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
+

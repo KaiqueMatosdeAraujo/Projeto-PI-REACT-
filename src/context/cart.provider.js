@@ -34,24 +34,29 @@ function CartProvider(props) {
         console.log(cartList)
     }
 
-    const removeFromCart = (productId) => {
-        setCart(old => {
-            const newCart = {}
-            Object.keys(old).forEach(id => {
-                if (id !== productId) {
-                    newCart[id] = old[id]
-                }
-            })
-            return newCart
-        })
+  
+
+    const deleteCart = (id) => {
+        let cartList = getCartStorage()
+        for(let i = 0; i < cartList.length; i++){
+            if(cartList[i].codProduto == id){
+                cartList.splice(i, 1)
+             
+            }
+        }
+        setCart(cartList)
+        setCartQty(cartList.length)
+        localStorage.setItem("cart", JSON.stringify(cartList))
+        localStorage.setItem("qtyCart", JSON.stringify(cartList.length))
     }
 
+//   const deleteCart = (id) => {
+//         setCart(cart.filter((item) => item.id !== id))
+//      }
 
-     const onDeleteObject = (item) => {
-            const newCountries = cart.filter(element => element.id !== item.id);
-            setCart({ cart : newCountries });
-    
-        }
+
+
+
     
         
 
@@ -66,7 +71,7 @@ function CartProvider(props) {
    
 
     return (
-        <CartContext.Provider value={{cart, cartQty, addToCart, getCartQty, getCart,removeFromCart, onDeleteObject}}>
+        <CartContext.Provider value={{cart, cartQty, addToCart, getCartQty, getCart,deleteCart}}>
             {props.children}
         </CartContext.Provider>
     )

@@ -6,7 +6,7 @@ import lixeira from '../../pages/cart/imgs/lixeira.png'
 
 function ItemCart(props) {
     const { addToCart } = useContext(CartContext)
-    const { onDeleteObject } = useContext(CartContext)
+    const { deleteCart } = useContext(CartContext)
  
     return (
 
@@ -25,7 +25,7 @@ function ItemCart(props) {
                 </div>
             </div>
             <div className="remove-1">
-            <button type="button" className="comprar" onClick={() =>  onDeleteObject(props.product)}><img src={lixeira} alt="lixeira" width="30px" height="30px" /></button>
+            <button type="button"  onClick={() =>  deleteCart(props.id)}><img src={lixeira} alt="lixeira" width="30px" height="30px" /></button>
                 </div>
             <div className="cart-quantity-md">
                 
@@ -44,7 +44,7 @@ function ItemCart(props) {
 
             <div className="cart-controls-sm">
                 <div className="remove">
-                <button type="button" className="comprar" onClick={() =>  onDeleteObject(props.product)}><img src={lixeira} alt="lixeira" width="30px" height="30px" /></button>
+                <button type="button" className="trashButton" onClick={() =>  deleteCart(props.id)}><img src={lixeira} alt="lixeira" width="30px" height="30px" /></button>
                     
                 </div>
                 <div className="quantity-controls-sm">

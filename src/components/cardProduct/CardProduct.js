@@ -23,7 +23,7 @@ function CardProduct(props) {
                             <Link to="../paginas/PaginaItem2.html"><div className="nome-produto">{props.Name}</div></Link>
 
                             <div className="precos">
-                                <div className="preco">R$ {props.price},00</div>
+                                <div className="preco">R$ {props.price}</div>
                                 <div className="parcelado">OU 10X DE R$ {props.parcel}</div>
                             </div>
 

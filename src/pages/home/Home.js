@@ -51,7 +51,7 @@ function Home() {
             <BannerSecondary/>
             <Categories/>
             <p className="destaques"> PRODUTOS EM DESTAQUE </p>
-
+            <div className="cardsHome">
                 {/* <Link to="/ItemPage"><CardP Image={ Bruna } Name="Bebê Reborn Bruna" price="499" parcel="49,90"/></Link>
                 <Link to="/ItemPage"><CardP Image={ Emilly } Name="Bebê Reborn Arthur" price="499" parcel="49,90"/></Link>
                 <Link to="/ItemPage"><CardP Image={ Bianca } Name="Bebê Reborn Bianca" price="599" parcel="59,90"/></Link>
@@ -62,7 +62,8 @@ function Home() {
                 <Link to="/ItemPage"><CardP Image={ Heitor } Name="Bebê Reborn Heitor" price="659" parcel="65,90"/></Link>
                 <Link to="/ItemPage"><CardP Image={ Lucas }  Name="Bebê Reborn Lucas" price="599" parcel="59,90"/></Link> */}
                     <ProductList products={products}/>
-    
+                 
+          </div>
          
             <AssessmentsHome/>
             <Footer />

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import CardProduct from '../cardProduct/CardProduct'
 import ItemCart from "../itemCart/itemCart"
+import './ProductList.css'
 function ProductList(props) {
 
 
@@ -14,8 +15,13 @@ function ProductList(props) {
                     return (
                         <>
                              { props.cart 
-                            ? <ItemCart   name={item.nome} price={item.preco} product={item} />
-                            : <div className="cards-home">
+                            ?  <div className="cart-item">
+                               <form action="" style={{backgroundColor:'white'}}>
+                            <ItemCart doll1={item.imgProduto}  id={item.codProduto} name={item.nome} price={item.preco} product={item} />
+                            </form>
+                            </div>
+
+                            : <div className="cardsHome">
                                 <CardProduct Image={item.imgProduto} Name={item.nome} price={item.preco} product={item} parcel="61,90"></CardProduct>
                             </div>
 
@@ -27,9 +33,9 @@ function ProductList(props) {
     }
 
     return (
-        <ul>
+<>
             {listProducts()}
-        </ul>
+      </>
     )
 }
 
