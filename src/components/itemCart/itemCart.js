@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
-
+import CartContext from '../../context/cart.provider'
+import React, { useContext } from 'react';
 
 import lixeira from '../../pages/cart/imgs/lixeira.png'
 
 function ItemCart(props) {
+    const { addToCart } = useContext(CartContext)
+    const { onDeleteObject } = useContext(CartContext)
+ 
     return (
 
         <>
@@ -21,7 +25,7 @@ function ItemCart(props) {
                 </div>
             </div>
             <div className="remove-1">
-                    <img src={lixeira} alt="lixeira" width="30px" height="30px" />
+            <button type="button" className="comprar" onClick={() =>  onDeleteObject(props.product)}><img src={lixeira} alt="lixeira" width="30px" height="30px" /></button>
                 </div>
             <div className="cart-quantity-md">
                 
@@ -40,7 +44,8 @@ function ItemCart(props) {
 
             <div className="cart-controls-sm">
                 <div className="remove">
-                    <img src={lixeira} alt="lixeira" width="30px" height="30px" />
+                <button type="button" className="comprar" onClick={() =>  onDeleteObject(props.product)}><img src={lixeira} alt="lixeira" width="30px" height="30px" /></button>
+                    
                 </div>
                 <div className="quantity-controls-sm">
                     <button className="btn-menos btn-CustomCart">-</button>

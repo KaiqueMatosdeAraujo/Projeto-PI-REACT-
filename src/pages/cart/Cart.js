@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useContext } from 'react';
 import './Cart.css'
 // import lixeira from '../../imgs/lixeira.png';
 import doll1 from '../cart/img/alice.jpg'
@@ -13,11 +13,13 @@ import Product from "../product/Product";
 import ItemCart from '../../components/itemCart/itemCart'
 import Check from '../cart/imgs/sucesso.png'
 import ProductList from '../../components/productList/ProductList'
+import CartContext from '../../context/cart.provider'
 
 import RelatableProductsContainer from "../../components/relatableProductsContainer/RelatableProductsContainer"
 function Cart() {
-    const [cart, getCart] = useState([])
+    const { cart, getCart } = useContext(CartContext)
 
+    
     useEffect(() => {
         getCart()
     }, [])

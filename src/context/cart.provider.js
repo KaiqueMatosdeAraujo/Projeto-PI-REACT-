@@ -31,15 +31,42 @@ function CartProvider(props) {
     const getCart = () => {
         let cartList = getCartStorage()
         setCart(cartList)
+        console.log(cartList)
     }
+
+    const removeFromCart = (productId) => {
+        setCart(old => {
+            const newCart = {}
+            Object.keys(old).forEach(id => {
+                if (id !== productId) {
+                    newCart[id] = old[id]
+                }
+            })
+            return newCart
+        })
+    }
+
+
+     const onDeleteObject = (item) => {
+            const newCountries = cart.filter(element => element.id !== item.id);
+            setCart({ cart : newCountries });
+    
+        }
+    
+        
+
+    
+
 
     const getCartQty = () => {
         let cartList = getCartStorage()
         setCartQty(cartList.length)
     }
+    
+   
 
     return (
-        <CartContext.Provider value={{cart, cartQty, addToCart, getCartQty, getCart}}>
+        <CartContext.Provider value={{cart, cartQty, addToCart, getCartQty, getCart,removeFromCart, onDeleteObject}}>
             {props.children}
         </CartContext.Provider>
     )

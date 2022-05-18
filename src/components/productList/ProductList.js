@@ -14,7 +14,7 @@ function ProductList(props) {
                     return (
                         <>
                              { props.cart 
-                            ? <ItemCart   name={item.nome} price={item.preco}  unity="399,99" total="399,99"/>
+                            ? <ItemCart   name={item.nome} price={item.preco} product={item} />
                             : <div className="cards-home">
                                 <CardProduct Image={item.imgProduto} Name={item.nome} price={item.preco} product={item} parcel="61,90"></CardProduct>
                             </div>
