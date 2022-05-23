@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 import './Header.css'
 import logo from '../header/imgs/logo-pimpolhos-certo.png';
 import user from '../header/imgs/baby-user.png';
@@ -8,6 +10,22 @@ import BabyUser from '../header/imgs/baby-user.png'
 import MiniCartButton from '../../components/miniCartButton/MiniCartButton';
 
 function Header(props) {
+
+    const [promotions, setPromotions] = useState([]);
+    const [search, setSearch] = useState('');
+  
+    useEffect(() => {
+      const params = {};
+      if (search) {
+        params.title_like = search;
+      }
+      axios.get('http://localhost:8080/produto/buscar?nome=', { params })
+        .then((response) => {
+          setPromotions(response.data);
+        });
+    }, [search]);
+
+
     return (
         <>
             <header>
@@ -23,7 +41,10 @@ function Header(props) {
                                 <li className="nav-item navSearch col-lg-7 col-11 ">
                                     <form className="d-flex boxSearch">
 
-                                        <input className="form-control me-2" type="search" placeholder="Procure aqui " aria-label="Search" />
+                                        <input className="form-control me-2" type="search" placeholder="Procure aqui " aria-label="Search"
+                                            value={search}
+                                            onChange={(ev) => setSearch(ev.target.value)}
+                                         />
                                         <button className="btn" type="submit"><img src={SearchIcon} alt="Logo" width="25px" /></button>
                                     </form>
                                 </li>

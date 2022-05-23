@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
+
 import React, { useContext } from 'react';
 import './CardProduct.css'
 import Heart from './imgs/heart (2).png'
 import CartContext from '../../context/cart.provider'
 
+
+
 function CardProduct(props) {
     const { addToCart } = useContext(CartContext)
-
+    let parcel;
     return (
         
         <>
@@ -24,7 +27,7 @@ function CardProduct(props) {
 
                             <div className="precos">
                                 <div className="preco">R$ {props.price}</div>
-                                <div className="parcelado">OU 10X DE R$ {props.parcel}</div>
+                                <div className="parcelado">OU 10X DE R$ {parcel}</div>
                             </div>
 
                             <button type="button" className="comprar" onClick={() => addToCart(props.product)}>Comprar</button>
@@ -38,6 +41,8 @@ function CardProduct(props) {
 
             )
 }
+
+
 
 
             export default CardProduct

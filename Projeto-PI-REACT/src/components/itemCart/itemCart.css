@@ -5,4 +5,5 @@
 .cart-quantity-controls{
     display: flex;
     align-items: center;
+    font-size: 27px;
 }

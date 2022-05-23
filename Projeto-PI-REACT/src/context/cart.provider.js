@@ -21,6 +21,7 @@ function CartProvider(props) {
         ? JSON.parse(localStorage.getItem('cart'))
         : []
 
+        item.qty = 2
         cartList.push(item)
         localStorage.setItem("cart", JSON.stringify(cartList))
         localStorage.setItem("qtyCart", JSON.stringify(cartList.length))
@@ -49,18 +50,6 @@ function CartProvider(props) {
         localStorage.setItem("cart", JSON.stringify(cartList))
         localStorage.setItem("qtyCart", JSON.stringify(cartList.length))
     }
-
-//   const deleteCart = (id) => {
-//         setCart(cart.filter((item) => item.id !== id))
-//      }
-
-
-
-
-    
-        
-
-    
 
 
     const getCartQty = () => {
