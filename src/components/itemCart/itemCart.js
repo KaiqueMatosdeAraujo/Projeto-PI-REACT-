@@ -20,7 +20,7 @@ function ItemCart(props) {
                 </div>
                 <div className="cart-product-info">
                     <p className="cart-product-name">{props.name}</p>
-                    <p className="cart-price-sm">R$399,90</p>
+                    <p className="cart-price-sm">R${props.price}</p>
                     <small>x 1</small>
                 </div>
             </div>

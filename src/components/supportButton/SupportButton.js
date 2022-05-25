@@ -5,7 +5,7 @@ function SupportButton(props) {
     return (
         <>
             <div className={props.class}>
-                <Link to={props.link}> <button type="button" className="btn supportButton">{props.title}</button></Link>
+                <Link to={props.link}> <button type="button"  className="btn supportButton">{props.title}</button></Link>
             </div>
             
         </>

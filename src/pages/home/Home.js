@@ -33,7 +33,7 @@ function Home() {
 
     const getProducts = () => {
         axios.get('http://localhost:8080/produto').then((response) => {
-            setProducts(response.data)
+            setProducts(response.data.content)
         })
     }
 
