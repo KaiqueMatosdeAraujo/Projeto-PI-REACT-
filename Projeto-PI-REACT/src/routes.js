@@ -24,6 +24,7 @@ import Teste from './pages/teste/Teste'
 import BoyProduct from "./pages/boyProduct/BoyProduct";
 import Accessories from "./pages/accessoriesProducts/AccessoriesProducts"
 
+
 export const Routes = () => {
     return (
         <Switch>
@@ -50,7 +51,7 @@ export const Routes = () => {
             <Route path="/login" component={Login} />
             <Route path="/myAccount" component={MyAccount} />
             <Route path="/Teste" component={Teste}/>
-            
+    
         </Switch>
     )
 }

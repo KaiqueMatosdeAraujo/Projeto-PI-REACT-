@@ -20,12 +20,12 @@ function RelatableProductsContainer(props) {
            rProductName="Bebê Reborn Camila"
            rProductPrice="459,00"
            rProductParcel="45,90"
-           image={Product4} />
+           image={Product2} />
           <RelatableProduct
             rProductName="Bebê Reborn Renata"
             rProductPrice="659,00"
             rProductParcel="65,90"
-            image={Product1} />
+            image={Product3} />
           <RelatableProduct
             rProductName="Bebê Reborn Camila"
             rProductPrice="459,00"

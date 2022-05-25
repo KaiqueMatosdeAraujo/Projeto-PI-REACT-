@@ -13,10 +13,14 @@ import Check from '../cart/imgs/sucesso.png'
 import ProductList from '../../components/productList/ProductList'
 import CartContext from '../../context/cart.provider'
 
+
 import RelatableProductsContainer from "../../components/relatableProductsContainer/RelatableProductsContainer"
-function Cart() {
+
+function Cart(props) {
     const { cart, getCart } = useContext(CartContext)
 
+    const [cartQty, setCartQty] = useState(0) 
+    
     
     useEffect(() => {
         getCart()
@@ -64,7 +68,7 @@ function Cart() {
                         </div>
 
                         <div className="cart-total-holder">
-                            <p className="total-carrinho">Total: R$399,90</p>
+                            <p className="total-carrinho">R$ {props.total}</p>
                         </div>
                     </div>
                     <div className="cart-action-button">

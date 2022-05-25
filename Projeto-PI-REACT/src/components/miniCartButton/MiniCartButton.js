@@ -20,7 +20,7 @@ function MiniCartButton() {
                     <div className="row rowCentralized justify-content-around">
                         <img src={Cart} alt="Imagem Carrinho" className="col-2 minicartPng" />
                         <div className=" col-7 cartPriceItems ">{cartQty}</div>
-                        <div className=" col-2 cartPriceItems" >R$</div>
+                    
                     </div>
 
                 </a>

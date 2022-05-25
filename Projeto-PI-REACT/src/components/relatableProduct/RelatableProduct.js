@@ -1,5 +1,7 @@
 import './RelatableProduct.css'
 import Heart from '../card/imgs/heart (2).png'
+
+
 function RelatableProduct(props) {
   return (
     <>

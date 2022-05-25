@@ -106,12 +106,13 @@ function MyAccount() {
                     </div>
                     <div className="cardContentAccount containerAccount rowCentralized row">
 
-                        <div className="col-12 custom-inputAccount">
+                        <div className="col-11 custom-inputAccount">
                             <label for="inputAddressEndereco" id="InputEnderecoTitle">
                                 Endereço:</label>
                             <input type="text" className="form-control" id="inputAddressEndereco"
                                 placeholder="Av. Corifeu de Azevedo Marques, 3097" aria-label="Disabled input example" disabled />
                         </div>
+
 
                         <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
                             <label for="inputAddressBairro" id="InputBairroTitle">

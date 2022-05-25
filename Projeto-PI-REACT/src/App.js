@@ -7,10 +7,13 @@ import CartContext, { CartProvider } from './context/cart.provider'
 
 function App() {
   return (
+
     <CartProvider>
-    <Router>
+      
+      <Router>
       <Routes/>
-    </Router>
+      </Router>
+      
     </CartProvider>
   );
 }

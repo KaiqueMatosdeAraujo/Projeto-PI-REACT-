@@ -85,8 +85,7 @@ color:white;
     .campo-infos-cart{
         border-top: 1px solid #efefef;
        border:1px solid #efefef;
-       box-shadow: inset 1px 1px 1px rgb(0 0 0 / 20%),
-       inset -1px -1px 1px #efefef;
+       
        border-right: 1px solid #efefef;
        border-left: 1px solid #efefef;
        margin:5px;
@@ -699,9 +698,7 @@ display: flex;
         order: 0;
     }
 
-    .cart-collection{
-        padding-bottom: 2rem;
-    }
+   
 }
 @media (max-width: 400px){
     .cart-action-button{

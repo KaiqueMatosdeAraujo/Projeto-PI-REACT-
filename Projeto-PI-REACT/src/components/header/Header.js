@@ -12,18 +12,7 @@ import MiniCartButton from '../../components/miniCartButton/MiniCartButton';
 function Header(props) {
 
     const [promotions, setPromotions] = useState([]);
-    const [search, setSearch] = useState('');
-  
-    useEffect(() => {
-      const params = {};
-      if (search) {
-        params.title_like = search;
-      }
-      axios.get('http://localhost:8080/produto/buscar?nome=', { params })
-        .then((response) => {
-          setPromotions(response.data);
-        });
-    }, [search]);
+    
 
 
     return (
@@ -42,8 +31,7 @@ function Header(props) {
                                     <form className="d-flex boxSearch">
 
                                         <input className="form-control me-2" type="search" placeholder="Procure aqui " aria-label="Search"
-                                            value={search}
-                                            onChange={(ev) => setSearch(ev.target.value)}
+                                        
                                          />
                                         <button className="btn" type="submit"><img src={SearchIcon} alt="Logo" width="25px" /></button>
                                     </form>
