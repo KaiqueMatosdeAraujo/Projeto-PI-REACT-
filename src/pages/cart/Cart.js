@@ -48,7 +48,7 @@ function Cart() {
                         </div>
                         <div className="cart-item">
 
-                            <ProductList products={cart} cart />
+                             <ProductList products={cart} cart /> 
 
                         </div>
 

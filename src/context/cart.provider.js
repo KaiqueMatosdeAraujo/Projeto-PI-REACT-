@@ -16,11 +16,11 @@ function CartProvider(props) {
         return []
     }
 
-    const addToCart = (item) => {
+    const addToCart = (item, id) => {
         let cartList = localStorage.getItem('cart')
         ? JSON.parse(localStorage.getItem('cart'))
         : []
-
+        
         cartList.push(item)
         localStorage.setItem("cart", JSON.stringify(cartList))
         localStorage.setItem("qtyCart", JSON.stringify(cartList.length))

@@ -1,19 +1,33 @@
 import StatusContainer from '../statusContainer/StatusContainer'
 import './MoreDetails.css'
-
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 
 function MoreDetails(props) {
 
+    const [details, setDetails] = useState([])
 
+    useEffect(() => {
+        getDetails()
+    }, [])
 
+    const getDetails = () => {
+        //axios.get(`http://localhost:8080/endereco/${idcliente}/${idendereco}`)
+        axios.get(`http://localhost:8080/pedido/6/1/detalhe`)
+        .then((response) => {
+            setDetails(response.data)
+            console.log(response.data)
+        })
+    }
+console.log(details)
     return (
         <>
             <div className="modal fade" id="maisdetalhes1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-xl ">
                     <div className="modal-content">
                         <div className="modal-header ">
-                            <div className="modalcontentTitle" id="exampleModalLabel">Pedido {props.codRequest}</div>
+                            <div className="modalcontentTitle" id="exampleModalLabel">Pedido #{details.codPedido}</div>
                             <button type="button" className="btn modalclose" data-bs-dismiss="modal" aria-label="Close">X</button>
                         </div>
                         <div className="modal-body">
@@ -30,7 +44,7 @@ function MoreDetails(props) {
                                         </div>
 
                                         <div className="infosBebe-mais-detalhes col-lg-6">
-                                            <p><strong>{props.nameBaby}</strong></p>
+                                            <p><strong>{props.nomeProduto}</strong></p>
                                             <p>CÓDIGO: {props.codProduct}</p>
                                             <p><strong>R$ {props.priceProduct}</strong></p>
                                         </div>
@@ -38,7 +52,7 @@ function MoreDetails(props) {
 
                                     <StatusContainer
                                     class="container container-status-pagamento col-12 col-md-11 col-lg-12" vermelho
-                                    status="Processando pagamento"
+                                    status={details.statusPedido}
                                     />
                                 </div>
 

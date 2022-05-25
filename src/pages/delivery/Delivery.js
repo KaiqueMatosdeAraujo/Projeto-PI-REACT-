@@ -26,13 +26,14 @@ import OrderContext from '../../context/order.provider'
 import axios from 'axios'
 import { useParams } from "react-router-dom"
 import CartContext from '../../context/cart.provider'
-
+ 
 
 function Delivery(props) {
 
     const { getOrder } = useContext(OrderContext)
     const { cart, getCart } = useContext(CartContext)
     const [order, setOrder] = useState([])
+    const [ceps, setCep] = useState([])
     //const orders = props.orders || []
 
     useEffect(() => {
@@ -74,6 +75,34 @@ function Delivery(props) {
                 )
             })
         )
+    }
+
+
+    function onBlurCep(ev){
+        const { value } = ev.target
+        const cep = value?.replace(/[^0-9]/g, '')
+
+        if(cep?.length !== 8) {
+            return
+        }
+
+        fetch(`https://viacep.com.br/ws/${cep}/json`)
+        .then((res) => res.json())
+        .then((data) => {
+            setCep(data.logradouro)
+            console.log(data)
+        })
+        
+        // axios.get(`https://viacep.com.br/ws/${cep}/json`)
+        // .then((response) => {
+        //     JSON.stringify(response)
+        //     console.log(response.data)
+        // })
+        // .then((data) => {
+        //     setCep("rua", data.logradouro)
+        //     console.log(data)
+        // })
+        
     }
 
     return (
@@ -140,7 +169,7 @@ function Delivery(props) {
                             <div className="cep row rowCentralized ">
                                 <div className="form-group col-5 col-md-4 col-lg-4 col-xl-5">
                                     <label for="inputCep">CEP</label>
-                                    <input type="CEP" className="form-control" id="inputCEP" placeholder="Digite seu CEP" />
+                                    <input type="CEP" className="form-control" id="inputCEP" placeholder="Digite seu CEP" onBlur={(ev) => onBlurCep(ev)}/>
 
                                 </div>
 
@@ -160,7 +189,7 @@ function Delivery(props) {
                             <div className="caixaIntEnd">
                                 <div className="form-group col-12 col-md-12">
                                     <label for="inputAddress2">Endereço</label>
-                                    <input type="text" className="  form-control" id="inputAddress2" placeholder="Ex: Rua Pacheco" />
+                                    <input type="text" name="rua" className="form-control" id="inputAddress2" placeholder="Ex: Rua Pacheco" />
                                 </div>
                                 <div className="row rowCentralized inputs-numero-bairro">
                                     <div className="form-group col-12 col-md-2">

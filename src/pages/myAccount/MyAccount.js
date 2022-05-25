@@ -25,12 +25,101 @@ import LogoVisa from '../delivery/imgs/logo-visa-4096.png'
 import ChipCartaoCred from '../delivery/imgs/chip-de-cartao-de-credito.png'
 import TabsMyAccount from '../../components/tabsMyAccount/TabsMyAccount'
 import PinLocation from './img-myAccount/location.png'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { addressModel } from '../../models'
+import { Form } from 'react-bootstrap'
 
-import { useState } from 'react'
+
+function MyAccount(props) {
+
+    const { idcliente } = useParams()
+    const { idendereco } = useParams()
+
+    const [states, setStates] = useState([])
+    const [address, setAddress] = useState(addressModel)
+    const [addressrecovered, setAddressRecovered] = useState([])
+    const [allAdress, setAllAddress] = useState([])
+    const [successRegister, setSuccessRegister] = useState(false)
+
+    const endereco = props.endereco || {}
+
+    useEffect(() => {
+       // getAddress()
+        getAllAddress()
+    }, [])
+
+
+    // const getAddress = () => {
+    //     axios.get(`http://localhost:8080/endereco/${idcliente}/${idendereco}`)
+    //     //axios.get(`http://localhost:8080/endereco/5/12`)
+    //     .then((response) => {
+    //         setAddressRecovered(response.data)
+    //         console.log(response.data)
+    //     })
+    // }
+
+    const getAllAddress = () => {
+        axios.get(`http://localhost:8080/endereco/${idcliente}`)
+        .then((response) => {
+            setAllAddress(response.data)
+            console.log(allAdress)
+        })
+    }
+
+    const register = () => {
+        axios.post(`http://localhost:8080/endereco/5/cadastrar`, address)
+        .then((response) => {
+            setSuccessRegister(true)
+        })
+    }
+
+
+    // const delete = (id) => {
+    //     axios.delete(`${baseUrl}/customer/${id}`)
+    //         .then((response) => {
+    //             alert('item removido com sucesso')
+    //             getCustomers()
+    //         })
+    // }
+
+
+    
+    
+
+    const listAddress = () => {
+        return(
+            allAdress.map((item) => {
+                return(
+                    <>
+                        <div className="row rowCentralized enderecoCartao">
+
+                                <div className="col-12 col-md-12">
+                                    <div className="disabledBox">
+
+                                        <a className="imageDisableBox"> <img src={PinLocation} /></a>
+                                        <div className="col-sm-9 col-7">
+                                            {item.nomeRua}, {item.numeroCasa} - {item.bairro} - {item.nomeCidade}
+                                        </div>
+                                        <div className="dataButtons col-2">
+                                            <div className="row">
+                                                <a className="imageDisableBox "><img src={lixeira} alt="" /></a>
+                                                {/* <a className="imageDisableBox col-6 "><img src={lapis} alt="" /></a> */}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </>
+                )
+            })
+        )
+    }
 
 
 
-function MyAccount() {
+
     return (
         <>
 
@@ -49,15 +138,22 @@ function MyAccount() {
 
 
 
-            <div className="row justify-content-around rowCentralized">
-                <div className="col-lg-5 col-md-11 col-12">
+            <div className="row rowCentralized justify-content-center ">
+                <div className=" col-md-11 col-11 teste-dados">
                     <div className="cardContentTitleDC"> <img className="emotes" src={cadastro} />Dados Cadastrais</div>
                     <div className="container containerAccount">
-                        <div className="cardContentAccount rowCentralized row">
-                            <div className="col-12 custom-inputAccount">
+                        <div className="cardContentAccount rowCentralized row teste">
+                            
+                            <div className="col-12 col-md-12 col-lg-5 custom-inputAccount ">
                                 <label for="inputAddressEndereco" id="InputEnderecoTitle">
                                     Nome:</label>
                                 <input type="text" className="form-control" id="inputAddressEndereco" placeholder="Osvaldo Silva"
+                                    aria-label="Disabled input example" disabled />
+                            </div>
+
+                            <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
+                                <label for="inputAddressCEP" id="InputCEPTitle">E-mail:</label>
+                                <input type="text" className="form-control" id="inputAddressCEP" placeholder="osvaldoSilva@gmail.com"
                                     aria-label="Disabled input example" disabled />
                             </div>
 
@@ -76,14 +172,6 @@ function MyAccount() {
                                     aria-label="Disabled input example" disabled />
                             </div>
 
-                            <div className="col-12 custom-inputAccount">
-                                <label for="inputAddressCEP" id="InputCEPTitle">E-mail:</label>
-                                <input type="text" className="form-control" id="inputAddressCEP" placeholder="osvaldoSilva@gmail.com"
-                                    aria-label="Disabled input example" disabled />
-                            </div>
-
-
-
                             <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
                                 <label for="inputAddressComplemento" id="InputComplementoTitle">Telefone:</label>
                                 <input type="text" className="form-control" id="inputAddressComplemento" placeholder="(11) 99999-9999 "
@@ -101,65 +189,77 @@ function MyAccount() {
 
 
 
-                <div className="col-md-11 col-12 col-lg-5">
+                {/* <div className="col-md-11 col-12 col-lg-5">
                     <div className="cardContentTitleDC"><img className="emotes" src={localizacao} alt="" /> Endereço Principal
                     </div>
+                   
+
                     <div className="cardContentAccount containerAccount rowCentralized row">
 
-                        <div className="col-12 custom-inputAccount">
-                            <label for="inputAddressEndereco" id="InputEnderecoTitle">
-                                Endereço:</label>
-                            <input type="text" className="form-control" id="inputAddressEndereco"
-                                placeholder="Av. Corifeu de Azevedo Marques, 3097" aria-label="Disabled input example" disabled />
-                        </div>
+                            <div className="col-9 custom-inputAccount numeroCasa" >
+                                <label for="inputAddressEndereco" id="InputEnderecoTitle">
+                                    Endereço:</label>
+                                <input type="text" className="form-control" id="inputAddressEndereco"
+                                    placeholder={addressrecovered.nomeRua} aria-label="Disabled input example" disabled />
+                            </div>
 
-                        <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
-                            <label for="inputAddressBairro" id="InputBairroTitle">
-                                Bairro:</label>
-                            <input type="text" className="form-control" id="inputAddressBairro" placeholder="Vila Butantã"
-                                aria-label="Disabled input example" disabled />
-                        </div>
+                            <div className="col-2 custom-inputAccount">
+                                <label for="inputAddressNumero" id="InputNumeroTitle">
+                                    N°:</label>
+                                <input type="text" className="form-control" id="inputAddressNumero"
+                                    placeholder={addressrecovered.numeroCasa} aria-label="Disabled input example" disabled />
+                            </div>
 
-                        <div className="col-12 col-md-12 col-lg-5 custom-inputAccount responsive-inputA">
-                            <label for="inputAddressCidade" id="InputCidadeTitle">
-                                Cidade:</label>
-                            <input type="text" className="form-control" id="inputAddressCidade" placeholder="São Paulo"
-                                aria-label="Disabled input example" disabled />
-                        </div>
+                            <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
+                                <label for="inputAddressBairro" id="InputBairroTitle">
+                                    Bairro:</label>
+                                <input type="text" className="form-control" id="inputAddressBairro" placeholder={addressrecovered.bairro}
+                                    aria-label="Disabled input example" disabled />
+                            </div>
 
-                        <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
-                            <label for="inputAddressUF" id="InputUFTitle">
-                                UF:</label>
-                            <input type="text" className="form-control" id="inputAddressUF" placeholder="SP"
-                                aria-label="Disabled input example" disabled />
-                        </div>
+                            <div className="col-12 col-md-12 col-lg-5 custom-inputAccount responsive-inputA">
+                                <label for="inputAddressCidade" id="InputCidadeTitle">
+                                    Cidade:</label>
+                                <input type="text" className="form-control" id="inputAddressCidade" placeholder={addressrecovered.nomeCidade}
+                                    aria-label="Disabled input example" disabled />
+                            </div>
+
+                            <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
+                                <label for="inputAddressUF" id="InputUFTitle">
+                                    UF:</label>
+                                <input type="text" className="form-control" id="inputAddressUF" placeholder={addressrecovered.estado}
+                                    aria-label="Disabled input example" disabled />
+                            </div>
 
 
-                        <div className="col-12 col-md-12 col-lg-5 custom-inputAccount responsive-inputA">
-                            <label for="inputAddressCEP" id="InputCEPTitle">
-                                CEP:</label>
-                            <input type="text" className="form-control" id="inputAddressCEP" placeholder="05212040"
-                                aria-label="Disabled input example" disabled />
-                        </div>
+                            <div className="col-12 col-md-12 col-lg-5 custom-inputAccount responsive-inputA">
+                                <label for="inputAddressCEP" id="InputCEPTitle">
+                                    CEP:</label>
+                                <input type="text" className="form-control" id="inputAddressCEP" placeholder={addressrecovered.cep}
+                                    aria-label="Disabled input example" disabled />
+                            </div>
 
-                        <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
-                            <label for="inputAddressComplemento" id="InputComplementoTitle">
-                                Complemento:</label>
-                            <input type="text" className="form-control" id="inputAddressComplemento" placeholder=" "
-                                aria-label="Disabled input example" disabled />
-                        </div>
+                            <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
+                                <label for="inputAddressComplemento" id="InputComplementoTitle">
+                                    Complemento:</label>
+                                <input type="text" className="form-control" id="inputAddressComplemento" placeholder={addressrecovered.complemento}
+                                    aria-label="Disabled input example" disabled />
+                            </div>
 
-                        <div className="col-12 col-md-12 col-lg-5 custom-inputAccount responsive-inputA">
-                            <label for="inputAddressPontodeReferencia" id="InputPontodeReferenciaTitle">
-                                Ponto de Referência:</label>
-                            <input type="text" className="form-control" id="inputAddressPontodeReferencia"
-                                placeholder=" Em frente a USP " aria-label="Disabled input example" disabled />
+                            <div className="col-12 col-md-12 col-lg-5 custom-inputAccount responsive-inputA">
+                                <label for="inputAddressPontodeReferencia" id="InputPontodeReferenciaTitle">
+                                    Ponto de Referência:</label>
+                                <input type="text" className="form-control" id="inputAddressPontodeReferencia"
+                                    placeholder={addressrecovered.pontoReferencia} aria-label="Disabled input example" disabled />
+                            </div>
                         </div>
-                    </div>
-                </div>
+                </div> */}
 
                 {/* <!-- Modal Cadastro botão --> */}
 
+            </div>
+
+            <div className="row rowCentralized justify-content-center">
                 <button type="button" className="btn edit col-md-6 col-8" data-bs-toggle="modal"
                     data-bs-target="#modalEditarDados">Editar Dados Cadastrais</button>
             </div>
@@ -239,7 +339,7 @@ function MyAccount() {
                                             <label for="inputAddress" id="inputEndereco">
                                                 Endereço:</label>
                                             <input type="text" className="form-control" id="inputEndereco"
-                                                placeholder="Av. Corifeu de Azevedo Marques" />
+                                                placeholder="teste" />
                                         </div>
 
                                         <div className="col-12 col-md-4 col-xl-2">
@@ -304,16 +404,24 @@ function MyAccount() {
 
             {/* <!-- Outros Endereços --> */}
             <div className="row rowCentralized justify-content-center">
-                <div className="cardContentAccount col-md-11" id="cardenderecos">
-                    <div className="row titleContainer">
+                <div className="cardContentAccount col-md-11 col-11" id="cardenderecos">
+                    <div className="row titleContainer rowCentralized">
                         <div className="col-md-5 col-8 titleContainersecondary">Outros Endereços</div>
 
                         {/* {/<div className="textoapoio col-md-3 col-5" id="AdicionarEnde">Adicione novos endereços</div>/} */}
                     </div>
                     <br />
                     <div className="row rowCentralized enderecoCartao">
-                        <div className="col-12 col-md-12 col-lg-8">
-                            <div className="row rowCentralized enderecoCartao">
+                        <div className="col-11 col-md-12 col-lg-12">
+
+                        <div className='d-flex title-button'>
+                            <div className="col-5 col-md-7 col-lg-8" id="listaEnde"> Endereços Adicionais:</div><br /><br />
+                            
+                            <button type="button" className="btn CadastroButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <strong>+</strong> Cadastrar novo endereço
+                            </button>
+                        </div>  
+                            {/* <div className="row rowCentralized enderecoCartao">
                                 <div className="col-12" id="listaEnde"> Endereços Adicionais:</div><br /><br />
 
                                 <div className="col-12 col-md-12">
@@ -321,8 +429,8 @@ function MyAccount() {
 
                                         <a className="imageDisableBox  col-2 col-md-1"> <img src={PinLocation} /></a>
                                         <div className="col-sm-9 col-7">
-                                            <input type="text" className="form-control " placeholder="Rua Lorem,1689 Vila-Butantã-SP"
-                                                aria-label="Disabled input example" disabled />
+                                            <input type="text" className="form-control " placeholder={addressrecovered.nomeRua}
+                                                aria-label="Disabled input example"  disabled />
                                         </div>
                                         <div className="dataButtons col-2">
                                             <div className="row">
@@ -332,16 +440,17 @@ function MyAccount() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
+                            {listAddress()}
                         </div>
 
-                        <div className="col-8 col-md-10 col-lg-4">
+                        {/* <div className="col-10 col-md-10 col-lg-4">
                             <div className="row disableBoxRow">
                                 <button type="button" className="btn CadastroButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <strong>+</strong> Cadastrar novo endereço
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
 
@@ -361,61 +470,79 @@ function MyAccount() {
                                             <label for="inputEndereco" id="inputEndereco">
                                                 Endereço:</label>
                                             <input type="text" className="form-control" id="inputEndereco"
-                                                placeholder="Av. Corifeu de Azevedo Marques" />
+                                                placeholder="Av. Corifeu de Azevedo Marques" value={address.nomeRua} onChange={(event) => {setAddress({...address, nomeRua: event.target.value})}}/>
                                         </div>
 
                                         <div className="col-2">
                                             <label for="inputAdressNumCadastroEnde" id="inputNumCadastroEnde">
                                                 Nº:</label>
-                                            <input type="text" className="form-control" id="inputAdressNumCadastroEnde" placeholder="3097" />
+                                            <input type="text" className="form-control" id="inputAdressNumCadastroEnde" placeholder="3097" value={address.numeroCasa} onChange={(event) => {setAddress({...address, numeroCasa: event.target.value})}}/>
                                         </div>
 
                                         <div className="col-4">
                                             <label for="inputAddressBairro" id="InputBairroTitle">
                                                 Bairro:</label>
-                                            <input type="text" className="form-control" id="inputAddressBairro" placeholder="Vila Butantã" />
+                                            <input type="text" className="form-control" id="inputAddressBairro" placeholder="Vila Butantã" value={address.bairro} onChange={(event) => {setAddress({...address, bairro: event.target.value})}} />
                                         </div>
 
                                         <div className="col-5">
                                             <label for="inputCidade" id="inputCidade">
                                                 Cidade:</label>
-                                            <input type="text" className="form-control" id="inputAddressCidade" placeholder="São Paulo" />
+                                            <input type="text" className="form-control" id="inputAddressCidade" placeholder="São Paulo" value={address.nomeCidade} onChange={(event) => {setAddress({...address, nomeCidade: event.target.value})}}/>
                                         </div>
 
                                         <div className="col-3">
                                             <label for="inputAddressUF" id="InputUFTitle">
                                                 UF:</label>
-                                            <input type="text" className="form-control" id="inputAddressUF" placeholder="SP" />
-                                        </div>
-
+                                            <input type="text" className="form-control" id="inputAddressUF" placeholder="SP" value={address.estado} onChange={(event) => {setAddress({...address, estado: event.target.value})}}/>
+                                            {/* <Form.Select
+                                                onChange={(event) => {
+                                                    console.log(event)
+                                                    let stateSelected = event.target.options.selectedIndex
+                                                    let textState = event.target.options[stateSelected].innerText
+                                                    setAddress({...address, states: event.target.value})
+                                                }}>
+                                            
+                                            <option>Selecione um estado </option>
+                                            {
+                                                states.map((item) => {
+                                                    return(
+                                                        <option key={item.codEstado} value={item.codEstado}>{item.descricaoEstado}</option>
+                                                    )
+                                                })
+                                            }
+                                            </Form.Select> */}
+                                       </div>
+ 
 
                                         <div className="col-4">
                                             <label for="inputAddressCEP" id="InputCEPTitle">
                                                 CEP:</label>
-                                            <input type="text" className="form-control" id="inputAddressCEP" placeholder="05212040" />
+                                            <input type="text" className="form-control" id="inputAddressCEP" placeholder="05212040" value={address.cep} onChange={(event) => {setAddress({...address, cep: event.target.value})}} />
                                         </div>
 
                                         <div className="col-6">
                                             <label for="inputAddressComplemento" id="InputComplementoTitle">
                                                 Complemento:</label>
-                                            <input type="text" className="form-control" id="inputAddressComplemento" placeholder=" " />
+                                            <input type="text" className="form-control" id="inputAddressComplemento" placeholder=" " value={address.complemento} onChange={(event) => {setAddress({...address, complemento: event.target.value})}}/>
                                         </div>
 
-                                        <div className="col-10">
+                                        <div className="col-10">               
                                             <label for="inputAddressPontodeReferencia" id="InputPontodeReferenciaTitle">
                                                 Ponto de Referência:</label>
-                                            <input type="text" className="form-control" id="inputAddressPontodeReferencia"
-                                                placeholder=" Em frente a USP " />
+                                            <input type="text" className="form-control" id="inputAddressPontodeReferencia" placeholder=" Em frente a USP " value={address.pontoReferencia} onChange={(event) => {setAddress({...address, pontoReferencia: event.target.value})}}/>
                                         </div>
 
 
 
                                     </div>
                                 </div>
+                                {successRegister ? <h3>Usuário cadastrado com sucesso</h3> : ''}
                                 <div className="modal-footer">
                                     <button type="button" className="btn cancelar" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="submit" className="btn salvar" data-bs-dismiss="modal">Salvar</button>
+                                    <button type="submit" className="btn salvar" data-bs-dismiss="modal" onClick={register}>Salvar</button>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -424,8 +551,8 @@ function MyAccount() {
             </div>
             {/* <!--  Final Outros Endereços --> */}
             <div className="row row rowCentralized justify-content-center">
-                <div className="cardContentAccount col-md-11 " id="cardenderecos">
-                    <div className="row  titleContainer">
+                <div className="cardContentAccount col-md-11 col-11 " id="cardenderecos">
+                    <div className="row  titleContainer rowCentralized">
                         <div className=" col-md-5 col-8 titleContainersecondary">Meus Cartões</div>
                     </div>
                     <br />
