@@ -1,0 +1,58 @@
+
+.Principal{
+  padding: 30px;
+
+}
+.myProfilePage{
+    background-color: rgb(255 247 249);
+}
+
+br {
+    background-color: white;
+}
+.containerPrincipal{
+    background-color:white;
+}
+.containerPrincipal1{
+    background-color:white;
+}
+.titulo2{
+    color:#E6889A;
+}
+.titulo{
+    color:#E6889A;
+}
+.texto {
+    color:black;
+     /* text-align: start; */
+     font-family: 'Comfortaa', cursive;
+    
+    }
+
+b { 
+    font-weight:bold;
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+    padding: 11px;
+}
+
+h3 h4 {
+    padding-top: 24px;
+}
+
+.bold{
+    text-align: justify;
+}
+
+.lh-base{
+    outline:1px solid rgb(209, 209, 209);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.sining-text{
+    font-weight:bold;
+   color:#494949;
+}
+

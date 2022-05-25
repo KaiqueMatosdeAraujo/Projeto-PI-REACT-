@@ -1,0 +1,17 @@
+
+
+.destaques{
+    color: #E6889A;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 17px;
+}
+
+.cards-home{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

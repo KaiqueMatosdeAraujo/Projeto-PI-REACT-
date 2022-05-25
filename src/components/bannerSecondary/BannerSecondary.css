@@ -1,0 +1,17 @@
+
+.entregaImg{
+    width: 100%;
+}
+@media (min-width: 450px)
+{
+    .banner-mobile{
+        display: none;
+    }
+}
+
+@media (max-width: 450px)
+{
+    .banner-entrega{
+        display: none;
+    }
+}

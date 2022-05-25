@@ -1,0 +1,39 @@
+.menu{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Comfortaa', cursive;
+    background-color: white;
+   
+}
+ 
+.menu-a li a, .dropdown-toggle{
+    list-style: none;
+    text-decoration-line: none;
+    color: #E6889A;
+    font-weight: bold;
+}
+
+.dropdown-item:active{
+background-color: rgb(224, 224, 224);
+}
+
+.menu-a li a:visited{
+color: #E6889A;
+}
+
+.menu-a li a:hover{
+    color: grey;
+}
+.dropdown-toggle:hover{
+    color:grey;
+}
+.dropdown-toggle{
+padding: 0.5rem 1rem;
+text-decoration-line: none;
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+     box-shadow: none;
+}

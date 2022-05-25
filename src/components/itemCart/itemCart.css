@@ -1,0 +1,26 @@
+.cart-item {
+    display: grid;
+    grid-template-columns: 100%;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2), 
+                inset -2px -2px 2px #efefef;
+    color:grey;
+    margin:5px;
+}
+
+
+@media(min-width: 768px) {
+.cart-item first-child{
+    border-top: 1px solid #efefef;
+}
+
+.cart-item{
+    /* box-shadow: none;
+    border: none; */
+    display: flex;
+    /* width: 20%; */
+    border-bottom: 1px solid #efefef;
+}
+
+}

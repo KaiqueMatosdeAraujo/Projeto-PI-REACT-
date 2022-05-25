@@ -1,0 +1,88 @@
+.bgPage{
+ 
+    background-color: rgb(255 247 249);
+}
+.container-profile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+ul{
+    line-height: 2;
+}
+
+
+
+.nav-item.principal{
+    outline:0.5px solid rgb(199, 199, 199);
+    background-color: #ffc792a8;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+
+}
+
+.nav-link.principal {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    width: 231px;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    width: 276px;
+}
+
+.nav-link.principal:active{
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    color:rgb(0, 0, 0);
+}
+
+.nav-link.principal:hover{
+   
+   color:rgb(255, 255, 255);
+    
+}
+
+.nav-link.active.principal{
+    text-decoration-color: black;
+    border-top-right-radius:12px;
+    border-top-left-radius:12px;
+}
+
+
+
+#titleCardMinhaConta h1{
+    font-size:25px;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+
+.container.row{
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+
+
+@media (max-width: 425px){
+    nav-link.principal {
+        width: 366px;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+

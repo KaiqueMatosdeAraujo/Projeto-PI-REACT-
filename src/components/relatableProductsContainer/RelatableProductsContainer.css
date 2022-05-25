@@ -1,0 +1,17 @@
+.nomeBebe{
+    color:#E6889A;
+    font-weight: bold;
+}
+.containerConteudo {
+    padding: 21px;
+    outline:1px solid rgb(209, 209, 209);
+    border-radius: 8px;
+    background-color:white;
+    margin-bottom:1%;
+   
+}
+
+.row-cards-relatable-products{
+    margin-left: 0px;
+    margin-right: 0px;
+}
