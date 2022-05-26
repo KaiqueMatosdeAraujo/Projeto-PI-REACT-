@@ -16,10 +16,15 @@ function CartProvider(props) {
         return []
     }
 
+
     const addToCart = (item) => {
+
+
         let cartList = localStorage.getItem('cart')
         ? JSON.parse(localStorage.getItem('cart'))
         : []
+
+        
 
         let isInCart = false
 
@@ -72,14 +77,14 @@ function CartProvider(props) {
         let cartList = getCartStorage()
         setCartQty(cartList.length)
     }
+
+   
     
     const alterarQuantidade = (operacao, codProduto) => {
         let cartList = localStorage.getItem('cart')
         ? JSON.parse(localStorage.getItem('cart'))
         : []
         
-        
-
         cartList.forEach(element => {
             
             if(element.codProduto == codProduto){
@@ -91,15 +96,19 @@ function CartProvider(props) {
                 if(operacao == "+") element.quantidade++
 
                 
+
                 element.total = element.preco * element.quantidade
-                element.parcela = element.preco / 10         
+
+                
+           
             }
         });
+
 
         localStorage.setItem("cart", JSON.stringify(cartList))
         setCart(cartList)
     }
-   
+    
 
     return (
         <CartContext.Provider value={{cart, cartQty, addToCart, getCartQty, getCart, deleteCart, alterarQuantidade}}>

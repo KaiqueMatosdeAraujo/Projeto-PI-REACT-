@@ -1,8 +1,21 @@
 import './RelatableProduct.css'
 import Heart from '../card/imgs/heart (2).png'
+import CartContext from '../../context/cart.provider'
+import React, { useContext } from 'react';
 
 
 function RelatableProduct(props) {
+
+  
+  const { addToCart } = useContext(CartContext)
+
+  let parcela = props.price / 10;
+  let parcelaFormatada = parseFloat(parcela.toFixed(2))
+  let parcel = parcelaFormatada.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+  var atual = props.price
+  var precoFormat = atual.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
   return (
     <>
 
@@ -22,18 +35,18 @@ function RelatableProduct(props) {
 
         <div class="row justify-content-evenly">
           <div class="nomeProdutoRelacionado col-10">
-            {props.rProductName}
+            {props.name}
           </div>
           <div class="precoProdutoRelacionado col-10">
-            R$   {props.rProductPrice}
+            R$   {precoFormat}
           </div>
           <div class="parcelamentoProdutoRelacionado col-10">
-            OU 10X DE R${props.rProductParcel}
+            OU 10X DE R$ {parcel}
           </div>
         </div>
 
         <div class="row justify-content-evenly">
-          <button type="button" class="btn btnAdicionarAoCarrinho botaoComprarProdutoRelacionado  col-8">Comprar</button>
+          <button type="button" class="btn btnAdicionarAoCarrinho botaoComprarProdutoRelacionado  col-8" onClick={() => addToCart(props.productRelatable)}>Comprar</button>
         </div>
 
 

@@ -7,6 +7,12 @@ function ItemCart(props) {
 
   const { deleteCart } = useContext(CartContext);
 
+  var atual = props.price
+  var precoFormat = atual.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+  var atualTotal = props.total
+  var totalFormat = atualTotal.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
   return (
     <>
       
@@ -22,7 +28,7 @@ function ItemCart(props) {
         </div>
         <div className="cart-product-info">
           <p className="cart-product-name">{props.name}</p>
-          <p className="cart-price-sm">R$ {props.price}</p>
+          <p className="cart-price-sm">R$ {precoFormat}</p>
           
           
         </div>
@@ -50,10 +56,10 @@ function ItemCart(props) {
         </div>
       </div>
       <div className="cart-unit-price">
-        <h4>R$ {props.price}</h4>
+        <h4>R$ {precoFormat}</h4>
       </div>
       <div className="cart-product-total">
-        <h4>R$ {props.total} </h4>
+        <h4>R$ {totalFormat} </h4>
       </div>
       
     </>

@@ -10,6 +10,12 @@ function ProductList(props) {
 
   const products = props.products || [];
 
+  // const casa =  localStorage.getItem('cart')
+
+  // console.log(casa)
+
+ 
+
   const listProducts = () => {
     return products.length == 0 ? (
       <div className="carrinhoVazio">Seu Carrinho está vazio!</div>
@@ -21,6 +27,7 @@ function ProductList(props) {
               <div className="cart-item">
                 <div className="form" style={{ backgroundColor: "white" }}>
                   <ItemCart
+                  
                     key={item.codProduto}
                     doll1={item.imgProduto}
                     id={item.codProduto}
@@ -31,7 +38,6 @@ function ProductList(props) {
                     decrementar={alterarQuantidade}
                     quantidade={item.quantidade}
                     total={item.total}
-                    parcel={item.parcela}
                   />
                 </div>
               </div>

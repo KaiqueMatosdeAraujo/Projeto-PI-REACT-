@@ -1,15 +1,24 @@
 import { Link } from 'react-router-dom'
 
-import React, { useContext } from 'react';
+
 import './CardProduct.css'
 import Heart from './imgs/heart (2).png'
 import CartContext from '../../context/cart.provider'
+import React, { useContext } from 'react';
 
 
 
 function CardProduct(props) {
     const { addToCart } = useContext(CartContext)
-    let parcel;
+
+    
+    let parcela = props.price / 10;
+    let parcelaFormatada = parseFloat(parcela.toFixed(2))
+    let parcel = parcelaFormatada.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+    var atual = props.price
+    var precoFormat = atual.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
     return (
         
         <>
@@ -26,7 +35,7 @@ function CardProduct(props) {
                             <Link to="../paginas/PaginaItem2.html"><div className="nome-produto">{props.Name}</div></Link>
 
                             <div className="precos">
-                                <div className="preco">R$ {props.price}</div>
+                                <div className="preco">R$ {precoFormat}</div>
                                 <div className="parcelado">OU 10X DE R$ {parcel}</div>
                             </div>
 
