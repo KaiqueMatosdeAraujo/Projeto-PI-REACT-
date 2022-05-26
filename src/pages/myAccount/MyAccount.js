@@ -30,12 +30,15 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { addressModel } from '../../models'
 import { Form } from 'react-bootstrap'
-
+import { useHistory } from 'react-router-dom'
 
 function MyAccount(props) {
 
+   // const idClienteLocalStorage = JSON.parse(localStorage.getItem("User"))
+    //const codConvertido = parseInt(idClienteLocalStorage)
     const { idcliente } = useParams()
-    const { idendereco } = useParams()
+    //let history = useHistory
+    //console.log(idClienteLocalStorage)
 
     const [states, setStates] = useState([])
     const [address, setAddress] = useState(addressModel)
@@ -45,8 +48,14 @@ function MyAccount(props) {
 
     const endereco = props.endereco || {}
 
+    // const getUser = () => { 
+    //     history.push(`/profile/${idClienteLocalStorage}`) 
+    // } 
+    
+
     useEffect(() => {
        // getAddress()
+       //getUser()
         getAllAddress()
     }, [])
 
@@ -69,7 +78,7 @@ function MyAccount(props) {
     }
 
     const register = () => {
-        axios.post(`http://localhost:8080/endereco/5/cadastrar`, address)
+        axios.post(`http://localhost:8080/endereco/1/cadastrar`, address)
         .then((response) => {
             setSuccessRegister(true)
         })
@@ -455,6 +464,7 @@ function MyAccount(props) {
 
 
                     {/* <!-- Modal --> */}
+                    <form action=''>
                     <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div className="modal-dialog modal-lg">
@@ -465,7 +475,7 @@ function MyAccount(props) {
                                 </div>
                                 <div className="modal-body">
                                     <div className="cardContentAccount row modalEndereco">
-
+                                   
                                         <div className="col-10">
                                             <label for="inputEndereco" id="inputEndereco">
                                                 Endereço:</label>
@@ -540,13 +550,13 @@ function MyAccount(props) {
                                 {successRegister ? <h3>Usuário cadastrado com sucesso</h3> : ''}
                                 <div className="modal-footer">
                                     <button type="button" className="btn cancelar" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="submit" className="btn salvar" data-bs-dismiss="modal" onClick={register}>Salvar</button>
+                                    <button type="submit" className="btn salvar" data-bs-dismiss="modal" onClick={register()}>Salvar</button>
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
-
+                    </form>
                 </div>
             </div>
             {/* <!--  Final Outros Endereços --> */}

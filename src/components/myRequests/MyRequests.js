@@ -46,9 +46,8 @@ function MyRequests(props) {
                                         <p><strong>Data do Pedido:</strong> {order.dataPedido}</p>
                                         <p><strong>Valor:</strong>R$ {props.price}</p>
                                         <p className="p-formaPagamento"><strong>Forma de Pagamento:</strong></p>
-                                        <p>{order.formaPagamento}<br />
-                                            {props.cardNumber}<br />
-                                            10x sem juros  </p>
+                                        <p>{order.formaPagamento}<br /></p>
+                                            
                                     </div>
 
                                     <div className="col-md-4 col-10">

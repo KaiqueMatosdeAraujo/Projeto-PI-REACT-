@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Router } from "react-router-dom";
 import Home from './pages/home/Home'
 import Product from './pages/product/Product'
 import Cart from './pages/cart/Cart'
@@ -9,7 +9,7 @@ import AssessmentsHome from "./components/assessmentsHome/AssessmentsHome";
 import Contact from './pages/contactUs/Contact'
 import SuccessPassword from './pages/success_password/SuccessPassword'
 import Wishlist from "./pages/wishlist/Wishlist";
-
+import {history} from '../src/History'
 import SuccessPurchase from './pages/successPurchase/SuccessPurchase'
 import MyAccount from './pages/myAccount/MyAccount'
 import ForgotPassword from './pages/forgotPassword/ForgotPassword'
@@ -26,6 +26,7 @@ import Accessories from "./pages/accessoriesProducts/AccessoriesProducts"
 
 export const Routes = () => {
     return (
+        <Router history={history}>
         <Switch>
             <Route path="/successPurchase" component={SuccessPurchase}/>
             <Route path="/" component={Home} exact />
@@ -53,5 +54,6 @@ export const Routes = () => {
             <Route path="/Teste" component={Teste}/>
             
         </Switch>
+        </Router>
     )
 }
