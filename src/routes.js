@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route,Router } from "react-router-dom";
 import Home from './pages/home/Home'
 import Product from './pages/product/Product'
 import Cart from './pages/cart/Cart'
@@ -22,8 +22,11 @@ import ExchangesReturn from './pages/exchangesReturn/exchangesReturn'
 import Login from './pages/login/Login'
 import Teste from './pages/teste/Teste'
 
+import {history} from '../src/History'
+
 export const Routes = () => {
     return (
+        <Router history={history}>
         <Switch>
             <Route path="/successPurchase" component={SuccessPurchase}/>
             <Route path="/" component={Home} exact />
@@ -47,5 +50,6 @@ export const Routes = () => {
             <Route path="/myAccount" component={MyAccount} />
             <Route path="/Teste" component={Teste}/>
         </Switch>
+        </Router>
     )
 }

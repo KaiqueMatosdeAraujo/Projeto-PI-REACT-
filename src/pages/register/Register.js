@@ -510,8 +510,7 @@ function Register() {
                           !validName || !validPwd || !validMatch ? true : false
                         }
                       >
-                  <InputMask mask="99999-9999" maskChar={null} value={ddd}  />;
-                  <Link to="/login"> Cadastrar</Link>
+                   Cadastrar
                       </button>
                     </div>
                   </form>
