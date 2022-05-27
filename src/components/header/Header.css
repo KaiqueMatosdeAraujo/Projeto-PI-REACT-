@@ -1,0 +1,229 @@
+.headerNavBar{
+    background-color:#E6889A;
+}
+.navSearch{
+    justify-content:flex-end;
+    display: flex;
+}
+.row.navLinks{
+    display: flex;
+    font-size: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-end;
+}
+.collapse .navbar-nav.row{
+    justify-content: space-between;
+}
+.input-group-addon{
+    display:none;
+}
+
+.navLinks a{
+    padding:0;
+    display: inline;
+    text-align: center;
+}
+
+.boxSearch{
+
+    background-color: white;
+    border-radius:25px;
+    width: 90%;
+}
+.boxSearch input{
+    border-radius: 25px;
+    border: none;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgb(255 255 255 / 0%);
+}
+
+
+
+
+.navbar-collapse .navbar-nav {
+   align-items: center;
+
+}
+.headerCart{
+    background-color:#9abdff;
+    border-radius:24px;
+    height:38px;
+    width: 137px;
+    
+}
+
+ .headerCart .nav-link:hover{
+    color:white;
+outline:3px solid rgb(232, 232, 232);
+border-radius:25px;
+height:38px;
+
+}
+.minicartPng{
+height:20px;
+}
+
+
+.cartPriceItems {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -2px;
+}
+
+.babyPngUser{
+    width: 52px;
+    height: 28px;
+}
+.supportphrase{
+    display: none;
+}
+@media (max-width: 991px) {
+    .collapse .navbar-nav.row {
+        justify-content: center;
+        --bs-gutter-x: 0;
+    }
+    .collapse .navbar-nav{
+        display: flex;
+        flex-direction: row;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .navSearch {
+        justify-content: center;
+    }
+    .headerCart {
+        height: 43px;
+        width: 213px;
+    }
+    .cartPriceItems {
+        font-size: 19px;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: -1%;
+        margin-left: -12%;
+    }
+    .minicartPng{
+        height: 30px;
+        width: 35px;
+
+        }
+    .boxSearch input {
+        
+            border-radius: 25px;
+            border: none;
+            height: 48px;
+            font-size: 13px;
+        
+     }
+     .row.navLinks {
+        display: flex;
+        font-size: 16px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    .babyPngUser{
+     width: 58px;
+    height: 36px;
+}
+    .supportphrase{
+        display: inline;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+    .nav-link.active.loginLink{
+        text-align: start;
+    }
+    .navLinks a {
+        text-align:end;
+    }
+    .boxSearch{
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    }
+}
+@media (max-width: 768px){
+    .headerCart {
+        width: 165px;
+    }
+    .cartPriceItems {
+            font-size: 15px;
+            margin-top: 0%;
+            margin-left: -21%;
+    }
+    .minicartPng{
+    height: 27px;
+    width: 27px;
+}
+
+.row.navLinks {
+        font-size: 14px;
+        justify-content: flex-end;
+    
+}
+.babyPngUser {
+   display: none;
+}
+}
+
+@media (max-width: 575px){
+  .babyPngUser{
+      display: none;
+  }
+    .row.navLinks {
+        display: flex;
+        font-size: 16px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    .headerCart {
+        width: 142px;
+    }
+    .minicartPng {
+        height: 20px;
+        width: 24px;
+    }
+    .headerCart {
+        width: 140px;
+        height: 36px;
+    }
+
+    .cartPriceItems {
+       
+            font-size: 14px;
+            margin-top: -2%;
+            margin-left: -14%;
+        
+    }
+    .supportphrase{
+        display: none;
+    }
+    .row.navLinks {
+            display: flex;
+            font-size: 15px;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-around;
+            align-content: center;
+    }
+    .navLinks a {
+        text-align: center;
+    }
+    .nav-link.active.loginLink {
+        text-align: center; 
+    }
+}
