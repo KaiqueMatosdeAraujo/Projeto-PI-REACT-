@@ -3,19 +3,31 @@ import bebe1 from './imgs/bebe1.png'
 import bebe3 from './imgs/bebe3.jpg'
 import cart from './imgs/shopping-cart.png'
 import MoreDetails from '../moreDetails/MoreDetails'
-
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 
 function MyRequests(props) {
 
- 
+    const [order, setOrder] = useState([])
+
+    useEffect(() => {
+        getOrder()
+    }, [])
+
+    const getOrder = () => {
+        //axios.get(`http://localhost:8080/endereco/${idcliente}/${idendereco}`)
+        axios.get(`http://localhost:8080/pedido/1/1/meusPedidos`)
+        .then((response) => {
+            setOrder(response.data)
+            console.log(response.data)
+        })
+    }
+
+
 
     return (
         <>
- 
-            
-          
-      
 
                         <div className="container container-meus-pedidos">
                             <p><strong>Pedido # {props.codPedido}</strong></p>
@@ -32,13 +44,11 @@ function MyRequests(props) {
                             <div className="container container-conteudo ">
                                 <div className="row">
                                     <div className=" col-md-8 col-12">
-                                        <p><strong>Situação do pedido:</strong> {props.status}</p>
-                                        <p><strong>Data do Pedido:</strong> {props.data}</p>
+                                        <p><strong>Situação do pedido:</strong> {order.statusPedido}</p>
+                                        <p><strong>Data do Pedido:</strong> {order.dataPedido}</p>
                                         <p><strong>Valor:</strong>R$ {props.price}</p>
                                         <p className="p-formaPagamento"><strong>Forma de Pagamento:</strong></p>
-                                        <p>{props.methodPayment}<br />
-                                            {props.cardNumber}<br />
-                                            10x sem juros  </p>
+                                        <p>{order.formaPagamento}<br /></p>
                                     </div>
 
                                     <div className="col-md-4 col-10">

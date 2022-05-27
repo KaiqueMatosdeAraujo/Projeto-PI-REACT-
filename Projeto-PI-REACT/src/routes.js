@@ -23,6 +23,7 @@ import Login from './pages/login/Login'
 import Teste from './pages/teste/Teste'
 import BoyProduct from "./pages/boyProduct/BoyProduct";
 import Accessories from "./pages/accessoriesProducts/AccessoriesProducts"
+import ResultSearch from './pages/resultSearch/ResultSearch'
 
 
 export const Routes = () => {
@@ -51,6 +52,7 @@ export const Routes = () => {
             <Route path="/login" component={Login} />
             <Route path="/myAccount" component={MyAccount} />
             <Route path="/Teste" component={Teste}/>
+            <Route path="/resultsearch/:name" component={ResultSearch}/> 
     
         </Switch>
     )

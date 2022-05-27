@@ -3,7 +3,9 @@ import './CheckoutProduct.css'
 
 function CheckoutProduct(props) {
 
-
+    var atual = props.price
+    var precoFormat = atual.toLocaleString('pt-br', {minimumFractionDigits: 2});
+  
 
     return (
         <>
@@ -15,7 +17,7 @@ function CheckoutProduct(props) {
                     <ul type="none">
                         <li><strong>{props.name}</strong></li>
                         <li><strong>Quantidade:</strong> {props.qtd}</li>
-                        <li><strong>Valor do produto: </strong>R$ {props.price}</li>
+                        <li><strong>Valor do produto: </strong>R$ {precoFormat}</li>
                     </ul>
 
                 </div>

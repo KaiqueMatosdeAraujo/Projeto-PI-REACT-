@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-import React, { useEffect, useState } from 'react';
-import axios from 'axios'
 import './Header.css'
 import logo from '../header/imgs/logo-pimpolhos-certo.png';
 import user from '../header/imgs/baby-user.png';
@@ -8,11 +6,32 @@ import SearchIcon from '../header/imgs/search.png'
 import Logo from '../header/imgs/logo-pimpolhos-certo.png'
 import BabyUser from '../header/imgs/baby-user.png'
 import MiniCartButton from '../../components/miniCartButton/MiniCartButton';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { baseUrl } from '../../environments/environments'
+import { useHistory } from 'react-router-dom'
 
-function Header(props) {
+function Header() {
 
-    const [promotions, setPromotions] = useState([]);
+    const [search, setSearch] = useState("");
+    let history = useHistory()
     
+
+    const searchProducts = () => {
+        history.push(`/resultsearch/${search}`)
+    }
+
+     const buscaInput = (e) => {
+        if (e.keyCode === 13) {
+            const valor = e.target.value;
+            console.log(valor);
+        }
+    }
+
+
+
+   
+
 
 
     return (
@@ -28,16 +47,16 @@ function Header(props) {
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0 row">
 
                                 <li className="nav-item navSearch col-lg-7 col-11 ">
-                                    <form className="d-flex boxSearch">
+                                    <div className="d-flex boxSearch">
 
-                                        <input className="form-control me-2" type="search" placeholder="Procure aqui " aria-label="Search"
-                                        
-                                         />
-                                        <button className="btn" type="submit"><img src={SearchIcon} alt="Logo" width="25px" /></button>
-                                    </form>
+                                        <input className="form-control me-2" type="search" value={search} onChange={(e) => setSearch(e.target.value)} onKeyDown={(e) => buscaInput(e)} placeholder="Procure aqui " aria-label="Search" />
+                                        <button className="btn" type="submit" onClick={() => searchProducts()}><img src={SearchIcon} alt="Logo" width="25px" /></button>
+                                    </div>
+
+
                                 </li>
                                 <li className="nav-item col-lg-2 col-md-6 col-4">
-                                <Link to="/cart"> <MiniCartButton totalCart="9.900,00"/></Link>
+                                    <Link to="/cart"> <MiniCartButton totalCart="9.900,00" /></Link>
                                 </li>
                                 <li className="nav-item   col-xl-2 col-lg-3 col-md-5 col-7">
                                     <div className="row navLinks">
@@ -53,13 +72,14 @@ function Header(props) {
                         </div>
                     </div>
                 </nav>
-                
+
             </header>
 
 
 
         </>
     )
+
 }
 
 export default Header

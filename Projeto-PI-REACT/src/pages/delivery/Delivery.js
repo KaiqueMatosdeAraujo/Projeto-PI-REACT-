@@ -1,5 +1,5 @@
-
 import { Link } from "react-router-dom";
+import { Form } from 'react-bootstrap'
 import React, { useContext, useState, useEffect } from "react";
 import "./Delivery.css";
 import Nav from "../../components/nav/Nav";
@@ -23,15 +23,182 @@ import Bebe from "./imgs/bebe2.jpg";
 import BannerFreight from "../../components/freightBanner/FreightBanner";
 import Caminhao from "./imgs/caminhao-de-entrega.png";
 import CaminhaoP from "./imgs/CaminhaoEntregaP.png";
-import CartContext from '../../context/cart.provider'
+import CartContext from "../../context/cart.provider";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { addressModel, cardModel, orderModel } from "../../models";
+
+import lixeira from "../myAccount/img-myAccount/trashBin.png";
+import PinLocation from "../myAccount/img-myAccount/location.png";
 
 function Delivery(props) {
   const { cart, getCart } = useContext(CartContext);
+  const { idcliente } = useParams();
 
-    useEffect(() => {
-        getCart()
-        // getOrders()
-    },[]) 
+  useEffect(() => {
+    getCart();
+    getAllAddress();
+    listAddress();
+  }, []);
+
+  const totalCarrinho = JSON.parse(localStorage.getItem("cart"));
+
+  const valorTotal = totalCarrinho
+    .map((item) => item.total)
+    .reduce((prev, curr) => prev + curr, 0);
+
+  var atualTotal = valorTotal;
+  var totalFormat = atualTotal.toLocaleString("pt-br", {
+    minimumFractionDigits: 2,
+  });
+
+ 
+
+  const [successRegister, setSuccessRegister] = useState(false);
+  const [address, setAddress] = useState(addressModel);
+
+  const [allAdress, setAllAddress] = useState([]);
+
+  const [ addressCod, setAddressCod ] = useState([])
+
+  const [ order, serOrder ] = useState(orderModel)
+
+  const register = () => {
+    axios
+      .post(`http://localhost:8080/endereco/1/cadastrar`, address)
+      .then((response) => {
+        setSuccessRegister(true);
+      });
+  };
+
+  const getAllAddress = () => {
+    axios
+      .get(`http://localhost:8080/endereco/1`)
+      .then((response) => {
+        setAllAddress(response.data);
+        console.log(allAdress);
+      });
+  };
+
+
+  // pedido
+
+  const [pagamento, setPagamento] = useState({
+    card: false,
+    pix: false,
+    boleto: false,
+  });
+
+  console.log(pagamento)
+
+  // const postPedido = () => {
+  //   axios
+  //     .post(`${basePedido}/novo`, order)
+  //     .then(() => {
+  //       getPedido();
+  //     })
+  //     .catch((error) => {
+  //       console.error(error.messege);
+  //     });
+  // };
+
+  // function addItemPedido(idpe) {
+  //   const lista = [];
+  //   //percorre a lista salva na memoria
+  //   carrinho.map((value) => {
+  //     //a cada volta, cria um objeto de item pedido e salva no array acima
+  //     lista.push({
+  //       quantidade: value.quantidade,
+  //       porcentagemIcms: 1,
+  //       valorIcms: 1,
+  //       produto: value.id,
+  //       pedido: idpe,
+  //     });
+  //   });
+  //   console.log(lista);
+  //   // chama o ultimo metodo para finalizar
+  //   postItemPedido(lista);
+  // }
+
+  // ultimo passo para finalizar o pedido
+  // const postItemPedido = (idItemPedido) => {
+  //   axios
+  //     .post(`${baseItemPedido}/novo`, idItemPedido)
+  //     .then(() => {
+  //       console.log("flxo finalizado");
+  //     })
+  //     .catch((error) => {
+  //       console.error(error.messege);
+  //     });
+  // };
+
+  
+
+  const listAddress = () => {
+    // return 
+
+      return (
+        <>
+          <div className="row rowCentralized enderecoCartao">
+          <div className="pagamento1">
+              <strong>
+                {" "}
+                <img src={CaminhaoP} alt="" /> Entrega
+              </strong>
+              <hr />
+            </div>
+            <div className="col-12 col-md-12">
+              <div className="disabledBox">
+                
+
+              <Form.Check onChange={(event) => { 
+                
+                const address = event.target.options.selectedIndex
+                const textAddress = event.target.options[address].innerText
+                // {id: event.target.value, name: textState}
+                setAddress({...order, endereco: event.target.value}) 
+              }}> {
+                allAdress.map((item) => {
+                    return (
+                    <Form.Check 
+                      type="radio"
+                      key={item.endereco}
+                      value={item.endereco}
+                      name="group1"
+                      id={`default-radio`}
+                      label={item.nomeRua} 
+                      
+                    >
+                      
+                    </Form.Check>
+                      
+                    )
+                })
+              }
+
+            
+              
+                
+              </Form.Check>
+
+                  
+
+                {/* <div className="col-sm-9 col-7">
+                  {item.nomeRua}, {item.numeroCasa} - {item.bairro} - {" "}
+                  {item.nomeCidade}
+                </div>
+                <div className="dataButtons col-2"> */}
+                  <div className="row">
+                    {/* <a className="imageDisableBox col-6 "><img src={lapis} alt="" /></a> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {/* </div> */}
+        </>
+      );
+    // });
+  };
 
   const listOrder = () => {
     return cart.map((item) => {
@@ -41,7 +208,7 @@ function Delivery(props) {
             <ProductCheckoutSimple
               nameProduct={item.nome}
               qtd={item.quantidade}
-              price={item.preco}
+              price={item.total}
             />
           </div>
         </>
@@ -56,7 +223,7 @@ function Delivery(props) {
           <div className="row  rowCentralized justify-content-center ">
             <CheckoutProduct
               name={item.nome}
-              qtd={1}
+              qtd={item.quantidade}
               price={item.preco}
               image={item.imgProduto}
             />
@@ -106,9 +273,9 @@ function Delivery(props) {
               </div>
               <div className="col-6 col-lg-2">
                 <ul type="none">
-                  <li>R$ 549,90</li>
+                  <li> R$ {totalFormat}</li>
                   <li>(Defina abaixo)</li>
-                  <li>R$ 549,90</li>
+                  <li>R$ {totalFormat}</li>
                 </ul>
               </div>
             </div>
@@ -121,179 +288,242 @@ function Delivery(props) {
 
         <div className="row rowCentralized checkoutCentralized">
           <div className=" col-xl-4  col-11 formEntrega">
-            <div className="entrega">
-              <strong>
-                {" "}
-                <img src={CaminhaoP} /> Entrega
-              </strong>
-              <hr />
+            {listAddress()}
+
+            <button
+              type="button"
+              className="btn CadastroButton"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <strong>+</strong> Cadastrar novo endereço
+            </button>
+
+            <div
+              className="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog modal-lg">
+                <div className="modal-content">
+                  <div className="modal-header myprofileModal">
+                    <div className="modalcontentTitle" id="exampleModalLabel">
+                      Cadastre um novo endereço
+                    </div>
+                    <button
+                      type="button"
+                      className="btn modalclose"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      X
+                    </button>
+                  </div>
+                  <div className="modal-body">
+                    <div className="cardContentAccount row modalEndereco">
+                      <div className="col-10">
+                        <label for="inputEndereco" id="inputEndereco">
+                          Endereço:
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="inputEndereco"
+                          placeholder="Av. Corifeu de Azevedo Marques"
+                          value={address.nomeRua}
+                          onChange={(event) => {
+                            setAddress({
+                              ...address,
+                              nomeRua: event.target.value,
+                            });
+                          }}
+                        />
+                      </div>
+
+                      <div className="col-2">
+                        <label
+                          for="inputAdressNumCadastroEnde"
+                          id="inputNumCadastroEnde"
+                        >
+                          Nº:
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="inputAdressNumCadastroEnde"
+                          placeholder="3097"
+                          value={address.numeroCasa}
+                          onChange={(event) => {
+                            setAddress({
+                              ...address,
+                              numeroCasa: event.target.value,
+                            });
+                          }}
+                        />
+                      </div>
+
+                      <div className="col-4">
+                        <label for="inputAddressBairro" id="InputBairroTitle">
+                          Bairro:
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="inputAddressBairro"
+                          placeholder="Vila Butantã"
+                          value={address.bairro}
+                          onChange={(event) => {
+                            setAddress({
+                              ...address,
+                              bairro: event.target.value,
+                            });
+                          }}
+                        />
+                      </div>
+
+                      <div className="col-5">
+                        <label for="inputCidade" id="inputCidade">
+                          Cidade:
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="inputAddressCidade"
+                          placeholder="São Paulo"
+                          value={address.nomeCidade}
+                          onChange={(event) => {
+                            setAddress({
+                              ...address,
+                              nomeCidade: event.target.value,
+                            });
+                          }}
+                        />
+                      </div>
+
+                      <div className="col-3">
+                        <label for="inputAddressUF" id="InputUFTitle">
+                          UF:
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="inputAddressUF"
+                          placeholder="SP"
+                          value={address.estado}
+                          onChange={(event) => {
+                            setAddress({
+                              ...address,
+                              estado: event.target.value,
+                            });
+                          }}
+                        />
+                        {/* <Form.Select
+                                                onChange={(event) => {
+                                                    console.log(event)
+                                                    let stateSelected = event.target.options.selectedIndex
+                                                    let textState = event.target.options[stateSelected].innerText
+                                                    setAddress({...address, states: event.target.value})
+                                                }}>
+                                            
+                                            <option>Selecione um estado </option>
+                                            {
+                                                states.map((item) => {
+                                                    return(
+                                                        <option key={item.codEstado} value={item.codEstado}>{item.descricaoEstado}</option>
+                                                    )
+                                                })
+                                            }
+                                            </Form.Select> */}
+                      </div>
+
+                      <div className="col-4">
+                        <label for="inputAddressCEP" id="InputCEPTitle">
+                          CEP:
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="inputAddressCEP"
+                          placeholder="05212040"
+                          value={address.cep}
+                          onChange={(event) => {
+                            setAddress({ ...address, cep: event.target.value });
+                          }}
+                        />
+                      </div>
+
+                      <div className="col-6">
+                        <label
+                          for="inputAddressComplemento"
+                          id="InputComplementoTitle"
+                        >
+                          Complemento:
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="inputAddressComplemento"
+                          placeholder=" "
+                          value={address.complemento}
+                          onChange={(event) => {
+                            setAddress({
+                              ...address,
+                              complemento: event.target.value,
+                            });
+                          }}
+                        />
+                      </div>
+
+                      <div className="col-10">
+                        <label
+                          for="inputAddressPontodeReferencia"
+                          id="InputPontodeReferenciaTitle"
+                        >
+                          Ponto de Referência:
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="inputAddressPontodeReferencia"
+                          placeholder=" Em frente a USP "
+                          value={address.pontoReferencia}
+                          onChange={(event) => {
+                            setAddress({
+                              ...address,
+                              pontoReferencia: event.target.value,
+                            });
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  {successRegister ? (
+                    <h3>Usuário cadastrado com sucesso</h3>
+                  ) : (
+                    ""
+                  )}
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn cancelar"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancelar
+                    </button>
+                    <button
+                      type="submit"
+                      className="btn salvar"
+                      data-bs-dismiss="modal"
+                      onClick={register()}
+                    >
+                      Salvar
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <form>
-              <div className="cep row rowCentralized ">
-                <div className="form-group col-5 col-md-4 col-lg-4 col-xl-5">
-                  <label for="inputCep">CEP</label>
-                  <input
-                    type="CEP"
-                    className="form-control"
-                    id="inputCEP"
-                    placeholder="Digite seu CEP"
-                  />
-                </div>
-
-                <div className="col-1">
-                  <button>
-                    <img className="LupaImgFrete " src={Lupa} alt="Lupa" />
-                  </button>
-                </div>
-
-                <div className="col-5 col-md-7  col-lg-7 col-xl-5 searchCep">
-                  <a
-                    className="correios"
-                    href="https://buscacepinter.correios.com.br/app/endereco/index.php"
-                    target="_blank"
-                  >
-                    Não sei meu CEP
-                  </a>
-                </div>
-              </div>
-
-              <div className="caixaIntEnd">
-                <div className="form-group col-12 col-md-12">
-                  <label for="inputAddress2">Endereço</label>
-                  <input
-                    type="text"
-                    className="  form-control"
-                    id="inputAddress2"
-                    placeholder="Ex: Rua Pacheco"
-                  />
-                </div>
-                <div className="row rowCentralized inputs-numero-bairro">
-                  <div className="form-group col-12 col-md-2">
-                    <label for="inputAddress2">Nº</label>
-                    <input
-                      type="text"
-                      className=" col-2 form-control"
-                      id="inputAddress2"
-                      placeholder="100"
-                    />
-                  </div>
-                  <div className="form-group col-12 col-md-9">
-                    <label for="inputCity">Bairro</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="inputCity"
-                      placeholder="Ex: Vl. Sonia"
-                    />
-                  </div>
-                </div>
-
-                <div className="form-row">
-                  <div className="cidadeUf">
-                    <div className="form-group col-12 col-md-9">
-                      <label for="inputCity">Cidade</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="inputCity"
-                        placeholder="Ex: Vl. Sonia"
-                      />
-                    </div>
-                    <div className="form-group col-12 col-md-2">
-                      <label for="inputEstado">Estado</label>
-                      <select id="inputEstado" className="form-control">
-                        <option selected>UF</option>
-                        <option>AC</option>
-                        <option>AL</option>
-                        <option>AM</option>
-                        <option>BA</option>
-                        <option>CE</option>
-                        <option>DF</option>
-                        <option>ES</option>
-                        <option>GO</option>
-                        <option>MA</option>
-                        <option>MT</option>
-                        <option>MS</option>
-                        <option>MG</option>
-                        <option>PA</option>
-                        <option>PB</option>
-                        <option>PR</option>
-                        <option>PE</option>
-                        <option>PI</option>
-                        <option>RJ</option>
-                        <option>RN</option>
-                        <option>RS</option>
-                        <option>RO</option>
-                        <option>RR</option>
-                        <option>SC</option>
-                        <option>SP</option>
-                        <option>SE</option>
-                        <option>TO</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="form-group col-12 col-md-12 col-lg-12">
-                  <label for="inputCity">Complemento</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="inputCity"
-                    placeholder="Casa 1"
-                  />
-                </div>
-                <div className="form-group col-12 col-md-12 ">
-                  <label for="inputCity">Ponto de Referência</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="inputCity"
-                    placeholder="Proximo ao Supermercado"
-                  />
-                </div>
-              </div>
-              <br />
-              <div className="check">
-                <div className="row rowCentralized">
-                  <div className="input-group mb-3">
-                    <div className="input-group-prepend">
-                      <div className="input-group-text">
-                        <input
-                          type="checkbox"
-                          aria-label="Chebox para permitir input text"
-                        />
-                      </div>
-                    </div>
-                    <input
-                      type="text"
-                      className="form-control espacamento-input"
-                      aria-label="Input text com checkbox"
-                      placeholder="R$0,00         9 dias úteis        Frete Comum "
-                      disabled
-                    />
-                  </div>
-                  <div className="input-group ">
-                    <div className="input-group-prepend">
-                      <div className="input-group-text">
-                        <input
-                          type="checkbox"
-                          aria-label="Chebox para permitir input text"
-                        />
-                      </div>
-                    </div>
-                    <input
-                      type="text"
-                      className="form-control espacamento-input"
-                      aria-label="Input text com checkbox"
-                      placeholder="R$15,90         5 dias úteis      Frete Expresso "
-                      disabled
-                    />
-                  </div>
-                </div>
-              </div>
-            </form>
           </div>
 
           {/*  FINAL ENTREGA*/}
@@ -319,7 +549,13 @@ function Delivery(props) {
                   data-bs-toggle="modal"
                   data-bs-target="#modalCartao"
                 >
-                  <input type="radio" name="pagamento" />
+                  <input type="radio" name="pagamento" onClick={() =>
+                    setPagamento({
+                      card: true,
+                      pix: false,
+                      boleto: false,
+                    })
+                  }/>
                 </button>
 
                 {/*  MODAL  */}
@@ -488,14 +724,24 @@ function Delivery(props) {
             <div className="modalPix">
               <div className="input-group mb-3">
                 {/*  Button trigger modal  */}
+
+                
                 <button
                   type="button"
                   className=" btn btn-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#pix"
                 >
-                  <input type="radio" name="pagamento" />
+                  <input type="radio" name="pagamento" onClick={() =>
+                    setPagamento({
+                      card: false,
+                      pix: true,
+                      boleto: false,
+                    })
+                  }/>
                 </button>
+
+                
 
                 {/*  Modal  */}
                 <div
@@ -577,7 +823,13 @@ function Delivery(props) {
                   data-bs-toggle="modal"
                   data-bs-target="#boleto"
                 >
-                  <input type="radio" name="pagamento" />
+                  <input type="radio" name="pagamento" onClick={() =>
+                    setPagamento({
+                      card: false,
+                      pix: false,
+                      boleto: true,
+                    })
+                  }/>
                 </button>
 
                 {/*  Modal  */}
@@ -659,8 +911,8 @@ function Delivery(props) {
                 <h5>
                   <strong>Revise e confirme sua compra</strong>
                 </h5>
-               
-               {orderSummary()}
+
+                {orderSummary()}
 
                 <div className="row rowCentralized justify-content-center">
                   <div className="checkoutEntrega col-11">

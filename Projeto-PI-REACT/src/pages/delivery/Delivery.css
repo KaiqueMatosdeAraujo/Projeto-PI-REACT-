@@ -37,6 +37,10 @@
   width: 98%;
 }
 
+Label {
+  font-size: 14px !important;
+}
+
 .resumo2 {
   background-color: #ffffff;
   margin: 5px 15px 0px 15px;
