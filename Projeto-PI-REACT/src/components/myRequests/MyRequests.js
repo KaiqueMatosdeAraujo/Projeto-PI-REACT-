@@ -30,7 +30,7 @@ function MyRequests(props) {
         <>
 
                         <div className="container container-meus-pedidos">
-                            <p><strong>Pedido # {props.codPedido}</strong></p>
+                            <p><strong>Pedido # 1</strong></p>
                             <hr />
 
                             <div className="d-flex">
@@ -44,11 +44,11 @@ function MyRequests(props) {
                             <div className="container container-conteudo ">
                                 <div className="row">
                                     <div className=" col-md-8 col-12">
-                                        <p><strong>Situação do pedido:</strong> {order.statusPedido}</p>
-                                        <p><strong>Data do Pedido:</strong> {order.dataPedido}</p>
-                                        <p><strong>Valor:</strong>R$ {props.price}</p>
+                                        <p><strong>Situação do pedido:</strong> Em processamento</p>
+                                        <p><strong>Data do Pedido:</strong> 27/05/2022</p>
+                                        <p><strong>Valor:</strong>R$ 1.197,00</p>
                                         <p className="p-formaPagamento"><strong>Forma de Pagamento:</strong></p>
-                                        <p>{order.formaPagamento}<br /></p>
+                                        <p>Boleto<br /></p>
                                     </div>
 
                                     <div className="col-md-4 col-10">

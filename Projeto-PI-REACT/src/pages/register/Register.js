@@ -46,8 +46,8 @@ function Register() {
                                                 <input type="text" className="form-control " placeholder="Insira a data de nascimento" />
                                             </div>
                                             <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5">
-                                                <label className="mb-2 mt-2" for="usuario">Telefone:</label>
-                                                <input type="tel" className="form-control" placeholder="Insira o telefone" />
+                                                <label className="mb-2 mt-2" for="usuario">DDD:</label>
+                                                <input type="tel" className="form-control" placeholder="Insira o DDD" />
                                             </div>
                                             <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5">
                                                 <label className="mb-2 mt-2" for="usuario">Celular:</label>

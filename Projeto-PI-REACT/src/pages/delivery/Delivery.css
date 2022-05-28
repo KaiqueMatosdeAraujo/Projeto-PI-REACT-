@@ -173,7 +173,7 @@ Label {
 .pix,
 .boleto {
   background-color: #f7d8945d;
-  width: 90%;
+  width: 93%;
   height: 35px;
   border-radius: 0px 5px 5px 0px;
 }
@@ -333,6 +333,18 @@ Label {
   border: none;
   padding: 5px;
 }
+
+
+
+.card {
+  background-color: #f7d8945d !important;
+    width: 24px;
+    height: 35px;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+}
+
+
 
 .modalPix button:hover {
   background-color: #f7d794;

@@ -106,7 +106,7 @@ function MyAccount(props) {
   };
 
 
-
+  console.log(cards)
 
   const listCards = () => {
     return cards.map((item) => {
