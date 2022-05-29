@@ -15,6 +15,7 @@ import babyCadastro from "./imgs/baby-cadastro.png";
 import InputMask from 'react-input-mask';
 import SupportButton from "../../components/supportButton/SupportButton";
 import axios from "axios";
+import { history } from '../../History'
 
 const USER_REGEX = /[A-Z][a-z]* [A-Z][a-z]*/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,15}$/;
@@ -130,6 +131,7 @@ function Register() {
       console.log(response?.accessToken);
       console.log(JSON.stringify(response));
       setSuccess(true);
+      history.push('/login')
       //clear state and controlled inputs
       //need value attrib on inputs for this
       setUser("");

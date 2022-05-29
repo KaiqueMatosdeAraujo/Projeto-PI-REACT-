@@ -1,4 +1,6 @@
 import React, { useState, createContext } from 'react'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CartContext = createContext({})
 
@@ -6,7 +8,7 @@ function CartProvider(props) {
 
     const [cart, setCart] = useState([])
     const [cartQty, setCartQty] = useState(0) 
-
+ 
 
     const getCartStorage = () => {
         if(localStorage.getItem('cart')) {
@@ -70,6 +72,7 @@ function CartProvider(props) {
         setCartQty(cartList.length)
         localStorage.setItem("cart", JSON.stringify(cartList))
         localStorage.setItem("qtyCart", JSON.stringify(cartList.length))
+       
     }
 
 

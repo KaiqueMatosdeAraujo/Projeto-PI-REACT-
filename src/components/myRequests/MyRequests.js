@@ -10,14 +10,14 @@ import axios from 'axios'
 function MyRequests(props) {
 
     const [order, setOrder] = useState([])
-
+    const  idcliente  = parseInt(localStorage.getItem("UserId"));
     useEffect(() => {
         getOrder()
     }, [])
 
     const getOrder = () => {
         //axios.get(`http://localhost:8080/endereco/${idcliente}/${idendereco}`)
-        axios.get(`http://localhost:8080/pedido/1/1/meusPedidos`)
+        axios.get(`http://localhost:8080/pedido/${idcliente}/1/meusPedidos`)
         .then((response) => {
             setOrder(response.data)
             console.log(response.data)

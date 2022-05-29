@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Form } from 'react-bootstrap'
+import { Form } from "react-bootstrap";
 import React, { useContext, useState, useEffect } from "react";
 import "./Delivery.css";
 import Nav from "../../components/nav/Nav";
@@ -11,31 +11,36 @@ import Boleto from "./imgs/boleto.png";
 import LogoMaster from "./imgs/logo-mastercard-4096.png";
 import LogoAmerican from "./imgs/logo-american-express-4096.png";
 import LogoVisa from "./imgs/logo-visa-4096.png";
+
 import PinLocalizacao from "./imgs/pinLocation.png";
 import Pix from "./imgs/pix.png";
-import LogoHiperCard from "./imgs/hipercard_payment_method_card_icon_142739.png";
-import ChipCartaoCred from "./imgs/chip-de-cartao-de-credito.png";
+
 import ProductCheckoutSimple from "../../components/productCheckoutSimple/ProductCheckoutSimple";
 import Lupa from "./imgs/pesquisa-de-lupa.png";
 import PagamentoCartCred from "./imgs/pagamento-com-cartao-de-credito(1).png";
 import Resumo from "./imgs/resumo.png";
-import Bebe from "./imgs/bebe2.jpg";
+
 import BannerFreight from "../../components/freightBanner/FreightBanner";
 import Caminhao from "./imgs/caminhao-de-entrega.png";
 import CaminhaoP from "./imgs/CaminhaoEntregaP.png";
 import CartContext from "../../context/cart.provider";
+import OrderContext from "../../context/order.provider";
 import axios from "axios";
+
+
 import { useParams } from "react-router-dom";
 import { addressModel, cardModel, orderModel } from "../../models";
 
-import lixeira from "../myAccount/img-myAccount/trashBin.png";
-import PinLocation from "../myAccount/img-myAccount/location.png";
+
 
 function Delivery(props) {
   const { cart, getCart } = useContext(CartContext);
   const { idcliente } = useParams();
 
+  const { orderPlus, getOrder, addOrder } = useContext(OrderContext)
+
   useEffect(() => {
+    getCards();
     getCart();
     getAllAddress();
     listAddress();
@@ -52,16 +57,17 @@ function Delivery(props) {
     minimumFractionDigits: 2,
   });
 
- 
-
   const [successRegister, setSuccessRegister] = useState(false);
   const [address, setAddress] = useState(addressModel);
 
   const [allAdress, setAllAddress] = useState([]);
 
-  const [ addressCod, setAddressCod ] = useState([])
+  
 
-  const [ order, serOrder ] = useState(orderModel)
+  const [order, serOrder] = useState(orderModel);
+
+  const [cards, setCards] = useState([]);
+  const [card, setCard] = useState(cardModel);
 
   const register = () => {
     axios
@@ -72,24 +78,53 @@ function Delivery(props) {
   };
 
   const getAllAddress = () => {
+    axios.get(`http://localhost:8080/endereco/1`).then((response) => {
+      setAllAddress(response.data);
+      console.log(allAdress);
+    });
+  };
+
+  const getCards = () => {
+    axios.get(`http://localhost:8080/cartao/1`).then((response) => {
+      setCards(response.data);
+      console.log();
+    });
+  };
+
+  const registerCard = () => {
     axios
-      .get(`http://localhost:8080/endereco/1`)
+      .post(`http://localhost:8080/cartao/1/cadastrar`, card)
       .then((response) => {
-        setAllAddress(response.data);
-        console.log(allAdress);
+        setSuccessRegister(true);
+        console.log(card);
       });
   };
 
-
   // pedido
 
-  const [pagamento, setPagamento] = useState({
-    card: false,
-    pix: false,
-    boleto: false,
-  });
+  const [addressCod, setAddressCod] = useState('');
 
-  console.log(pagamento)
+  const addAddress = (event) =>{
+    setAddressCod(event.target.value)
+    console.log(addressCod) 
+  }
+
+  const [pagamento, setPagamento] = useState('');
+
+  const addCard = (event) => {
+    setPagamento(event.target.value)
+    addOrder(pagamento)
+    localStorage.setItem("order", pagamento)
+    console.log(event.target.value) 
+  }
+
+  const addCardToOrder = (event) => {
+    addCard(event)
+    
+  }
+
+
+
 
   // const postPedido = () => {
   //   axios
@@ -132,73 +167,82 @@ function Delivery(props) {
   //     });
   // };
 
-  
+
+
+  const listCards = () => {
+    return cards.map((item) => {
+      return (
+        <>
+          <div className="modalPix">
+            <div className="input-group mb-3">
+
+              <button
+                type="button"
+                className=" btn btn-primary"
+                value={item.codCartao}
+                onClick={addCardToOrder}
+                
+              >
+                {/* <input
+                  type="radio"
+                  name="pagamento"
+                  
+                /> */}
+                
+              </button>
+
+               
+
+              <input
+                type="text"
+                className="form-control cardCredit "
+                placeholder={item.numeroCartao}
+                aria-label="Disabled input example"
+                disabled
+              />
+            </div>
+          </div>
+
+         
+        </>
+      );
+    });
+  };
+
 
   const listAddress = () => {
-    // return 
-
+    return allAdress.map((item) => {
       return (
         <>
           <div className="row rowCentralized enderecoCartao">
-          <div className="pagamento1">
-              <strong>
-                {" "}
-                <img src={CaminhaoP} alt="" /> Entrega
-              </strong>
-              <hr />
-            </div>
             <div className="col-12 col-md-12">
-              <div className="disabledBox">
+              <div className="disabledBox btnEndereco">
+                <button
+                type="button"
+                className=" btn btn-primary"
                 
-
-              <Form.Check onChange={(event) => { 
                 
-                const address = event.target.options.selectedIndex
-                const textAddress = event.target.options[address].innerText
-                // {id: event.target.value, name: textState}
-                setAddress({...order, endereco: event.target.value}) 
-              }}> {
-                allAdress.map((item) => {
-                    return (
-                    <Form.Check 
-                      type="radio"
-                      key={item.endereco}
-                      value={item.endereco}
-                      name="group1"
-                      id={`default-radio`}
-                      label={item.nomeRua} 
-                      
-                    >
-                      
-                    </Form.Check>
-                      
-                    )
-                })
-              }
-
-            
-              
+              >
+                <input
+                  type="radio"
+                  name="pagamento"
+                  value={item.codEndereco}
+                  onClick={addAddress}
+                />
                 
-              </Form.Check>
-
-                  
-
-                {/* <div className="col-sm-9 col-7">
-                  {item.nomeRua}, {item.numeroCasa} - {item.bairro} - {" "}
-                  {item.nomeCidade}
+              </button>
+                <div className="col-sm-9 col-7">
+                  {item.nomeRua}, {item.numeroCasa} - {item.bairro} - {item.nomeCidade}/{item.estado}
                 </div>
-                <div className="dataButtons col-2"> */}
-                  <div className="row">
-                    {/* <a className="imageDisableBox col-6 "><img src={lapis} alt="" /></a> */}
-                  </div>
-                </div>
+                
               </div>
             </div>
-          {/* </div> */}
+          </div>
         </>
       );
-    // });
+    });
   };
+  
 
   const listOrder = () => {
     return cart.map((item) => {
@@ -274,7 +318,7 @@ function Delivery(props) {
               <div className="col-6 col-lg-2">
                 <ul type="none">
                   <li> R$ {totalFormat}</li>
-                  <li>(Defina abaixo)</li>
+                  <li>R$ 0,00</li>
                   <li>R$ {totalFormat}</li>
                 </ul>
               </div>
@@ -288,6 +332,14 @@ function Delivery(props) {
 
         <div className="row rowCentralized checkoutCentralized">
           <div className=" col-xl-4  col-11 formEntrega">
+            <div className="pagamento1">
+              <strong>
+                {" "}
+                <img src={CaminhaoP} alt="" /> Entrega
+              </strong>
+              <hr />
+            </div>
+
             {listAddress()}
 
             <button
@@ -516,7 +568,7 @@ function Delivery(props) {
                       type="submit"
                       className="btn salvar"
                       data-bs-dismiss="modal"
-                      onClick={register()}
+                      onClick={register}
                     >
                       Salvar
                     </button>
@@ -530,18 +582,23 @@ function Delivery(props) {
           {/*  PAGAMENTO  */}
 
           <div className=" col-xl-3 col-11 formPagamento">
+
             <div className="pagamento1">
               <strong>
                 {" "}
                 <img src={PagamentoCartCred} alt="" /> Pagamento
               </strong>
               <hr />
-            </div>
+            </div> 
 
-            {/* MODAL CARTÃO  */}
-            <div className="modalCartao">
-              <div className="input-group mb-3">
-                {/*  Button trigger modal  */}
+            {listCards()}
+
+            
+
+              
+            {/* <div className="modalCartao">
+              <div className="input-group mb-3"> */}
+                {/*  Button trigger modal  
 
                 <button
                   type="button"
@@ -558,7 +615,7 @@ function Delivery(props) {
                   }/>
                 </button>
 
-                {/*  MODAL  */}
+                 MODAL  
 
                 <div
                   className="modal fade"
@@ -715,7 +772,7 @@ function Delivery(props) {
                   <img src={LogoAmerican} width="100%" />
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/*  FINAL MODAL CARTÃO  */}
 
@@ -725,23 +782,24 @@ function Delivery(props) {
               <div className="input-group mb-3">
                 {/*  Button trigger modal  */}
 
-                
                 <button
                   type="button"
                   className=" btn btn-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#pix"
                 >
-                  <input type="radio" name="pagamento" onClick={() =>
-                    setPagamento({
-                      card: false,
-                      pix: true,
-                      boleto: false,
-                    })
-                  }/>
+                  <input
+                    type="radio"
+                    name="pagamento"
+                    onClick={() =>
+                      setPagamento({
+                        card: false,
+                        pix: true,
+                        boleto: false,
+                      })
+                    }
+                  />
                 </button>
-
-                
 
                 {/*  Modal  */}
                 <div
@@ -823,13 +881,17 @@ function Delivery(props) {
                   data-bs-toggle="modal"
                   data-bs-target="#boleto"
                 >
-                  <input type="radio" name="pagamento" onClick={() =>
-                    setPagamento({
-                      card: false,
-                      pix: false,
-                      boleto: true,
-                    })
-                  }/>
+                  <input
+                    type="radio"
+                    name="pagamento"
+                    onClick={() =>
+                      setPagamento({
+                        card: false,
+                        pix: false,
+                        boleto: true,
+                      })
+                    }
+                  />
                 </button>
 
                 {/*  Modal  */}
@@ -866,7 +928,7 @@ function Delivery(props) {
                             <ul type="none">
                               <li>
                                 O boleto bancário será gerado no CPF:{" "}
-                                <strong>568.********</strong>{" "}
+                                <strong>568.****</strong>{" "}
                               </li>
                               <li>
                                 E Será enviado no seu e-mail após a finalização
@@ -937,7 +999,9 @@ function Delivery(props) {
                           <div className="col-9 col-md-9 col-lg-10">
                             <ul type="none">
                               <li>
-                                <strong>Rua Pacheco, 55</strong>
+                                <strong>
+                                  Rua Visconde de Sousa Franco. 55
+                                </strong>
                               </li>
                               <li>São Paulo/SP - CEP: 03131-085</li>
                             </ul>
@@ -956,7 +1020,7 @@ function Delivery(props) {
                                 </strong>
                               </li>
                               <li>
-                                Chegará no seu endereço até dia 17/01/2021
+                                Chegará no seu endereço até dia 08/06/2022
                               </li>
                             </ul>
                           </div>
@@ -980,19 +1044,11 @@ function Delivery(props) {
                     </p>
                     <div className="collapse" id="checkoutPagamento">
                       <div className="row">
-                        <div className="col-3 col-md-4 col-lg-2">
-                          <img
-                            className="paymentMethodImg"
-                            src={LogoMaster}
-                            width="100%"
-                          />
-                        </div>
                         <div className="col-9 col-md-8 col-lg-10">
                           <ul type="none">
                             <li>
-                              <strong>** ** 4135</strong>
+                              <img src={Boleto} width="30%" />
                             </li>
-                            <li>Você pagara 10x de R$ 54,99</li>
                           </ul>
                         </div>
                       </div>

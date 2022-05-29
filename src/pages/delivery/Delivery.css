@@ -93,9 +93,7 @@ Label {
 
 .formEntrega {
   background-color: white;
-
-  padding: 20px;
-  height: 100%;
+  padding: 18px 10px;
   margin: 20px 0px 10px 0px;
 }
 
@@ -154,6 +152,17 @@ Label {
   justify-content: space-between;
 }
 
+.btnEndereco button{
+  background-color: transparent;
+  border: none;
+}
+
+.btnEndereco button:hover, button:visited{
+  background-color: transparent;
+  border: none;
+}
+
+
 /* <!-- FINAL ENTREGA --> */
 
 /* <!-- PAGAMENTO --> */
@@ -173,7 +182,7 @@ Label {
 .pix,
 .boleto {
   background-color: #f7d8945d;
-  width: 90%;
+  width: 93%;
   height: 35px;
   border-radius: 0px 5px 5px 0px;
 }
@@ -333,6 +342,18 @@ Label {
   border: none;
   padding: 5px;
 }
+
+
+
+.cardCredit {
+  background-color: #f7d8945d !important;
+    width: 24px;
+    height: 35px;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+}
+
+
 
 .modalPix button:hover {
   background-color: #f7d794;

@@ -2,21 +2,24 @@ import CartContext from "../../context/cart.provider";
 import React, { useContext, useState, useEffect } from "react";
 import "./itemCart.css";
 import lixeira from "../../pages/cart/imgs/lixeira.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ItemCart(props) {
+  const notifyDelete = () => toast.error("Deletado com sucesso");
 
   const { deleteCart } = useContext(CartContext);
 
-  var atual = props.price
-  var precoFormat = atual.toLocaleString('pt-br', {minimumFractionDigits: 2});
+  var atual = props.price;
+  var precoFormat = atual.toLocaleString("pt-br", { minimumFractionDigits: 2 });
 
-  var atualTotal = props.total
-  var totalFormat = atualTotal.toLocaleString('pt-br', {minimumFractionDigits: 2});
+  var atualTotal = props.total;
+  var totalFormat = atualTotal.toLocaleString("pt-br", {
+    minimumFractionDigits: 2,
+  });
 
   return (
     <>
-      
-
       <div className="cart-product">
         <div className="cart-image">
           <img
@@ -29,14 +32,20 @@ function ItemCart(props) {
         <div className="cart-product-info">
           <p className="cart-product-name">{props.name}</p>
           <p className="cart-price-sm">R$ {precoFormat}</p>
-          
-          
         </div>
       </div>
       <div className="remove-1">
-        <button type="button" onClick={() => deleteCart(props.id)}>
+        <button
+          type="button"
+          onClick={() => {
+            deleteCart(props.id);
+            notifyDelete();
+          }}
+        >
           <img src={lixeira} alt="lixeira" width="30px" height="30px" />
         </button>
+        <ToastContainer autoClose={500} />
+
       </div>
       <div className="cart-quantity-md">
         <div className="cart-quantity-controls">
@@ -61,7 +70,6 @@ function ItemCart(props) {
       <div className="cart-product-total">
         <h4>R$ {totalFormat} </h4>
       </div>
-      
     </>
   );
 }

@@ -31,7 +31,16 @@ const Login = () => {
     const [senha, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
-    const [token] = useState('');
+    const [loading,setLoading] = useState(true);
+    useEffect(()=>{
+const  userRecovery = localStorage.getItem('logged')
+
+if(userRecovery){
+    setUser(JSON.parse(userRecovery))
+}
+       setLoading(false)
+
+    },[])
 
     useEffect(() => {
         userRef.current.focus();
@@ -43,38 +52,43 @@ const Login = () => {
     
     const handleSubmit = () => {
        
-        try{
+    
              axios.post(LOGIN_URL,{email,senha})
                 .then((resp) => {
                     axios.defaults.headers.common['Authorization'] =  `Bearer ${resp.data.token}`
                   
                   const usuarioId = resp?.data?.codCliente;
                   const usuarioNome = resp?.data?.nome;
+                  const usuarioEmail = resp?.data?.email;
+                  const token = resp?.data?.token;
+                  const logged = {
+                    usuarioId,usuarioEmail,token
+                  }
                   localStorage.setItem('app-token',  token)
                   localStorage.setItem('UserId',  usuarioId)
                   localStorage.setItem('UserName',  usuarioNome)
-                  notifyRegister()
+                  localStorage.setItem('loggedUser', JSON.stringify(logged))
                      history.push('/')
                      
                 })
             }
                 
         
-         catch (err) {
-            if (!err?.resp) {
-                setErrMsg('No Server Response');
-            } else if (err.resp.status === 400) {
-                console.log("Error")
-                setErrMsg('Senha ou Email Incorretos');
-            } else if (err.resp.status === 401) {
-                setErrMsg('Acesso não autorizado');
-            } else {
-                console.log("Error")
-                setErrMsg('Login Invalido');
-            }
-            errRef.current.focus();
-        }
-    }
+        //  catch (err) {
+        //     if (!err?.resp) {
+        //         setErrMsg('No Server Response');
+        //     } else if (err.resp.status === 400) {
+        //         console.log("Error")
+        //         setErrMsg('Senha ou Email Incorretos');
+        //     } else if (err.resp.status === 401) {
+        //         setErrMsg('Acesso não autorizado');
+        //     } else {
+        //         console.log("Error")
+        //         setErrMsg('Login Invalido');
+        //     }
+        //     errRef.current.focus();
+        // }
+    // }
     
 
 
