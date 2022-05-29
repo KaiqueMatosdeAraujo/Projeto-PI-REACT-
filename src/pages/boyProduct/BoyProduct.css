@@ -1,0 +1,12 @@
+.nomePagina {
+    text-align: center;
+    color: gray;
+    padding-top: 24px;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+

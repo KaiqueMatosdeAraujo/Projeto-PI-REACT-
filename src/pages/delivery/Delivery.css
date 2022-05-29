@@ -1,0 +1,821 @@
+.btn-close.fechar3 {
+  margin-top: -1%;
+  background-color: white;
+}
+.btn-close.fechar {
+  margin-top: 12px;
+  background-color: transparent;
+}
+.btn-close.fechar:active {
+  background-color: white;
+}
+.btn-close.fechar2:active {
+  background-color: white;
+}
+.btn-close.fechar2 {
+  margin-left: 422px;
+  background-color: white;
+}
+.btn-close.fechar2:hover {
+  background-color: white;
+}
+.btn-close.fechar:hover {
+  background-color: white;
+}
+
+.btn-close.fechar:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  }
+/* <!-- RESUMO --> */
+
+.resumo {
+  background-color: #ffffff;
+  margin: 20px 15px 0px 15px;
+  padding: 8px 0px 0px 20px;
+  height: 40px;
+  width: 98%;
+}
+
+Label {
+  font-size: 14px !important;
+}
+
+.resumo2 {
+  background-color: #ffffff;
+  margin: 5px 15px 0px 15px;
+  padding: 4px 0px 0px 20px;
+  height: 100%;
+  width: 98%;
+}
+
+.resumo3 {
+  background-color: #ffffff;
+  margin: 5px 15px 0px 15px;
+  padding-left: 20px;
+  width: 98%;
+}
+
+.resumo3 li {
+  margin-top: 10px;
+}
+
+/* <!-- FINAL RESUMO --> */
+
+/* <!-- ENTREGA --> */
+
+.rowCentralized.checkoutCentralized {
+  display: flex;
+  justify-content: space-around !important;
+}
+
+.cep.row.rowCentralized.checkoutCentralized {
+  margin-bottom: 4%;
+  display: flex;
+  justify-content: space-between !important;
+}
+
+.caixaIntEnd .row.rowCentralized.checkoutCentralized {
+  justify-content: space-between !important;
+}
+.searchCep {
+  margin-top: 1px;
+}
+.entrega {
+  text-align: center;
+  font-size: 22px;
+}
+
+.cidadeUf{
+    display: flex;
+    justify-content: space-between;
+}
+
+.formEntrega {
+  background-color: white;
+
+  padding: 20px;
+  height: 100%;
+  margin: 20px 0px 10px 0px;
+}
+
+.cep {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+.cep img {
+  margin-bottom: 2%;
+  margin-right: 1%;
+  
+}
+
+.cep button {
+  margin-top: 15px;
+  background-color: white;
+  border: none;
+}
+.lupaImgFrete {
+  width: 50%;
+}
+.correios {
+  color: black;
+  font-size: 12px;
+}
+
+.caixaIntEnd {
+  border: 1px solid #00000036;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.formEntrega form {
+  border: 1px solid #00000036;
+  border-radius: 8px;
+  padding: 9px;
+}
+
+.form-control {
+    font-size: 12px !important;
+}
+
+.check input {
+  font-size: 14px;
+}
+.inputs-numero-bairro{
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs-numero-bairro{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* <!-- FINAL ENTREGA --> */
+
+/* <!-- PAGAMENTO --> */
+
+.pagamento1 {
+  text-align: center;
+  font-size: 22px;
+}
+
+.formPagamento {
+  background-color: white;
+  padding: 18px 10px;  
+  margin: 20px 0px 10px 10px;
+}
+
+.cartao,
+.pix,
+.boleto {
+  background-color: #f7d8945d;
+  width: 93%;
+  height: 35px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.cartao img {
+  margin: 0px 10px;
+  width: 13%;
+}
+
+.boleto img {
+  padding: 0px 10px;
+}
+
+.mensagemCcv {
+  display: block;
+}
+
+/* <!-- FINAL PAGAMENTO --> */
+
+/* <!-- MODAL CARTÃO DE CREDITO --> */
+
+.modalCartao button {
+  background-color: #f7d8949c;
+  width: 7%;
+  border: none;
+  padding: 5px;
+}
+
+.modalCartao button:hover {
+  background-color: #f7d794;
+}
+
+.modalCartao button:focus{
+    background-color: #f7d794;
+}
+
+.pag {
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.pag hr {
+  margin: 0px;
+}
+
+.imagens img {
+  margin: 6px;
+}
+.imagemPix {
+  margin: 12px;
+  height: 27px;
+}
+
+.cartFake1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.cartFake {
+  background-image: url(../myAccount/img-myAccount/backgroundCart.png);
+  margin: 0px;
+  height: 180px;
+  border-radius: 20px;
+  color: black;
+  font-size: 16px;
+ 
+}
+
+.cartFake img {
+  padding-top: 10px;
+  width: 80%;
+  height: 90%;
+}
+
+.num {
+  padding-top: 10px;
+  margin-left: 75px;
+}
+
+.nome {
+  padding-top: 30px;
+  margin-left: 30px;
+}
+
+.dataCard {
+  padding-top: 30px;
+  margin-left: 20px;
+}
+
+.form {
+  margin: 20px 10px 20px 10px;
+  font-size: 16px;
+}
+
+.formCard{
+    margin: 20px 10px 20px 10px;
+    font-size: 16px;
+}
+
+.form input {
+  height: 30px;
+  font-size: 14px;
+}
+
+.form select {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.form option {
+  font-size: 16px;
+  font-family: "Dancing Script", cursive;
+}
+
+.addPagamento button {
+  background-color: #9cf38e;
+  width: 60%;
+  margin: 30px 0px 20px 90px;
+  height: 50px;
+  color: white;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.addPagamentobutton:hover {
+  background-color: #79b870;
+}
+
+.btnInterrogacao button {
+  background-color: transparent;
+  color: rgb(59, 59, 59);
+  margin-top: 19px;
+  font-size: 25px;
+}
+
+.btnInterrogacao button:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.form a {
+  margin-top: 30px;
+  font-size: 22px;
+  color: black;
+}
+/* <!-- FINAL MODAL CARTÃO DE CREDITO --> */
+
+/* <!-- MODAL PIX--> */
+
+.modalPix button {
+  background-color: #f7d8949c;
+  width: 7%;
+  border: none;
+  padding: 5px;
+}
+
+
+
+.card {
+  background-color: #f7d8945d !important;
+    width: 24px;
+    height: 35px;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+}
+
+
+
+.modalPix button:hover {
+  background-color: #f7d794;
+}
+
+.modalPix button:focus {
+    background-color: #f7d794;
+  }
+
+.modalPix hr {
+  margin: 0px;
+  width: 100% !important;
+}
+div.pix img {
+  margin-top: 2%;
+  margin-left: 11px;
+  width: 25%;
+}
+div.boleto img {
+  width: 36%;
+}
+
+.textPix {
+  padding: 20px 5px 0px 25px;
+  font-size: 14px;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.pi {
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.valor {
+  font-size: 16px;
+  margin: 20px 0px;
+}
+
+.addPagamento {
+  margin-left: 14px;
+}
+
+.btnFinalizar button {
+  background-color: #9cf38e;
+  width: 60%;
+  margin: 30px 0px 20px 80px;
+  height: 50px;
+  color: white;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.addPagamento button {
+  background-color: #9cf38e !important;
+  width: 60% !important;
+  margin: 30px 0px 20px 80px !important;
+  height: 50px !important;
+  color: white !important;
+  border-radius: 30px !important;
+  font-size: 20px !important;
+  border-color: transparent;
+}
+
+.btnFinalizar button:hover,
+.addPagamento button:hover {
+  background-color: #79b870;
+}
+
+/* <!-- FINAL MODAL PIX--> */
+
+/* <!-- MODAL BOLETO--> */
+
+.modalBoleto button {
+  background-color: #f7d8949c;
+  width: 7%;
+  border: none;
+  padding: 5px;
+}
+
+.imagemBoleto {
+  margin: 6px;
+}
+
+.modalBoleto button:hover {
+    background-color: #f7d794;
+}
+
+.modalBoleto button:focus {
+    background-color: #f7d794;
+    border: none;  
+}
+
+.modalBoleto hr {
+  margin: 0px;
+  width: 100% !important;
+}
+
+.modalBoleto img {
+    margin: 6px 4px;
+}
+
+.textBoleto {
+  padding: 20px 5px 0px 25px;
+  font-size: 14px;
+}
+
+.pi {
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.valor {
+  font-size: 16px;
+  margin: 20px 0px;
+}
+
+.btnFinalizar button {
+  background-color: #9cf38e;
+  width: 60%;
+  margin: 30px 0px 20px 80px;
+  height: 50px;
+  color: white;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.btnFinalizar button:hover {
+  background-color: #79b870;
+}
+
+/* <!-- FINAL MODAL BOLETO--> */
+
+/* <!-- CHECKOUT-> */
+.checkout {
+  background-color: white;
+  margin: 20px 0px 5px 10px;
+}
+
+.resumo1 {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.chek {
+  height: max-content;
+  padding-bottom: 3%;
+}
+
+.chek h5 {
+  padding-top: 15px;
+  text-align: center;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.747);
+}
+
+.checkoutResumo {
+  display: flex;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.checkoutEntrega {
+  font-size: 15px;
+}
+
+.checkoutEntrega button {
+  background-color: #9accff;
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+  border: none;
+}
+
+.checkoutEntrega img {
+  margin: 10px;
+}
+
+.imgCaminhao img {
+  margin-top: 20px;
+}
+
+.checkoutPagamento {
+  font-size: 15px;
+}
+
+.checkoutPagamento button {
+  background-color: #9accff;
+  width: 100%;
+  text-align: left;
+  border: none;
+  margin-top: 10px;
+}
+
+/* <!-- FINAL CHECKOUT-> */
+@media (max-width: 820px) {
+
+
+}
+
+.checkoutPagamento button:hover,
+.checkoutEntrega button:hover {
+  background-color: #9abdff;
+}
+
+.checkoutPagamento button:focus,
+.checkoutEntrega button:focus {
+  background-color: #9abdff;
+}
+
+.btnFinalizarCompra button {
+  background-color: #9cf38e;
+  width: 100%;
+  margin: 50px 0px 5px 15px;
+  height: 40px;
+  color: white;
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+}
+
+.btnFinalizarCompra button:hover {
+  background-color: #79b870;
+}
+
+/* <!-- FINAL CHECKOUT-> */
+
+@media (max-width: 820px) {
+  .resumo {
+    width: 91%;
+  }
+
+  .resumo3 {
+    width: 91%;
+  }
+
+  .resumo2 {
+    width: 91%;
+  }
+  .check input {
+    font-size: 11px;
+  }
+
+  .formPagamento {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0px 10px 10px;
+  }
+
+  .cartao img {
+    width: 5%;
+  }
+
+  div.pix img {
+    width: 11%;
+    margin: 5px 10px;
+  }
+
+  .checkout {
+    background-color: white;
+    margin: 20px 0px 5px 10px;
+  }
+
+  .chek h5 {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.747);
+  }
+
+  .checkoutResumo {
+    display: flex;
+    font-size: 11px;
+    line-height: 2;
+  }
+
+  .checkoutEntrega button {
+    background-color: #9accff;
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .entregaDescriao {
+    font-size: 10px;
+  }
+
+  .entregaDescriao hr {
+    margin: 0px 0px 10px 0px;
+  }
+
+  .checkoutPagamento button {
+    background-color: #9accff;
+    width: 100%;
+    text-align: left;
+    border: none;
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .card {
+    font-size: 9px;
+    padding: 6px;
+  }
+
+  .btnFinalizarCompra button {
+    font-size: 16px;
+    margin: 20px 0px 20px 15px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkoutEntrega img {
+    margin-left: 21%;
+    margin-top: 0%;
+    width: 25%;
+  }
+
+  img.paymentMethodImg {
+    width: 30%;
+    margin-left: 31%;
+  }
+}
+@media (max-width: 765px) {
+  .formPagamento,
+  .checkout {
+    height: 100%;
+  }
+
+  .check input {
+    font-size: 11px;
+  }
+
+  .cartao img {
+    width: 11%;
+  }
+
+  div.pix img {
+    width: 28%;
+    margin-top: 2%;
+  }
+
+  .cartFake {
+    margin-left: 45px;
+  }
+
+  .addPagamento,
+  .addPagamento button {
+    font-size: 15px !important;
+    margin-left: 0px;
+  }
+
+  .resumo,
+  .resumo2,
+  .resumo3 {
+    font-size: 13px;
+    margin: 5px 0px 0px 0px;
+    padding: 0px;
+  }
+
+  .resumo2 {
+    font-size: 12px;
+  }
+
+  .imgCaminhao img {
+    width: 51%;
+    margin-left: 72%;
+  }
+
+  .entregaDescriao li {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .checkoutPagamento li {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .formEntrega form {
+    border: none;
+    padding: 0;
+  }
+  .caixaIntEnd {
+    border: none;
+    padding: 0;
+  }
+  .check {
+    outline: 1px solid #ced4da;
+    border-radius: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .cidadeUf{
+    display: block;
+  }
+
+  .espacamento-input{
+    margin-right: 2%;
+  }
+
+  .formEntrega, .formPagamento{
+    padding: 0px;
+  }
+}
+
+@media (max-width: 770px) {
+  div.boleto img {
+    width: 15%;
+  }
+}
+
+@media (max-width: 500px) {
+  .checkout img {
+    margin-left: 21%;
+    margin-top: 14%;
+    width: 66%;
+  }
+  div.resumo1 strong img {
+    margin-left: 0;
+    margin-top: 0;
+    width: 6%;
+  }
+}
+
+@media (max-width: 425px) {
+  .imagemBoleto {
+    margin-right: 22px;
+  }
+
+  .imagemPix img {
+    width: 27%;
+  }
+
+  div.pix img {
+    width: 24%;
+  }
+
+  .addPagamento button {
+    margin: 30px 0px 20px 65px !important;
+    height: 46px !important;
+  }
+
+  .modalBoleto img {
+    margin: 10px;
+    width: 35%;
+  }
+
+  div.boleto img {
+    width: 32%;
+    margin: 6px;
+  }
+
+  .btn-close.fechar {
+    margin-top: 10px;
+  }
+
+  .imagemBoleto {
+    margin: 0px 11px;
+  }
+
+  .pag hr {
+    margin: 0px;
+    width: 100% !important;
+  }
+}
