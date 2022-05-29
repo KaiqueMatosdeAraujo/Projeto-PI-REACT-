@@ -25,6 +25,8 @@ function OrderProvider(props){
         ? JSON.parse(localStorage.getItem('order'))
         : []
 
+        
+
         localStorage.setItem("order", JSON.stringify(orderList))
         setOrderPlus(orderList)
     }

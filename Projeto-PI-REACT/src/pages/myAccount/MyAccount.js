@@ -25,6 +25,8 @@ import LogoAmerican from "../delivery/imgs/logo-american-express-4096.png";
 import LogoVisa from "../delivery/imgs/logo-visa-4096.png";
 import ChipCartaoCred from "../delivery/imgs/chip-de-cartao-de-credito.png";
 import TabsMyAccount from "../../components/tabsMyAccount/TabsMyAccount";
+import MaskedInput from "../../mask/Mask";
+import { baseUrl } from "../../environments/environments";
 
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -49,10 +51,15 @@ function MyAccount(props) {
 
   const endereco = props.endereco || {};
 
+  function handleChange(event) {
+    setAddress({ ...address, cep: event.target.value });
+  }
+
   useEffect(() => {
     getCustomer();
     getCards();
     getAllAddress();
+    getSelectEstado();
   }, []);
 
   // const getAddress = () => {
@@ -89,12 +96,10 @@ function MyAccount(props) {
   };
 
   const getAllAddress = () => {
-    axios
-      .get(`http://localhost:8080/endereco/1`)
-      .then((response) => {
-        setAllAddress(response.data);
-        console.log(allAdress);
-      });
+    axios.get(`http://localhost:8080/endereco/1`).then((response) => {
+      setAllAddress(response.data);
+      console.log(allAdress);
+    });
   };
 
   const register = () => {
@@ -105,8 +110,56 @@ function MyAccount(props) {
       });
   };
 
+  const [estado, setEstado] = useState([]);
 
-  console.log(cards)
+  const getSelectEstado = () => {
+    axios.get(`${baseUrl}/endereco/uf`).then((response) => {
+      console.log(response.data);
+      let estadoFilter = [];
+      let estadoResponse = response.data;
+      for (let i = 0; i < estadoResponse.length; i++) {
+        if (estado.cod_estado !== estadoResponse[i].cod_estado) {
+          estadoFilter.push(estadoResponse[i]);
+        }
+      }
+      setEstado(estadoFilter);
+    });
+  };
+
+  const renderEstado = () => {
+    return (
+      <>
+        <div className="col-3">
+          <label for="inputAddressUF" id="InputUFTitle">
+            UF:
+          </label>
+
+          <Form.Select
+            onChange={(event) => {
+              console.log(event);
+              let stateSelected = event.target.options.selectedIndex;
+              let textState = event.target.options[stateSelected].innerText;
+              setEstado({
+                cod_estado:event.target.value,
+                descricao_estado:textState
+              });
+            }}
+          >
+            <option defaultValue >Selecione um estado </option>
+            {estado.map((item) => {
+              return (
+                <option key={item.cod_estado} value={item.cod_estado}>
+                  {item.descricao_estado}
+                </option>
+              );
+            })}
+          </Form.Select>
+        </div>
+      </>
+    );
+  };
+
+  console.log(cards);
 
   const listCards = () => {
     return cards.map((item) => {
@@ -250,7 +303,7 @@ function MyAccount(props) {
                 </label>
                 <input
                   type="text"
-                  className="form-control col-12"
+                  className="form-control"
                   id="inputAddressBairro"
                   placeholder={customer.cpf}
                   aria-label="Disabled input example"
@@ -276,20 +329,20 @@ function MyAccount(props) {
                   DDD:
                 </label>
                 <input
-                    type="text"
-                    className="form-control"
-                    id="inputAddressComplemento"
-                    placeholder={customer.ddd}
-                    aria-label="Disabled input example"
-                    disabled
-                    />
-                </div>
+                  type="text"
+                  className="form-control"
+                  id="inputAddressComplemento"
+                  placeholder={customer.ddd}
+                  aria-label="Disabled input example"
+                  disabled
+                />
+              </div>
 
               <div className="col-12 col-md-12 col-lg-5 custom-inputAccount">
                 <label for="inputAddressComplemento" id="InputComplementoTitle">
                   Telefone:
                 </label>
-               
+
                 <input
                   type="text"
                   className="form-control"
@@ -299,8 +352,6 @@ function MyAccount(props) {
                   disabled
                 />
               </div>
-
-    
             </div>
           </div>
         </div>
@@ -661,11 +712,9 @@ function MyAccount(props) {
                   <strong>+</strong> Cadastrar novo endereço
                 </button>
               </div>
-              
+
               {listAddress()}
             </div>
-
-            
           </div>
 
           {/* <!-- Modal --> */}
@@ -772,10 +821,15 @@ function MyAccount(props) {
                       />
                     </div>
 
-                    <div className="col-3">
+                    {renderEstado()}
+
+                    {/* <div className="col-3">
                       <label for="inputAddressUF" id="InputUFTitle">
                         UF:
                       </label>
+
+                        
+
                       <input
                         type="text"
                         className="form-control"
@@ -811,21 +865,22 @@ function MyAccount(props) {
                           );
                         })}
                       </Form.Select>
-                    </div>
+                    </div> */}
 
                     <div className="col-4">
                       <label for="inputAddressCEP" id="InputCEPTitle">
                         CEP:
                       </label>
-                      <input
+                    
+
+                      <MaskedInput
                         type="text"
-                        className="form-control"
                         id="inputAddressCEP"
-                        placeholder="05212040"
                         value={address.cep}
-                        onChange={(event) => {
-                          setAddress({ ...address, cep: event.target.value });
-                        }}
+                        maxLength={18}
+                        onChange={handleChange}
+                        mask="99999-999"
+                        name="cep"
                       />
                     </div>
 
@@ -909,9 +964,9 @@ function MyAccount(props) {
             </div>
           </div>
           <br />
-          
+
           {listCards()}
-          
+
           {/* <div className="row rowCentralized enderecoCartao">
             <div className="col-12 col-md-12 col-lg-12">
               <div className="row rowCentralized enderecoCartao">
@@ -979,141 +1034,141 @@ function MyAccount(props) {
                   </div>
                 </div> */}
 
-                <div className="col-8 col-md-10 col-lg-4">
-                  <div className="row disableBoxRow">
-                    <button
-                      type="button"
-                      className="btn CadastroButton"
-                      data-bs-toggle="modal"
-                      data-bs-target="#novocartao"
-                    >
-                      <strong>+</strong> Cadastrar novo cartão
-                    </button>
+          <div className="col-8 col-md-10 col-lg-4">
+            <div className="row disableBoxRow">
+              <button
+                type="button"
+                className="btn CadastroButton"
+                data-bs-toggle="modal"
+                data-bs-target="#novocartao"
+              >
+                <strong>+</strong> Cadastrar novo cartão
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <!--Modal Cartão--> */}
+
+      <div
+        className="modal fade"
+        id="novocartao"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="pag">
+              <div className="row modalHeaderRow rowCentralized">
+                <div className=" imagens col-4">
+                  <img src={mastercard} />
+                  <img src={AmericanMini} />
+                  <img src={visa} />
+                </div>
+                <div className="col-7 ">Editar Cartão</div>
+                <div className="col-1">
+                  <button
+                    type="button"
+                    className="btn-close fechar4 "
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+              </div>
+              <hr />
+              <div className="row justify-content-center">
+                <div className="cartFakeAccount col-10 col-md-8">
+                  <div className="row">
+                    <div className="col-3">
+                      <img src={ChipCartaoCred} alt="" />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="num col-10">
+                      <strong>5858 6858 6989 5875</strong>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="nome col-7 col-md-6">
+                      <strong>Osvaldo Silva</strong>
+                    </div>
+                    <div className="dataCard col-2 col-md-4">
+                      <strong>05/25</strong>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <div className="form">
+                <div className="row">
+                  <div className=" col-8 col-md-8">
+                    <label for="">
+                      <strong>Número do cartão</strong>{" "}
+                    </label>
+                    <input
+                      className="form-control form-control-lg"
+                      type=""
+                      placeholder="5858 6858 6989 5875"
+                      aria-label=".form-control-lg example"
+                      value={card.numeroCartao}
+                      onChange={(event) => {
+                        setCard({
+                          ...card,
+                          numeroCartao: event.target.value,
+                        });
+                      }}
+                    />
+                    <br />
+                  </div>
 
-            {/* <!--Modal Cartão--> */}
+                  <div className=" col-4 col-md-4">
+                    <label for="">
+                      <strong>Validade</strong>{" "}
+                    </label>
+                    <input
+                      className="form-control form-control-lg"
+                      type=""
+                      placeholder="05/25"
+                      aria-label=".form-control-lg example"
+                      value={card.validade}
+                      onChange={(event) => {
+                        setCard({
+                          ...card,
+                          validade: event.target.value,
+                        });
+                      }}
+                    />
+                    <br />
+                  </div>
+                </div>
 
-            <div
-              className="modal fade"
-              id="novocartao"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="pag">
-                    <div className="row modalHeaderRow rowCentralized">
-                      <div className=" imagens col-4">
-                        <img src={mastercard} />
-                        <img src={AmericanMini} />
-                        <img src={visa} />
-                      </div>
-                      <div className="col-7 ">Editar Cartão</div>
-                      <div className="col-1">
-                        <button
-                          type="button"
-                          className="btn-close fechar4 "
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                    </div>
-                    <hr />
-                    <div className="row justify-content-center">
-                      <div className="cartFakeAccount col-10 col-md-8">
-                        <div className="row">
-                          <div className="col-3">
-                            <img src={ChipCartaoCred} alt="" />
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="num col-10">
-                            <strong>5858 6858 6989 5875</strong>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="nome col-7 col-md-6">
-                            <strong>Osvaldo Silva</strong>
-                          </div>
-                          <div className="dataCard col-2 col-md-4">
-                            <strong>05/25</strong>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="form">
-                      <div className="row">
-                        <div className=" col-8 col-md-8">
-                          <label for="">
-                            <strong>Número do cartão</strong>{" "}
-                          </label>
-                          <input
-                            className="form-control form-control-lg"
-                            type=""
-                            placeholder="5858 6858 6989 5875"
-                            aria-label=".form-control-lg example"
-                            value={card.numeroCartao}
-                            onChange={(event) => {
-                              setCard({
-                                ...card,
-                                numeroCartao: event.target.value,
-                              });
-                            }}
-                          />
-                          <br />
-                        </div>
+                <div className="row">
+                  <div className="col-12">
+                    <label for="">
+                      <strong>Nome do Títular</strong>{" "}
+                    </label>
+                    <input
+                      className="form-control form-control-lg"
+                      type=""
+                      placeholder="Osvaldo Silva"
+                      aria-label=".form-control-lg example"
+                      value={card.nomeTitular}
+                      onChange={(event) => {
+                        setCard({
+                          ...card,
+                          nomeTitular: event.target.value,
+                        });
+                      }}
+                    />
+                    <br />
+                  </div>
+                </div>
 
-                        <div className=" col-4 col-md-4">
-                          <label for="">
-                            <strong>Validade</strong>{" "}
-                          </label>
-                          <input
-                            className="form-control form-control-lg"
-                            type=""
-                            placeholder="05/25"
-                            aria-label=".form-control-lg example"
-                            value={card.validade}
-                            onChange={(event) => {
-                              setCard({
-                                ...card,
-                                validade: event.target.value,
-                              });
-                            }}
-                          />
-                          <br />
-                        </div>
-                      </div>
-
-                      <div className="row">
-                        <div className="col-12">
-                          <label for="">
-                            <strong>Nome do Títular</strong>{" "}
-                          </label>
-                          <input
-                            className="form-control form-control-lg"
-                            type=""
-                            placeholder="Osvaldo Silva"
-                            aria-label=".form-control-lg example"
-                            value={card.nomeTitular}
-                            onChange={(event) => {
-                              setCard({
-                                ...card,
-                                nomeTitular: event.target.value,
-                              });
-                            }}
-                          />
-                          <br />
-                        </div>
-                      </div>
-
-                      {/* <div className="row">
+                {/* <div className="row">
                                                     <div className="col-12">
                                                         <label for=""><strong>Bandeira</strong> </label> */}
-                      {/* <input className="form-control form-control-lg" type="hidden"
+                {/* <input className="form-control form-control-lg" type="hidden"
                                                             placeholder="Osvaldo Silva" aria-label=".form-control-lg example"  value={card.bandeira} onChange={(event) => {setCard({...card, registerBandeira})}} />
                                                    
 
@@ -1123,124 +1178,122 @@ function MyAccount(props) {
                                                         <input className="form-control form-control-lg" type="hidden"
                                                             placeholder="Osvaldo Silva" aria-label=".form-control-lg example"  value={card.cliente} onChange={(event) => {setCard({...card, registerCliente})}} /> */}
 
-                      <div className="row">
-                        <div className="addPagamento col-12">
-                          <button onClick={registerCard}>
-                            <strong> Salvar </strong>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-        
-        <div
-          className="modal fade"
-          id="editarcartao"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="pag">
-                <div className="row modalHeaderRow rowCentralized">
-                  <div className=" imagens col-3">
-                    <img src={mastercard} />
-                  </div>
-                  <div className="col-7 ">Editar Cartão</div>
-                  <div className="col-1">
-                    <button
-                      type="button"
-                      className="btn-close fechar4"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                </div>
-                <hr />
-                <div className="row justify-content-center">
-                  <div className="cartFakeAccount col-10 col-md-8">
-                    <div className="row">
-                      <div className="col-3">
-                        <img src={ChipCartaoCred} alt="" />
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="num col-10">
-                        <strong>5858 6858 6989 5875</strong>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="nome col-7 col-md-6">
-                        <strong>Osvaldo Silva</strong>
-                      </div>
-                      <div className="dataCard col-2 col-md-4">
-                        <strong>05/25</strong>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="form">
-                  <div className="row">
-                    <div className=" col-8 col-md-8">
-                      <label for="">
-                        <strong>Número do cartão</strong>{" "}
-                      </label>
-                      <input
-                        className="form-control form-control-lg"
-                        type=""
-                        placeholder="5858 6858 6989 5875"
-                        aria-label=".form-control-lg example"
-                      />
-                      <br />
-                    </div>
-
-                    <div className=" col-4 col-md-4">
-                      <label for="">
-                        <strong>Validade</strong>{" "}
-                      </label>
-                      <input
-                        className="form-control form-control-lg"
-                        type=""
-                        placeholder="05/25"
-                        aria-label=".form-control-lg example"
-                      />
-                      <br />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-12">
-                      <label for="">
-                        <strong>Nome do Títular</strong>{" "}
-                      </label>
-                      <input
-                        className="form-control form-control-lg"
-                        type=""
-                        placeholder="Osvaldo Silva"
-                        aria-label=".form-control-lg example"
-                      />
-                      <br />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="addPagamento col-12">
-                      <button>
-                        <strong> Salvar </strong>
-                      </button>
-                    </div>
+                <div className="row">
+                  <div className="addPagamento col-12">
+                    <button onClick={registerCard}>
+                      <strong> Salvar </strong>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      
+      </div>
+
+      <div
+        className="modal fade"
+        id="editarcartao"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="pag">
+              <div className="row modalHeaderRow rowCentralized">
+                <div className=" imagens col-3">
+                  <img src={mastercard} />
+                </div>
+                <div className="col-7 ">Editar Cartão</div>
+                <div className="col-1">
+                  <button
+                    type="button"
+                    className="btn-close fechar4"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+              </div>
+              <hr />
+              <div className="row justify-content-center">
+                <div className="cartFakeAccount col-10 col-md-8">
+                  <div className="row">
+                    <div className="col-3">
+                      <img src={ChipCartaoCred} alt="" />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="num col-10">
+                      <strong>5858 6858 6989 5875</strong>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="nome col-7 col-md-6">
+                      <strong>Osvaldo Silva</strong>
+                    </div>
+                    <div className="dataCard col-2 col-md-4">
+                      <strong>05/25</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="form">
+                <div className="row">
+                  <div className=" col-8 col-md-8">
+                    <label for="">
+                      <strong>Número do cartão</strong>{" "}
+                    </label>
+                    <input
+                      className="form-control form-control-lg"
+                      type=""
+                      placeholder="5858 6858 6989 5875"
+                      aria-label=".form-control-lg example"
+                    />
+                    <br />
+                  </div>
+
+                  <div className=" col-4 col-md-4">
+                    <label for="">
+                      <strong>Validade</strong>{" "}
+                    </label>
+                    <input
+                      className="form-control form-control-lg"
+                      type=""
+                      placeholder="05/25"
+                      aria-label=".form-control-lg example"
+                    />
+                    <br />
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="col-12">
+                    <label for="">
+                      <strong>Nome do Títular</strong>{" "}
+                    </label>
+                    <input
+                      className="form-control form-control-lg"
+                      type=""
+                      placeholder="Osvaldo Silva"
+                      aria-label=".form-control-lg example"
+                    />
+                    <br />
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="addPagamento col-12">
+                    <button>
+                      <strong> Salvar </strong>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -113,12 +113,14 @@ function Delivery(props) {
 
   const addCard = (event) => {
     setPagamento(event.target.value)
-    console.log(pagamento) 
+    addOrder(pagamento)
+    localStorage.setItem("order", pagamento)
+    console.log(event.target.value) 
   }
 
   const addCardToOrder = (event) => {
     addCard(event)
-    addOrder()
+    
   }
 
 
@@ -177,15 +179,15 @@ function Delivery(props) {
               <button
                 type="button"
                 className=" btn btn-primary"
-                
+                value={item.codCartao}
+                onClick={addCardToOrder}
                 
               >
-                <input
+                {/* <input
                   type="radio"
                   name="pagamento"
-                  value={item.codCartao}
-                  onClick={addCardToOrder}
-                />
+                  
+                /> */}
                 
               </button>
 
@@ -214,7 +216,7 @@ function Delivery(props) {
         <>
           <div className="row rowCentralized enderecoCartao">
             <div className="col-12 col-md-12">
-              <div className="disabledBox">
+              <div className="disabledBox btnEndereco">
                 <button
                 type="button"
                 className=" btn btn-primary"

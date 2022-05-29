@@ -93,9 +93,7 @@ Label {
 
 .formEntrega {
   background-color: white;
-
-  padding: 20px;
-  height: 100%;
+  padding: 18px 10px;
   margin: 20px 0px 10px 0px;
 }
 
@@ -153,6 +151,17 @@ Label {
   display: flex;
   justify-content: space-between;
 }
+
+.btnEndereco button{
+  background-color: transparent;
+  border: none;
+}
+
+.btnEndereco button:hover, button:visited{
+  background-color: transparent;
+  border: none;
+}
+
 
 /* <!-- FINAL ENTREGA --> */
 
