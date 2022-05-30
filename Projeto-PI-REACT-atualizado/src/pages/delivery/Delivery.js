@@ -26,24 +26,24 @@ import CaminhaoP from "./imgs/CaminhaoEntregaP.png";
 import CartContext from "../../context/cart.provider";
 import OrderContext from "../../context/order.provider";
 import axios from "axios";
-
+import { ToastContainer, toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useParams } from "react-router-dom";
 import { addressModel, cardModel, orderModel } from "../../models";
 
-
-
 function Delivery(props) {
   const { cart, getCart } = useContext(CartContext);
-  
-  const idcliente = parseInt(localStorage.getItem("UserId")) 
-  const { orderPlus, getOrder, addOrder } = useContext(OrderContext)
+
+  const notifyAdress = () => toast.success("Endereço salvo com sucesso") 
+
+  const idcliente = parseInt(localStorage.getItem("UserId"));
+  const { orderPlus, getOrder, addOrder } = useContext(OrderContext);
 
   useEffect(() => {
     getCards();
     getCart();
     getAllAddress();
-    
   }, []);
 
   const totalCarrinho = JSON.parse(localStorage.getItem("cart"));
@@ -58,14 +58,10 @@ function Delivery(props) {
     minimumFractionDigits: 2,
   });
 
-  
-
   const [successRegister, setSuccessRegister] = useState(false);
   const [address, setAddress] = useState(addressModel);
 
   const [allAdress, setAllAddress] = useState([]);
-
-  
 
   const [order, serOrder] = useState(orderModel);
 
@@ -77,15 +73,17 @@ function Delivery(props) {
       .post(`http://localhost:8080/endereco/${idcliente}/cadastrar`, address)
       .then((response) => {
         setSuccessRegister(true);
-        listAddress()
+        listAddress();
       });
   };
 
   const getAllAddress = () => {
-    axios.get(`http://localhost:8080/endereco/${idcliente}`).then((response) => {
-      setAllAddress(response.data);
-      console.log(allAdress);
-    });
+    axios
+      .get(`http://localhost:8080/endereco/${idcliente}`)
+      .then((response) => {
+        setAllAddress(response.data);
+        console.log(allAdress);
+      });
   };
 
   const getCards = () => {
@@ -104,39 +102,35 @@ function Delivery(props) {
       });
   };
 
-  var valorFrete = 500; 
+  var valorFrete = 500;
 
   // pedido
 
-  const [addressCod, setAddressCod] = useState('');
+  const [addressCod, setAddressCod] = useState("");
 
-  const addAddress = (event) =>{
-    setAddressCod(event.target.value)
-    console.log(addressCod) 
-  }
+  const addAddress = (event) => {
+    setAddressCod(event.target.value);
+    console.log(addressCod);
+  };
 
-  const [pagamento, setPagamento] = useState('');
+  const [pagamento, setPagamento] = useState("");
 
   const addCard = (event) => {
-    setPagamento(event.target.value)
-    addOrder(pagamento)
-    localStorage.setItem("order", pagamento)
-    console.log(event.target.value) 
-  }
+    setPagamento(event.target.value);
+    addOrder(pagamento);
+    localStorage.setItem("order", pagamento);
+    console.log(event.target.value);
+  };
 
   const addCardToOrder = (event) => {
-    addCard(event)
-    
-  }
+    addCard(event);
+  };
 
   // let valorFrete = 0;
 
   // if (valorTotal =>) {
-    
+
   // }
-
-
-
 
   const listCards = () => {
     return cards.map((item) => {
@@ -144,23 +138,18 @@ function Delivery(props) {
         <>
           <div className="modalPix">
             <div className="input-group mb-3">
-
               <button
                 type="button"
                 className=" btn btn-primary"
                 value={item.codCartao}
                 onClick={addCardToOrder}
-                
               >
                 {/* <input
                   type="radio"
                   name="pagamento"
                   
                 /> */}
-                
               </button>
-
-               
 
               <input
                 type="text"
@@ -171,13 +160,10 @@ function Delivery(props) {
               />
             </div>
           </div>
-
-         
         </>
       );
     });
   };
-
 
   const listAddress = () => {
     return allAdress.map((item) => {
@@ -186,25 +172,19 @@ function Delivery(props) {
           <div className="row rowCentralized enderecoCartao">
             <div className="col-12 col-md-12">
               <div className="disabledBox btnEndereco">
-                <button
-                type="button"
-                className=" btn btn-primary"
-                
-                
-              >
-                <input
-                  type="radio"
-                  name="pagamento"
-                  id="endereco"
-                  value={item.codEndereco}
-                  onClick={addAddress}
-                />
-                
-              </button>
+                <button type="button" className=" btn btn-primary">
+                  <input
+                    type="radio"
+                    name="pagamento"
+                    id="endereco"
+                    value={item.codEndereco}
+                    onClick={addAddress}
+                  />
+                </button>
                 <div className="col-sm-9 col-7">
-                  {item.nomeRua}, {item.numeroCasa} - {item.bairro} - {item.nomeCidade}/{item.estado}
+                  {item.nomeRua}, {item.numeroCasa} - {item.bairro} -{" "}
+                  {item.nomeCidade}/{item.estado}
                 </div>
-                
               </div>
             </div>
           </div>
@@ -212,7 +192,61 @@ function Delivery(props) {
       );
     });
   };
-  
+
+  const listAddressCheckout = () => {
+    return allAdress.map((item) => {
+      return (
+        <>
+          <button
+            className="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#checkoutEntrega"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            <strong>Detalhes da Entrega</strong>
+          </button>
+
+          <div className="collapse" id="checkoutEntrega">
+            <div className="entregaDescriao">
+              <div className="row justify-content-center">
+                <div className=" col-3 col-md-3 col-lg-2">
+                  <img src={PinLocalizacao} width="100%" />
+                </div>
+                <div className="col-9 col-md-9 col-lg-10">
+                  <ul type="none">
+                    <li>
+                      <strong>
+                        {item.nomeRua}, {item.numeroCasa}
+                      </strong>
+                    </li>
+                    <li>
+                      Estado:{item.estado} - CEP: {item.cep} 
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <hr />
+              <div className="row justify-content-center">
+                <div className=" col-3 col-md-3 col-lg-2">
+                  <img src={Caminhao} width="100%" />
+                </div>
+                <div className="col-9 col-md-9 col-lg-10">
+                  <ul type="none">
+                    <li>
+                      <strong>Prazo de entrega de 9 dias úteis</strong>
+                    </li>
+                    <li>Chegará no seu endereço até dia 08/06/2022</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      );
+    });
+  };
 
   const listOrder = () => {
     return cart.map((item) => {
@@ -538,37 +572,32 @@ function Delivery(props) {
                       type="submit"
                       className="btn salvar"
                       data-bs-dismiss="modal"
-                      onClick={register}
-                    >
-                      Salvar
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+                      onClick={() => {register();notifyAdress();}} > Salvar 
+                    </button> 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+            <ToastContainer autoClose={1500}/> 
           </div>
 
           {/*  FINAL ENTREGA*/}
           {/*  PAGAMENTO  */}
 
           <div className=" col-xl-3 col-11 formPagamento">
-
             <div className="pagamento1">
               <strong>
                 {" "}
                 <img src={PagamentoCartCred} alt="" /> Pagamento
               </strong>
               <hr />
-            </div> 
+            </div>
 
             {listCards()}
 
-            
-
-              
             {/* <div className="modalCartao">
               <div className="input-group mb-3"> */}
-                {/*  Button trigger modal  
+            {/*  Button trigger modal  
 
                 <button
                   type="button"
@@ -820,7 +849,7 @@ function Delivery(props) {
                         </div>
                         <div className="row">
                           <div className="valor col-12">
-                            <strong>Valor total: </strong> R$ 549,90
+                            <strong>Valor total: </strong> R$ 1.197,00
                           </div>
                         </div>
                         <div className="row">
@@ -853,7 +882,7 @@ function Delivery(props) {
                   data-bs-target="#boleto"
                 >
                   <input
-                  id="boletoo"
+                    id="boletoo"
                     type="radio"
                     name="pagamento"
                     onClick={() =>
@@ -911,7 +940,7 @@ function Delivery(props) {
                         </div>
                         <div className="row">
                           <div className="valor col-12">
-                            <strong>Valor total: </strong> R$ 549,90
+                            <strong>Valor total: </strong> R$ 1.197,00
                           </div>
                         </div>
                         <div className="row">
@@ -950,55 +979,9 @@ function Delivery(props) {
 
                 <div className="row rowCentralized justify-content-center">
                   <div className="checkoutEntrega col-11">
-                    <p>
-                      <button
-                        className="btn btn-primary"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#checkoutEntrega"
-                        aria-expanded="false"
-                        aria-controls="collapseExample"
-                      >
-                        <strong>Detalhes da Entrega</strong>
-                      </button>
-                    </p>
-                    <div className="collapse" id="checkoutEntrega">
-                      <div className="entregaDescriao">
-                        <div className="row justify-content-center">
-                          <div className=" col-3 col-md-3 col-lg-2">
-                            <img src={PinLocalizacao} width="100%" />
-                          </div>
-                          <div className="col-9 col-md-9 col-lg-10">
-                            <ul type="none">
-                              <li>
-                                <strong>
-                                  Rua Visconde de Sousa Franco. 55
-                                </strong>
-                              </li>
-                              <li>São Paulo/SP - CEP: 03131-085</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <hr />
-                        <div className="row justify-content-center">
-                          <div className=" col-3 col-md-3 col-lg-2">
-                            <img src={Caminhao} width="100%" />
-                          </div>
-                          <div className="col-9 col-md-9 col-lg-10">
-                            <ul type="none">
-                              <li>
-                                <strong>
-                                  Prazo de entrega de 9 dias úteis
-                                </strong>
-                              </li>
-                              <li>
-                                Chegará no seu endereço até dia 08/06/2022
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    
+                  {listAddressCheckout()} 
+                    
                   </div>
 
                   <div className="checkoutPagamento col-11">

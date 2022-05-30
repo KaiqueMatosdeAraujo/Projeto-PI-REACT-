@@ -2,7 +2,13 @@ import './RelatableProduct.css'
 import Heart from '../card/imgs/heart (2).png'
 import CartContext from '../../context/cart.provider'
 import React, { useContext } from 'react';
+import { ToastContainer, toast } from "react-toastify";
 
+
+const notify = () =>
+  toast.success("Adicionado ao carrinho ", {
+    position: "top-right",
+  });
 
 function RelatableProduct(props) {
 
@@ -46,9 +52,9 @@ function RelatableProduct(props) {
         </div>
 
         <div class="row justify-content-evenly">
-          <button type="button" class="btn btnAdicionarAoCarrinho botaoComprarProdutoRelacionado  col-8" onClick={() => addToCart(props.productRelatable)}>Comprar</button>
+          <button type="button" class="btn btnAdicionarAoCarrinho botaoComprarProdutoRelacionado  col-8" onClick={() => {addToCart(props.productRelatable); notify();}}>Comprar</button>
         </div>
-
+        <ToastContainer autoClose={500} />
 
       </div>
     </>

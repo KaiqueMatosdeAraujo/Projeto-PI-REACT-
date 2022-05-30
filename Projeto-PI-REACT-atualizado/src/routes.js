@@ -36,7 +36,7 @@ export const Routes = () => {
             <Route path="/boyProduct" component={BoyProduct}/>
             <Route path="/accessories" component={Accessories}/>
             <Route path="/cart" component={Cart} />
-            <Route path="/itemPage" component={ItemPage} />
+            <Route path="/itemPage/:codProduto" component={ItemPage} />
             <Route path="/profile" component={Profile} />
             <Route path="/nav" component={Nav} exact/>
             <Route path="/assessmentsHome" component={AssessmentsHome} exact/>

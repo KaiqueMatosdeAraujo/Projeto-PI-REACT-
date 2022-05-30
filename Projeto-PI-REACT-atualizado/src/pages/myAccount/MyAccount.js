@@ -499,7 +499,7 @@ function MyAccount(props) {
                           type="text"
                           className="form-control "
                           id="inputAddressNome"
-                          placeholder="Osvaldo Silva"
+                          placeholder="Maria Silva Oliveira"
                         />
                       </div>
 
@@ -511,7 +511,7 @@ function MyAccount(props) {
                           type="text"
                           className="form-control"
                           id="inputAddressEmail"
-                          placeholder="osvaldoSilva@gmail.com"
+                          placeholder="mariasilva@gmail.com"
                           aria-label="Disabled input example"
                           disabled
                         />
@@ -525,7 +525,7 @@ function MyAccount(props) {
                           type="text"
                           className="form-control col-12"
                           id="inputAddressSexo"
-                          placeholder="000.000.000-00"
+                          placeholder="568.456.585-21"
                           aria-label="Disabled input example"
                           disabled
                         />
@@ -542,7 +542,7 @@ function MyAccount(props) {
                           type="text"
                           className="form-control"
                           id="inputAddressNascimento"
-                          placeholder="01/01/2021"
+                          placeholder="25/11/1998"
                           aria-label="Disabled input example"
                           disabled
                         />
@@ -550,13 +550,13 @@ function MyAccount(props) {
 
                       <div className="col-12 col-md-12 col-xl-5 ">
                         <label for="inputAddressTelefone" id="inputTelefone">
-                          Telefone:
+                          DDD:
                         </label>
                         <input
                           type="text"
                           className="form-control"
                           id="inputAddressTelefone"
-                          placeholder=""
+                          placeholder="11"
                         />
                       </div>
 
@@ -569,7 +569,7 @@ function MyAccount(props) {
                           type="text"
                           className="form-control"
                           id="inputCelular"
-                          placeholder="(11) 99999-9999 "
+                          placeholder="94068-1587 "
                         />
                       </div>
                     </div>
@@ -591,7 +591,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputEndereco"
-                        placeholder="teste"
+                        placeholder="Rua Santo Antonio"
                       />
                     </div>
 
@@ -603,7 +603,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputNumero"
-                        placeholder="3097"
+                        placeholder="467"
                       />
                     </div>
 
@@ -615,7 +615,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputAddressBairro"
-                        placeholder="Vila Butantã"
+                        placeholder="Bela Vista"
                       />
                     </div>
 
@@ -651,7 +651,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputAddressCEP"
-                        placeholder="05212040"
+                        placeholder="05212-040"
                       />
                     </div>
 
@@ -678,7 +678,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputAddressPontodeReferencia"
-                        placeholder=" Em frente a USP "
+                        placeholder=""
                       />
                     </div>
                   </div>

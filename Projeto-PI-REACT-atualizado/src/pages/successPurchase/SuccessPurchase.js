@@ -41,9 +41,7 @@ function SucessPurchase(props) {
                     Compra realizada com sucesso!!
                 </p >
 
-                <p className="p-segunto-texto">
-                    A confirmação do seu pedido foi enviada para seu e-mail
-                </p>
+               
                 <SuccessPurschaseItens formPagment="Cartão de Crédito" parcel="4 X Vezes Sem Juros" delivery="Correios"/>
             </div>
               <div className="col-11">
@@ -51,19 +49,20 @@ function SucessPurchase(props) {
                 <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Cod.</th>
                         <th scope="col">Produto</th>
                         <th scope="col">Preço</th>
                     </tr>
                 </thead>
                 <tbody>
                   
-                <ItensProducts id="1" name="Bebê Reborn Realista -" subname="Abigail Pode Dar Banho" value="999,99"/>
-                <ItensProducts id="2" name="Bebê reborn Alice -" subname="Com coelinho" value="599,99"/>
+                <ItensProducts id="1" name="Bebe Reborn Emilly"  value=" 619,00"/>
+                <ItensProducts id="3" name="Bebe Reborn Arthur"  value=" 549,00"/>
+                <ItensProducts id="17" name="Chupeta Rosa Simples" value=" 29,00"/>
         
                         
                     
-                <ItensProducts id="Total"  value="1.599,98"/>
+                <ItensProducts id="Total"  value="1.197,00"/>
                 </tbody>
             </table>
             </div>

@@ -337,7 +337,7 @@ function Register() {
                         </label>
                         <input
                           className="form-control"
-                          type="text"
+                          type="email"
                           placeholder="Insira o e-mail"
                           id="email"
                           onChange={(e) => setEmail(e.target.value)}
@@ -376,7 +376,7 @@ function Register() {
                         </label>
                         <input
                           className="form-control"
-                          type="text"
+                          type="email"
                           placeholder="Confirme o e-mail"
                           id="emailConfirma"
                           onChange={(e) => setMatchEmail(e.target.value)}

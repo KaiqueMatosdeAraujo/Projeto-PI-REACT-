@@ -52,7 +52,7 @@ function MoreDetails(props) {
                                         <p>{props.cardNumber}</p>
                                         <p><strong>Subtotal:</strong> R$ {props.subtotal}</p>
                                         <p><strong>Frete:</strong> {props.freight}</p>
-                                        <p><strong>Valor do total:</strong> R$ {props.priceRequest} <br />10x de R$ {props.installment}</p>
+                                        <p><strong>Valor do total:</strong> R$ {props.priceRequest} <br /></p>
                                     </div>
 
                                 </div>

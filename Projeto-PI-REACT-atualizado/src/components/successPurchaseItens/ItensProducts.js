@@ -8,7 +8,7 @@ function ItensProduct(props) {
         <>
             <tr>
                 <th scope="row">{props.id}</th>
-                <td>{props.name} - <br /> {props.subname}</td>
+                <td>{props.name}  <br /> {props.subname}</td>
                 <td>R$ {props.value}</td>
             </tr>
         </>
