@@ -1,0 +1,132 @@
+.pageRegister{
+    background-color: rgb(255 247 249);
+}
+.user-cadastro{
+    width: 60%;
+    margin-top: 20%;
+    margin-left: 26%;
+}
+
+.border-card{
+    box-shadow: 0px 0px 1em 0px rgba(50, 50, 50, 0.384);
+}
+
+.row.rowCentralized{
+    --bs-gutter-x: 0; 
+     --bs-gutter-y: 0;
+}
+
+.text-title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.row.custom-input{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    justify-content: space-between;
+}
+
+.custom-input input{
+    font-size: 12px;
+}
+
+.custom-input label{    /* ADICIONEI */
+    font-weight: bold;
+    color: #626262;
+}
+
+.custom-input input::placeholder{   /* ADICIONEI */
+    color: black;
+}
+
+
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: rgb(123, 197, 237);
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.supportButton{
+    background-color: #9ACCFF;
+    width: 190px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 25px;
+    /* border-radius: 30%; 
+    height: 40px;*/
+    text-align: center;
+    margin-bottom: 15%;
+}
+
+.supportButton:hover{
+    color: gray;
+} 
+
+
+@media (max-width: 767px){ 
+
+    .col-2.col-mobile{
+        padding: 0px;
+    }
+
+    .custom-input{
+        display: block !important;
+  
+    }
+
+    .input-login{
+        margin: 0px;
+    }
+
+    .input-media{   /* CRIEI ESSA CLASSE NO HTML */
+        margin-top: 15px;
+    }
+
+    .user-cadastro{
+        left: 154px;
+        width: 80%;
+    }
+    
+    hr{
+        width: 285px;
+        margin-left: 28px;
+    }
+}

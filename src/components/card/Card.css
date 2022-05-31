@@ -1,0 +1,60 @@
+.cardProdutoRelacionado{
+
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgb(216, 216, 216);
+    box-shadow: 0 2px 2px 0 grey;
+    
+}
+
+.nomeProdutoRelacionado{
+ 
+    color: #E6889A;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.precoProdutoRelacionado{
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(165, 165, 165);
+}
+
+.parcelamentoProdutoRelacionado{
+color: rgb(206, 206, 206);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.btnAdicionarAoCarrinho {
+    font-size: 100%;
+    background-color: #9CF38E;
+    font-weight: bold;
+    border-color: transparent;
+    align-items: center;
+    padding: 10px;
+    border-radius: 26px;
+    color: white;
+    text-decoration: none;
+
+}
+.btnAdicionarAoCarrinho:hover{
+    color:white;
+    background-color: #8edb82;;
+}
+
+
+.btnAdicionarAoCarrinho:focus:not(:focus-visible) {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .adicionarAoCarrinho:hover {
+    background-color: #69e956;
+}

@@ -1,0 +1,77 @@
+.pageLogin{
+    background-color: rgb(255 247 249);
+}
+
+.backgroundH{
+    outline: 1px solid rgba(0,0,0,.125);
+}
+
+.user-login{
+    /* width: 49px; */
+    height: 44px;
+    position: relative;
+   
+    margin-top: 15px;
+}
+
+
+.text-title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.row-login{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+.custom-input input{
+    font-size: 12px;
+    height: 40px;
+}
+
+.text-esqueci-senha{
+    font-size: 14px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.text-esqueci-senha a{
+    color: black;
+}
+
+.card-input-login{
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+    align-items: center;
+}
+
+
+@media (max-width: 992px){ 
+    .card-input-login{
+        border: none;
+        outline: none;
+    }
+}
+
+
+@media (max-width: 767px){ 
+    hr{
+        width: 260px;
+        margin-left: 13px;
+    }
+
+    .text-title{
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 768px){
+    .user-login{
+        left: 25%;
+    }
+}
