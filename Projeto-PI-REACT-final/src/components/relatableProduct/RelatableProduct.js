@@ -3,7 +3,7 @@ import Heart from '../card/imgs/heart (2).png'
 import CartContext from '../../context/cart.provider'
 import React, { useContext } from 'react';
 import { ToastContainer, toast } from "react-toastify";
-
+import { Link } from "react-router-dom";
 
 const notify = () =>
   toast.success("Adicionado ao carrinho ", {
@@ -12,15 +12,15 @@ const notify = () =>
 
 function RelatableProduct(props) {
 
-  
+
   const { addToCart } = useContext(CartContext)
 
   let parcela = props.price / 10;
   let parcelaFormatada = parseFloat(parcela.toFixed(2))
-  let parcel = parcelaFormatada.toLocaleString('pt-br', {minimumFractionDigits: 2});
+  let parcel = parcelaFormatada.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
   var atual = props.price
-  var precoFormat = atual.toLocaleString('pt-br', {minimumFractionDigits: 2});
+  var precoFormat = atual.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
   return (
     <>
@@ -33,16 +33,23 @@ function RelatableProduct(props) {
         </div>
 
 
+        <Link to={props.link}>
 
-        <div class="row justify-content-evenly">
-          <a class="col-10"><img src={props.image} alt="" class="responsive" width="25" height="25" /></a>
-        </div>
-
-
-        <div class="row justify-content-evenly">
-          <div class="nomeProdutoRelacionado col-10">
-            {props.name}
+          <div class="row justify-content-evenly">
+            <a class="col-10"><img src={props.image} alt="" class="responsive" width="25" height="25" /></a>
           </div>
+
+        </Link>
+
+
+
+        <div class="row justify-content-evenly">
+          <Link to={props.link}>
+            <div class="nomeProdutoRelacionado col-12">
+              {props.name}
+            </div>
+          </Link>
+
           <div class="precoProdutoRelacionado col-10">
             R$   {precoFormat}
           </div>
@@ -52,7 +59,7 @@ function RelatableProduct(props) {
         </div>
 
         <div class="row justify-content-evenly">
-          <button type="button" class="btn btnAdicionarAoCarrinho botaoComprarProdutoRelacionado  col-8" onClick={() => {addToCart(props.productRelatable); notify();}}>Comprar</button>
+          <button type="button" class="btn btnAdicionarAoCarrinho botaoComprarProdutoRelacionado  col-8" onClick={() => { addToCart(props.productRelatable); notify(); }}>Comprar</button>
         </div>
         <ToastContainer autoClose={500} />
 

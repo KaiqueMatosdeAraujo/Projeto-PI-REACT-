@@ -49,6 +49,7 @@ function ProductList(props) {
                   price={item.preco}
                   product={item}
                   parcel={item.parcela}
+                  link={`/itemPage/${item.codProduto}`}
                 ></CardProduct>
               </div>
               
