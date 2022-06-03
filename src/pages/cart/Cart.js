@@ -84,7 +84,7 @@ function Cart(props) {
                     </div>
                     <div className="cart-action-button">
                         <Link to="/" className="btn-main">Continuar comprando</Link>
-                       {user &&( <Link to="/Delivery" className="btn-main">Finalizar compra</Link>)}
+                       {user &&( <Link to="/delivery" className="btn-main">Finalizar compra</Link>)}
                        {!user &&( <Link to="/login" className="btn-main">Finalizar compra</Link>)}
                     </div>
 

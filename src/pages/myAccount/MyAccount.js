@@ -27,7 +27,7 @@ import ChipCartaoCred from "../delivery/imgs/chip-de-cartao-de-credito.png";
 import TabsMyAccount from "../../components/tabsMyAccount/TabsMyAccount";
 import MaskedInput from "../../mask/Mask";
 import { baseUrl } from "../../environments/environments";
-
+import Cartao from './img-myAccount/cartao-multibanco.png'
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -60,8 +60,9 @@ function MyAccount(props) {
     getCustomer();
     getCards();
     getAllAddress();
+    getEstados()
     // getSelectEstado();
-  }, [allAdress]);
+  }, [successRegister]);
 
   // const getAddress = () => {
   //     axios.get(`http://localhost:8080/endereco/${idcliente}/${idendereco}`)
@@ -94,12 +95,14 @@ function MyAccount(props) {
         console.log(card);
       });
   };
+  
 
   const getAllAddress = () => {
     axios
       .get(`http://localhost:8080/endereco/${idcliente}`)
       .then((response) => {
         setAllAddress(response.data);
+        setSuccessRegister(false);
         console.log(allAdress);
       });
   };
@@ -109,101 +112,31 @@ function MyAccount(props) {
       .post(`http://localhost:8080/endereco/${idcliente}/cadastrar`, address)
       .then((response) => {
         setSuccessRegister(true);
-        listAddress();
       });
   };
 
-  const [estado, setEstado] = useState([]);
+  const [estados, setEstados] = useState([]);
 
-  // const getSelectEstado = () => {
-  //   axios.get(`${baseUrl}/endereco/uf`).then((response) => {
-  //     console.log(response.data);
-  //     let estadoFilter = [];
-  //     let estadoResponse = response.data;
-  //     for (let i = 0; i < estadoResponse.length; i++) {
-  //       if (estado.cod_estado !== estadoResponse[i].cod_estado) {
-  //         estadoFilter.push(estadoResponse[i]);
-  //       }
-  //     }
-  //     setEstado(estadoFilter);
-
-  //   });
-  // };
-  console.log("Aqui Esta o Estado ----->>>>>>>>>", estado);
-  const renderEstado = () => {
-    return (
-      <>
-        <div className="col-3">
-          <label for="inputAddressUF" id="InputUFTitle">
-            UF:
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputAddressUF"
-            placeholder="SP"
-            value={address.estado}
-            onChange={(event) => {
-              setAddress({
-                ...address,
-                estado: event.target.value,
-              });
-            }}
-          />
-        </div>
-
-        {/* <div className="col-3">
-          <label for="inputAddressUF" id="InputUFTitle">
-            UF:
-          </label>
-
-          <Form.Select
-            onChange={(event) => {
-              console.log(event);
-              let stateSelected = event.target.options.selectedIndex;
-              let textState = event.target.options[stateSelected].innerText;
-              setEstado({
-                estado:event.target.value
-                
-              });
-            }}
-          >
-            <option defaultValue >Selecione um estado </option>
-            {estado.map((item) => {
-              return (
-                <option key={item.cod_estado} value={item.cod_estado}>
-                  {item.descricao_estado}
-                </option>
-              );
-            })}
-          </Form.Select>
-        </div> */}
-      </>
-    );
+  const getEstados = () => {
+    axios.get(`http://localhost:8080/endereco/uf`).then((response) => {
+      setEstados(response.data);
+    });
   };
-
-  console.log(cards);
 
   const listCards = () => {
     return cards.map((item) => {
       return (
         <>
           <div className="row rowCentralized enderecoCartao">
-            <div className="col-12 col-md-12 col-lg-12">
+            <div className="col-12 col-md-8 col-lg-8">
               <div className="row rowCentralized enderecoCartao">
                 <div className="col-12 col-lg-8">
                   <div className="disabledBox">
                     <a className="imageDisableBox col-2 col-md-1">
-                      <img src={mastercard} alt="" />
+                      <img src={Cartao} alt="" />
                     </a>
                     <div className="col-sm-9 col-7">
-                      <input
-                        type="text"
-                        className="form-control "
-                        placeholder={item.numeroCartao}
-                        aria-label="Disabled input example"
-                        disabled
-                      />
+                      {item.numeroCartao}
                     </div>
 
                     <div className="dataButtons col-2">
@@ -213,7 +146,7 @@ function MyAccount(props) {
                         </a>
                         <a
                           type="button"
-                          className="imageDisableBox col-6 "
+                          className="imageDisableBox col-5 "
                           data-bs-toggle="modal"
                           data-bs-target="#editarcartao"
                         >
@@ -844,51 +777,30 @@ function MyAccount(props) {
                       />
                     </div>
 
-                    {renderEstado()}
-
-                    {/* <div className="col-3">
+               
+                    <div className="col-3">
                       <label for="inputAddressUF" id="InputUFTitle">
                         UF:
                       </label>
 
-                        
-
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="inputAddressUF"
-                        placeholder="SP"
-                        value={address.estado}
-                        onChange={(event) => {
-                          setAddress({
-                            ...address,
-                            estado: event.target.value,
-                          });
-                        }}
-                      />
                       <Form.Select
                         onChange={(event) => {
-                          console.log(event);
-                          let stateSelected =
-                            event.target.options.selectedIndex;
-                          let textState =
-                            event.target.options[stateSelected].innerText;
-                          setAddress({
-                            ...address,
-                            states: event.target.value,
-                          });
+                          setAddress({ ...address, estado: event.target.value });
                         }}
                       >
-                        <option>Selecione um estado </option>
-                        {states.map((item) => {
+                        <option>Selecione um estado</option>
+                        {estados.map((item) => {
                           return (
-                            <option key={item.codEstado} value={item.codEstado}>
-                              {item.descricaoEstado}
+                            <option
+                              key={item.cod_estado}
+                              value={item.cod_estado}
+                            >
+                              {item.descricao_estado}
                             </option>
                           );
                         })}
                       </Form.Select>
-                    </div> */}
+                    </div>
 
                     <div className="col-4">
                       <label for="inputAddressCEP" id="InputCEPTitle">
@@ -980,10 +892,22 @@ function MyAccount(props) {
           className="cardContentAccount col-md-11 col-11 "
           id="cardenderecos"
         >
-          <div className="row  titleContainer rowCentralized">
-            <div className=" col-md-5 col-8 titleContainersecondary">
+           <div className="row  titleContainer rowCentralized">
+            <div className=" col-md-5 col-8 col-lg-2 titleContainersecondary">
               Meus Cartões
             </div>
+            <div className="col-8 col-md-10 col-lg-4">
+            
+              <button
+                type="button"
+                className="btn CadastroButton"
+                data-bs-toggle="modal"
+                data-bs-target="#novocartao"
+              >
+                <strong>+</strong> Cadastrar novo cartão
+              </button>
+            
+          </div>
           </div>
           <br />
 

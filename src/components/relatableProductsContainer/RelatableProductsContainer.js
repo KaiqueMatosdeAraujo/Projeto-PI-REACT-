@@ -31,6 +31,7 @@ function RelatableProductsContainer(props) {
               price={item.preco}
               image={item.imgProduto}
               productRelatable={item}
+              link={`/itemPage/${item.codProduto}`}
             />
           </>
         )

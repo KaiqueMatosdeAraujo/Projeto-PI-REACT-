@@ -36,23 +36,23 @@ function Delivery(props) {
    const teste = new Date("14-02-2021");
  const cliente =  parseInt(localStorage.getItem("UserId"));
 //  const dataPedido = '2022-05-31'
- const endereco = 1;
+//  const endereco = 1;
  const frete = 1;
  const pagamento = 1
  const statusPedido = 1
 
-//   const { cart, getCart } = useContext(CartContext);
+  const { cart, getCart } = useContext(CartContext);
 
 //   const notifyAdress = () => toast.success("Endereço salvo com sucesso") 
 
-  // const idcliente = parseInt(localStorage.getItem("UserId"));
+
 //   const { orderPlus, getOrder, addOrder } = useContext(OrderContext);
 
-//   useEffect(() => {
-//     getCards();
-//     getCart();
-//     getAllAddress();
-//   }, []);
+ useEffect(() => {
+     getCards();
+          getCart();
+     getAllAddress();
+   }, []);
 
 //   const totalCarrinho = JSON.parse(localStorage.getItem("cart"));
 
@@ -66,44 +66,45 @@ function Delivery(props) {
 //     minimumFractionDigits: 2,
 //   });
 
-//   const [successRegister, setSuccessRegister] = useState(false);
-//   const [address, setAddress] = useState(addressModel);
+  const [successRegister, setSuccessRegister] = useState(false);
+  const [address, setAddress] = useState(addressModel);
+  const [endereco,setEndereco] = useState("")
+  const [allAdress, setAllAddress] = useState([]);
 
-//   const [allAdress, setAllAddress] = useState([]);
+  const [order, serOrder] = useState(orderModel);
 
-//   const [order, serOrder] = useState(orderModel);
-
-//   const [cards, setCards] = useState([]);
-//   const [card, setCard] = useState(cardModel);
-
-//   const register = () => {
+  const [cards, setCards] = useState([]);
+  const [card, setCard] = useState(cardModel);
+  console.log(allAdress);
+  console.log(cards);
+  console.log("AQUI ESTA O ENDERECO",endereco)
+  const register = () => {
 
 
 
     
-//     axios
-//       .post(`http://localhost:8080/endereco/${idcliente}/cadastrar`, address)
-//       .then((response) => {
-//         setSuccessRegister(true);
-//         listAddress();
-//       });
-//   };
+    axios
+      .post(`http://localhost:8080/endereco/${cliente}/cadastrar`, address)
+      .then((response) => {
+        setSuccessRegister(true);
+        listAddress();
+      });
+  };
 
-//   const getAllAddress = () => {
-//     axios
-//       .get(`http://localhost:8080/endereco/${idcliente}`)
-//       .then((response) => {
-//         setAllAddress(response.data);
-//         console.log(allAdress);
-//       });
-//   };
+  const getAllAddress = () => {
+    axios
+      .get(`http://localhost:8080/endereco/${cliente}`)
+      .then((response) => {
+        setAllAddress(response.data);
+      });
+  };
 
-//   const getCards = () => {
-//     axios.get(`http://localhost:8080/cartao/${idcliente}`).then((response) => {
-//       setCards(response.data);
-//       console.log();
-//     });
-//   };
+  const getCards = () => {
+    axios.get(`http://localhost:8080/cartao/${cliente}`).then((response) => {
+      setCards(response.data);
+      console.log(cards);
+    });
+  };
 
 //   const registerCard = () => {
 //     axios
@@ -118,7 +119,6 @@ function Delivery(props) {
   let apiRes = null
   try{
      apiRes = await axios.post(`http://localhost:8080/pedido/cadastrar`,JSON.stringify({
-    // dataPedido,
     cliente,
     frete,
     pagamento,
@@ -126,7 +126,9 @@ function Delivery(props) {
     endereco},
   
   ),{
-    
+    headers: { 
+      'Content-Type': 'application/json'
+  }
   })}catch (err) {
     apiRes = err.response;
   } finally {
@@ -200,33 +202,32 @@ function Delivery(props) {
   //   });
   // };
 
-  // const listAddress = () => {
-  //   return allAdress.map((item) => {
-  //     return (
-  //       <>
-  //         <div className="row rowCentralized enderecoCartao">
-  //           <div className="col-12 col-md-12">
-  //             <div className="disabledBox btnEndereco">
-  //               <button type="button" className=" btn btn-primary">
-  //                 <input
-  //                   type="radio"
-  //                   name="pagamento"
-  //                   id="endereco"
-  //                   value={item.codEndereco}
-  //                   onClick={addAddress}
-  //                 />
-  //               </button>
-  //               <div className="col-sm-9 col-7">
-  //                 {item.nomeRua}, {item.numeroCasa} - {item.bairro} -{" "}
-  //                 {item.nomeCidade}/{item.estado}
-  //               </div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </>
-  //     );
-  //   });
-  // };
+  const listAddress = () => {
+    return allAdress.map((item) => {
+      return (
+        <>
+          <div className="row rowCentralized enderecoCartao">
+            <div className="col-12 col-md-12">
+              <div className="disabledBox btnEndereco">
+                <button type="button" className=" btn btn-primary">
+                  <input
+                    type="radio"
+                    name="pagamento"
+                    id="endereco"
+                    value={item.codEndereco}
+                  />
+                </button>
+                <div className="col-sm-9 col-7">
+                  {item.nomeRua}, {item.numeroCasa} - {item.bairro} -{" "}
+                  {item.nomeCidade}/{item.estado}
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      );
+    });
+  };
 
   // const listAddressCheckout = () => {
   //   return allAdress.map((item) => {
@@ -316,8 +317,16 @@ function Delivery(props) {
   //   });
   // };
 
+   const onChangeValue =(e)=> {
+    setEndereco( e.target.value);
+    console.log(e.target.value);
+  }
+
   return (
     <><h1>Olaaa</h1>
+    <div onChange={onChangeValueEndereco}>
+    {listAddress()}
+    </div>
      <button onClick={registerOrder}>
                          <strong>Finalizar Compra</strong>
                         </button>

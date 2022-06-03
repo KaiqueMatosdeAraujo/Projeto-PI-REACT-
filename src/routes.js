@@ -17,7 +17,7 @@ import Register from './pages/register/Register'
 import UpdatePassword from "./pages/updatePassword/UpdatePassword";
 import Assessments from "./components/assessments/Assessments";
 import MoreDetails from './components/moreDetails/MoreDetails'
-// import Delivery from './pages/delivery/Delivery'
+ import Delivery from './pages/delivery/Delivery'
 import ExchangesReturn from './pages/exchangesReturn/exchangesReturn'
 import Login from './pages/login/Login'
 
@@ -48,7 +48,7 @@ export const Routes = () => {
             <Route path="/Contact" component={Contact} />
             <Route path="/SuccessPassword" component={SuccessPassword} />
             <Route path="/Wishlist" component={Wishlist}/>
-            {/* <Route path="/delivery" component={Delivery} /> */}
+             <Route path="/delivery" component={Delivery} /> 
             <Route path="/exchangesReturn" component={ExchangesReturn} />
             <Route path="/login" component={Login} />
             <Route path="/myAccount" component={MyAccount} />

@@ -48,6 +48,8 @@ const Login = () => {
         const usuarioNome = resp?.data?.nome;
         const usuarioEmail = resp?.data?.email;
         const token = resp?.data?.token;
+        const testeResp = resp?.data;
+        console.log(testeResp,"Aqui O teste do Resp")
 
         localStorage.setItem("app-token", token);
         localStorage.setItem("UserId", usuarioId);

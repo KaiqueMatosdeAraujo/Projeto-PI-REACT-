@@ -49,6 +49,8 @@ function ProductList(props) {
                   price={item.preco}
                   product={item}
                   parcel={item.parcela}
+                  qtdEstoque={item.qtdEstoque}
+                  link={`/itemPage/${item.codProduto}`}
                 ></CardProduct>
               </div>
               
@@ -58,7 +60,6 @@ function ProductList(props) {
       })
     );
   };
-
   return <>{listProducts()}</>;
 }
 

@@ -1,9 +1,11 @@
+const idcliente = parseInt(localStorage.getItem("UserId"));
+
 const card = {
     numeroCartao: "",
 	nomeTitular: "",
 	validade: "",
-	bandeira: null,
-    cliente:  null 
+	bandeira: 1,
+    cliente: `${idcliente}`
 }
 
 export default card

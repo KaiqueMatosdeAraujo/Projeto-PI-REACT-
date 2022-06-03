@@ -13,7 +13,6 @@ import { useHistory } from 'react-router-dom'
 
 function Header() {
     const userName = localStorage.getItem('UserName')
-  console.log("nome de Usuario",userName)
     const [search, setSearch] = useState("");
     let history = useHistory()
   
