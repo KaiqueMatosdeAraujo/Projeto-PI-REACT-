@@ -1,0 +1,41 @@
+.categorias{
+    display: flex;
+    justify-content: space-around;
+    margin-top:2%
+    
+}
+
+.img-cat{
+    border-radius: 80px;    
+    margin-bottom:5%;
+}
+
+ @media (max-width:830px)
+ {
+     .img-cat{
+        width: 231px;
+        height: 183px;
+    
+     }
+ }
+ 
+@media (max-width: 760px)
+{
+    .categorias{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        
+    }
+}
+
+@media (min-width: 940px)
+{
+    .categorias {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin: 11px;
+    padding: 10px;
+    }
+}

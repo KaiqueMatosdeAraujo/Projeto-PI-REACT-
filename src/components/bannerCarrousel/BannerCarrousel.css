@@ -1,0 +1,15 @@
+@media (max-width: 450px)
+{
+    .carousel{
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 450px)
+{
+    .banner-mobile{
+        display: none;
+    }
+}

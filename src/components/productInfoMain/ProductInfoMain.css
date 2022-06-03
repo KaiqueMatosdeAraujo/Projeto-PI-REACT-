@@ -1,0 +1,312 @@
+ .containerConteudo-ProductInfoMain {
+    padding: 21px;
+    outline:1px solid rgb(209, 209, 209);
+    border-radius: 8px;
+    background-color:white;
+    margin-top:2%;
+
+
+}
+/*.ContainerInfoProduto{
+    margin-top: 10px;
+}*/
+
+.imgMaior{
+    height:80%;
+}
+
+.infoBonecos {
+        padding: 30px;
+        outline: 1px solid rgb(209, 209, 209);
+        border-radius: 8px;
+        
+       
+}
+.nomeBebe{
+    color:#E6889A;
+    font-weight: bold;
+}
+h2.nomeBebe{
+    Font-size: 30px;
+}
+.PrecoBebeInfo{
+    font-size: 36px;
+}
+/*.nomeBebe.PrecoBebeInfo{
+    margin-top: 10px;
+}*/
+h3.nomeBebe{
+    color: rgb(165, 165, 165);
+}
+.PrecoBebeInfoDescricao{
+    color: rgb(165, 165, 165);
+    font-size:24px;
+}
+.img-thumbnail{
+    border: 0.2px solid rgb(209, 209, 209);
+    border-radius: 8px;
+    margin-bottom:15px;
+}
+.imgMaior{
+height:80%;
+}
+.rowPreco{
+    display:flex;
+    flex-direction: column;
+}
+.precoContainer{
+    margin-top:18%;
+}
+.descricao {
+    padding: 21px;
+    outline: 1px solid rgb(209, 209, 209);
+    border-radius: 8px;
+}
+.inputNumero {
+    border-radius: 34px;
+    font-family: 'Comfortaa',cursive;
+    border-color: #767676e3;
+    color: #000000;
+    font-weight: bold;
+    font-size: 25px;
+}
+.btnAdicionarAoCarrinho {
+    font-size: 100%;
+    background-color: #9CF38E;
+    font-weight: bold;
+    border-color: transparent;
+    align-items: center;
+    padding: 10px;
+    border-radius: 26px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 7%;
+}
+.btnAdicionarAoCarrinho:hover{
+    color:white;
+    background-color: #8edb82;
+}
+.btnAdicionarAoCarrinho:focus:not(:focus-visible) {
+    outline: 0;
+    box-shadow: none;
+  }
+.bottom {
+    width: 145px;
+}
+.adicionarAoCarrinho:hover {
+    background-color: #69e956;
+}
+.imgFav {
+    height: 9%;
+    width: 83%;
+}
+h2 {
+    margin-top: 20px;
+}
+.produtoSubtitulo{
+    display:flex;
+    color: rgb(165, 165, 165);
+    font-weight: bold;
+    
+}
+.produtoSubtitulo.v2 {
+    justify-content: flex-end;
+}
+h5 {
+    font-weight: bold;
+    margin-left: 26px;
+}
+.row.miniImg{
+    justify-content: center;
+}
+.row.botoesInfoProduto{
+    justify-content: flex-start;
+    margin-top:7%;
+    
+}
+.descricaoTecContent{
+   color: #666565;
+}
+.responsive{
+    
+        width: 100%;
+        height: auto;
+      
+}
+.adicionar{
+   
+    border-radius: 17px;
+    background-color: white;
+    border: 1.5px solid grey;
+    color: #E6889A;
+    font-weight: bold;
+    height: 65%;
+}
+.subtrair{
+   
+    border-radius: 17px;
+    background-color: white;
+    border: 1.5px solid grey;
+    color: #E6889A;
+    font-weight: bold;
+    height: 65%;
+}
+.campo-qtd{
+    border-radius: 16px;
+  
+    font-size: 17px;
+    border: 1.5px solid grey;
+    font-weight: bold;
+    color: #E6889A;
+    text-align: center;
+    height: 65%;
+}
+.row .botoesInfoProduto input{
+    margin-right: 5px;
+}
+
+
+@media (max-width:991px){
+    .cardProdutoRelacionado{
+        margin-top:15px;
+    }
+    .imgFav{
+        width:61%;
+    }
+    .ContainerInfoProduto{
+        margin-top: 10px;
+    }
+    .btnAdicionarAoCarrinho{
+        font-size: 83%;
+    }
+}
+
+
+@media (min-width:767px){
+    .imgFav{
+    width:50%;
+    }
+
+    
+}
+
+
+@media (max-width:414px){
+    .imgFav{
+        width: 100%;
+    }
+    h2.nomeBebe{
+        Font-size: 18px;
+    }
+    .botoesInfoProduto{
+        font-size:12px;
+    }
+    .btnAdicionarAoCarrinho{
+        font-size: 119%;
+        margin-top: 10px;
+    }
+}
+.PrecoBebeInfo {
+    font-size:27px;
+}
+.PrecoBebeInfoDescricao{
+    font-size:18px;
+}
+
+
+@media (max-width: 390px){
+    .btnAdicionarAoCarrinho{
+        
+        font-size: 106%;
+        margin-top: 10px;
+        margin-left: -7%;
+    }
+
+    .container-imagem{
+        width: 100%;
+        padding-right: var(--bs-gutter-x,.75rem);
+        padding-left: var(--bs-gutter-x,.75rem);
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .containerConteudo-ProductInfoMain{
+        outline: none;
+        border-radius: none;
+        
+    }
+
+    .produtoSubtitulo{
+        font-size: 12px;
+    }
+
+    h2.nomeBebe{
+        Font-size: 21px;
+    }
+
+    .imgFav{
+        margin-bottom: 70%;
+        margin-left: 30%;
+    }
+
+    .infoBonecos{
+        padding: 23px;
+    }
+
+    .row.botoesInfoProduto {
+        justify-content: flex-start;
+        margin-top: 7%;
+        margin-left: 2%;
+    }
+
+    .row-marca-codigo{
+        display: block;
+    }
+
+    .produtoSubtitulo.v2{
+        justify-content: flex-start;
+    }
+
+    .precoContainer {
+        margin-top: 11%;
+    }
+
+    .subtrair{
+        font-size: 22px;
+        height: 40%;
+        border-radius: 12px;
+        padding: 7px;
+    }
+
+    .campo-qtd{
+        font-size: 22px;
+        height: 40%;
+        border-radius: 12px;
+        padding: 7px;
+    }
+
+    .adicionar{
+        font-size: 22px;
+        height: 40%;
+        border-radius: 12px;
+        padding: 7px;
+    }
+}
+
+
+@media (max-width: 992px){
+    .imgMaiorFlex{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px){
+    .btnItemProduct{
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+    }
+}

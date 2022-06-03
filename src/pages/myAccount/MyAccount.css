@@ -1,0 +1,427 @@
+.disabledBox{
+    display: flex;
+    background-color: #f4f4f4;
+    border-radius: 9px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 2%;
+}
+.disabledBox .form-control{
+    border: 1px solid #ffffff00;
+    background-color: #f4f4f4;;
+}
+
+.teste{
+    justify-content: space-between;
+}
+
+.teste-dados{
+    border: 0.5px solid rgb(199, 199, 199);
+    border-radius: 8px;
+    padding-bottom: 2%;
+    margin-bottom: 12px;
+    padding: 2%;
+}
+
+.numeroCasa{
+    margin-right: 7%;
+}
+
+.imageDisableBox{
+    padding:3px;
+    display: flex;
+    justify-content: flex-end;
+}
+.cadastroButton{
+    text-align:center;
+}
+
+.btn-close.fechar4:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    }
+.btn-close.fechar4:active {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+        background-color: #f897a9;
+}
+.btn-close.fechar4:hover {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    background-color: #f897a9;
+}
+.enderecoExtra1{
+  width:80%
+}
+.modalHeaderRow{
+    font-weight: bold;
+    font-size: 25px;
+    align-items: center;
+    justify-content: space-between;
+    height: 47px;
+    color: white;
+    
+}
+.minha-contah1{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-minha-conta{
+padding-top: 10px;
+}
+
+.minha-conta{
+    display: flex;
+    justify-content: center;
+    margin-left: 68px;
+
+}
+.num{
+    font-size: 18px;
+}
+.imgLocation{
+    width:6%;
+    
+}
+.data{
+    margin-top: 26px;
+}
+
+
+.cartFakeAccount {
+    background-image: url(./img-myAccount/backgroundCart.png);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 2% 0%;
+    height: 175px;
+}
+
+.tab-content{
+background-color: white;
+padding:10px;
+outline:1px solid rgb(199, 199, 199);
+margin-bottom: 20px;
+}
+
+.nav-item.principal{
+   outline:0.5px solid rgb(199, 199, 199);
+    background-color: #ffc792a8;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    
+}
+.nav-link.principal{
+    color:rgb(0, 0, 0);
+    font-weight:bold;
+}
+.nav-link.principal:active{
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    color:rgb(0, 0, 0);
+}
+.nav-link.principal:hover{
+   
+   color:rgb(255, 255, 255);
+    
+}
+.nav-link.active.principal{
+     text-decoration-color: black;
+    border-top-right-radius:12px;
+    border-top-left-radius:12px;
+}
+
+.titleCard{
+    padding: 5px;
+    outline: 0.5px solid rgb(199, 199, 199);
+    border-radius:8px;
+
+}
+#titleCardMinhaConta h1{
+    font-size:25px;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+
+.container.row{
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1{
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left:10px
+}
+
+.modalcontentTitle{
+    font-size: 19px;
+    font-weight: bold;
+  
+}
+.cardContentTitleDC{
+    font-size:  20px;
+   font-weight: bold;
+   margin-left: 0px;
+   margin-top: 0px;
+}
+
+.title-button{
+    justify-content: space-evenly;
+}
+.cardContentAccount{
+ 
+ border: 0.5px solid rgb(199, 199, 199);
+ border-radius:8px;
+ padding: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
+
+}
+
+.nav-tabs.margin-tab{
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+.input-group img{
+        margin-left: 1px;
+}
+
+.input-group-text{
+    border:2px solid transparent;
+    height: 30px;
+    background-color:transparent;
+}
+.form-control{
+    font-size: 11px;
+   
+    
+}
+
+Label{
+    font-size: 11px;
+    
+}
+
+.titleContainersecondary{
+    font-weight: bold;
+}
+
+/* Endereço Principal*/
+.titleContainer{
+    align-items: flex-end;
+}
+.textoapoio{
+    font-size: 11px;
+}
+
+#AdicionarEnde{
+    margin-left: -117px;
+  
+}
+
+.btn:focus{
+    box-shadow: none;
+}
+.cancelar{
+background-color: rgb(172, 172, 172);
+color: rgb(255, 255, 255);
+}
+
+.salvar{
+    background-color: rgb(165, 201, 243);
+    color: rgb(255, 255, 255);
+}
+.salvar2:hover{
+    background-color: rgb(134, 134, 156);
+    color: rgb(255, 255, 255);
+}
+
+.cancelar:hover{
+    background-color: rgb(134, 134, 156);
+    color: rgb(255, 255, 255);
+}
+.salvar:hover{
+    background-color: rgb(123, 164, 211);
+    color: rgb(255, 255, 255);
+
+}
+.edit{
+    background-color: rgb(165, 201, 243);
+    color: rgb(255, 255, 255);
+}
+.edit:hover{
+    background-color: rgb(109, 146, 189);
+    color: rgb(255, 255, 255);
+}
+
+
+.myprofileModal{
+    background-color:#f897a9;
+    color: white;
+ 
+}
+.modal-body{
+ 
+    font-weight: bold;
+
+}
+
+/* .cartaocadastrado{
+    height: 4%;
+    width: 4%;
+} */
+
+.cardContentAccount.row.modalEndereco{
+justify-content:space-between;
+}
+.btn.lupa{
+background-color: rgb(177, 236, 217);
+
+}
+.imgLocation{
+    height: 4%;
+    width: 6%;
+}
+.row.cepteste{
+    flex-wrap: nowrap;
+}
+
+.cartaocadastrado{
+    height:30px;
+    
+}
+
+
+.imgApoio{
+    margin-top: 8px;
+  
+}
+.emotes{
+    margin-right: 2px;
+}
+
+.btn.modalclose{
+   font-size: 30px;
+  /* color: white; */
+  /* font-weight: bold; */
+
+}
+.nomeCartao{
+    font-size: 19px;
+    margin-top: 27px;
+}
+.helpCard{
+
+    margin: -33px 10px 15px 103px;
+    font-size: 22px;
+    color: black;
+}
+
+.navtabContainer{
+   margin-top: 20px;
+}
+.btn.salvar2{
+    width: 357px;
+    align-items: center;
+    margin-right: 2px;
+}
+.ImagemLapis{
+    width: 22px;
+    height: 24px;
+}
+.modal-footer.Card{
+    background-color:white;
+}
+
+.custom-inputAccount input{
+    font-size: 12px;
+    height: 40px;
+}
+
+.titulo-cadastrar-cartao{
+    font-size: 20px;
+}
+
+@media(max-width:768px){
+    .row.disableBoxRow {
+        --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    justify-content: center;
+    }
+
+    .titulo-cadastrar-cartao{
+        font-size: 20px;
+    }
+
+  
+}
+@media(max-width:520px){
+
+        /* .input-group img {
+            margin-right: 8px;
+            width: 28px;
+            margin-left: -10px;
+        } */
+    .row.enderecoCartao{
+        display:flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+    }
+    .enderecoExtra1{
+        width: 40%;
+    }
+    .imgLocation{
+        width: 8%;
+        
+    }
+    .row .teste{
+        
+        flex-direction: row;
+        justify-content:space-between;
+    }
+    .row.titleContainer{
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    
+    .containerAccount{
+        display: flex;
+        justify-content: center;
+    }
+
+    .cardContentAccount{
+        border: none;
+        padding: 0px;
+    }
+
+    .imagens{
+        display: none;
+    }
+
+    .titulo-cadastrar-cartao{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (min-width: 575px){
+
+}
+
+@media(min-width:1000px){
+    .responsive-inputA{
+        margin-left: 16%;
+    }
+    /* .input-group img {
+        margin-right: 8px;
+        width: 28px;
+        margin-left: -10px;
+    } */
+}
