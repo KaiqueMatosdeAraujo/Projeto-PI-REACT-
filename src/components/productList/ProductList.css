@@ -1,0 +1,37 @@
+.cardsHome{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cart-item .form{
+    display: grid;
+    grid-template-columns: 100%;
+    border-radius: 10px;
+    color: grey;
+    margin: 8px;
+}
+
+.carrinhoVazio{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 3%;
+
+}
+
+@media(min-width: 768px) {
+.cart-item .form:first-child{
+    border-top: 1px solid #efefef;
+}
+
+
+.cart-item .form{
+    /* box-shadow: none;
+    border: none; */
+    display: flex;
+    /* width: 20%; */
+    border-bottom: 1px solid #efefef;
+}
+}
