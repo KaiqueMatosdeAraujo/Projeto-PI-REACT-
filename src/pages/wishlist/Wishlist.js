@@ -32,7 +32,7 @@ function Wishlist(props) {
                         <div className="produtosFav row">
                             <div className="col-lg-12">
 
-                                <ListProduct image={item.imgProduto} name={item.nome} codigo={item.codProduto} valor={item.preco} product={item} />
+                                <ListProduct image={item.imgProduto} name={item.nome} codigo={item.codProduto} valor={item.preco} product={item} qtdEstoque={item.qtdEstoque}/>
 
                             </div>
                         </div>

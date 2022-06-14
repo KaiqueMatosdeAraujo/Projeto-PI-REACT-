@@ -35,6 +35,29 @@ function ProductWishlist(props) {
     position: "top-right",
   });
 
+  const SemEstoquenotify = () =>
+  toast.error("Produto sem estoque ", {
+    position: "top-right",
+  });
+
+  const estoque = (props.qtdEstoque)
+  console.log(estoque)
+
+  const renderizaBotao = () => {
+    return estoque == 0 ? (
+      <button  
+      onClick={() => {
+          SemEstoquenotify()
+        }}><strong>Avise-me</strong> </button>
+    ) : (
+      <button  
+     onClick={() => {
+          addToCart(props.product);
+          notify();
+        }}><strong>Adicionar ao Carrinho</strong> </button>
+    )
+  }
+
 
   return (
     <>
@@ -62,11 +85,9 @@ function ProductWishlist(props) {
               <ToastContainer autoClose={500} />
             </div>
             {/* <div className="lineVertical col-1">.</div> */}
-            <div className="btnCar col-8">
-              <button onClick={() => {
-                    addToCart(props.product);
-                    notify();
-                  }}><strong>Adicionar ao Carrinho</strong> </button>
+            <div className="btnCar col-8"> 
+               {renderizaBotao()} 
+              
             </div>
           </div>
         </div>
