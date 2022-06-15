@@ -50,6 +50,13 @@ function MyAccount(props) {
   const [cards, setCards] = useState([]);
   const [card, setCard] = useState(cardModel);
 
+  //Cartão
+  const [numeroCartao, setnumeroCartao] = useState('')
+  const [validade, setValidade] = useState('')
+  const [nomeTitular, setNomeTitular] = useState('')
+  const bandeira = 1
+
+  const cliente = parseInt(localStorage.getItem("UserId"));
   const endereco = props.endereco || {};
 
   function handleChange(event) {
@@ -62,7 +69,7 @@ function MyAccount(props) {
     getAllAddress();
     getEstados()
     // getSelectEstado();
-  }, [successRegister]);
+  }, [successRegister, idcliente]);
 
   // const getAddress = () => {
   //     axios.get(`http://localhost:8080/endereco/${idcliente}/${idendereco}`)
@@ -89,13 +96,24 @@ function MyAccount(props) {
 
   const registerCard = () => {
     axios
-      .post(`http://localhost:8080/cartao/${idcliente}/cadastrar`, card)
+      .post(`http://localhost:8080/cartao/${idcliente}/cadastrar`, JSON.stringify({
+
+        numeroCartao,
+        nomeTitular,
+        validade,
+        bandeira,
+        cliente
+      }), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => {
         setSuccessRegister(true);
         console.log(card);
       });
   };
-  
+
 
   const getAllAddress = () => {
     axios
@@ -126,7 +144,7 @@ function MyAccount(props) {
   const listCards = () => {
     return cards.map((item) => {
       const numeroCartao = item.numeroCartao;
-      const maskCartao = numeroCartao.slice(numeroCartao.length - 4); 
+      const maskCartao = numeroCartao.slice(numeroCartao.length - 4);
       return (
         <>
           <div className="row rowCentralized enderecoCartao">
@@ -138,7 +156,7 @@ function MyAccount(props) {
                       <img src={Cartao} alt="" />
                     </a>
                     <div className="col-sm-9 col-7">
-                    {`**** **** **** ${maskCartao}`}
+                      {`** ** ** ${maskCartao}`}
                     </div>
 
                     <div className="dataButtons col-2">
@@ -446,7 +464,7 @@ function MyAccount(props) {
                           type="text"
                           className="form-control"
                           id="inputAddressEmail"
-                          placeholder={customer.email} 
+                          placeholder={customer.email}
                           aria-label="Disabled input example"
                           disabled
                         />
@@ -491,7 +509,7 @@ function MyAccount(props) {
                           type="text"
                           className="form-control"
                           id="inputAddressTelefone"
-                          placeholder={customer.ddd} 
+                          placeholder={customer.ddd}
                         />
                       </div>
 
@@ -504,14 +522,14 @@ function MyAccount(props) {
                           type="text"
                           className="form-control"
                           id="inputCelular"
-                          placeholder={customer.numeroTelefone} 
+                          placeholder={customer.numeroTelefone}
                         />
                       </div>
                     </div>
                   </div>
                 </div>
 
-            
+
               </div>
             </div>
             <div className="modal-footer">
@@ -537,20 +555,13 @@ function MyAccount(props) {
       {/* <!-- Outros Endereços --> */}
       <div className="row rowCentralized justify-content-center">
         <div className="cardContentAccount col-md-11 col-11" id="cardenderecos">
-          <div className="row titleContainer rowCentralized">
-            <div className="col-md-5 col-8 titleContainersecondary">
-              Outros Endereços
-            </div>
 
-            {/* {/<div className="textoapoio col-md-3 col-5" id="AdicionarEnde">Adicione novos endereços</div>/} */}
-          </div>
           <br />
           <div className="row rowCentralized enderecoCartao">
             <div className="col-11 col-md-12 col-lg-12">
               <div className="d-flex title-button">
-                <div className="col-5 col-md-7 col-lg-8" id="listaEnde">
-                  {" "}
-                  Endereços Adicionais:
+                <div className="col-md-5 col-8 titleContainersecondary">
+                  Outros Endereços
                 </div>
                 <br />
                 <br />
@@ -602,7 +613,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputEndereco"
-                        placeholder="Av. Corifeu de Azevedo Marques"
+                        placeholder="Digite o logradouro"
                         value={address.nomeRua}
                         onChange={(event) => {
                           setAddress({
@@ -624,7 +635,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputAdressNumCadastroEnde"
-                        placeholder="3097"
+                        placeholder="Número"
                         value={address.numeroCasa}
                         onChange={(event) => {
                           setAddress({
@@ -643,7 +654,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputAddressBairro"
-                        placeholder="Vila Butantã"
+                        placeholder="Digite o bairro"
                         value={address.bairro}
                         onChange={(event) => {
                           setAddress({
@@ -662,7 +673,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputAddressCidade"
-                        placeholder="São Paulo"
+                        placeholder="Digite a cidade"
                         value={address.nomeCidade}
                         onChange={(event) => {
                           setAddress({
@@ -673,7 +684,7 @@ function MyAccount(props) {
                       />
                     </div>
 
-               
+
                     <div className="col-3">
                       <label for="inputAddressUF" id="InputUFTitle">
                         UF:
@@ -711,6 +722,7 @@ function MyAccount(props) {
                         onChange={handleChange}
                         mask="99999-999"
                         name="cep"
+                        placeholder="Digite o CEP"
                       />
                     </div>
 
@@ -725,7 +737,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputAddressComplemento"
-                        placeholder=" "
+                        placeholder="Digite o complemento (Opcional)  "
                         value={address.complemento}
                         onChange={(event) => {
                           setAddress({
@@ -747,7 +759,7 @@ function MyAccount(props) {
                         type="text"
                         className="form-control"
                         id="inputAddressPontodeReferencia"
-                        placeholder=" Em frente a USP "
+                        placeholder="Digite o ponto de referência (Opcional) "
                         value={address.pontoReferencia}
                         onChange={(event) => {
                           setAddress({
@@ -788,12 +800,12 @@ function MyAccount(props) {
           className="cardContentAccount col-md-11 col-11 "
           id="cardenderecos"
         >
-           <div className="row  titleContainer rowCentralized">
-            <div className=" col-md-5 col-8 col-lg-2 titleContainersecondary">
+          <div className="row  titleContainer rowCentralized">
+            <div className=" col-md-5 col-8 col-lg-9 titleContainersecondary">
               Meus Cartões
             </div>
-            <div className="col-8 col-md-10 col-lg-4">
-            
+            <div className="btnCard col-8 col-md-10 col-lg-3">
+
               <button
                 type="button"
                 className="btn CadastroButton"
@@ -802,92 +814,16 @@ function MyAccount(props) {
               >
                 <strong>+</strong> Cadastrar novo cartão
               </button>
-            
-          </div>
+
+            </div>
           </div>
           <br />
 
           {listCards()}
 
-          {/* <div className="row rowCentralized enderecoCartao">
-            <div className="col-12 col-md-12 col-lg-12">
-              <div className="row rowCentralized enderecoCartao">
-                <div className="col-12 col-lg-8">
-                  <div className="disabledBox">
-                    <a className="imageDisableBox col-2 col-md-1">
-                      <img src={mastercard} alt="" />
-                    </a>
-                    <div className="col-sm-9 col-7">
-                      <input
-                        type="text"
-                        className="form-control "
-                        placeholder="4658 ** ** 9867"
-                        aria-label="Disabled input example"
-                        disabled
-                      />
-                    </div>
 
-                    <div className="dataButtons col-2">
-                      <div className="row">
-                        <a className="imageDisableBox col-6">
-                          <img src={lixeira} alt="" />
-                        </a>
-                        <a
-                          type="button"
-                          className="imageDisableBox col-6 "
-                          data-bs-toggle="modal"
-                          data-bs-target="#editarcartao"
-                        >
-                          <img src={lapis} />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="disabledBox">
-                    <a className="imageDisableBox col-1">
-                      <img src={visa} alt="" />
-                    </a>
-                    <div className="col-sm-9 col-8">
-                      <input
-                        type="text"
-                        className="form-control "
-                        placeholder="4658 ** ** 9867"
-                        aria-label="Disabled input example"
-                        disabled
-                      />
-                    </div>
 
-                    <div className="dataButtons col-2">
-                      <div className="row">
-                        <a className="imageDisableBox col-6">
-                          <img src={lixeira} alt="" />
-                        </a>
-                        <a
-                          type="button"
-                          className="imageDisableBox col-6 "
-                          data-bs-toggle="modal"
-                          data-bs-target="#editarcartao"
-                        >
-                          <img src={lapis} />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-
-          <div className="col-8 col-md-10 col-lg-4">
-            <div className="row disableBoxRow">
-              <button
-                type="button"
-                className="btn CadastroButton"
-                data-bs-toggle="modal"
-                data-bs-target="#novocartao"
-              >
-                <strong>+</strong> Cadastrar novo cartão
-              </button>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -948,17 +884,17 @@ function MyAccount(props) {
                     <label for="">
                       <strong>Número do cartão</strong>{" "}
                     </label>
-                    <input
+                    <MaskedInput
                       className="form-control form-control-lg"
-                      type=""
-                      placeholder="5858 6858 6989 5875"
-                      aria-label=".form-control-lg example"
-                      value={card.numeroCartao}
+                      type="text"
+                      id="inputNumberCard"
+                      value={numeroCartao}
+
+                      mask="9999.9999.9999.9999"
+
+                      placeholder="Digite o numero do cartão"
                       onChange={(event) => {
-                        setCard({
-                          ...card,
-                          numeroCartao: event.target.value,
-                        });
+                        setnumeroCartao(event.target.value)
                       }}
                     />
                     <br />
@@ -968,20 +904,20 @@ function MyAccount(props) {
                     <label for="">
                       <strong>Validade</strong>{" "}
                     </label>
-                    <input
+                    <MaskedInput
                       className="form-control form-control-lg"
-                      type=""
-                      placeholder="05/25"
+                      type="text"
+                      id="inputValidade"
                       aria-label=".form-control-lg example"
-                      value={card.validade}
+                      value={validade}
+
+                      mask="99/99"
+
+                      placeholder="00/00"
                       onChange={(event) => {
-                        setCard({
-                          ...card,
-                          validade: event.target.value,
-                        });
+                        setValidade(event.target.value)
                       }}
                     />
-                    <br />
                   </div>
                 </div>
 
@@ -993,36 +929,38 @@ function MyAccount(props) {
                     <input
                       className="form-control form-control-lg"
                       type=""
-                      placeholder="Osvaldo Silva"
+                      placeholder="Digite o nome do titular do cartão"
                       aria-label=".form-control-lg example"
-                      value={card.nomeTitular}
+                      value={nomeTitular}
                       onChange={(event) => {
-                        setCard({
-                          ...card,
-                          nomeTitular: event.target.value,
-                        });
+                        setNomeTitular(event.target.value)
                       }}
                     />
                     <br />
                   </div>
                 </div>
 
-                {/* <div className="row">
-                                                    <div className="col-12">
-                                                        <label for=""><strong>Bandeira</strong> </label> */}
-                {/* <input className="form-control form-control-lg" type="hidden"
-                                                            placeholder="Osvaldo Silva" aria-label=".form-control-lg example"  value={card.bandeira} onChange={(event) => {setCard({...card, registerBandeira})}} />
-                                                   
+                <div>
+                  <input
+                    type="hidden"
+                    id="inputBandeira"
+                    value={bandeira} />
+                </div>
 
-                                                
-                                                    
-                                                        
-                                                        <input className="form-control form-control-lg" type="hidden"
-                                                            placeholder="Osvaldo Silva" aria-label=".form-control-lg example"  value={card.cliente} onChange={(event) => {setCard({...card, registerCliente})}} /> */}
+                <div>
+                  <input
+                    type="hidden"
+                    id="inputCliente"
+                    value={cliente} />
+                </div>
+
 
                 <div className="row">
                   <div className="addPagamento col-12">
-                    <button onClick={registerCard}>
+                    <button onClick={registerCard}
+                      data-bs-dismiss="modal"
+                      aria-label="Close" >
+
                       <strong> Salvar </strong>
                     </button>
                   </div>

@@ -24,7 +24,7 @@ import Login from './pages/login/Login'
 import BoyProduct from "./pages/boyProduct/BoyProduct";
 import Accessories from "./pages/accessoriesProducts/AccessoriesProducts"
 import ResultSearch from './pages/resultSearch/ResultSearch'
-import Deliveryteste from "./pages/deliveryTeste/Delivery";
+
 
 export const Routes = () => {
     return (
@@ -52,7 +52,6 @@ export const Routes = () => {
             <Route path="/exchangesReturn" component={ExchangesReturn} />
             <Route path="/login" component={Login} />
             <Route path="/myAccount" component={MyAccount} />
-            <Route path ="/teste" component={Deliveryteste} />
             <Route path="/resultsearch/:name" component={ResultSearch}/> 
   
         </Switch>

@@ -62,36 +62,7 @@ function MyRequests(props) {
         })
     }
 
-   
-    // const listDetailsOrder = () => {
-
-    //     return (
-    //         <>
-    //             <MoreDetails
-    //                 // image={detailsOrder.itemPedido[0].codProduto.imgProduto}
-    //                 // codRequest={detailsOrder.codPedido}
-    //                 // nameBaby={detailsOrder.itemPedido[0].codProduto.nome}
-    //                 // codProduct={detailsOrder.itemPedido[0].codProduto.codProduto}
-    //                 // priceProduct={detailsOrder.itemPedido[0].codProduto.preco}
-                  
-    //                 address={detailsOrder.endereco.nomeRua}
-    //                 number={detailsOrder.endereco.numeroCasa}
-    //                 neighborhood={detailsOrder.endereco.bairro}
-    //                 city={detailsOrder.endereco.nomeCidade}
-    //                 state={detailsOrder.endereco.estado.descricao_estado}
-    //                 reference={detailsOrder.endereco.pontoReferencia}
-    //                 paymentMethod={detailsOrder.pagamento.formaPagamento.descricao}
-    //                 subtotal="1.197,00"
-    //                 freight={detailsOrder.valorFrete}
-    //                 priceRequest="1.197,00"
-    //                 status={detailsOrder.statusPedido}
-    //             />
-                
-    //         </>
-    //     );
-
-    // };
-
+  
     const listOrder = () => {
         return order.map((item) => {
             return (
@@ -151,7 +122,6 @@ function MyRequests(props) {
     return (
         <>
             {listOrder()}
-            {/* {() => listDetailsOrder()} */}
             {/* <MoreDetails
                 // image={detailsOrder.itemPedido[0].codProduto.imgProduto}
                 // codRequest={detailsOrder.codPedido}

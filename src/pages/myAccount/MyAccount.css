@@ -12,6 +12,10 @@
     background-color: #f4f4f4;;
 }
 
+.btnCard button{
+    margin-left: -26px;
+    } 
+    
 .teste{
     justify-content: space-between;
 }

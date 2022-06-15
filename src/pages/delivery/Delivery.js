@@ -14,6 +14,8 @@ import LogoVisa from "./imgs/logo-visa-4096.png";
 import { history } from "../../History";
 import PinLocalizacao from "./imgs/pinLocation.png";
 import Pix from "./imgs/pix.png";
+import MaskedInput from "../../mask/Mask";
+import ChipCartaoCred from "./imgs/chip-de-cartao-de-credito.png"
 
 import ProductCheckoutSimple from "../../components/productCheckoutSimple/ProductCheckoutSimple";
 import Lupa from "./imgs/pesquisa-de-lupa.png";
@@ -35,17 +37,22 @@ import { addressModel, cardModel, orderModel } from "../../models";
 function Delivery(props) {
   const teste = new Date("14-02-2021");
   const cliente = parseInt(localStorage.getItem("UserId"));
-  const [endereco,setEndereco] = useState("")
-  const [pagamento,setPagamento] = useState("")
+  const [endereco, setEndereco] = useState("")
+  const [pagamento, setPagamento] = useState("")
   const statusPedido = 1;
   const { cart, getCart } = useContext(CartContext);
   const notifyAdress = () => toast.success("Endereço salvo com sucesso");
   const idcliente = parseInt(localStorage.getItem("UserId"));
   const { orderPlus, getOrder, addOrder } = useContext(OrderContext);
   const [successRegister, setSuccessRegister] = useState(false);
-  const [pixPagamento,setPixPagamento] = useState('')
-  const [cartaoPagamento,setCartaoPagamento]= useState('')
-  const [boletoPagamento,setBoletoPagamento]= useState('')
+  const [pixPagamento, setPixPagamento] = useState('')
+  const [cartaoPagamento, setCartaoPagamento] = useState('')
+  const [boletoPagamento, setBoletoPagamento] = useState('')
+
+
+  function handleChange(event) {
+    setAddress({ ...address, cep: event.target.value });
+  }
 
 
   useEffect(() => {
@@ -54,7 +61,8 @@ function Delivery(props) {
     getAllAddress();
     getEstados();
     
-  }, [successRegister]);
+
+  }, [successRegister, idcliente]);
 
   const totalCarrinho = JSON.parse(localStorage.getItem("cart"));
 
@@ -65,14 +73,14 @@ function Delivery(props) {
   var atualTotal = valorTotal;
 
   var totalFormat = atualTotal
- const freteSemFormatacao = atualTotal >= 500 ? 0.00 : 15.90
- const frete = freteSemFormatacao > 0.00 ? 2 : 1 
- const freteExibicao = freteSemFormatacao
- const valorTotalPedido = totalFormat + freteExibicao
- 
+  const freteSemFormatacao = atualTotal >= 500 ? 0.00 : 15.90
+  const frete = freteSemFormatacao > 0.00 ? 2 : 1
+  const freteExibicao = freteSemFormatacao
+  const valorTotalPedido = totalFormat + freteExibicao
 
 
- 
+
+
   const [address, setAddress] = useState(addressModel);
 
   const [allAdress, setAllAddress] = useState([]);
@@ -83,56 +91,61 @@ function Delivery(props) {
   const [card, setCard] = useState(cardModel);
   const [estados, setEstados] = useState([]);
 
+  //Cartão
+  const [numeroCartao,setnumeroCartao]= useState('')
+  const [validade,setValidade]= useState('')
+  const [nomeTitular,setNomeTitular]= useState('')
+  const bandeira = 1
 
 
-  const paymentPix =()=>{
-     
+  const paymentPix = () => {
+
     console.log(pixPagamento)
-    
-    
+
+
   }
 
- const pagamentos = {
-   formaPagamento:1,
-  cartao:1
+  const pagamentos = {
+    formaPagamento: 1,
+    cartao: 1
 
 
- }
-    
-//  const pagamentos = {
-//   formaPagamento:1,
-//  boleto:1
+  }
+
+  //  const pagamentos = {
+  //   formaPagamento:1,
+  //  boleto:1
 
 
-// }
-// const pagamentos = {
-//   formaPagamento:1,
-// pix:1
+  // }
+  // const pagamentos = {
+  //   formaPagamento:1,
+  // pix:1
 
 
-// }
+  // }
 
   // let produtos = Array.from(pull,({codProduto}) => codProduto)
   // let quantidade = Array.from(pull,({quantidade}) => quantidade)
-  
-const orderItems =(itensDoPedido)=>{
- axios.post(`http://localhost:8080/pedido/novo`, itensDoPedido)
-.then((response) => {
-  console.log("ItemPedidoCriado")
-  history.push("/successPurchase");
-});
-}
 
-const paymentOrder =()=> {
-axios.post(`http://localhost:8080/pagamento/cadastrar`,JSON.stringify(pagamentos),  {
-  headers: {
-    "Content-Type": "application/json",
-  },
-})
-.then((response) => {
-  console.log("Pagamento Gerado com Sucesso")
-});
-}
+  const orderItems = (itensDoPedido) => {
+    axios.post(`http://localhost:8080/pedido/novo`, itensDoPedido)
+      .then((response) => {
+        console.log("ItemPedidoCriado")
+        history.push("/successPurchase");
+      });
+  }
+
+  const paymentOrder = () => {
+    axios.post(`http://localhost:8080/pagamento/cadastrar`, JSON.stringify(pagamentos), {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        console.log("Pagamento Gerado com Sucesso")
+      });
+  }
 
 
   const register = () => {
@@ -171,17 +184,28 @@ axios.post(`http://localhost:8080/pagamento/cadastrar`,JSON.stringify(pagamentos
 
   const registerCard = () => {
     axios
-      .post(`http://localhost:8080/cartao/${idcliente}/cadastrar`, card)
+      .post(`http://localhost:8080/cartao/${idcliente}/cadastrar`,JSON.stringify({
+        
+        numeroCartao,
+        nomeTitular,
+        validade,
+        bandeira,
+        cliente
+      }), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      } )
       .then((response) => {
         setSuccessRegister(true);
         console.log(card);
       });
   };
-  
+
   const registerOrder = async () => {
     let apiRes = null;
-     localStorage.removeItem('ultimoPedido');
-   
+    localStorage.removeItem('ultimoPedido');
+
     try {
       apiRes = await axios.post(
         `http://localhost:8080/pedido/cadastrar`,
@@ -198,51 +222,51 @@ axios.post(`http://localhost:8080/pagamento/cadastrar`,JSON.stringify(pagamentos
             "Content-Type": "application/json",
           },
         }
-      ).then((resp) =>{
-        
+      ).then((resp) => {
+
         const pedidoId = resp?.data.codPedido;
         localStorage.setItem("ultimoPedido", pedidoId);
-      
-          
-         
+
+
+
       })
       orderItems(productsQuantity())
-      
-      
-     
+
+
+
     } catch (err) {
       apiRes = err.response;
     } finally {
       console.log(apiRes);
     }
 
-    
+
   };
 
-  
-  function productsQuantity(){
-  const pull =JSON.parse(localStorage.getItem('cart'))
 
-  let itensDoPedido = []
+  function productsQuantity() {
+    const pull = JSON.parse(localStorage.getItem('cart'))
 
-  pull.map((item)=>{
-   const codProduto = `${item.codProduto}`
-  
-   const quantidade = `${item.quantidade}`
-   const codPedido = localStorage.getItem("ultimoPedido")
-   
+    let itensDoPedido = []
 
-   const  itemPedido = {codProduto,codPedido,quantidade}
-   console.log(itemPedido)
-   itensDoPedido.push(itemPedido)
-  
-   console.log("Aqui O Map",pull.map)
-  })
-  console.log("AQUI OS ITENS",itensDoPedido)
-  return itensDoPedido
-}
+    pull.map((item) => {
+      const codProduto = `${item.codProduto}`
 
- 
+      const quantidade = `${item.quantidade}`
+      const codPedido = localStorage.getItem("ultimoPedido")
+
+
+      const itemPedido = { codProduto, codPedido, quantidade }
+      console.log(itemPedido)
+      itensDoPedido.push(itemPedido)
+
+      console.log("Aqui O Map", pull.map)
+    })
+    console.log("AQUI OS ITENS", itensDoPedido)
+    return itensDoPedido
+  }
+
+
 
 
 
@@ -266,12 +290,12 @@ axios.post(`http://localhost:8080/pagamento/cadastrar`,JSON.stringify(pagamentos
     //addCard(event);
   };
 
- const texto = "Olá"
+  const texto = "Olá"
 
   const listCards = () => {
     return cards.map((item) => {
       const numeroCartao = item.numeroCartao;
-      const maskCartao = numeroCartao.slice(numeroCartao.length - 4); 
+      const maskCartao = numeroCartao.slice(numeroCartao.length - 4);
       return (
         <>
           <div className="modalPix">
@@ -279,39 +303,39 @@ axios.post(`http://localhost:8080/pagamento/cadastrar`,JSON.stringify(pagamentos
               <button
                 type="button"
                 className=" btn btn-primary"
-               
+
               >
-                
-               
+
+
                 <input
                   type="radio"
                   name="pagamento"
                   id="pagamento"
                   value="2"
-                  onChange={onChangeValuePagamento} 
+                  onChange={onChangeValuePagamento}
                 />
                 {/* <a className="imageDisableBox ">
                   <img src={Cartao} alt="" />
                </a> */}
               </button>
-       
+
               <input
                 //value={item.codCartao}
-                
+
                 type="text"
                 className="form-control cardCredit "
-                placeholder= {`**** **** **** ${maskCartao}`}
+                placeholder={`** ** ** ${maskCartao}`}
                 aria-label="Disabled input example"
                 disabled
-              /> 
-             
+              />
+
             </div>
           </div>
         </>
       );
     });
   };
-console.log(endereco)
+  console.log(endereco)
   const listAddress = () => {
     return allAdress.map((item) => {
       return (
@@ -319,9 +343,9 @@ console.log(endereco)
           <div className="row rowCentralized enderecoCartao">
             <div className="col-12 col-md-12">
               <div className="disabledBox btnEndereco">
-         
+
                 <button type="button" className=" btn btn-primary">
-               
+
                   <input
                     type="radio"
                     name="endereco"
@@ -339,7 +363,7 @@ console.log(endereco)
         </>
       );
     });
-  }; 
+  };
 
   const listAddressCheckout = () => {
     let index = endereco
@@ -431,14 +455,14 @@ console.log(endereco)
   };
 
 
-  const onChangeValueEndereco =(e)=> {
+  const onChangeValueEndereco = (e) => {
     setEndereco(e.target.value);
-    console.log("Endereço:::",e.target.value);
+    console.log("Endereço:::", e.target.value);
   }
 
-  const onChangeValuePagamento =(e)=> {
+  const onChangeValuePagamento = (e) => {
     setPagamento(e.target.value);
-    console.log("Pagamento:",e.target.value);
+    console.log("Pagamento:", e.target.value);
   }
 
   return (
@@ -483,14 +507,14 @@ console.log(endereco)
               <div className="col-6 col-lg-2">
                 <ul type="none">
                   <li> R$ {totalFormat.toLocaleString("pt-br", {
-    minimumFractionDigits: 2,
-  })}</li>
+                    minimumFractionDigits: 2,
+                  })}</li>
                   <li>R$ {freteExibicao.toLocaleString("pt-br", {
-    minimumFractionDigits: 2,
-  })}</li>
+                    minimumFractionDigits: 2,
+                  })}</li>
                   <li>R$ {valorTotalPedido.toLocaleString("pt-br", {
-    minimumFractionDigits: 2,
-  })}</li>
+                    minimumFractionDigits: 2,
+                  })}</li>
                 </ul>
               </div>
             </div>
@@ -510,10 +534,10 @@ console.log(endereco)
               </strong>
               <hr />
             </div>
-            <span  onChange={onChangeValueEndereco}>
+            <span onChange={onChangeValueEndereco}>
 
-            {listAddress()}
-           </span>
+              {listAddress()}
+            </span>
             <button
               type="button"
               className="btn CadastroButton"
@@ -555,7 +579,7 @@ console.log(endereco)
                           type="text"
                           className="form-control"
                           id="inputEndereco"
-                          placeholder="Av. Corifeu de Azevedo Marques"
+                          placeholder="Digite o logradouro"
                           value={address.nomeRua}
                           onChange={(event) => {
                             setAddress({
@@ -577,7 +601,7 @@ console.log(endereco)
                           type="text"
                           className="form-control"
                           id="inputAdressNumCadastroEnde"
-                          placeholder="3097"
+                          placeholder="Número"
                           value={address.numeroCasa}
                           onChange={(event) => {
                             setAddress({
@@ -596,7 +620,7 @@ console.log(endereco)
                           type="text"
                           className="form-control"
                           id="inputAddressBairro"
-                          placeholder="Vila Butantã"
+                          placeholder="Digite o bairro"
                           value={address.bairro}
                           onChange={(event) => {
                             setAddress({
@@ -615,7 +639,7 @@ console.log(endereco)
                           type="text"
                           className="form-control"
                           id="inputAddressCidade"
-                          placeholder="São Paulo"
+                          placeholder="Digite a cidade"
                           value={address.nomeCidade}
                           onChange={(event) => {
                             setAddress({
@@ -627,42 +651,42 @@ console.log(endereco)
                       </div>
 
                       <div className="col-3">
-                      <label for="inputAddressUF" id="InputUFTitle">
-                        UF:
-                      </label>
+                        <label for="inputAddressUF" id="InputUFTitle">
+                          UF:
+                        </label>
 
-                      <Form.Select
-                        onChange={(event) => {
-                          setAddress({ ...address, estado: event.target.value });
-                        }}
-                      >
-                        <option>Selecione um estado</option>
-                        {estados.map((item) => {
-                          return (
-                            <option
-                              key={item.cod_estado}
-                              value={item.cod_estado}
-                            >
-                              {item.descricao_estado}
-                            </option>
-                          );
-                        })}
-                      </Form.Select>
-                    </div>
+                        <Form.Select
+                          onChange={(event) => {
+                            setAddress({ ...address, estado: event.target.value });
+                          }}
+                        >
+                          <option>Selecione um estado</option>
+                          {estados.map((item) => {
+                            return (
+                              <option
+                                key={item.cod_estado}
+                                value={item.cod_estado}
+                              >
+                                {item.descricao_estado}
+                              </option>
+                            );
+                          })}
+                        </Form.Select>
+                      </div>
 
                       <div className="col-4">
                         <label for="inputAddressCEP" id="InputCEPTitle">
                           CEP:
                         </label>
-                        <input
+                        <MaskedInput
                           type="text"
-                          className="form-control"
                           id="inputAddressCEP"
-                          placeholder="05212040"
                           value={address.cep}
-                          onChange={(event) => {
-                            setAddress({ ...address, cep: event.target.value });
-                          }}
+                          maxLength={18}
+                          onChange={handleChange}
+                          mask="99999-999"
+                          name="cep"
+                          placeholder="Digite o CEP"
                         />
                       </div>
 
@@ -677,7 +701,7 @@ console.log(endereco)
                           type="text"
                           className="form-control"
                           id="inputAddressComplemento"
-                          placeholder=" "
+                          placeholder="Digite o complemento (Opcional)  "
                           value={address.complemento}
                           onChange={(event) => {
                             setAddress({
@@ -699,7 +723,7 @@ console.log(endereco)
                           type="text"
                           className="form-control"
                           id="inputAddressPontodeReferencia"
-                          placeholder=" Em frente a USP "
+                          placeholder="Digite o ponto de referência (Opcional) "
                           value={address.pontoReferencia}
                           onChange={(event) => {
                             setAddress({
@@ -766,6 +790,7 @@ console.log(endereco)
                   data-bs-toggle="modal"
                   data-bs-target="#modalCartao"
                 >
+
                   <input type="radio" name="pagamento" onClick={() =>
                     setPagamento({
                       card: true,
@@ -805,7 +830,7 @@ console.log(endereco)
                           <div className="cartFake col-10 col-md-8">
                             <div className="row">
                               <div className="col-3">
-                                {/* <img src={ChipCartaoCred} alt="" /> */}
+                                <img src={ChipCartaoCred} alt="" />
                               </div>
                             </div>
                             <div className="row">
@@ -830,20 +855,21 @@ console.log(endereco)
                               <label for="inputNumberCard" id="inputNumberCard">
                                 <strong>Número do cartão</strong>{" "}
                               </label>
-                              <input
+
+                              <MaskedInput
                                 className="form-control form-control-lg"
                                 type="text"
                                 id="inputNumberCard"
-                                placeholder="5858 6858 6989 5875"
+                                value={numeroCartao}
+                                maxLength={20}
+                                mask="9999.9999.9999.9999"
                                 aria-label=".form-control-lg example"
-                                value={card.numeroCartao}
+                                placeholder="Digite o numero do cartão"
                                 onChange={(event) => {
-                                  setCard({
-                                    ...card,
-                                    numeroCartao: event.target.value,
-                                   });
-                                  }}
+                                  setnumeroCartao(event.target.value)
+                                }}
                               />
+
                               <br />
                             </div>
 
@@ -851,20 +877,21 @@ console.log(endereco)
                               <label for="inputValidade" id="inputValidade">
                                 <strong>Validade</strong>{" "}
                               </label>
-                              <input
+                              <MaskedInput
                                 className="form-control form-control-lg"
                                 type="text"
                                 id="inputValidade"
-                                placeholder="05/25"
                                 aria-label=".form-control-lg example"
-                                value={card.validade}
+                                value={validade}
+                                maxLength={10}
+                                mask="99/99"
+
+                                placeholder="00/00"
                                 onChange={(event) => {
-                                  setCard({
-                                    ...card,
-                                    validade: event.target.value,
-                                   });
-                                  }}
+                                  setValidade(event.target.value)
+                                }}
                               />
+
                               <br />
                             </div>
                           </div>
@@ -878,32 +905,30 @@ console.log(endereco)
                                 className="form-control form-control-lg"
                                 type="text"
                                 id="inputNomeTitular"
-                                placeholder="Osvaldo Silva"
+                                placeholder="Digite o nome do titular do cartão"
                                 aria-label=".form-control-lg example"
-                                value={card.nomeTitular}
+                                value={nomeTitular}
                                 onChange={(event) => {
-                                  setCard({
-                                    ...card,
-                                    nomeTitular: event.target.value,
-                                   });
+                                  setNomeTitular(event.target.value)
                                   }}
                               />
+                              
                               <br />
                             </div>
                           </div>
 
                           <div>
                             <input
-                            type="hidden"
-                            id="inputBandeira"
-                            value={card.bandeira}/>
+                              type="hidden"
+                              id="inputBandeira"
+                              value={bandeira} />
                           </div>
 
                           <div>
                             <input
-                            type="hidden"
-                            id="inputCliente"
-                            value={card.cliente}/>
+                              type="hidden"
+                              id="inputCliente"
+                              value={cliente} />
                           </div>
 
                           <div className="row">
@@ -916,6 +941,7 @@ console.log(endereco)
                                 type=""
                                 placeholder="CCV"
                                 aria-label=".form-control-lg example"
+                                maxLength={3}
                               />
                             </div>
                             <div className="btnInterrogacao col-2 col-md-3">
@@ -929,14 +955,15 @@ console.log(endereco)
                               </button>
                             </div>
 
-                            
+
                           </div>
 
                           <div className="row">
                             <div className="addPagamento col-12">
-                              <button onClick={() => registerCard()} 
-                            data-bs-dismiss="modal"
-                            aria-label="Close">
+                              <button onClick={() => registerCard()}
+                                data-bs-dismiss="modal"
+                                aria-label="Close">
+
                                 <strong>Adicionar Pagamento</strong>
                               </button>
                             </div>
@@ -961,7 +988,7 @@ console.log(endereco)
             <div className="modalPix">
               <div className="input-group mb-3">
                 {/*  Button trigger modal  */}
- 
+
                 <button
                   type="button"
                   className=" btn btn-primary"
@@ -973,9 +1000,9 @@ console.log(endereco)
                     id="pixx"
                     type="radio"
                     name="pagamento"
-                    value="2"
-                  
-                    
+                    value="3"
+
+
                   />
                 </button>
 
@@ -1027,13 +1054,15 @@ console.log(endereco)
                         </div>
                         <div className="row">
                           <div className="valor col-12">
-                            <strong>Valor total: </strong> R$ {totalFormat}
+                            <strong>Valor total: </strong>  R$ {totalFormat.toLocaleString("pt-br", {
+                              minimumFractionDigits: 2,
+                            })}
                           </div>
                         </div>
                         <div className="row">
                           <div className=" addPagamento col-12">
-                            <button onClick={paymentPix(                    )}>
-                              
+                            <button onClick={paymentPix()}>
+
                               <strong>Adicionar Pagamento</strong>
                             </button>
                           </div>
@@ -1064,7 +1093,7 @@ console.log(endereco)
                     id="boletoo"
                     type="radio"
                     name="pagamento"
-                    value="10"
+                    value="1"
                     onChange={onChangeValuePagamento}
                   />
                 </button>
@@ -1103,7 +1132,7 @@ console.log(endereco)
                             <ul type="none">
                               <li>
                                 O boleto bancário será gerado no CPF:{" "}
-                                <strong>568.**</strong>{" "}
+                                <strong>568.*.*-**</strong>{" "}
                               </li>
                               <li>
                                 E Será enviado no seu e-mail após a finalização
@@ -1114,7 +1143,9 @@ console.log(endereco)
                         </div>
                         <div className="row">
                           <div className="valor col-12">
-                            <strong>Valor total: </strong> R$ {totalFormat}
+                            <strong>Valor total: </strong>  R$ {totalFormat.toLocaleString("pt-br", {
+                              minimumFractionDigits: 2,
+                            })}
                           </div>
                         </div>
                         <div className="row">

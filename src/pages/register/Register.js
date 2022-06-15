@@ -19,7 +19,7 @@ import { history } from '../../History'
 import { cpfMask } from "../../mask/CpfMask";
 
 const USER_REGEX = /[A-Z][a-z]* [A-Z][a-z]*/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,15}$/;
+const PWD_REGEX = /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%]).{8,15}$/;
 const EMAIL_REGEX = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
 const CPF_REGEX = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
 const DATA_REGEX = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i
@@ -150,6 +150,35 @@ function Register() {
     }
   };
 
+  function mascaraCpf() {
+    var cpf = document.getElementById('cpf')
+    if (cpf.value.length == 3 || cpf.value.length == 7) {
+        cpf.value += '.'
+    }
+    else if (cpf.value.length == 11) {
+        cpf.value += '-'
+    }
+
+    if (cpf.value.length < 15) {
+        return false;
+    } else if (cpf == " ") {
+        return false
+    }
+}
+
+function mascaraCelular() {
+  var celular = document.getElementById('celular')
+  if (celular.value.length == 5) {
+      celular.value += '-'
+  }
+}
+
+function mascaraData() {
+  var data = document.getElementById('nascimento')
+  if (data.value.length == 2 || data.value.length == 5) {
+      data.value += '/'
+  }
+}
   
 
   return (
@@ -259,6 +288,8 @@ function Register() {
                               aria-describedby="pwdnote"
                               onFocus={() => setCpfFocus(true)}
                               onBlur={() => setCpfFocus(false)}
+                              maxLength="14" autoComplete='off'
+                              onKeyUp={mascaraCpf}
 
                             />
                             
@@ -290,6 +321,8 @@ function Register() {
                               aria-describedby="pwdnote"
                               onFocus={() => setNascFocus(true)}
                               onBlur={() => setNascFocus(false)}
+                              maxLength="10" autoComplete='off'
+                              onKeyUp={mascaraData}
                             />
                           </div>
                           <div className="form-group font-weight-bold col-12 col-md-3 col-lg-3">
@@ -307,6 +340,7 @@ function Register() {
                               aria-describedby="pwdnote"
                               onFocus={() => setNascFocus(true)}
                               onBlur={() => setNascFocus(false)}
+                              maxLength="2"
                             />
                           </div>
                           <div className="form-group font-weight-bold col-12 col-md-5 col-lg-5">
@@ -324,6 +358,8 @@ function Register() {
                               aria-describedby="pwdnote"
                               onFocus={() => setPhoneFocus(true)}
                               onBlur={() => setPhoneFocus(false)}
+                              maxLength="10" autoComplete='off'
+                              onKeyUp={mascaraCelular}
                             />
                           </div>
                           <input type="hidden" id="tipotelefone" name="custId" value={descricao_telefone}/>
